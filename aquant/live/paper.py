@@ -37,14 +37,14 @@ class PaperTrader:
         today = date.today().isoformat()
         rec_map = {r.symbol: r for r in recommendations}
 
-        # ── Step 1: Fill yesterday's pending orders at estimated prices ──
+        # ── Step 1: Fill yesterday's pending orders at today's open ──
         for sym, order in list(self.pending.items()):
             fill_price = order["target_price"]
-            # Try to get actual close price for better estimate
+            # Actual fill: yesterday's signal → today's opening auction
             if feed:
                 try:
                     df = feed.get(sym)
-                    fill_price = float(df["close"].iloc[-1])
+                    fill_price = float(df["open"].iloc[-1])  # today's open
                 except Exception:
                     pass
 
