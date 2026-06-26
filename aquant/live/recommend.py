@@ -22,19 +22,40 @@ _BASE_STRATEGIES = [
 ]
 
 
-def _get_strategies():
-    """Return strategy list with adaptive weights from tracker."""
+def _get_strategies(regime=None):
+    """Return strategy list with P&L weights × regime weights."""
     try:
         from aquant.live.tracker import get_adaptive_weights
-        weights = get_adaptive_weights()
+        pnl_weights = get_adaptive_weights()
     except Exception:
-        weights = {}
+        pnl_weights = {}
+
+    # Regime overlay (applied only if 'ranging' boosts MeanRevert, etc.)
+    regime_weights = {}
+    if regime:
+        from aquant.strategy.optimizer import get_regime_weights
+        regime_weights = get_regime_weights(regime["regime"], regime["strength"])
 
     result = []
     for cls, name, default_w in _BASE_STRATEGIES:
-        w = weights.get(name, default_w)
-        result.append((cls, name, w))
+        w = pnl_weights.get(name, default_w)
+        rw = regime_weights.get(name, 1.0)
+        result.append((cls, name, w * rw))
     return result
+
+
+def _detect_regime(feed):
+    """Detect market regime from 上证指数, return dict for _get_strategies."""
+    from aquant.strategy.optimizer import detect_regime
+    try:
+        df = feed.get_index("000001", start="2024-01-01")
+        if df is not None and len(df) > 60:
+            regime, strength = detect_regime(df)
+            log.info("Market regime: %s (ADX strength=%d)", regime, strength)
+            return {"regime": regime, "strength": strength}
+    except Exception:
+        pass
+    return {"regime": "mixed", "strength": 50}
 
 
 class Recommendation:
@@ -90,16 +111,32 @@ def recommend(watchlist="cached", min_score=20):
     # Suppress noise during batch scanning
     logging.getLogger("aquant.strategy.base").setLevel(logging.ERROR)
 
+    # ── Step 0: Detect market regime from 上证指数 ──
+    regime = _detect_regime(feed)
+
     # ── Step 1: scan each strategy across all symbols ──
-    all_results = {}  # symbol -> {strategy_name: ScanResult}
+    all_results = {}
     for sym in symbols:
         all_results[sym] = {}
 
-    for strategy_cls, sname, weight in _get_strategies():
+    for strategy_cls, sname, weight in _get_strategies(regime):
         scanner = SignalScanner(strategy_cls, feed)
         results = scanner.scan(symbols)
         for r in results:
             all_results[r.symbol][sname] = r
+
+    # ── Store regime for phone display ──
+    try:
+        from aquant.live.tracker import load_history, save_history
+        tracker_data = load_history()
+        tracker_data["market_regime"] = {
+            "regime": regime["regime"],
+            "strength": regime["strength"],
+            "date": str(date.today()),
+        }
+        save_history(tracker_data)
+    except Exception:
+        pass
 
     # ── Step 2: score each stock ──
     recommendations = []
