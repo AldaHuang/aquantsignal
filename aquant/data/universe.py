@@ -132,36 +132,48 @@ def filter_stocks(stocks, max_price=100, min_volume=500_000,
     return result[:top_n]
 
 
+_opt_queue = []  # stocks queued for parameter optimization
+
+
 def _backtest_one(symbol, feed):
     """Run all 3 strategies on one stock, return best Sharpe.
-    Returns (best_sharpe, best_strategy) or (-999, None).
+    Uses cached optimized params when available; queues new stocks for optimization.
     """
     import logging
     from aquant.backtest.engine import BacktestEngine
     from aquant.strategy.examples.ma_cross import MaCross
     from aquant.strategy.examples.turtle import Turtle
     from aquant.strategy.examples.mean_revert import MeanRevert
+    from aquant.strategy.optimizer import get_optimized_params
 
-    # Suppress noise during mass backtesting
     logging.getLogger("aquant.strategy.base").setLevel(logging.ERROR)
 
-    strategies = [("均线", MaCross), ("海龟", Turtle), ("布林", MeanRevert)]
-    best_sharpe = -999
-    best_name = None
+    strategy_map = [("均线", MaCross, "ma_cross"),
+                    ("海龟", Turtle, "turtle"),
+                    ("布林", MeanRevert, "mean_revert")]
 
     try:
         df = feed.get(symbol, start="2022-01-01")
     except Exception:
-        return best_sharpe, best_name
+        return -999, None
 
     if df is None or len(df) < 100:
-        return best_sharpe, best_name
+        return -999, None
 
-    for sname, scls in strategies:
+    best_sharpe = -999
+    best_name = None
+    has_optimized = False
+
+    for sname, scls, opt_key in strategy_map:
+        # Check for optimized params
+        opt_params, cached_sharpe = get_optimized_params(symbol, opt_key)
+        if opt_params:
+            has_optimized = True
+
         try:
             engine = BacktestEngine(initial_cash=10_000)
             engine.add_data(df, symbol=symbol)
-            engine.add_strategy(scls)
+            engine.add_strategy(scls, **(opt_params or {}))
             result = engine.run()
             sharpe = result.metrics.get("sharpe_ratio", -999)
             if sharpe > best_sharpe:
@@ -170,7 +182,32 @@ def _backtest_one(symbol, feed):
         except Exception:
             pass
 
+    # Queue for optimization if not yet optimized (< 5 queued per run)
+    if not has_optimized and len(_opt_queue) < 5:
+        _opt_queue.append((symbol, opt_key))
+
     return best_sharpe, best_name
+
+
+def run_pending_optimizations(feed, max_count=5):
+    """Run parameter optimization for queued stocks (called after ranking)."""
+    from aquant.strategy.optimizer import optimize_params
+    from aquant.strategy.examples.ma_cross import MaCross
+    from aquant.strategy.examples.turtle import Turtle
+    from aquant.strategy.examples.mean_revert import MeanRevert
+
+    opt_map = {"ma_cross": MaCross, "turtle": Turtle, "mean_revert": MeanRevert}
+    count = 0
+
+    while _opt_queue and count < max_count:
+        symbol, opt_key = _opt_queue.pop(0)
+        cls = opt_map.get(opt_key)
+        if cls:
+            params, sharpe = optimize_params(symbol, feed, opt_key, cls)
+            if params:
+                log.info("Optimized %s for %s: %s (Sharpe=%.2f)",
+                         symbol, opt_key, params, sharpe)
+                count += 1
 
 
 def rank_by_sharpe(stocks, feed, top_n=30):
@@ -243,6 +280,9 @@ def build_universe(max_price=100, top_n=20, exclude_star=True,
         bar = "█" * min(5, max(1, int((sharpe + 1) * 2)))
         log.info("  %2d. %s %s  ¥%.2f  Sharpe=%.2f [%s] %s",
                  i + 1, code, name, price, sharpe, strategy, bar)
+
+    # ── Run pending parameter optimizations (max 5 per day) ──
+    run_pending_optimizations(feed, max_count=5)
 
     log.info("Universe: %d stocks selected", len(result))
     return result
