@@ -68,7 +68,7 @@ function render() {
   const recs = data.records || [];
   if (!recs.length) return;
   const latest = recs[recs.length-1];
-  document.getElementById('date').textContent = '更新: ' + latest.date;
+  document.getElementById('date').textContent = '更新: ' + latest.date + ' ' + (latest.time||'');
 
   const picks = latest.picks || [];
 
