@@ -620,5 +620,15 @@
     "均线交叉": 1.0,
     "海龟突破": 1.0,
     "布林回归": 1.0
+  },
+  "paper": {
+    "equity": 10000,
+    "cash": 10000,
+    "initial_cash": 10000,
+    "total_pnl": 0,
+    "total_trades": 0,
+    "positions": 0,
+    "pending": 13,
+    "history": []
   }
 }
