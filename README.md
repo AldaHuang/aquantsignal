@@ -122,6 +122,39 @@ Step 6: 推送到 GitHub Pages（手机可看）
 - Python ≥ 3.9
 - akshare, pandas, numpy, matplotlib, pyyaml, certifi
 
+## 故障排查
+
+### 数据下载失败 / 网络超时
+
+新浪 API（`money.finance.sina.com.cn`）偶尔不稳定。系统会自动 fallback 到 AKShare：
+
+```bash
+# 测试数据获取
+python3 -m aquant data fetch 000001
+
+# 单只股票回测（用模拟数据测试策略逻辑）
+python3 -m aquant backtest 000001 --strategy ma_cross --mock
+```
+
+### 缓存问题
+
+数据缓存在 `~/.aquant/cache/aquant.db`（SQLite）。如需强制刷新：
+
+```bash
+python3 -m aquant data fetch 000001 --force
+```
+
+### 回测报 "Insufficient data"
+
+- 确保数据时间跨度足够：`--start 2020-01-01`
+- 或使用 `--mock` 生成模拟数据快速验证策略逻辑
+
+### 手机面板不显示
+
+1. 确认已运行过 `./run_daily.sh`（至少需要 `reports/tracker.json`）
+2. 本地测试：`cd aquant && python3 -m http.server 8080`，然后访问 `http://localhost:8080`
+3. 线上：确认 `deploy.sh` 已推送最新 `reports/` 到 GitHub Pages
+
 ## 测试
 
 ```bash

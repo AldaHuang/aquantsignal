@@ -195,23 +195,20 @@ class PaperTrader:
                 del self.positions[sym]
 
     def _close_position(self, sym, price, date_str, reason):
-        """Queue a sell order for existing position."""
+        """Execute a sell order to close an existing position immediately."""
         if sym not in self.positions:
             return
         pos = self.positions[sym]
-        self.pending[sym] = {
+        order = {
+            "symbol": sym,
             "shares": pos["shares"],
-            "target_price": price,
             "side": "sell",
             "fill_price": price,
             "fill_date": date_str,
-            "stop_loss": 0,
             "name": pos.get("name", sym),
             "reason": reason,
         }
-        # Execute immediately for closing
-        self._execute(self.pending[sym])
-        del self.pending[sym]
+        self._execute(order)
 
     def _calc_shares(self, price, stop_loss):
         """Calculate position size: risk 2% of capital per trade."""
