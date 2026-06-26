@@ -32,12 +32,17 @@ else:
 
 # Step 2: Update adaptive weights
 echo ""
-echo "[2/3] Updating strategy weights..."
+echo "[2/5] Learning from paper trades..."
 $PY -c "
-from aquant.live.tracker import update_strategy_weights
+from aquant.live.tracker import update_strategy_weights, get_learning_status
 weights = update_strategy_weights()
-for s, w in weights.items():
-    print(f'  {s}: {w:.2f}')
+learn = get_learning_status()
+pnl = learn.get('pnl', {})
+print('  Strategy weights (P&L-driven):')
+for s, w in sorted(weights.items()):
+    p = pnl.get(s, 0)
+    tag = '📈' if p > 5 else '📉' if p < -5 else '➖'
+    print(f'  {tag} {s}: {w:.2f}  (累计盈亏: ¥{p:+.0f})')
 " 2>&1
 
 # Step 3: Run recommendation
@@ -89,7 +94,7 @@ from aquant.live.changelog import write_changelog
 write_changelog()
 # Also copy paper summary to tracker for phone display
 import json, os
-paper_path = os.path.expanduser('~/.aquant/paper.json')
+paper_path = 'reports/paper.json'
 tracker_path = 'reports/tracker.json'
 if os.path.exists(paper_path):
     with open(paper_path) as f:
