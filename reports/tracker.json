@@ -1,0 +1,739 @@
+{
+  "records": [
+    {
+      "date": "2026-06-25",
+      "picks": [
+        {
+          "symbol": "301292",
+          "name": "海科新源",
+          "verdict": "买入",
+          "score": 62,
+          "price": 89.77,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "301526",
+          "name": "国际复材",
+          "verdict": "买入",
+          "score": 60,
+          "price": 47.88,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "002046",
+          "name": "国机精工",
+          "verdict": "买入",
+          "score": 56,
+          "price": 75.41,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "600176",
+          "name": "中国巨石",
+          "verdict": "买入",
+          "score": 53,
+          "price": 70.8,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "601138",
+          "name": "工业富联",
+          "verdict": "买入",
+          "score": 51,
+          "price": 76.99,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "603618",
+          "name": "杭电股份",
+          "verdict": "买入",
+          "score": 49,
+          "price": 57.19,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "601208",
+          "name": "东材科技",
+          "verdict": "买入",
+          "score": 49,
+          "price": 77.58,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "600498",
+          "name": "烽火通信",
+          "verdict": "买入",
+          "score": 49,
+          "price": 84.69,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "600353",
+          "name": "旭光电子",
+          "verdict": "买入",
+          "score": 48,
+          "price": 48.75,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "600105",
+          "name": "永鼎股份",
+          "verdict": "买入",
+          "score": 48,
+          "price": 72.96,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "300209",
+          "name": "行云科技",
+          "verdict": "买入",
+          "score": 47,
+          "price": 29.7,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "600226",
+          "name": "亨通股份",
+          "verdict": "买入",
+          "score": 45,
+          "price": 11.2,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "002491",
+          "name": "通鼎互联",
+          "verdict": "买入",
+          "score": 42,
+          "price": 38.5,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "002436",
+          "name": "兴森科技",
+          "verdict": "买入",
+          "score": 42,
+          "price": 53.53,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "601126",
+          "name": "四方股份",
+          "verdict": "卖出",
+          "score": 37,
+          "price": 71.72,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "001267",
+          "name": "汇绿生态",
+          "verdict": "卖出",
+          "score": 34,
+          "price": 62.23,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "002558",
+          "name": "巨人网络",
+          "verdict": "卖出",
+          "score": 32,
+          "price": 27.73,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "002156",
+          "name": "通富微电",
+          "verdict": "卖出",
+          "score": 23,
+          "price": 77.81,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          }
+        },
+        {
+          "symbol": "002602",
+          "name": "世纪华通",
+          "verdict": "卖出",
+          "score": 21,
+          "price": 13.74,
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          }
+        },
+        {
+          "symbol": "002536",
+          "name": "飞龙股份",
+          "verdict": "卖出",
+          "score": 20,
+          "price": 51.89,
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          }
+        }
+      ],
+      "validation": {
+        "checked_date": "2026-06-26",
+        "buy_win_rate": 0.0,
+        "buy_hits": 0,
+        "buy_misses": 14
+      }
+    },
+    {
+      "date": "2026-06-26",
+      "picks": [
+        {
+          "symbol": "301526",
+          "name": "国际复材",
+          "verdict": "买入",
+          "score": 60,
+          "price": 52.27,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现优秀",
+            "止损¥43.54(-16.7%) 止盈¥65.37(+25.1%) 仓位52%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 52.27,
+          "stop_loss": 43.54,
+          "take_profit": 65.37,
+          "atr": 4.37,
+          "position_pct": 52,
+          "risk_pct": 8.7
+        },
+        {
+          "symbol": "002046",
+          "name": "国机精工",
+          "verdict": "买入",
+          "score": 56,
+          "price": 75.41,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可",
+            "止损¥64.96(-13.9%) 止盈¥91.09(+20.8%) 仓位75%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 75.41,
+          "stop_loss": 64.96,
+          "take_profit": 91.09,
+          "atr": 5.23,
+          "position_pct": 75,
+          "risk_pct": 10.5
+        },
+        {
+          "symbol": "600176",
+          "name": "中国巨石",
+          "verdict": "买入",
+          "score": 53,
+          "price": 70.8,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可",
+            "止损¥62.27(-12.0%) 止盈¥83.60(+18.1%) 仓位70%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 70.8,
+          "stop_loss": 62.27,
+          "take_profit": 83.6,
+          "atr": 4.27,
+          "position_pct": 70,
+          "risk_pct": 8.5
+        },
+        {
+          "symbol": "601138",
+          "name": "工业富联",
+          "verdict": "买入",
+          "score": 51,
+          "price": 76.99,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎",
+            "止损¥68.93(-10.5%) 止盈¥89.08(+15.7%) 仓位76%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 76.99,
+          "stop_loss": 68.93,
+          "take_profit": 89.08,
+          "atr": 4.03,
+          "position_pct": 76,
+          "risk_pct": 8.1
+        },
+        {
+          "symbol": "603618",
+          "name": "杭电股份",
+          "verdict": "买入",
+          "score": 49,
+          "price": 57.19,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可",
+            "止损¥49.24(-13.9%) 止盈¥69.12(+20.9%) 仓位57%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 57.19,
+          "stop_loss": 49.24,
+          "take_profit": 69.12,
+          "atr": 3.98,
+          "position_pct": 57,
+          "risk_pct": 7.9
+        },
+        {
+          "symbol": "601208",
+          "name": "东材科技",
+          "verdict": "买入",
+          "score": 49,
+          "price": 77.58,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可",
+            "止损¥66.41(-14.4%) 止盈¥94.34(+21.6%) 仓位77%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 77.58,
+          "stop_loss": 66.41,
+          "take_profit": 94.34,
+          "atr": 5.59,
+          "position_pct": 77,
+          "risk_pct": 11.2
+        },
+        {
+          "symbol": "600353",
+          "name": "旭光电子",
+          "verdict": "买入",
+          "score": 48,
+          "price": 48.75,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可",
+            "止损¥41.86(-14.1%) 止盈¥59.09(+21.2%) 仓位48%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 48.75,
+          "stop_loss": 41.86,
+          "take_profit": 59.09,
+          "atr": 3.45,
+          "position_pct": 48,
+          "risk_pct": 6.9
+        },
+        {
+          "symbol": "600105",
+          "name": "永鼎股份",
+          "verdict": "买入",
+          "score": 48,
+          "price": 72.96,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎",
+            "止损¥62.88(-13.8%) 止盈¥88.08(+20.7%) 仓位72%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 72.96,
+          "stop_loss": 62.88,
+          "take_profit": 88.08,
+          "atr": 5.04,
+          "position_pct": 72,
+          "risk_pct": 10.1
+        },
+        {
+          "symbol": "600226",
+          "name": "亨通股份",
+          "verdict": "买入",
+          "score": 45,
+          "price": 11.2,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎",
+            "止损¥9.69(-13.5%) 止盈¥13.47(+20.3%) 仓位11%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 11.2,
+          "stop_loss": 9.69,
+          "take_profit": 13.47,
+          "atr": 0.76,
+          "position_pct": 11,
+          "risk_pct": 1.5
+        },
+        {
+          "symbol": "600667",
+          "name": "太极实业",
+          "verdict": "买入",
+          "score": 43,
+          "price": 25.31,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎",
+            "止损¥21.64(-14.5%) 止盈¥30.81(+21.7%) 仓位25%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 25.31,
+          "stop_loss": 21.64,
+          "take_profit": 30.81,
+          "atr": 1.83,
+          "position_pct": 25,
+          "risk_pct": 3.7
+        },
+        {
+          "symbol": "002491",
+          "name": "通鼎互联",
+          "verdict": "买入",
+          "score": 42,
+          "price": 38.5,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎",
+            "止损¥32.93(-14.5%) 止盈¥46.85(+21.7%) 仓位38%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 38.5,
+          "stop_loss": 32.93,
+          "take_profit": 46.85,
+          "atr": 2.78,
+          "position_pct": 38,
+          "risk_pct": 5.6
+        },
+        {
+          "symbol": "002436",
+          "name": "兴森科技",
+          "verdict": "买入",
+          "score": 42,
+          "price": 53.53,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎",
+            "止损¥45.94(-14.2%) 止盈¥64.91(+21.3%) 仓位53%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 53.53,
+          "stop_loss": 45.94,
+          "take_profit": 64.91,
+          "atr": 3.79,
+          "position_pct": 53,
+          "risk_pct": 7.6
+        },
+        {
+          "symbol": "000657",
+          "name": "中钨高新",
+          "verdict": "买入",
+          "score": 37,
+          "price": 105.68,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可",
+            "一手需 ¥10,568，资金不足",
+            "止损¥90.08(-14.8%) 止盈¥129.08(+22.1%) 仓位100%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 105.68,
+          "stop_loss": 90.08,
+          "take_profit": 129.08,
+          "atr": 7.8,
+          "position_pct": 100,
+          "risk_pct": 15.6
+        },
+        {
+          "symbol": "601126",
+          "name": "四方股份",
+          "verdict": "卖出",
+          "score": 37,
+          "price": 71.72,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号新鲜（近期触发）",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "001267",
+          "name": "汇绿生态",
+          "verdict": "卖出",
+          "score": 34,
+          "price": 62.23,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002558",
+          "name": "巨人网络",
+          "verdict": "卖出",
+          "score": 32,
+          "price": 27.73,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002261",
+          "name": "拓维信息",
+          "verdict": "卖出",
+          "score": 26,
+          "price": 28.46,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002156",
+          "name": "通富微电",
+          "verdict": "卖出",
+          "score": 23,
+          "price": 77.81,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002602",
+          "name": "世纪华通",
+          "verdict": "卖出",
+          "score": 21,
+          "price": 13.74,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002536",
+          "name": "飞龙股份",
+          "verdict": "卖出",
+          "score": 20,
+          "price": 51.89,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        }
+      ]
+    }
+  ],
+  "strategy_weights": {
+    "均线交叉": 1.0,
+    "海龟突破": 1.0,
+    "布林回归": 1.0
+  }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>aquant 量化推荐</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,system-ui,sans-serif;background:#0f0f0f;color:#e0e0e0;padding:12px;max-width:480px;margin:0 auto}
+h1{font-size:20px;text-align:center;padding:12px 0 4px;color:#fff}
+.date{text-align:center;color:#666;font-size:12px;margin-bottom:12px}
+.card{background:#1a1a1a;border-radius:10px;padding:12px;margin:8px 0;border:1px solid #2a2a2a}
+.name{font-size:17px;font-weight:700}
+.code{font-size:12px;color:#888}
+.price{font-size:15px}
+.row{display:flex;justify-content:space-between;align-items:center;margin:4px 0}
+.tag{padding:3px 10px;border-radius:5px;font-size:13px;font-weight:600}
+.buy{background:#c0392b;color:#fff}.sell{background:#27ae60;color:#fff}
+.watch{background:#e67e22;color:#fff}.hold{background:#555;color:#ccc}
+.reason{font-size:12px;color:#999;line-height:1.6;margin-top:6px}
+.trade{font-size:11px;color:#f39c12;margin-top:4px;line-height:1.5}
+.nav{display:flex;gap:8px;margin:10px 0 16px}
+.nav b{padding:10px 0;text-align:center;flex:1;border-radius:8px;background:#2a2a2a;color:#ccc;font-size:14px;font-weight:400;cursor:pointer}
+.nav b.on{background:#c0392b;color:#fff}
+.tab{display:none}
+.tab.active{display:block}
+.plan td{padding:6px 4px;font-size:12px;border-bottom:1px solid #222}
+.plan th{padding:6px 4px;font-size:11px;color:#888;text-align:left;border-bottom:1px solid #333}
+.log{font-size:11px;color:#aaa;line-height:1.8;white-space:pre-wrap}
+.log h2,.log h3{font-size:14px;color:#ddd;margin-top:12px}
+.foot{text-align:center;color:#555;font-size:10px;padding:20px 0}
+.loading{text-align:center;color:#666;padding:40px}
+.stats{font-size:12px;color:#999;line-height:2}
+</style>
+</head>
+<body>
+<h1>📊 aquant</h1>
+<div class="date" id="date">加载中...</div>
+
+<div class="nav">
+  <b class="on" onclick="show('recommend')">推荐</b>
+  <b onclick="show('plan')">交易指令</b>
+  <b onclick="show('log')">日志</b>
+</div>
+
+<div id="loading" class="loading">加载数据中...</div>
+
+<div id="tab-recommend" class="tab"></div>
+<div id="tab-plan" class="tab"></div>
+<div id="tab-log" class="tab"></div>
+<p class="foot">自动生成 · 仅供参考</p>
+
+<script>
+let data = {};
+
+async function load() {
+  try {
+    const r = await fetch('reports/tracker.json');
+    data = await r.json();
+    document.getElementById('loading').style.display='none';
+    render();
+  } catch(e) {
+    document.getElementById('loading').innerHTML='暂无数据';
+  }
+}
+
+function render() {
+  const recs = data.records || [];
+  if (!recs.length) return;
+  const latest = recs[recs.length-1];
+  document.getElementById('date').textContent = '更新: ' + latest.date;
+
+  const picks = latest.picks || [];
+
+  // Recommend tab
+  let html = '';
+  picks.forEach(p => {
+    const v = p.verdict;
+    const tag = v==='买入'?'buy':v==='卖出'?'sell':v==='关注'?'watch':'hold';
+    const reasons = (p.reasons||[]).filter(r=>!r.startsWith('止损')).slice(0,3).join(' · ');
+    html += `<div class="card">
+      <div class="row"><span class="name">${p.name}<span class="code"> ${p.symbol}</span></span>
+      <span class="price">¥${p.price.toFixed(2)}</span></div>
+      <div class="row"><span style="color:#888;font-size:13px">评分 ${p.score}/100</span>
+      <span class="tag ${tag}">${v}</span></div>
+      <div class="reason">${reasons}</div>`;
+    if (p.stop_loss) html += `<div class="trade">止损 ¥${p.stop_loss.toFixed(2)} | 止盈 ¥${p.take_profit.toFixed(2)} | 仓位 ${p.position_pct}% | 风险 ${p.risk_pct}%</div>`;
+    html += `</div>`;
+  });
+  document.getElementById('tab-recommend').innerHTML = html || '<p class="loading">暂无推荐</p>';
+
+  // Plan tab
+  const buys = picks.filter(p=>['买入','关注'].includes(p.verdict) && p.stop_loss > 0);
+  html = buys.length ? `<table class="plan" style="width:100%">
+    <tr><th>股票</th><th>买入</th><th>止损</th><th>止盈</th><th>仓位</th><th>风险</th></tr>` : '<p class="loading">暂无买入信号</p>';
+  buys.forEach(p => {
+    html += `<tr><td>${p.name}</td><td>¥${p.entry.toFixed(2)}</td>
+      <td style="color:#e74c3c">¥${p.stop_loss.toFixed(2)}</td>
+      <td style="color:#27ae60">¥${p.take_profit.toFixed(2)}</td>
+      <td>${p.position_pct}%</td><td>${p.risk_pct}%</td></tr>`;
+  });
+  if (buys.length) html += '</table>';
+  document.getElementById('tab-plan').innerHTML = html;
+
+  // Log tab: stats
+  const w = data.strategy_weights || {};
+  html = '<h3>策略权重</h3><div class="stats">';
+  Object.entries(w).forEach(([k,v]) => { html += `${k}: ${v.toFixed(2)}<br>`; });
+  html += '</div>';
+  document.getElementById('tab-log').innerHTML = html;
+}
+
+function show(name) {
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  document.querySelectorAll('.nav b').forEach(b=>b.classList.remove('on'));
+  event.target.classList.add('on');
+  if (name==='recommend') render();
+}
+document.getElementById('tab-recommend').classList.add('active');
+load();
+</script>
+</body>
+</html>
