@@ -9,6 +9,10 @@ set -e
 cd "$(dirname "$0")"
 PY=~/python312/python-extracted/Python_Framework.pkg/Payload/Versions/3.12/bin/python3.12
 DATE=$(date +%Y-%m-%d)
+
+# Mark today's run to prevent duplicate from wakeup_check
+mkdir -p ~/.aquant
+echo "$DATE" > ~/.aquant/last_run
 mkdir -p logs
 
 echo "=============================================="
