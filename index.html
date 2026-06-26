@@ -40,6 +40,7 @@ h1{font-size:20px;text-align:center;padding:12px 0 4px;color:#fff}
 <div class="nav">
   <b class="on" onclick="show('recommend')">推荐</b>
   <b onclick="show('plan')">交易指令</b>
+  <b onclick="show('paper')">模拟盘</b>
   <b onclick="show('log')">日志</b>
 </div>
 
@@ -47,6 +48,7 @@ h1{font-size:20px;text-align:center;padding:12px 0 4px;color:#fff}
 
 <div id="tab-recommend" class="tab"></div>
 <div id="tab-plan" class="tab"></div>
+<div id="tab-paper" class="tab"></div>
 <div id="tab-log" class="tab"></div>
 <p class="foot">自动生成 · 仅供参考</p>
 
@@ -101,6 +103,35 @@ function render() {
   });
   if (buys.length) html += '</table>';
   document.getElementById('tab-plan').innerHTML = html;
+
+  // Paper trading tab
+  const pp = data.paper || {};
+  if (pp.equity) {
+    const ret = ((pp.equity - pp.initial_cash) / pp.initial_cash * 100).toFixed(2);
+    const color = ret >= 0 ? '#e74c3c' : '#27ae60';
+    let ph = `<div class="card">
+      <div class="row"><span class="name">总资产</span><span style="font-size:22px;color:${color}">¥${pp.equity.toFixed(2)}</span></div>
+      <div class="row"><span style="color:#888">初始资金</span><span>¥${pp.initial_cash.toFixed(2)}</span></div>
+      <div class="row"><span style="color:#888">收益率</span><span style="color:${color};font-size:16px">${ret}%</span></div>
+      <div class="row"><span style="color:#888">现金</span><span>¥${pp.cash.toFixed(2)}</span></div>
+      <div class="row"><span style="color:#888">持仓</span><span>${pp.positions||0} 只</span></div>
+      <div class="row"><span style="color:#888">累计交易</span><span>${pp.total_trades||0} 笔</span></div>
+    </div>`;
+    // Recent trades
+    if (pp.history && pp.history.length) {
+      ph += '<h3>最近交易</h3>';
+      pp.history.slice(-5).reverse().forEach(t => {
+        const c = t.pnl>=0?'#e74c3c':'#27ae60';
+        ph += `<div class="card">
+          <div class="row"><span class="name">${t.name||t.symbol}</span><span style="color:${c}">¥${t.pnl>0?'+'+t.pnl.toFixed(2):t.pnl.toFixed(2)} (${t.pnl_pct}%)</span></div>
+          <div style="font-size:11px;color:#888">${t.side==='buy'?'买':'卖'} ${t.shares}股 @ ¥${(t.exit_price||t.entry_price).toFixed(2)} | ${t.exit_date||t.entry_date} | ${t.reason||''}</div>
+        </div>`;
+      });
+    }
+    document.getElementById('tab-paper').innerHTML = ph;
+  } else {
+    document.getElementById('tab-paper').innerHTML = '<p class="loading">模拟盘数据收集中...<br>明天第二次运行后开始显示</p>';
+  }
 
   // Log tab: stats
   const w = data.strategy_weights || {};
