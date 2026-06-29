@@ -2199,32 +2199,12 @@
     "布林回归": 1.0
   },
   "paper": {
-    "equity": 0,
+    "equity": 11425.0,
     "cash": 109.0,
     "initial_cash": 10000,
     "total_pnl": 0,
     "total_trades": 0,
     "positions": 1,
-    "equity_log": [
-      {
-        "date": "2026-06-27",
-        "equity": 10000,
-        "cash": 10000,
-        "position_value": 0
-      },
-      {
-        "date": "2026-06-28",
-        "equity": 9985.0,
-        "cash": 1170.0,
-        "position_value": 8815.0
-      },
-      {
-        "date": "2026-06-29",
-        "equity": 9980.0,
-        "cash": 109.0,
-        "position_value": 9871.0
-      }
-    ],
     "history": []
   }
 }
