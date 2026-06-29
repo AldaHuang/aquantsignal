@@ -71,9 +71,11 @@ def record_recommendations(recs):
 
 
 def validate_yesterday(feed):
-    """Check how yesterday's predictions performed against today's prices.
+    """Validate yesterday's picks against today's actual price movement.
 
-    Returns dict with performance stats per strategy and per verdict.
+    Two metrics:
+      - direction_accuracy: % of BUY picks that rose today vs yesterday's close
+      - The more meaningful metric is paper trading P&L, tracked separately.
     """
     data = load_history()
     yesterday = (date.today() - timedelta(days=1)).isoformat()
@@ -87,58 +89,46 @@ def validate_yesterday(feed):
     if not yesterday_entry:
         return None
 
-    results = {"buy_hits": 0, "buy_misses": 0, "sell_hits": 0, "sell_misses": 0,
-               "strategy_hits": {}, "strategy_total": {}}
+    picks = yesterday_entry.get("picks", [])
+    buy_picks = [p for p in picks if p.get("verdict") in ("买入", "关注")]
 
-    for pick in yesterday_entry["picks"]:
-        symbol = pick["symbol"]
-        old_price = pick["price"]
-        verdict = pick["verdict"]
+    if not buy_picks:
+        return None
 
-        # Get today's price
+    hits, misses, total_change = 0, 0, 0.0
+    for pick in buy_picks:
         try:
-            df = feed.get(symbol)
-            new_price = float(df["close"].iloc[-1])
+            df = feed.get(pick["symbol"])
+            old_close = pick["price"]
+            today_open = float(df["open"].iloc[-1])  # actual fill price
+            if old_close > 0:
+                change = (today_open - old_close) / old_close
+                total_change += change
+                if change > 0:
+                    hits += 1
+                else:
+                    misses += 1
         except Exception:
             continue
 
-        if old_price <= 0:
-            continue
+    total = hits + misses
+    if total == 0:
+        return None
 
-        change = (new_price - old_price) / old_price
-        date_str = str(df.index[-1].date())
+    results = {
+        "buy_count": len(buy_picks),
+        "validated": total,
+        "direction_hits": hits,
+        "direction_accuracy": hits / total,
+        "avg_gap": round(total_change / total * 100, 2),  # average overnight gap %
+    }
 
-        # Validate
-        if verdict in ("买入", "关注"):
-            if change > 0:
-                results["buy_hits"] += 1
-            else:
-                results["buy_misses"] += 1
-        elif verdict == "卖出":
-            if change < 0:
-                results["sell_hits"] += 1
-            else:
-                results["sell_misses"] += 1
-
-        # Per-strategy tracking
-        for sname, signal in pick.get("signals", {}).items():
-            results["strategy_total"][sname] = results["strategy_total"].get(sname, 0) + 1
-            if signal == "BUY" and change > 0:
-                results["strategy_hits"][sname] = results["strategy_hits"].get(sname, 0) + 1
-            elif signal == "SELL" and change < 0:
-                results["strategy_hits"][sname] = results["strategy_hits"].get(sname, 0) + 1
-
-    # Calculate win rates
-    total = results["buy_hits"] + results["buy_misses"]
-    results["buy_win_rate"] = results["buy_hits"] / max(total, 1)
-
-    # Store validation in history
+    # Store
     if yesterday_entry and "validation" not in yesterday_entry:
         yesterday_entry["validation"] = {
             "checked_date": date.today().isoformat(),
-            "buy_win_rate": results["buy_win_rate"],
-            "buy_hits": results["buy_hits"],
-            "buy_misses": results["buy_misses"],
+            "direction_accuracy": results["direction_accuracy"],
+            "avg_gap_pct": results["avg_gap"],
         }
         save_history(data)
 

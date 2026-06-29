@@ -28,8 +28,10 @@ from aquant.data.feed import DataFeed
 from aquant.live.tracker import validate_yesterday
 result = validate_yesterday(DataFeed())
 if result:
-    print(f'  Yesterday buy win rate: {result[\"buy_win_rate\"]*100:.0f}%')
-    print(f'  Buy hits: {result[\"buy_hits\"]}, misses: {result[\"buy_misses\"]}')
+    acc = result.get('direction_accuracy', 0) * 100
+    gap = result.get('avg_gap', 0)
+    print(f'  Direction accuracy: {acc:.0f}% ({result.get(\"validated\",0)} picks)')
+    print(f'  Avg overnight gap: {gap:+.2f}%')
 else:
     print('  No yesterday data to validate')
 " 2>&1

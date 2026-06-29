@@ -47,13 +47,15 @@ def write_changelog():
             lines.append(f"- {s}: **{w:.2f}** {bar} ({note})")
         lines.append("")
 
-    # ── Yesterday hit rate ──
+    # ── Yesterday validation ──
     if yesterday_valid:
-        hits = yesterday_valid.get("buy_hits", 0)
-        total = hits + yesterday_valid.get("buy_misses", 0)
+        acc = yesterday_valid.get("direction_accuracy", 0) * 100
+        total = yesterday_valid.get("validated", 0)
+        gap = yesterday_valid.get("avg_gap_pct", 0)
         if total > 0:
-            wr = yesterday_valid.get("buy_win_rate", 0) * 100
-            lines.append(f"### 昨日命中率: {wr:.0f}% ({hits}/{total})")
+            lines.append(f"### 昨日方向准确率: {acc:.0f}% ({total}只)")
+            lines.append(f"- 隔夜跳空均值: {gap:+.2f}%（买入后次日开盘涨跌幅）")
+            lines.append(f"- 注意：方向准确率只反映短期涨跌，不代表最终盈亏")
             lines.append("")
 
     # ── Changes from yesterday with reasons ──
