@@ -515,7 +515,7 @@
         '<div class="empty"><div class="emoji">📈</div>模拟盘数据收集中...<br><span style="font-size:11px">系统运行 2 次以上后开始显示</span></div>';
     }
 
-    // Log tab
+    // Log tab: strategy weights + full changelog
     var weights = data.strategy_weights || {};
     html = '<div class="log-section"><h4>策略权重</h4>';
     Object.keys(weights).sort().forEach(function(k){
@@ -537,6 +537,36 @@
       });
       html += '</div>';
     }
+
+    // Market regime
+    var mr = data.market_regime || {};
+    if (mr.regime){
+      var rlabel = {trending:'📈 趋势市', ranging:'📊 震荡市', mixed:'➖ 混合市'};
+      html += '<div class="log-section"><h4>市场状态</h4>';
+      html += '<div style="font-size:13px;padding:4px 0">'+(rlabel[mr.regime]||mr.regime)+' (强度:'+(mr.strength||50)+')</div>';
+      html += '</div>';
+    }
+
+    // Full changelog
+    var clog = data.changelog || '';
+    if (clog){
+      html += '<div class="log-section"><h4>更新日志</h4>';
+      // Render markdown simply — convert ## to headings
+      var lines = clog.split('\n');
+      var inCode = false;
+      for (var i=0; i<Math.min(lines.length,300); i++){
+        var line = lines[i];
+        if (line.indexOf('```')===0){ inCode=!inCode; continue; }
+        if (inCode){ html += '<div style="font-size:10px;color:var(--text-dim);font-family:var(--font-mono);white-space:pre-wrap">'+esc(line)+'</div>'; continue; }
+        if (line.indexOf('### ')==0) html += '<div style="font-size:13px;font-weight:600;color:#fff;margin:10px 0 4px">'+esc(line.slice(4))+'</div>';
+        else if (line.indexOf('## ')==0) html += '<div style="font-size:14px;font-weight:700;color:var(--accent);margin:14px 0 6px">'+esc(line.slice(3))+'</div>';
+        else if (line.indexOf('- ')>=0 && line.indexOf('- ')<3) html += '<div style="font-size:11px;color:var(--text-dim);padding:1px 0 1px 8px">'+esc(line)+'</div>';
+        else if (line.indexOf('|')===0) html += '<div style="font-size:10px;color:var(--text-dim);font-family:var(--font-mono);padding:1px 0">'+esc(line)+'</div>';
+        else if (line.trim()) html += '<div style="font-size:11px;color:#aaa;padding:1px 0">'+esc(line)+'</div>';
+      }
+      html += '</div>';
+    }
+
     document.getElementById('tab-log').innerHTML = html;
   }
 

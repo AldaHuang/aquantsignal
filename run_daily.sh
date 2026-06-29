@@ -136,8 +136,14 @@ if os.path.exists(paper_path):
     }
     with open(tracker_path, 'w') as f:
         json.dump(tracker, f, indent=2, ensure_ascii=False)
-    print('  Paper trading synced to tracker')
-print('  CHANGELOG.md updated')
+    # Also sync CHANGELOG content
+    import os
+    clog_path = 'CHANGELOG.md'
+    if os.path.exists(clog_path):
+        with open(clog_path) as cf:
+            clog = cf.read()
+        tracker['changelog'] = clog[:15000]  # cap for mobile
+    print('  Paper + changelog synced to tracker')
 " 2>&1
 
 # Step 6: Deploy to GitHub Pages
