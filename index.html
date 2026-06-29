@@ -299,6 +299,18 @@
     .trade-item{border-bottom-color:rgba(0,0,0,.03)}
     .tag-hold{background:rgba(0,0,0,.06);color:#999}
   }
+  /* ── Changelog ── */
+  .clog-day{background:var(--card-bg);border-radius:10px;padding:10px 14px;margin:10px 0;border:1px solid var(--border)}
+  .clog-date{font-size:14px;font-weight:700;color:var(--accent);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+  .clog-section{margin:6px 0}
+  .clog-sub{font-size:12px;font-weight:600;color:#ddd;margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.3px}
+  .clog-item{font-size:11px;color:var(--text-dim);padding:3px 0 3px 10px;border-left:2px solid var(--border);margin:2px 0;line-height:1.6}
+  .clog-add{border-left-color:var(--red);background:rgba(192,57,43,.06)}
+  .clog-remove{border-left-color:var(--green);background:rgba(39,174,96,.06)}
+  .clog-stay{border-left-color:var(--accent);background:rgba(212,120,0,.06)}
+  .clog-bold{font-size:12px;font-weight:600;color:#eee;padding:4px 0}
+  .clog-tbl{font-size:10px;color:var(--text-dim);font-family:var(--font-mono);padding:1px 0;white-space:pre-wrap}
+  .clog-text{font-size:11px;color:#999;padding:2px 0;line-height:1.6}
 </style>
 </head>
 <body>
@@ -547,22 +559,61 @@
       html += '</div>';
     }
 
-    // Full changelog
+    // Full changelog — render with structure
     var clog = data.changelog || '';
     if (clog){
       html += '<div class="log-section"><h4>更新日志</h4>';
-      // Render markdown simply — convert ## to headings
-      var lines = clog.split('\n');
-      var inCode = false;
-      for (var i=0; i<Math.min(lines.length,300); i++){
-        var line = lines[i];
-        if (line.indexOf('```')===0){ inCode=!inCode; continue; }
-        if (inCode){ html += '<div style="font-size:10px;color:var(--text-dim);font-family:var(--font-mono);white-space:pre-wrap">'+esc(line)+'</div>'; continue; }
-        if (line.indexOf('### ')==0) html += '<div style="font-size:13px;font-weight:600;color:#fff;margin:10px 0 4px">'+esc(line.slice(4))+'</div>';
-        else if (line.indexOf('## ')==0) html += '<div style="font-size:14px;font-weight:700;color:var(--accent);margin:14px 0 6px">'+esc(line.slice(3))+'</div>';
-        else if (line.indexOf('- ')>=0 && line.indexOf('- ')<3) html += '<div style="font-size:11px;color:var(--text-dim);padding:1px 0 1px 8px">'+esc(line)+'</div>';
-        else if (line.indexOf('|')===0) html += '<div style="font-size:10px;color:var(--text-dim);font-family:var(--font-mono);padding:1px 0">'+esc(line)+'</div>';
-        else if (line.trim()) html += '<div style="font-size:11px;color:#aaa;padding:1px 0">'+esc(line)+'</div>';
+      // Split by date headers
+      var sections = clog.split(/\n(?=## \d{4}-\d{2}-\d{2})/);
+      for (var si=0; si<Math.min(sections.length, 10); si++){
+        var sec = sections[si];
+        if (!sec.trim()) continue;
+        var secLines = sec.split('\n');
+        var dateHeading = '';
+        if (secLines[0] && secLines[0].indexOf('## ')==0) dateHeading = secLines[0].slice(3);
+
+        html += '<div class="clog-day">';
+        if (dateHeading) html += '<div class="clog-date">📅 '+esc(dateHeading)+'</div>';
+
+        var sub = ''; // current sub-section
+        for (var li=1; li<secLines.length; li++){
+          var l = secLines[li];
+          // Section headers
+          if (l.indexOf('### ')==0){
+            if (sub) html += '</div>';
+            sub = esc(l.slice(4));
+            html += '<div class="clog-section"><div class="clog-sub">'+sub+'</div>';
+            continue;
+          }
+          if (l.indexOf('---')===0) continue;
+          // Bullet items
+          if (l.indexOf('- ')>=0 && l.indexOf('- ')<3){
+            var txt = l.replace(/^- /,'').trim();
+            // Color code adds/removes
+            var itemClass = 'clog-item';
+            if (txt.indexOf('🔴')>=0 || txt.indexOf('新增')>=0) itemClass += ' clog-add';
+            else if (txt.indexOf('🟢')>=0 || txt.indexOf('移除')>=0) itemClass += ' clog-remove';
+            else if (txt.indexOf('持续')>=0) itemClass += ' clog-stay';
+            html += '<div class="'+itemClass+'">'+esc(txt)+'</div>';
+            continue;
+          }
+          // Bold text lines
+          if (l.indexOf('**')>=0){
+            html += '<div class="clog-bold">'+esc(l).replace(/\*\*/g,'')+'</div>';
+            continue;
+          }
+          // Table rows
+          if (l.indexOf('|')===0){
+            html += '<div class="clog-tbl">'+esc(l).replace(/\|/g,' ')+'</div>';
+            continue;
+          }
+          // Plain text
+          if (l.trim()){
+            html += '<div class="clog-text">'+esc(l)+'</div>';
+          }
+        }
+        if (sub) html += '</div>'; // close last sub-section
+        html += '</div>'; // close day
       }
       html += '</div>';
     }
