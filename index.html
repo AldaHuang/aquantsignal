@@ -476,15 +476,37 @@
         '<span class="ml">当前持仓</span><span class="mv">'+(pp.positions||0)+' 只</span>'+
         '<span class="ml">累计交易</span><span class="mv">'+(pp.total_trades||0)+' 笔</span>'+
         '</div></div>';
+      // Positions
+      if (pp.positions_list && pp.positions_list.length){
+        html += '<h4 style="font-size:12px;color:var(--text-dim);margin:12px 0 6px">持仓</h4>';
+        pp.positions_list.forEach(function(p){
+          var pc = (p.pnl_pct||0)>=0?'var(--red)':'var(--green)';
+          html += '<div class="trade-item">'+
+            '<div class="tl"><span style="font-weight:600">'+esc(p.name||p.symbol)+'</span><span style="font-size:11px;color:var(--text-dim)">'+(p.shares||0)+'股</span></div>'+
+            '<div class="td">成本 ¥'+(p.avg_cost||0).toFixed(2)+' → 现价 ¥'+(p.current_price||0).toFixed(2)+' | 市值 ¥'+(p.market_value||0).toFixed(2)+' | <span style="color:'+pc+'">'+(p.pnl_pct>0?'+':'')+(p.pnl_pct||0).toFixed(2)+'%</span></div>'+
+            '<div class="td" style="font-size:10px">止损 ¥'+(p.stop_loss||0).toFixed(2)+' | 入场 '+esc(p.entry_date||'')+'</div>'+
+            '</div>';
+        });
+      }
+      // Closed trades
       if (pp.history && pp.history.length){
-        html += '<h4 style="font-size:12px;color:var(--text-dim);margin:12px 0 6px;text-transform:uppercase;letter-spacing:0.5px">最近交易</h4>';
+        html += '<h4 style="font-size:12px;color:var(--text-dim);margin:12px 0 6px">已平仓</h4>';
         pp.history.slice(-5).reverse().forEach(function(t){
           var c = (t.pnl||0)>=0?'var(--red)':'var(--green)';
           html += '<div class="trade-item">'+
             '<div class="tl"><span style="font-weight:600">'+esc(t.name||t.symbol)+'</span>'+
             '<span style="font-family:var(--font-mono);color:'+c+'">¥'+(t.pnl>0?'+':'')+(t.pnl||0).toFixed(2)+' ('+(t.pnl_pct||0)+'%)</span></div>'+
-            '<div class="td">'+(t.side==='buy'?'买':'卖')+' '+(t.shares||0)+'股 @ ¥'+((t.exit_price||t.entry_price||0)).toFixed(2)+' | '+esc(t.exit_date||t.entry_date||'')+' | '+esc(t.reason||'')+'</div>'+
+            '<div class="td">'+(t.side==='buy'?'买':'卖')+' '+(t.shares||0)+'股 | 买¥'+(t.entry_price||0).toFixed(2)+' 卖¥'+(t.exit_price||0).toFixed(2)+' | 佣金¥'+(t.commission||0).toFixed(2)+' 印花税¥'+(t.stamp_duty||0).toFixed(2)+'</div>'+
+            '<div class="td" style="font-size:10px">'+esc(t.exit_date||t.entry_date||'')+' | '+esc(t.reason||'')+'</div>'+
             '</div>';
+        });
+      }
+      // Order log
+      if (pp.order_log && pp.order_log.length){
+        html += '<h4 style="font-size:12px;color:var(--text-dim);margin:12px 0 6px">操作日志</h4>';
+        pp.order_log.slice(-10).reverse().forEach(function(o){
+          var icons = {ORDER_CREATED:'📝', ORDER_FILLED:'✅', ORDER_FAILED:'❌'};
+          html += '<div style="font-size:10px;color:var(--text-dim);padding:2px 4px;line-height:1.7;border-bottom:1px solid var(--border)">'+(icons[o.event]||'📌')+' '+esc(o.time||'')+' <b>'+esc(o.event||'')+'</b> '+esc(o.name||o.symbol||'')+' '+(o.side||'')+' '+(o.shares||'')+'股 @ ¥'+(o.price||o.target_price||0).toFixed(2)+' '+(o.commission?'佣金¥'+o.commission.toFixed(2):'')+' '+esc(o.reason||'')+'</div>';
         });
       }
       document.getElementById('tab-paper').innerHTML = html;

@@ -107,15 +107,32 @@ if os.path.exists(paper_path):
         paper = json.load(f)
     with open(tracker_path) as f:
         tracker = json.load(f)
+    positions = paper.get('positions', {})
+    pos_list = []
+    total_mv = 0
+    for s, p in positions.items():
+        cp = p.get('current_price', p.get('avg_cost', 0))
+        mv = p['shares'] * cp
+        total_mv += mv
+        pos_list.append({
+            'symbol': s, 'name': p.get('name',s),
+            'shares': p['shares'], 'avg_cost': round(p['avg_cost'],2),
+            'current_price': round(cp,2), 'market_value': round(mv,2),
+            'pnl_pct': round((cp-p['avg_cost'])/p['avg_cost']*100,2) if p['avg_cost']>0 else 0,
+            'entry_date': p.get('entry_date','?'),
+            'stop_loss': round(p.get('stop_loss',0),2),
+        })
     tracker['paper'] = {
-        'equity': paper.get('equity', 0),
-        'cash': paper.get('cash', 0),
+        'equity': round(paper.get('cash',0) + total_mv, 2),
+        'cash': round(paper.get('cash', 0), 2),
         'initial_cash': paper.get('initial_cash', 10000),
         'total_pnl': sum(t.get('pnl',0) for t in paper.get('history',[])),
         'total_trades': len(paper.get('history',[])),
-        'positions': len(paper.get('positions',{})),
+        'positions': len(positions),
         'equity_log': paper.get('equity_log', [])[-30:],
         'history': paper.get('history', [])[-10:],
+        'order_log': paper.get('order_log', [])[-20:],
+        'positions_list': pos_list,
     }
     with open(tracker_path, 'w') as f:
         json.dump(tracker, f, indent=2, ensure_ascii=False)

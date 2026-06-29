@@ -2199,12 +2199,165 @@
     "布林回归": 1.0
   },
   "paper": {
-    "equity": 11425.0,
-    "cash": 109.0,
+    "equity": 10000,
+    "cash": 10000,
     "initial_cash": 10000,
     "total_pnl": 0,
     "total_trades": 0,
-    "positions": 1,
-    "history": []
+    "positions": 0,
+    "equity_log": [
+      {
+        "date": "2026-06-29",
+        "time": "20:25",
+        "equity": 10000,
+        "cash": 10000,
+        "position_value": 0,
+        "return_pct": 0.0
+      }
+    ],
+    "history": [],
+    "order_log": [
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "301526",
+        "name": "国际复材",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 47.82,
+        "stop_loss": 38.46
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "002558",
+        "name": "巨人网络",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 27.23,
+        "stop_loss": 24.57
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "002046",
+        "name": "国机精工",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 73.8,
+        "stop_loss": 63.2
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "600176",
+        "name": "中国巨石",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 70.98,
+        "stop_loss": 60.96
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "000657",
+        "name": "中钨高新",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 95.57,
+        "stop_loss": 78.82
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "600397",
+        "name": "江钨装备",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 27.5,
+        "stop_loss": 23.85
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "603618",
+        "name": "杭电股份",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 49.29,
+        "stop_loss": 41.09
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "601208",
+        "name": "东材科技",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 67.33,
+        "stop_loss": 55.28
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "600353",
+        "name": "旭光电子",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 43.18,
+        "stop_loss": 35.71
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "600105",
+        "name": "永鼎股份",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 63.1,
+        "stop_loss": 52.3
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "600667",
+        "name": "太极实业",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 29.0,
+        "stop_loss": 24.87
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "600226",
+        "name": "亨通股份",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 9.57,
+        "stop_loss": 7.87
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "002436",
+        "name": "兴森科技",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 49.0,
+        "stop_loss": 40.79
+      },
+      {
+        "time": "2026-06-29 20:25",
+        "event": "ORDER_CREATED",
+        "symbol": "002491",
+        "name": "通鼎互联",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 33.2,
+        "stop_loss": 27.71
+      }
+    ],
+    "positions_list": []
   }
 }
