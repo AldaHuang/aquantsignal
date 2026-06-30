@@ -35,8 +35,14 @@ class PaperTrader:
             fill_price = order["target_price"]
             if feed:
                 try:
-                    df = feed.get(sym)
-                    fill_price = float(df["open"].iloc[-1])
+                    df = feed.get(sym, force_refresh=True)
+                    today_open = float(df["open"].iloc[-1])
+                    # Reject stale/anomalous prices
+                    target = order["target_price"]
+                    if 0.5 * target < today_open < 2.0 * target:
+                        fill_price = today_open
+                    else:
+                        log.warning("Price anomaly %s: target=%.2f open=%.2f", sym, target, today_open)
                 except Exception:
                     pass
             order["fill_price"] = fill_price
