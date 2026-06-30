@@ -64,7 +64,10 @@ class PaperTrader:
                 except Exception:
                     pass
 
-        # ── Step 3: Process new signals ──
+        # ── Step 3: Process new signals (sort by score, buy top-N within budget) ──
+        max_positions = 8  # max holdings at once
+        new_buys = []
+
         for sym, r in rec_map.items():
             verdict = r.verdict
             if sym in self.positions:
@@ -75,21 +78,42 @@ class PaperTrader:
             elif sym in self.pending:
                 pass
             elif verdict in ("买入", "关注"):
-                price = r.price
-                shares = self._calc_shares(price, getattr(r, 'stop_loss', price * 0.9))
-                stop_loss = getattr(r, 'stop_loss', 0)
-                if shares >= 100:
-                    self.pending[sym] = {
-                        "shares": shares, "target_price": price,
-                        "stop_loss": stop_loss, "signal_date": today,
-                        "name": r.name, "side": "buy",
-                        "created_time": now,
-                    }
-                    self._log_event("ORDER_CREATED", sym, {
-                        "name": r.name, "side": "buy", "shares": shares,
-                        "target_price": round(price, 2),
-                        "stop_loss": round(stop_loss, 2),
-                    })
+                score = r.score if hasattr(r, 'score') else 0
+                new_buys.append((score, sym, r))
+
+        # Sort by score descending, buy until budget exhausted
+        new_buys.sort(key=lambda x: -x[0])
+        remaining_cash = self.cash
+        pending_cost = sum(o["target_price"] * o["shares"] for o in self.pending.values())
+        remaining_cash -= pending_cost
+
+        for _, sym, r in new_buys:
+            if len(self.positions) + len(self.pending) >= max_positions:
+                break
+            price = r.price
+            lot_cost = price * 100 * 1.0003
+            if lot_cost > remaining_cash:
+                continue  # can't afford even 1 lot
+            # Buy 1 lot per stock for diversification
+            shares = 100
+            cost = shares * price * 1.0003
+            if cost > remaining_cash:
+                shares = 100
+                cost = shares * price * 1.0003
+            if cost > remaining_cash:
+                continue
+            remaining_cash -= cost
+            stop_loss = getattr(r, 'stop_loss', 0)
+            self.pending[sym] = {
+                "shares": shares, "target_price": price,
+                "stop_loss": stop_loss, "signal_date": today,
+                "name": r.name, "side": "buy", "created_time": now,
+            }
+            self._log_event("ORDER_CREATED", sym, {
+                "name": r.name, "side": "buy", "shares": shares,
+                "target_price": round(price, 2),
+                "stop_loss": round(stop_loss, 2),
+            })
 
         # ── Step 4: Mark to market ──
         position_value = 0
