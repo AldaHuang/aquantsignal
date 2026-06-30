@@ -53,8 +53,37 @@ for s, w in sorted(weights.items()):
 
 # Step 3: Run recommendation
 echo ""
-echo "[3/3] Running daily recommendation..."
+echo "[3/6] Running daily recommendation..."
 $PY -m aquant recommend --auto --top-n 20 --save --update-watchlist 2>&1 | grep -v "Insufficient cash" | tail -60
+
+# Step 3.5: Add K-line data for charts
+echo ""
+echo "  Adding K-line data..."
+$PY -c "
+import json
+from aquant.data.feed import DataFeed
+feed = DataFeed()
+with open('reports/tracker.json') as f: tracker = json.load(f)
+latest = tracker['records'][-1] if tracker.get('records') else None
+if latest:
+    klines = {}
+    for p in latest['picks']:
+        try:
+            df = feed.get(p['symbol'])
+            if df is not None and len(df)>=10:
+                recent = df.tail(30)
+                klines[p['symbol']] = {
+                    'dates': [str(d.date()) for d in recent.index],
+                    'open': [round(float(x),2) for x in recent['open']],
+                    'high': [round(float(x),2) for x in recent['high']],
+                    'low': [round(float(x),2) for x in recent['low']],
+                    'close': [round(float(x),2) for x in recent['close']],
+                }
+        except Exception: pass
+    tracker['klines'] = klines
+    with open('reports/tracker.json','w') as f: json.dump(tracker,f,indent=2,ensure_ascii=False)
+    print(f'  K-line data: {len(klines)} stocks')
+" 2>&1
 
 # Step 4: Update paper trading
 echo ""

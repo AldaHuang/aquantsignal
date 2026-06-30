@@ -434,15 +434,22 @@
     document.getElementById('stat-score').textContent = maxScore||'0';
 
     // Recommend tab
+    var klines = data.klines || {};
     var html = '';
-    picks.forEach(function(p){
+    picks.forEach(function(p, idx){
       var verdict = p.verdict||'观望';
       var tagClass = verdict==='买入'?'tag-buy':verdict==='卖出'?'tag-sell':verdict==='关注'?'tag-watch':'tag-hold';
       var reasons = (p.reasons||[]).filter(function(r){return !r.startsWith('止损');}).slice(0,3).join(' · ');
+      var sparkId = 'spark_'+idx;
       html += '<div class="card">'+
         '<div class="top"><span class="stock-name">'+esc(p.name)+'<span class="stock-code">'+esc(p.symbol)+'</span></span>'+
-        '<span class="stock-price">¥'+(p.price||0).toFixed(2)+'</span></div>'+
-        '<div class="mid"><span class="score">评分 <strong>'+(p.score||0)+'</strong>/100</span>'+
+        '<span class="stock-price">¥'+(p.price||0).toFixed(2)+'</span></div>';
+      // Sparkline
+      var kl = klines[p.symbol];
+      if (kl && kl.close && kl.close.length>5){
+        html += '<canvas id="'+sparkId+'" width="300" height="32" style="width:100%;height:32px;margin:4px 0"></canvas>';
+      }
+      html += '<div class="mid"><span class="score">评分 <strong>'+(p.score||0)+'</strong>/100</span>'+
         '<span class="tag '+tagClass+'">'+esc(verdict)+'</span></div>'+
         '<div class="reason">'+esc(reasons||'暂无理由')+'</div>';
       if (p.stop_loss && p.stop_loss>0){
@@ -453,6 +460,14 @@
       html += '</div>';
     });
     document.getElementById('tab-recommend').innerHTML = html || '<div class="empty">暂无推荐</div>';
+    // Draw sparklines after DOM update
+    setTimeout(function(){
+      picks.forEach(function(p, idx){
+        var kl = klines[p.symbol];
+        if (!kl || !kl.close || kl.close.length<5) return;
+        drawSpark('spark_'+idx, kl.close, kl.high, kl.low);
+      });
+    }, 50);
 
     // Plan tab
     var buyPlans = picks.filter(function(p){
@@ -620,6 +635,40 @@
     }
 
     document.getElementById('tab-log').innerHTML = html;
+  }
+
+  function drawSpark(id, closes, highs, lows){
+    var c = document.getElementById(id);
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var w = c.parentElement.clientWidth - 24;
+    var h = 32;
+    c.width = w * (window.devicePixelRatio||1);
+    c.height = h * (window.devicePixelRatio||1);
+    c.style.width = w+'px'; c.style.height = h+'px';
+    ctx.scale(window.devicePixelRatio||1, window.devicePixelRatio||1);
+    var n = closes.length;
+    var min = Math.min.apply(null, lows||closes);
+    var max = Math.max.apply(null, highs||closes);
+    var range = max - min || 1;
+    var xStep = w / (n-1);
+    var first = closes[0], last = closes[n-1];
+    var up = last >= first;
+    ctx.strokeStyle = up ? '#ff3d3d' : '#00c853';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    for (var i=0; i<n; i++){
+      var x = i * xStep;
+      var y = h - ((closes[i]-min)/range) * (h-4) - 2;
+      if (i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    // Fill area
+    ctx.lineTo((n-1)*xStep, h);
+    ctx.lineTo(0, h);
+    ctx.closePath();
+    ctx.fillStyle = up ? 'rgba(255,61,61,0.08)' : 'rgba(0,200,83,0.08)';
+    ctx.fill();
   }
 
   function esc(s){
