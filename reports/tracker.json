@@ -2199,30 +2199,30 @@
     },
     {
       "date": "2026-06-30",
-      "time": "15:20",
+      "time": "15:35",
       "picks": [
         {
           "symbol": "301526",
           "name": "国际复材",
           "verdict": "买入",
           "score": 60,
-          "price": 47.82,
+          "price": 46.67,
           "reasons": [
             "2/3 策略看多（均线交叉, 海龟突破）",
             "信号较旧，需确认",
             "历史回测表现优秀",
-            "止损¥38.46(-19.6%) 止盈¥61.87(+29.4%) 仓位47%"
+            "止损¥37.27(-20.1%) 止盈¥60.77(+30.2%) 仓位46%"
           ],
           "signals": {
             "均线交叉": "BUY",
             "海龟突破": "BUY",
             "布林回归": "SELL"
           },
-          "entry": 47.82,
-          "stop_loss": 38.46,
-          "take_profit": 61.87,
-          "atr": 4.68,
-          "position_pct": 47,
+          "entry": 46.67,
+          "stop_loss": 37.27,
+          "take_profit": 60.77,
+          "atr": 4.7,
+          "position_pct": 46,
           "risk_pct": 9.4
         },
         {
@@ -2588,7 +2588,7 @@
           "name": "海伦哲",
           "verdict": "卖出",
           "score": 21,
-          "price": 18.46,
+          "price": 21.07,
           "reasons": [
             "2/3 策略看空（海龟突破, 布林回归）",
             "信号较旧，需确认",
@@ -2706,30 +2706,18 @@
         "cash": 1001.0,
         "position_value": 8984.0,
         "return_pct": -0.15
+      },
+      {
+        "date": "2026-06-30",
+        "time": "15:35",
+        "equity": 9985.0,
+        "cash": 1001.0,
+        "position_value": 8984.0,
+        "return_pct": -0.15
       }
     ],
     "history": [],
     "order_log": [
-      {
-        "time": "2026-06-29 20:25",
-        "event": "ORDER_CREATED",
-        "symbol": "600105",
-        "name": "永鼎股份",
-        "side": "buy",
-        "shares": 100,
-        "target_price": 63.1,
-        "stop_loss": 52.3
-      },
-      {
-        "time": "2026-06-29 20:25",
-        "event": "ORDER_CREATED",
-        "symbol": "600667",
-        "name": "太极实业",
-        "side": "buy",
-        "shares": 100,
-        "target_price": 29.0,
-        "stop_loss": 24.87
-      },
       {
         "time": "2026-06-29 20:25",
         "event": "ORDER_CREATED",
@@ -2895,6 +2883,24 @@
       },
       {
         "time": "2026-06-30 15:20",
+        "event": "ORDER_CREATED",
+        "symbol": "600226",
+        "name": "亨通股份",
+        "side": "buy",
+        "shares": 100,
+        "target_price": 9.57,
+        "stop_loss": 7.87
+      },
+      {
+        "time": "2026-06-30 15:35",
+        "event": "ORDER_FAILED",
+        "symbol": "",
+        "reason": "资金不足",
+        "cash": 1001.0,
+        "needed": 1061.0
+      },
+      {
+        "time": "2026-06-30 15:35",
         "event": "ORDER_CREATED",
         "symbol": "600226",
         "name": "亨通股份",
