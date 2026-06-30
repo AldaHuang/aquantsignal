@@ -489,37 +489,37 @@
         '<span class="ml">当前持仓</span><span class="mv">'+(pp.positions||0)+' 只</span>'+
         '<span class="ml">累计交易</span><span class="mv">'+(pp.total_trades||0)+' 笔</span>'+
         '</div></div>';
-      // Positions
+      // Positions — clean cards
       if (pp.positions_list && pp.positions_list.length){
-        html += '<h4 style="font-size:12px;color:var(--text-dim);margin:12px 0 6px">持仓</h4>';
+        html += '<h4>持仓</h4>';
         pp.positions_list.forEach(function(p){
           var pc = (p.pnl_pct||0)>=0?'var(--red)':'var(--green)';
-          html += '<div class="trade-item">'+
-            '<div class="tl"><span style="font-weight:600">'+esc(p.name||p.symbol)+'</span><span style="font-size:11px;color:var(--text-dim)">'+(p.shares||0)+'股</span></div>'+
-            '<div class="td">成本 ¥'+(p.avg_cost||0).toFixed(2)+' → 现价 ¥'+(p.current_price||0).toFixed(2)+' | 市值 ¥'+(p.market_value||0).toFixed(2)+' | <span style="color:'+pc+'">'+(p.pnl_pct>0?'+':'')+(p.pnl_pct||0).toFixed(2)+'%</span></div>'+
-            '<div class="td" style="font-size:10px">止损 ¥'+(p.stop_loss||0).toFixed(2)+' | 入场 '+esc(p.entry_date||'')+'</div>'+
+          html += '<div class="card" style="padding:10px 12px">'+
+            '<div style="display:flex;justify-content:space-between;align-items:center">'+
+            '<span style="font-weight:600;font-size:15px">'+esc(p.name||p.symbol)+'</span>'+
+            '<span style="font-family:var(--font-mono);font-size:15px;color:'+pc+'">'+(p.pnl_pct>0?'+':'')+(p.pnl_pct||0).toFixed(1)+'%</span></div>'+
+            '<div style="font-size:12px;color:var(--text-dim);margin-top:4px">'+
+            (p.shares||0)+'股 | 成本¥'+(p.avg_cost||0).toFixed(2)+' | 现价¥'+(p.current_price||0).toFixed(2)+' | 市值¥'+(p.market_value||0).toFixed(0)+'</div>'+
+            '<div style="font-size:10px;color:var(--text-dim);margin-top:2px">入场 '+esc(p.entry_date||'')+' | 止损 ¥'+(p.stop_loss||0).toFixed(2)+'</div>'+
             '</div>';
         });
       }
-      // Closed trades
-      if (pp.history && pp.history.length){
-        html += '<h4 style="font-size:12px;color:var(--text-dim);margin:12px 0 6px">已平仓</h4>';
-        pp.history.slice(-5).reverse().forEach(function(t){
-          var c = (t.pnl||0)>=0?'var(--red)':'var(--green)';
-          html += '<div class="trade-item">'+
-            '<div class="tl"><span style="font-weight:600">'+esc(t.name||t.symbol)+'</span>'+
-            '<span style="font-family:var(--font-mono);color:'+c+'">¥'+(t.pnl>0?'+':'')+(t.pnl||0).toFixed(2)+' ('+(t.pnl_pct||0)+'%)</span></div>'+
-            '<div class="td">'+(t.side==='buy'?'买':'卖')+' '+(t.shares||0)+'股 | 买¥'+(t.entry_price||0).toFixed(2)+' 卖¥'+(t.exit_price||0).toFixed(2)+' | 佣金¥'+(t.commission||0).toFixed(2)+' 印花税¥'+(t.stamp_duty||0).toFixed(2)+'</div>'+
-            '<div class="td" style="font-size:10px">'+esc(t.exit_date||t.entry_date||'')+' | '+esc(t.reason||'')+'</div>'+
-            '</div>';
-        });
-      }
-      // Order log
-      if (pp.order_log && pp.order_log.length){
-        html += '<h4 style="font-size:12px;color:var(--text-dim);margin:12px 0 6px">操作日志</h4>';
-        pp.order_log.slice(-10).reverse().forEach(function(o){
-          var icons = {ORDER_CREATED:'📝', ORDER_FILLED:'✅', ORDER_FAILED:'❌'};
-          html += '<div style="font-size:10px;color:var(--text-dim);padding:2px 4px;line-height:1.7;border-bottom:1px solid var(--border)">'+(icons[o.event]||'📌')+' '+esc(o.time||'')+' <b>'+esc(o.event||'')+'</b> '+esc(o.name||o.symbol||'')+' '+(o.side||'')+' '+(o.shares||'')+'股 @ ¥'+(o.price||o.target_price||0).toFixed(2)+' '+(o.commission?'佣金¥'+o.commission.toFixed(2):'')+' '+esc(o.reason||'')+'</div>';
+      // Timeline: closed trades + order log merged
+      var timeline = [];
+      if (pp.history) pp.history.forEach(function(t){ timeline.push({type:'trade', date:t.exit_date||t.entry_date, name:t.name||t.symbol, pnl:t.pnl, pnl_pct:t.pnl_pct, side:t.side, detail:(t.shares||0)+'股 '+t.entry_price+'→'+t.exit_price, reason:t.reason}); });
+      if (pp.order_log) pp.order_log.forEach(function(o){
+        var label = o.event==='ORDER_FILLED'?'成交':o.event==='ORDER_CREATED'?'下单':'';
+        timeline.push({type:'order', date:o.time, name:o.name||o.symbol, label:label, detail:(o.side||'')+' '+(o.shares||'')+'股 @ ¥'+(o.price||o.target_price||0).toFixed(2), reason:o.reason, event:o.event});
+      });
+      timeline.sort(function(a,b){ return (b.date||'').localeCompare(a.date||''); });
+      if (timeline.length){
+        html += '<h4>活动</h4>';
+        timeline.slice(0, 15).forEach(function(t){
+          var icon = t.type==='trade'?(t.pnl>0?'🔴':'🟢'):(t.event==='ORDER_FILLED'?'✅':'📝');
+          var extra = t.type==='trade'?' <span style="font-family:var(--font-mono);color:'+(t.pnl>0?'var(--red)':'var(--green)')+'">¥'+(t.pnl>0?'+':'')+(t.pnl||0).toFixed(0)+'</span>':'';
+          html += '<div style="font-size:11px;padding:3px 0;display:flex;gap:6px">'+
+            '<span style="color:var(--text-dim);white-space:nowrap">'+icon+' '+(t.date||'').slice(5,16)+'</span>'+
+            '<span style="flex:1"><b style="font-size:10px;color:var(--accent)">'+(t.label||'')+'</b> '+esc(t.name||'')+' '+esc(t.detail||'')+extra+'</span></div>';
         });
       }
       document.getElementById('tab-paper').innerHTML = html;
