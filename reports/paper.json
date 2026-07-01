@@ -1,131 +1,77 @@
 {
-  "cash": 1486.0,
+  "cash": 10000,
   "initial_cash": 10000,
-  "positions": {
-    "": {
-      "shares": 300,
-      "avg_cost": 28.33,
-      "entry_date": "2026-07-01",
-      "current_price": 48.0,
-      "stop_loss": 37.27,
-      "name": "国际复材"
-    }
-  },
+  "positions": {},
   "pending": {
-    "600226": {
+    "301526": {
       "shares": 100,
-      "target_price": 9.68,
-      "stop_loss": 7.97,
+      "target_price": 46.75,
+      "stop_loss": 37.08,
       "signal_date": "2026-07-01",
-      "name": "亨通股份",
+      "name": "国际复材",
       "side": "buy",
-      "created_time": "18:16"
+      "created_time": "19:09"
+    },
+    "002558": {
+      "shares": 100,
+      "target_price": 28.11,
+      "stop_loss": 25.13,
+      "signal_date": "2026-07-01",
+      "name": "巨人网络",
+      "side": "buy",
+      "created_time": "19:09"
+    },
+    "603588": {
+      "shares": 100,
+      "target_price": 19.65,
+      "stop_loss": 17.3,
+      "signal_date": "2026-07-01",
+      "name": "高能环境",
+      "side": "buy",
+      "created_time": "19:09"
     }
   },
   "history": [],
   "equity_log": [
     {
-      "date": "2026-06-30",
-      "time": "21:20",
+      "date": "2026-07-01",
+      "time": "19:09",
       "equity": 10000,
       "cash": 10000,
       "position_value": 0,
       "return_pct": 0.0
-    },
-    {
-      "date": "2026-07-01",
-      "time": "18:16",
-      "equity": 9985.0,
-      "cash": 1486.0,
-      "position_value": 8499.0,
-      "return_pct": -0.15
     }
   ],
   "order_log": [
     {
-      "time": "2026-06-30 21:20",
+      "time": "2026-07-01 19:09",
       "event": "ORDER_CREATED",
       "symbol": "301526",
       "name": "国际复材",
       "side": "buy",
       "shares": 100,
-      "target_price": 46.67,
-      "stop_loss": 37.27
+      "target_price": 46.75,
+      "stop_loss": 37.08
     },
     {
-      "time": "2026-06-30 21:20",
+      "time": "2026-07-01 19:09",
       "event": "ORDER_CREATED",
       "symbol": "002558",
       "name": "巨人网络",
       "side": "buy",
       "shares": 100,
-      "target_price": 27.23,
-      "stop_loss": 24.57
+      "target_price": 28.11,
+      "stop_loss": 25.13
     },
     {
-      "time": "2026-06-30 21:20",
+      "time": "2026-07-01 19:09",
       "event": "ORDER_CREATED",
-      "symbol": "600226",
-      "name": "亨通股份",
+      "symbol": "603588",
+      "name": "高能环境",
       "side": "buy",
       "shares": 100,
-      "target_price": 9.57,
-      "stop_loss": 7.87
-    },
-    {
-      "time": "2026-07-01 18:16",
-      "event": "ORDER_FILLED",
-      "symbol": "",
-      "name": "国际复材",
-      "side": "buy",
-      "shares": 100,
-      "price": 48.0,
-      "value": 4800.0,
-      "commission": 5.0,
-      "stamp_duty": 0,
-      "cash_before": 10000,
-      "cash_after": 5195.0,
-      "reason": ""
-    },
-    {
-      "time": "2026-07-01 18:16",
-      "event": "ORDER_FILLED",
-      "symbol": "",
-      "name": "巨人网络",
-      "side": "buy",
-      "shares": 100,
-      "price": 27.4,
-      "value": 2740.0,
-      "commission": 5.0,
-      "stamp_duty": 0,
-      "cash_before": 5195.0,
-      "cash_after": 2450.0,
-      "reason": ""
-    },
-    {
-      "time": "2026-07-01 18:16",
-      "event": "ORDER_FILLED",
-      "symbol": "",
-      "name": "亨通股份",
-      "side": "buy",
-      "shares": 100,
-      "price": 9.59,
-      "value": 959.0,
-      "commission": 5.0,
-      "stamp_duty": 0,
-      "cash_before": 2450.0,
-      "cash_after": 1486.0,
-      "reason": ""
-    },
-    {
-      "time": "2026-07-01 18:16",
-      "event": "ORDER_CREATED",
-      "symbol": "600226",
-      "name": "亨通股份",
-      "side": "buy",
-      "shares": 100,
-      "target_price": 9.68,
-      "stop_loss": 7.97
+      "target_price": 19.65,
+      "stop_loss": 17.3
     }
   ]
 }
