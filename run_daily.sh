@@ -151,9 +151,12 @@ if os.path.exists(paper_path):
             'entry_date': p.get('entry_date','?'),
             'stop_loss': round(p.get('stop_loss',0),2),
         })
+    pending_cash = sum(o.get('target_price',0)*o.get('shares',0) for o in paper.get('pending',{}).values())
     tracker['paper'] = {
         'equity': round(paper.get('cash',0) + total_mv, 2),
         'cash': round(paper.get('cash', 0), 2),
+        'pending_cash': round(pending_cash, 2),
+        'free_cash': round(paper.get('cash',0) - pending_cash, 2),
         'initial_cash': paper.get('initial_cash', 10000),
         'total_pnl': sum(t.get('pnl',0) for t in paper.get('history',[])),
         'total_trades': len(paper.get('history',[])),

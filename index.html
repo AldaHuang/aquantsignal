@@ -501,6 +501,8 @@
         '<span class="ml">初始资金</span><span class="mv">¥'+((pp.initial_cash||0)).toFixed(2)+'</span>'+
         '<span class="ml">收益率</span><span class="mv" style="color:'+retColor+'">'+ret.toFixed(2)+'%</span>'+
         '<span class="ml">可用现金</span><span class="mv">¥'+((pp.cash||0)).toFixed(2)+'</span>'+
+        '<span class="ml">冻结(待成交)</span><span class="mv">¥'+((pp.pending_cash||0)).toFixed(2)+'</span>'+
+        '<span class="ml">实际可用</span><span class="mv" style="color:'+((pp.free_cash||0)<500?'var(--red)':'var(--green)')+'">¥'+((pp.free_cash||0)).toFixed(2)+'</span>'+
         '<span class="ml">当前持仓</span><span class="mv">'+(pp.positions||0)+' 只</span>'+
         '<span class="ml">累计交易</span><span class="mv">'+(pp.total_trades||0)+' 笔</span>'+
         '</div></div>';

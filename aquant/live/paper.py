@@ -262,9 +262,13 @@ class PaperTrader:
         total_trades = len(self.history)
         latest_eq = self.equity_log[-1]["equity"] if self.equity_log else self.cash
         total_return = (latest_eq - self.initial_cash) / self.initial_cash * 100
+        pending_cash = sum(o["target_price"] * o["shares"] for o in self.pending.values())
+        free_cash = self.cash - pending_cash
 
         return {
             "cash": round(self.cash, 2),
+            "pending_cash": round(pending_cash, 2),
+            "free_cash": round(free_cash, 2),
             "equity": round(latest_eq, 2),
             "total_return_pct": round(total_return, 2),
             "initial_cash": self.initial_cash,
