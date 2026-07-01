@@ -190,9 +190,10 @@ def cmd_recommend(args):
     # ── Save report ──
     if args.save:
         _save_report(recs, args)
-        # Also record for performance tracking
         from aquant.live.tracker import record_recommendations
         record_recommendations(recs)
+        # Sync changelog to tracker immediately
+        _sync_changelog_to_tracker()
     if args.update_watchlist:
         _update_watchlist_file(recs, args)
 
@@ -277,6 +278,21 @@ def _save_report(recs, args):
 
     print(f"\n📄 报告已保存: reports/{today}.md")
     print(f"📄 最新报告:   reports/latest.md")
+
+
+def _sync_changelog_to_tracker():
+    """Write changelog then sync it to tracker.json for phone display."""
+    import os, json
+    from aquant.live.changelog import write_changelog
+    write_changelog()
+    clog_path = os.path.join(os.path.dirname(__file__), "..", "CHANGELOG.md")
+    tracker_path = os.path.join(os.path.dirname(__file__), "..", "reports", "tracker.json")
+    if os.path.exists(clog_path) and os.path.exists(tracker_path):
+        with open(clog_path) as cf: clog = cf.read()
+        with open(tracker_path) as f: tracker = json.load(f)
+        tracker["changelog"] = clog[:15000]
+        with open(tracker_path, "w") as f:
+            json.dump(tracker, f, indent=2, ensure_ascii=False)
 
 
 def _update_watchlist_file(recs, args):
