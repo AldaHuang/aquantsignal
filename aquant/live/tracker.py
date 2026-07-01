@@ -135,19 +135,46 @@ def validate_yesterday(feed):
     return results
 
 
-def update_strategy_weights():
-    """Update strategy weights based on actual paper trading P&L.
+def _backtest_sharpe_weights():
+    """Use historical backtest Sharpe to set initial strategy weights."""
+    import json
+    cache_path = os.path.join(os.path.dirname(__file__), "..", "..", "reports", "opt_cache.json")
+    if not os.path.exists(cache_path):
+        return {}
+    with open(cache_path) as f:
+        cache = json.load(f)
+    # Average Sharpe per strategy across all optimized stocks
+    sharpes = {"均线交叉": [], "海龟突破": [], "布林回归": []}
+    for key, entry in cache.items():
+        for sname in sharpes:
+            if key.endswith("_" + {"均线交叉": "ma_cross", "海龟突破": "turtle", "布林回归": "mean_revert"}[sname]):
+                s = entry.get("sharpe", -999)
+                if s > -900:
+                    sharpes[sname].append(s)
+    weights = {}
+    for sname, vals in sharpes.items():
+        if vals:
+            avg = sum(vals) / len(vals)
+            # Map Sharpe to weight: -0.5→0.4, 0→0.8, 0.5→1.2
+            weights[sname] = round(max(0.25, min(1.5, 0.8 + avg * 0.8)), 2)
+    return weights if weights else {}
 
-    For each strategy, computes cumulative P&L from closed paper trades.
-    Strategies with positive P&L get higher weight.
-    Strategies with negative P&L get reduced weight.
-    Strategies with P&L < -5% of capital get temporarily disabled.
+
+def update_strategy_weights():
+    """Update strategy weights: backtest Sharpe baseline + paper P&L micro-adjust.
+
+    - Uses backtest Sharpe for initial weights (reflects historical edge)
+    - Paper P&L makes small adjustments (±0.1) after just 2 closed trades
+    - Full activation with larger adjustments after 10 trades
     """
     import json
     paper_path = os.path.join(os.path.dirname(__file__), "..", "..", "reports", "paper.json")
 
-    base_weights = {"均线交叉": 1.0, "海龟突破": 0.8, "布林回归": 1.0}
-    weights = dict(base_weights)
+    # Start with backtest-based weights, fill missing with defaults
+    defaults = {"均线交叉": 1.0, "海龟突破": 0.8, "布林回归": 1.0}
+    base = _backtest_sharpe_weights()
+    weights = dict(defaults)
+    weights.update(base)  # backtest overrides defaults where available
 
     if not os.path.exists(paper_path):
         return weights
@@ -156,60 +183,48 @@ def update_strategy_weights():
         paper = json.load(f)
 
     trades = paper.get("history", [])
-    if len(trades) < 5:
-        return weights  # Not enough data yet
+    n_trades = len(trades)
+    if n_trades < 2:
+        data = load_history()
+        data["strategy_weights"] = weights
+        save_history(data)
+        return weights
 
-    # Calculate P&L per strategy from paper trades
-    # A trade's P&L is attributed to strategies that voted BUY at entry
+    # Micro-adjust from paper P&L
     strategy_pnl = {}
-    strategy_trades = {}
-
-    # Read tracker to map trades to strategy signals
     data = load_history()
     for entry in data.get("records", []):
         for pick in entry.get("picks", []):
             sym = pick["symbol"]
             signals = pick.get("signals", {})
-            verdict = pick.get("verdict", "")
-
-            # Find matching paper trade
             for t in trades:
                 if t.get("symbol") == sym:
                     pnl = t.get("pnl", 0)
-                    for sname, signal in signals.items():
+                    for sname in signals:
                         strategy_pnl[sname] = strategy_pnl.get(sname, 0) + pnl
-                        strategy_trades[sname] = strategy_trades.get(sname, 0) + 1
                     break
 
-    # Adjust weights based on cumulative P&L
     initial_cash = paper.get("initial_cash", 10000)
-    for sname in base_weights:
+    for sname in base:
         pnl = strategy_pnl.get(sname, 0)
-        n_trades = strategy_trades.get(sname, 0)
-        if n_trades == 0:
-            continue
+        pnl_pct = pnl / max(initial_cash, 1)
 
-        pnl_pct = pnl / initial_cash
+        # Progressive adjustment based on trade count
+        if n_trades >= 10:
+            step = 0.15  # Full activation
+        elif n_trades >= 5:
+            step = 0.10  # Medium
+        else:
+            step = 0.05  # Micro-adjust (2-4 trades)
 
-        if pnl_pct < -0.05:
-            # Losing badly → disable
-            weights[sname] = 0.25
+        if pnl_pct > 0.02:
+            weights[sname] = round(min(1.5, weights[sname] + step), 2)
         elif pnl_pct < -0.02:
-            # Losing → reduce
-            weights[sname] = max(0.3, base_weights[sname] - 0.4)
-        elif pnl_pct > 0.05:
-            # Winning well → boost
-            weights[sname] = min(1.5, base_weights[sname] + 0.4)
-        elif pnl_pct > 0.02:
-            # Winning → slight boost
-            weights[sname] = min(1.3, base_weights[sname] + 0.2)
-        # else: near flat → keep base weight
+            weights[sname] = round(max(0.2, weights[sname] - step), 2)
 
     data["strategy_weights"] = weights
     data["strategy_pnl"] = {k: round(v, 2) for k, v in strategy_pnl.items()}
-    data["strategy_trades"] = strategy_trades
     save_history(data)
-
     return weights
 
 

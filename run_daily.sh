@@ -114,11 +114,13 @@ if records:
     trader = PaperTrader()
     feed = DataFeed()
     summary = trader.update(recs, feed)
-    print(f'  总资产: ¥{summary[\"equity\"]:,.2f}')
-    print(f'  收益率: {summary[\"total_return_pct\"]:+.2f}%')
+    print(f'  总资产: ¥{summary[\"equity\"]:,.2f} ({summary[\"total_return_pct\"]:+.2f}%)')
     print(f'  持仓: {summary[\"positions\"]} 只 | 待成交: {summary[\"pending\"]} 只')
-    print(f'  累计交易: {summary[\"total_trades\"]} 笔 | 胜率: {summary[\"win_rate\"]}%')
-    print(f'  累计盈亏: ¥{summary[\"total_pnl\"]:+,.2f}')
+    print(f'  累计交易: {summary[\"total_trades\"]} 笔 | 累计盈亏: ¥{summary[\"total_pnl\"]:+,.2f}')
+    for p in summary.get('positions_list', []):
+        dist_to_stop = (p['current_price'] - p['stop_loss']) / p['current_price'] * 100 if p.get('stop_loss',0) > 0 else 0
+        dist_to_tp = (p.get('take_profit', p['avg_cost']*1.1) - p['current_price']) / p['current_price'] * 100
+        print(f'    {p[\"name\"]} {p[\"shares\"]}股 ¥{p[\"avg_cost\"]:.2f}→¥{p[\"current_price\"]:.2f} ({p[\"pnl_pct\"]:+.1f}%) 距止损{dist_to_stop:.0f}% 止盈剩{dist_to_tp:.0f}%')
 " 2>&1
 
 # Step 5: Append to changelog

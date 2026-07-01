@@ -51,18 +51,57 @@ class PaperTrader:
             self._execute(order)
             del self.pending[sym]
 
-        # ── Step 2: Stop loss check ──
+        # ── Step 2: Exit rules on existing positions ──
         for sym in list(self.positions):
             pos = self.positions[sym]
-            if feed and pos.get("stop_loss", 0) > 0:
-                try:
-                    df = feed.get(sym)
-                    low = float(df["low"].iloc[-1])
-                    if low <= pos["stop_loss"]:
-                        self._close_position(sym, pos["stop_loss"], today, "止损触发")
-                        continue
-                except Exception:
-                    pass
+            pos.setdefault("days_held", 0)
+            pos.setdefault("peak_price", pos.get("avg_cost", 0))
+            pos.setdefault("trailing_activated", False)
+            pos.setdefault("absent_days", 0)
+
+            if not feed: continue
+
+            try:
+                df = feed.get(sym)
+                close = float(df["close"].iloc[-1])
+                high = float(df["high"].iloc[-1])
+                low = float(df["low"].iloc[-1])
+                entry = pos["avg_cost"]
+                stop_loss = pos.get("stop_loss", entry * 0.9)
+                risk_dist = entry - stop_loss if stop_loss < entry else entry * 0.05
+                pos["days_held"] += 1
+                pos["peak_price"] = max(pos["peak_price"], close)
+
+                # A: Take-profit
+                if close >= entry + 3 * risk_dist:
+                    self._close_position(sym, close, today, "止盈触发")
+                    continue
+
+                # B: Trailing stop (lock profit after +1.5x risk)
+                if close >= entry + 1.5 * risk_dist and not pos["trailing_activated"]:
+                    pos["trailing_activated"] = True
+                    pos["stop_loss"] = entry
+
+                # C: Stop loss
+                if low <= pos["stop_loss"]:
+                    self._close_position(sym, pos["stop_loss"], today, "止损触发")
+                    continue
+
+                # D: Time exit (>20 days, no profit)
+                if pos["days_held"] >= 20 and close <= entry:
+                    self._close_position(sym, close, today, "超20日无盈利")
+                    continue
+            except Exception: pass
+
+        # ── Step 2.5: Signal reversal (absent from recs 3+ days) ──
+        for sym in list(self.positions):
+            pos = self.positions[sym]
+            if sym in rec_map: pos["absent_days"] = 0
+            else:
+                pos["absent_days"] += 1
+                if pos["absent_days"] >= 3:
+                    self._close_position(sym, pos.get("current_price", pos["avg_cost"]),
+                                        today, "信号消失")
 
         # ── Step 3: Process new signals (sort by score, buy top-N within budget) ──
         max_positions = 8  # max holdings at once
@@ -291,6 +330,8 @@ class PaperTrader:
                     ),
                     "entry_date": p.get("entry_date", "?"),
                     "stop_loss": round(p.get("stop_loss", 0), 2),
+                    "take_profit": round(p["avg_cost"] + 3 * abs(p["avg_cost"] - p.get("stop_loss", p["avg_cost"] * 0.9)), 2),
+                    "days_held": p.get("days_held", 0),
                 } for sym, p in self.positions.items()
             ],
         }
