@@ -20,7 +20,7 @@ if [ ! -d .git ]; then
 fi
 
 # Add web-facing files
-git add index.html reports/tracker.json CHANGELOG.md watchlist.txt
+git add index.html reports/tracker.json reports/paper.json CHANGELOG.md watchlist.txt
 git commit -m "$COMMIT_MSG" 2>/dev/null || echo "  (no changes to commit)"
 
 # Push
