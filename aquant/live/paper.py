@@ -339,6 +339,7 @@ class PaperTrader:
     def _save(self):
         with open(PAPER_FILE, "w") as f:
             json.dump({
+                "updated": datetime.now().strftime("%Y-%m-%d"),
                 "cash": self.cash, "initial_cash": self.initial_cash,
                 "positions": self.positions, "pending": self.pending,
                 "history": self.history, "equity_log": self.equity_log,
@@ -350,4 +351,12 @@ def _load():
     if not os.path.exists(PAPER_FILE):
         return {}
     with open(PAPER_FILE) as f:
-        return json.load(f)
+        data = json.load(f)
+    # Safety: if data is stale (>2 days old) or corrupted (negative cash), reset
+    import datetime
+    updated = data.get("updated", "")
+    today = datetime.date.today().isoformat()
+    if updated < today or data.get("cash", -1) < 0:
+        log.warning("Resetting paper data: stale (updated %s, today %s)", updated, today)
+        return {}
+    return data
