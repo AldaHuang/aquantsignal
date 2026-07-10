@@ -352,11 +352,8 @@ def _load():
         return {}
     with open(PAPER_FILE) as f:
         data = json.load(f)
-    # Safety: if data is stale (>2 days old) or corrupted (negative cash), reset
-    import datetime
-    updated = data.get("updated", "")
-    today = datetime.date.today().isoformat()
-    if updated < today or data.get("cash", -1) < 0:
-        log.warning("Resetting paper data: stale (updated %s, today %s)", updated, today)
+    # Only reset if corrupted (negative cash), not based on date
+    if data.get("cash", 0) < 0:
+        log.warning("Resetting paper data: corrupted cash=%s", data.get("cash"))
         return {}
     return data

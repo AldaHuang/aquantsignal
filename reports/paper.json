@@ -11,7 +11,7 @@
       "signal_date": "2026-07-10",
       "name": "巨人网络",
       "side": "buy",
-      "created_time": "01:29"
+      "created_time": "17:56"
     },
     "002422": {
       "shares": 100,
@@ -20,7 +20,7 @@
       "signal_date": "2026-07-10",
       "name": "科伦药业",
       "side": "buy",
-      "created_time": "01:29"
+      "created_time": "17:56"
     },
     "600667": {
       "shares": 100,
@@ -29,14 +29,14 @@
       "signal_date": "2026-07-10",
       "name": "太极实业",
       "side": "buy",
-      "created_time": "01:29"
+      "created_time": "17:56"
     }
   },
   "history": [],
   "equity_log": [
     {
       "date": "2026-07-10",
-      "time": "01:29",
+      "time": "17:56",
       "equity": 10000,
       "cash": 10000,
       "position_value": 0,
@@ -45,7 +45,7 @@
   ],
   "order_log": [
     {
-      "time": "2026-07-10 01:29",
+      "time": "2026-07-10 17:56",
       "event": "ORDER_CREATED",
       "symbol": "002558",
       "name": "巨人网络",
@@ -55,7 +55,7 @@
       "stop_loss": 24.33
     },
     {
-      "time": "2026-07-10 01:29",
+      "time": "2026-07-10 17:56",
       "event": "ORDER_CREATED",
       "symbol": "002422",
       "name": "科伦药业",
@@ -65,7 +65,7 @@
       "stop_loss": 35.74
     },
     {
-      "time": "2026-07-10 01:29",
+      "time": "2026-07-10 17:56",
       "event": "ORDER_CREATED",
       "symbol": "600667",
       "name": "太极实业",
