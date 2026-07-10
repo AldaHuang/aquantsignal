@@ -1,37 +1,22 @@
 {
   "updated": "2026-07-10",
-  "cash": 10000,
+  "cash": 332.0,
   "initial_cash": 10000,
-  "positions": {},
-  "pending": {
-    "002558": {
-      "shares": 100,
-      "target_price": 28.32,
+  "positions": {
+    "": {
+      "shares": 300,
+      "avg_cost": 32.17666666666667,
+      "entry_date": "2026-07-10",
+      "current_price": 27.9,
       "stop_loss": 24.33,
-      "signal_date": "2026-07-10",
       "name": "巨人网络",
-      "side": "buy",
-      "created_time": "17:56"
-    },
-    "002422": {
-      "shares": 100,
-      "target_price": 42.7,
-      "stop_loss": 35.74,
-      "signal_date": "2026-07-10",
-      "name": "科伦药业",
-      "side": "buy",
-      "created_time": "17:56"
-    },
-    "600667": {
-      "shares": 100,
-      "target_price": 26.27,
-      "stop_loss": 20.45,
-      "signal_date": "2026-07-10",
-      "name": "太极实业",
-      "side": "buy",
-      "created_time": "17:56"
+      "days_held": 0,
+      "peak_price": 32.17666666666667,
+      "trailing_activated": false,
+      "absent_days": 1
     }
   },
+  "pending": {},
   "history": [],
   "equity_log": [
     {
@@ -41,6 +26,14 @@
       "cash": 10000,
       "position_value": 0,
       "return_pct": 0.0
+    },
+    {
+      "date": "2026-07-10",
+      "time": "18:05",
+      "equity": 9985.0,
+      "cash": 332.0,
+      "position_value": 9653.0,
+      "return_pct": -0.15
     }
   ],
   "order_log": [
@@ -73,6 +66,51 @@
       "shares": 100,
       "target_price": 26.27,
       "stop_loss": 20.45
+    },
+    {
+      "time": "2026-07-10 18:05",
+      "event": "ORDER_FILLED",
+      "symbol": "",
+      "name": "巨人网络",
+      "side": "buy",
+      "shares": 100,
+      "price": 27.9,
+      "value": 2790.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "cash_before": 10000,
+      "cash_after": 7205.0,
+      "reason": ""
+    },
+    {
+      "time": "2026-07-10 18:05",
+      "event": "ORDER_FILLED",
+      "symbol": "",
+      "name": "科伦药业",
+      "side": "buy",
+      "shares": 100,
+      "price": 41.81,
+      "value": 4181.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "cash_before": 7205.0,
+      "cash_after": 3019.0,
+      "reason": ""
+    },
+    {
+      "time": "2026-07-10 18:05",
+      "event": "ORDER_FILLED",
+      "symbol": "",
+      "name": "太极实业",
+      "side": "buy",
+      "shares": 100,
+      "price": 26.82,
+      "value": 2682.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "cash_before": 3019.0,
+      "cash_after": 332.0,
+      "reason": ""
     }
   ]
 }
