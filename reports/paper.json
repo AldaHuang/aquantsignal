@@ -1,116 +1,78 @@
 {
   "updated": "2026-07-13",
-  "cash": 1484.0,
+  "cash": 10000,
   "initial_cash": 10000,
-  "positions": {
-    "": {
-      "shares": 300,
-      "avg_cost": 28.336666666666666,
-      "entry_date": "2026-07-13",
-      "current_price": 32.0,
-      "stop_loss": 28.59,
+  "positions": {},
+  "pending": {
+    "002261": {
+      "shares": 100,
+      "target_price": 33.0,
+      "stop_loss": 29.46,
+      "signal_date": "2026-07-13",
       "name": "拓维信息",
-      "days_held": 0,
-      "peak_price": 28.336666666666666,
-      "trailing_activated": false,
-      "absent_days": 1
+      "side": "buy",
+      "created_time": "20:40"
+    },
+    "002558": {
+      "shares": 100,
+      "target_price": 28.48,
+      "stop_loss": 24.3,
+      "signal_date": "2026-07-13",
+      "name": "巨人网络",
+      "side": "buy",
+      "created_time": "20:40"
+    },
+    "600667": {
+      "shares": 100,
+      "target_price": 22.73,
+      "stop_loss": 16.57,
+      "signal_date": "2026-07-13",
+      "name": "太极实业",
+      "side": "buy",
+      "created_time": "20:40"
     }
   },
-  "pending": {},
   "history": [],
   "equity_log": [
     {
       "date": "2026-07-13",
-      "time": "20:31",
+      "time": "20:40",
       "equity": 10000,
       "cash": 10000,
       "position_value": 0,
       "return_pct": 0.0
-    },
-    {
-      "date": "2026-07-13",
-      "time": "20:34",
-      "equity": 9985.0,
-      "cash": 1484.0,
-      "position_value": 8501.0,
-      "return_pct": -0.15
     }
   ],
   "order_log": [
     {
-      "time": "2026-07-13 20:31",
+      "time": "2026-07-13 20:40",
       "event": "ORDER_CREATED",
       "symbol": "002261",
       "name": "拓维信息",
       "side": "buy",
       "shares": 100,
-      "target_price": 32.08,
-      "stop_loss": 28.59
+      "target_price": 33.0,
+      "stop_loss": 29.46
     },
     {
-      "time": "2026-07-13 20:31",
+      "time": "2026-07-13 20:40",
       "event": "ORDER_CREATED",
       "symbol": "002558",
       "name": "巨人网络",
       "side": "buy",
       "shares": 100,
-      "target_price": 29.56,
-      "stop_loss": 25.52
+      "target_price": 28.48,
+      "stop_loss": 24.3
     },
     {
-      "time": "2026-07-13 20:31",
+      "time": "2026-07-13 20:40",
       "event": "ORDER_CREATED",
       "symbol": "600667",
       "name": "太极实业",
       "side": "buy",
       "shares": 100,
-      "target_price": 25.26,
-      "stop_loss": 19.35
-    },
-    {
-      "time": "2026-07-13 20:34",
-      "event": "ORDER_FILLED",
-      "symbol": "",
-      "name": "拓维信息",
-      "side": "buy",
-      "shares": 100,
-      "price": 32.0,
-      "value": 3200.0,
-      "commission": 5.0,
-      "stamp_duty": 0,
-      "cash_before": 10000,
-      "cash_after": 6795.0,
-      "reason": ""
-    },
-    {
-      "time": "2026-07-13 20:34",
-      "event": "ORDER_FILLED",
-      "symbol": "",
-      "name": "巨人网络",
-      "side": "buy",
-      "shares": 100,
-      "price": 29.01,
-      "value": 2901.0,
-      "commission": 5.0,
-      "stamp_duty": 0,
-      "cash_before": 6795.0,
-      "cash_after": 3889.0,
-      "reason": ""
-    },
-    {
-      "time": "2026-07-13 20:34",
-      "event": "ORDER_FILLED",
-      "symbol": "",
-      "name": "太极实业",
-      "side": "buy",
-      "shares": 100,
-      "price": 24.0,
-      "value": 2400.0,
-      "commission": 5.0,
-      "stamp_duty": 0,
-      "cash_before": 3889.0,
-      "cash_after": 1484.0,
-      "reason": ""
+      "target_price": 22.73,
+      "stop_loss": 16.57
     }
   ]
 }

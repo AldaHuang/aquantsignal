@@ -48,6 +48,7 @@ class PaperTrader:
             except Exception as e:
                 log.warning("Fill failed for %s: %s, keeping pending", sym, e)
                 continue  # data unavailable, keep pending for next run
+            order["symbol"] = sym  # inject symbol into order dict
             order["fill_price"] = fill_price
             order["fill_date"] = today
             order["fill_time"] = now
