@@ -30,25 +30,24 @@ class PaperTrader:
         now = datetime.now().strftime("%H:%M")
         rec_map = {r.symbol: r for r in recommendations}
 
-        # ── Step 1: Fill pending orders at today's open ──
+        # ── Step 1: Fill yesterday's pending orders at today's open ──
         pending_copy = dict(self.pending)
         for sym, order in pending_copy.items():
             if not feed:
-                continue  # can't fill without data, keep pending
+                continue
             try:
                 df = feed.get(sym, force_refresh=True)
                 today_open = float(df["open"].iloc[-1])
                 target = order["target_price"]
-                # Sanity check: fill price within 50% of target
                 if 0.5 * target < today_open < 2.0 * target:
                     fill_price = today_open
                 else:
                     log.warning("Price anomaly %s: target=%.2f open=%.2f, skipping fill", sym, target, today_open)
-                    continue  # skip this fill, keep pending
+                    continue
             except Exception as e:
                 log.warning("Fill failed for %s: %s, keeping pending", sym, e)
-                continue  # data unavailable, keep pending for next run
-            order["symbol"] = sym  # inject symbol into order dict
+                continue
+            order["symbol"] = sym
             order["fill_price"] = fill_price
             order["fill_date"] = today
             order["fill_time"] = now
@@ -158,6 +157,23 @@ class PaperTrader:
                 "target_price": round(price, 2),
                 "stop_loss": round(stop_loss, 2),
             })
+
+        # ── Step 3.5: Fill immediately if starting fresh (show positions now) ──
+        if feed and self.pending and not self.positions:
+            for sym, order in list(self.pending.items()):
+                try:
+                    df = feed.get(sym, force_refresh=True)
+                    fill_price = float(df["close"].iloc[-1])
+                    target = order["target_price"]
+                    if 0.5 * target < fill_price < 2.0 * target:
+                        order["symbol"] = sym
+                        order["fill_price"] = fill_price
+                        order["fill_date"] = today
+                        order["fill_time"] = now
+                        self._execute(order)
+                        del self.pending[sym]
+                except Exception as e:
+                    log.debug("Fast fill failed for %s: %s", sym, e)
 
         # ── Step 4: Mark to market ──
         position_value = 0
