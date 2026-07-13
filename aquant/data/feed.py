@@ -51,13 +51,18 @@ class DataFeed:
         """
         symbol = normalize(symbol)
 
-        # Try cache first
+        # Try cache first (skip if data is stale: last entry > 2 trading days old)
         if not force_refresh:
             cached = self.cache.get(symbol, start, end, self.adjust)
             if cached is not None and len(cached) > 0:
                 if start is None or cached.index.min() <= pd.Timestamp(start):
                     if end is None or cached.index.max() >= pd.Timestamp(end):
-                        return cached
+                        # Check freshness
+                        from datetime import date, timedelta
+                        last_date = cached.index.max().date() if hasattr(cached.index.max(), 'date') else cached.index.max()
+                        if hasattr(last_date, 'date'): last_date = last_date.date()
+                        if last_date >= (date.today() - timedelta(days=1)):
+                            return cached
 
         # Fetch from Sina
         df = self._fetch_sina(symbol)
