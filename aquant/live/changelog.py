@@ -36,12 +36,12 @@ def write_changelog():
         for s, w in sorted(weights.items()):
             bar = "█" * max(1, int(w * 5))
             pnl = pnl_data.get(s, 0)
-            if pnl > 5:
-                note = f"累计盈利 ¥{pnl:.0f} → 加重"
+            if pnl < -50:
+                note = f"持续亏损 ¥{pnl:.0f} → 半停用"
             elif pnl < -5:
                 note = f"累计亏损 ¥{pnl:.0f} → 减重"
-            elif pnl < -50:
-                note = f"持续亏损 → 半停用"
+            elif pnl > 5:
+                note = f"累计盈利 ¥{pnl:.0f} → 加重"
             else:
                 note = "盈亏持平"
             lines.append(f"- {s}: **{w:.2f}** {bar} ({note})")

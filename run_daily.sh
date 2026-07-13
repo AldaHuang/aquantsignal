@@ -22,7 +22,7 @@ echo "=============================================="
 
 # Step 1: Validate yesterday's recommendations
 echo ""
-echo "[1/5] Validating yesterday's picks..."
+echo "[1/4] Validating yesterday's picks..."
 $PY -c "
 from aquant.data.feed import DataFeed
 from aquant.live.tracker import validate_yesterday
@@ -36,27 +36,12 @@ else:
     print('  No yesterday data to validate')
 " 2>&1
 
-# Step 2: Update adaptive weights
+# Step 2: Run recommendation
 echo ""
-echo "[2/5] Learning from paper trades..."
-$PY -c "
-from aquant.live.tracker import update_strategy_weights, get_learning_status
-weights = update_strategy_weights()
-learn = get_learning_status()
-pnl = learn.get('pnl', {})
-print('  Strategy weights (P&L-driven):')
-for s, w in sorted(weights.items()):
-    p = pnl.get(s, 0)
-    tag = '📈' if p > 5 else '📉' if p < -5 else '➖'
-    print(f'  {tag} {s}: {w:.2f}  (累计盈亏: ¥{p:+.0f})')
-" 2>&1
-
-# Step 3: Run recommendation
-echo ""
-echo "[3/6] Running daily recommendation..."
+echo "[2/5] Running daily recommendation..."
 $PY -m aquant recommend --auto --top-n 20 --save --update-watchlist 2>&1 | grep -v "Insufficient cash" | tail -60
 
-# Step 3.5: Add K-line data for charts
+# Step 2.5: Add K-line data for charts
 echo ""
 echo "  Adding K-line data..."
 $PY -c "
@@ -85,9 +70,9 @@ if latest:
     print(f'  K-line data: {len(klines)} stocks')
 " 2>&1
 
-# Step 4: Update paper trading
+# Step 3: Update paper trading
 echo ""
-echo "[4/5] Updating paper trading..."
+echo "[3/5] Updating paper trading..."
 $PY -c "
 from aquant.data.feed import DataFeed
 from aquant.live.paper import PaperTrader
@@ -121,6 +106,21 @@ if records:
         dist_to_stop = (p['current_price'] - p['stop_loss']) / p['current_price'] * 100 if p.get('stop_loss',0) > 0 else 0
         dist_to_tp = (p.get('take_profit', p['avg_cost']*1.1) - p['current_price']) / p['current_price'] * 100
         print(f'    {p[\"name\"]} {p[\"shares\"]}股 ¥{p[\"avg_cost\"]:.2f}→¥{p[\"current_price\"]:.2f} ({p[\"pnl_pct\"]:+.1f}%) 距止损{dist_to_stop:.0f}% 止盈剩{dist_to_tp:.0f}%')
+" 2>&1
+
+# Step 4: Update adaptive weights (runs AFTER recommend + paper, so weights persist)
+echo ""
+echo "[4/5] Learning from paper trades..."
+$PY -c "
+from aquant.live.tracker import update_strategy_weights, get_learning_status
+weights = update_strategy_weights()
+learn = get_learning_status()
+pnl = learn.get('pnl', {})
+print('  Strategy weights (P&L-driven):')
+for s, w in sorted(weights.items()):
+    p = pnl.get(s, 0)
+    tag = '📈' if p > 5 else '📉' if p < -5 else '➖'
+    print(f'  {tag} {s}: {w:.2f}  (累计盈亏: ¥{p:+.0f})')
 " 2>&1
 
 # Step 5: Append to changelog

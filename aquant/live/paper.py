@@ -31,20 +31,23 @@ class PaperTrader:
         rec_map = {r.symbol: r for r in recommendations}
 
         # ── Step 1: Fill pending orders at today's open ──
-        for sym, order in list(self.pending.items()):
-            fill_price = order["target_price"]
-            if feed:
-                try:
-                    df = feed.get(sym, force_refresh=True)
-                    today_open = float(df["open"].iloc[-1])
-                    # Reject stale/anomalous prices
-                    target = order["target_price"]
-                    if 0.5 * target < today_open < 2.0 * target:
-                        fill_price = today_open
-                    else:
-                        log.warning("Price anomaly %s: target=%.2f open=%.2f", sym, target, today_open)
-                except Exception:
-                    pass
+        pending_copy = dict(self.pending)
+        for sym, order in pending_copy.items():
+            if not feed:
+                continue  # can't fill without data, keep pending
+            try:
+                df = feed.get(sym, force_refresh=True)
+                today_open = float(df["open"].iloc[-1])
+                target = order["target_price"]
+                # Sanity check: fill price within 50% of target
+                if 0.5 * target < today_open < 2.0 * target:
+                    fill_price = today_open
+                else:
+                    log.warning("Price anomaly %s: target=%.2f open=%.2f, skipping fill", sym, target, today_open)
+                    continue  # skip this fill, keep pending
+            except Exception as e:
+                log.warning("Fill failed for %s: %s, keeping pending", sym, e)
+                continue  # data unavailable, keep pending for next run
             order["fill_price"] = fill_price
             order["fill_date"] = today
             order["fill_time"] = now
@@ -62,7 +65,7 @@ class PaperTrader:
             if not feed: continue
 
             try:
-                df = feed.get(sym)
+                df = feed.get(sym, force_refresh=True)
                 close = float(df["close"].iloc[-1])
                 high = float(df["high"].iloc[-1])
                 low = float(df["low"].iloc[-1])
@@ -91,7 +94,8 @@ class PaperTrader:
                 if pos["days_held"] >= 20 and close <= entry:
                     self._close_position(sym, close, today, "超20日无盈利")
                     continue
-            except Exception: pass
+            except Exception:
+                pass  # exit rule checks are best-effort
 
         # ── Step 2.5: Signal reversal (absent from recs 3+ days) ──
         for sym in list(self.positions):
@@ -352,8 +356,36 @@ def _load():
         return {}
     with open(PAPER_FILE) as f:
         data = json.load(f)
-    # Only reset if corrupted (negative cash), not based on date
-    if data.get("cash", 0) < 0:
-        log.warning("Resetting paper data: corrupted cash=%s", data.get("cash"))
+    # Validate: cash must be reasonable, positions must match order fills
+    cash = data.get("cash", -1)
+    if cash < 0:
+        log.warning("Resetting paper data: corrupted cash=%s", cash)
         return {}
+    # Verify position shares match filled orders in log
+    positions = data.get("positions", {})
+    order_log = data.get("order_log", [])
+    if positions and order_log:
+        # Reconstruct expected positions from fills
+        expected = {}
+        for o in order_log:
+            if o.get("event") == "ORDER_FILLED":
+                sym = o.get("symbol", "")
+                side = o.get("side", "buy")
+                shares = o.get("shares", 0)
+                price = o.get("price", 0)
+                if side == "buy":
+                    if sym not in expected:
+                        expected[sym] = {"shares": 0, "total_cost": 0.0}
+                    expected[sym]["shares"] += shares
+                    expected[sym]["total_cost"] += shares * price
+                elif side == "sell":
+                    if sym in expected:
+                        expected[sym]["shares"] = max(0, expected[sym]["shares"] - shares)
+        # Check if positions match
+        for sym, pos in positions.items():
+            exp = expected.get(sym, {"shares": 0})
+            if pos.get("shares", 0) != exp.get("shares", 0):
+                log.warning("Position mismatch for %s: stored=%d expected=%d, resetting",
+                            sym, pos.get("shares", 0), exp.get("shares", 0))
+                return {}
     return data

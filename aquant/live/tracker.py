@@ -170,11 +170,17 @@ def update_strategy_weights():
     import json
     paper_path = os.path.join(os.path.dirname(__file__), "..", "..", "reports", "paper.json")
 
-    # Start with backtest-based weights, fill missing with defaults
+    # Load previous weights as starting point (compound over time)
+    data = load_history()
+    prev_weights = data.get("strategy_weights", {})
     defaults = {"均线交叉": 1.0, "海龟突破": 0.8, "布林回归": 1.0}
-    base = _backtest_sharpe_weights()
     weights = dict(defaults)
-    weights.update(base)  # backtest overrides defaults where available
+    weights.update(prev_weights)  # carry forward previous adjustments
+    # Also blend in backtest Sharpe baseline
+    base = _backtest_sharpe_weights()
+    for s in weights:
+        if s in base:
+            weights[s] = round(weights[s] * 0.7 + base[s] * 0.3, 2)  # 70% carry-forward, 30% baseline pull
 
     if not os.path.exists(paper_path):
         return weights
@@ -190,15 +196,17 @@ def update_strategy_weights():
         save_history(data)
         return weights
 
-    # Micro-adjust from paper P&L
+    # Micro-adjust from paper P&L (each closed trade counted once)
     strategy_pnl = {}
-    data = load_history()
+    seen_trades = set()
     for entry in data.get("records", []):
         for pick in entry.get("picks", []):
             sym = pick["symbol"]
             signals = pick.get("signals", {})
-            for t in trades:
-                if t.get("symbol") == sym:
+            for i, t in enumerate(trades):
+                trade_id = f"{t.get('symbol')}_{t.get('exit_date')}_{t.get('pnl')}"
+                if t.get("symbol") == sym and trade_id not in seen_trades:
+                    seen_trades.add(trade_id)
                     pnl = t.get("pnl", 0)
                     for sname in signals:
                         strategy_pnl[sname] = strategy_pnl.get(sname, 0) + pnl
