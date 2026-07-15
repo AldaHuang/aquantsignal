@@ -10,7 +10,7 @@
       "current_price": 28.13,
       "stop_loss": 24.0,
       "name": "拓维信息",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 33.0,
       "trailing_activated": false,
       "absent_days": 0
@@ -22,7 +22,7 @@
       "current_price": 29.56,
       "stop_loss": 25.12,
       "name": "巨人网络",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 29.56,
       "trailing_activated": false,
       "absent_days": 0
@@ -34,7 +34,7 @@
       "current_price": 7.44,
       "stop_loss": 6.67,
       "name": "四川长虹",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 7.44,
       "trailing_activated": false,
       "absent_days": 0
@@ -78,6 +78,14 @@
     {
       "date": "2026-07-15",
       "time": "19:39",
+      "equity": 9607.74,
+      "cash": 3094.74,
+      "position_value": 6513.0,
+      "return_pct": -3.92
+    },
+    {
+      "date": "2026-07-15",
+      "time": "20:58",
       "equity": 9607.74,
       "cash": 3094.74,
       "position_value": 6513.0,
