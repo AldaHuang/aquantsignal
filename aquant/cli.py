@@ -281,60 +281,18 @@ def _save_report(recs, args):
 
 
 def _sync_changelog_to_tracker():
-    """Write changelog + sync paper data to tracker.json for phone display."""
+    """Write changelog and sync it to tracker.json."""
     import os, json
     from aquant.live.changelog import write_changelog
     write_changelog()
     clog_path = os.path.join(os.path.dirname(__file__), "..", "CHANGELOG.md")
-    paper_path = os.path.join(os.path.dirname(__file__), "..", "reports", "paper.json")
     tracker_path = os.path.join(os.path.dirname(__file__), "..", "reports", "tracker.json")
-
-    if not os.path.exists(tracker_path):
-        return
-
-    with open(tracker_path) as f:
-        tracker = json.load(f)
-
-    # Sync changelog
-    if os.path.exists(clog_path):
-        with open(clog_path) as cf:
-            tracker["changelog"] = cf.read()[:15000]
-
-    # Sync paper trading data
-    if os.path.exists(paper_path):
-        with open(paper_path) as pf:
-            paper = json.load(pf)
-        pos_list = []; total_mv = 0
-        for s, p in paper.get("positions", {}).items():
-            cp = p.get("current_price", p.get("avg_cost", 0))
-            mv = p["shares"] * cp; total_mv += mv
-            pos_list.append({
-                "symbol": s, "name": p.get("name", s),
-                "shares": p["shares"], "avg_cost": round(p["avg_cost"], 2),
-                "current_price": round(cp, 2), "market_value": round(mv, 2),
-                "pnl_pct": round((cp - p["avg_cost"]) / p["avg_cost"] * 100, 2) if p["avg_cost"] > 0 else 0,
-                "entry_date": p.get("entry_date", "?"),
-                "stop_loss": round(p.get("stop_loss", 0), 2),
-                "days_held": p.get("days_held", 0),
-            })
-        pending_cash = sum(o.get("target_price", 0) * o.get("shares", 0)
-                          for o in paper.get("pending", {}).values())
-        tracker["paper"] = {
-            "equity": round(paper.get("cash", 0) + total_mv, 2),
-            "cash": round(paper.get("cash", 0), 2),
-            "pending_cash": round(pending_cash, 2),
-            "free_cash": round(paper.get("cash", 0) - pending_cash, 2),
-            "initial_cash": paper.get("initial_cash", 10000),
-            "total_pnl": sum(t.get("pnl", 0) for t in paper.get("history", [])),
-            "total_trades": len(paper.get("history", [])),
-            "positions": len(paper["positions"]),
-            "history": paper.get("history", [])[-10:],
-            "order_log": paper.get("order_log", [])[-20:],
-            "positions_list": pos_list,
-        }
-
-    with open(tracker_path, "w") as f:
-        json.dump(tracker, f, indent=2, ensure_ascii=False)
+    if os.path.exists(clog_path) and os.path.exists(tracker_path):
+        with open(clog_path) as cf: clog = cf.read()
+        with open(tracker_path) as f: tracker = json.load(f)
+        tracker["changelog"] = clog[:15000]
+        with open(tracker_path, "w") as f:
+            json.dump(tracker, f, indent=2, ensure_ascii=False)
 
 
 def _update_watchlist_file(recs, args):

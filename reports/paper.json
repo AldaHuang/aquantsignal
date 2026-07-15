@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-14",
-  "cash": 3819.737,
+  "updated": "2026-07-15",
+  "cash": 3094.737,
   "initial_cash": 10000,
   "positions": {
     "002261": {
       "shares": 100,
       "avg_cost": 33.0,
       "entry_date": "2026-07-13",
-      "current_price": 30.59,
-      "stop_loss": 26.69,
+      "current_price": 28.13,
+      "stop_loss": 24.0,
       "name": "拓维信息",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 33.0,
       "trailing_activated": false,
       "absent_days": 0
@@ -19,26 +19,28 @@
       "shares": 100,
       "avg_cost": 28.48,
       "entry_date": "2026-07-13",
-      "current_price": 26.87,
-      "stop_loss": 22.65,
+      "current_price": 29.56,
+      "stop_loss": 25.12,
       "name": "巨人网络",
+      "days_held": 2,
+      "peak_price": 29.56,
+      "trailing_activated": false,
+      "absent_days": 0
+    },
+    "600839": {
+      "shares": 100,
+      "avg_cost": 7.2,
+      "entry_date": "2026-07-15",
+      "current_price": 7.44,
+      "stop_loss": 6.67,
+      "name": "四川长虹",
       "days_held": 1,
-      "peak_price": 28.48,
+      "peak_price": 7.44,
       "trailing_activated": false,
       "absent_days": 0
     }
   },
-  "pending": {
-    "600839": {
-      "shares": 100,
-      "target_price": 7.15,
-      "stop_loss": 6.4,
-      "signal_date": "2026-07-14",
-      "name": "四川长虹",
-      "side": "buy",
-      "created_time": "22:51"
-    }
-  },
+  "pending": {},
   "history": [
     {
       "symbol": "600667",
@@ -72,6 +74,14 @@
       "cash": 3819.74,
       "position_value": 5746.0,
       "return_pct": -4.34
+    },
+    {
+      "date": "2026-07-15",
+      "time": "19:39",
+      "equity": 9607.74,
+      "cash": 3094.74,
+      "position_value": 6513.0,
+      "return_pct": -3.92
     }
   ],
   "order_log": [
@@ -174,6 +184,21 @@
       "shares": 100,
       "target_price": 7.15,
       "stop_loss": 6.4
+    },
+    {
+      "time": "2026-07-15 19:39",
+      "event": "ORDER_FILLED",
+      "symbol": "600839",
+      "name": "四川长虹",
+      "side": "buy",
+      "shares": 100,
+      "price": 7.2,
+      "value": 720.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "cash_before": 3819.74,
+      "cash_after": 3094.74,
+      "reason": ""
     }
   ]
 }
