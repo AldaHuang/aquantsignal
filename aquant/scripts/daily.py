@@ -9,7 +9,7 @@ from datetime import date, datetime
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger("daily")
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.chdir(ROOT)
 
 
