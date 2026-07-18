@@ -77,9 +77,13 @@ def main():
     from aquant.live.changelog import write_changelog
     write_changelog()
 
+    # ── 6.5. Regenerate index.html with version key ──
+    step("刷新版本号...")
+    _stamp_index(today)
+
     # ── 7. Git push ──
     step("推送 GitHub...")
-    os.system("git add index.html reports/tracker.json reports/paper.json CHANGELOG.md watchlist.txt")
+    os.system("git add index.html reports/tracker.json reports/paper.json CHANGELOG.md watchlist.txt go.html")
     os.system(f"git commit -m '{today} 每日推荐更新' 2>/dev/null || true")
     os.system("git push origin main 2>&1 | tail -1")
 
@@ -139,6 +143,28 @@ def _full_sync(today):
 
     with open(tracker_path, "w") as f:
         json.dump(tracker, f, indent=2, ensure_ascii=False)
+
+
+def _stamp_index(today):
+    """Update index.html with today's version key for cache busting."""
+    idx_path = os.path.join(ROOT, "index.html")
+    tracker_path = os.path.join(ROOT, "reports", "tracker.json")
+    if not os.path.exists(idx_path) or not os.path.exists(tracker_path):
+        return
+    import json
+    with open(tracker_path) as f:
+        version = json.load(f).get("_version", today).replace(" ", "_").replace(":", "-")
+    with open(idx_path) as f:
+        html = f.read()
+    # Replace version key in fetch URL
+    import re
+    html = re.sub(
+        r"fetch\('reports/tracker\.json\?v=[^']*&t=",
+        f"fetch('reports/tracker.json?v={version}&t=",
+        html
+    )
+    with open(idx_path, "w") as f:
+        f.write(html)
 
 
 if __name__ == "__main__":
