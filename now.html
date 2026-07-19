@@ -92,10 +92,7 @@ h3{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;
 <script>
 var D={}; // will be replaced by inline data
 var D={};
-async function load(){
-  try{
-    var r=await fetch('reports/tracker.json?v=2026-07-16_22-46-36&t='+Date.now(),{cache:'no-cache'});
-    D=await r.json();
+function load(){
     var v=D._version||'';
     document.getElementById('ts').textContent=v.slice(0,16);
     document.getElementById('ft').textContent='数据更新: '+v;

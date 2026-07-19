@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16",
+  "updated": "2026-07-19",
   "cash": 3094.737,
   "initial_cash": 10000,
   "positions": {
@@ -7,10 +7,10 @@
       "shares": 100,
       "avg_cost": 33.0,
       "entry_date": "2026-07-13",
-      "current_price": 29.95,
-      "stop_loss": 25.57,
+      "current_price": 27.38,
+      "stop_loss": 22.74,
       "name": "拓维信息",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 33.0,
       "trailing_activated": false,
       "absent_days": 0
@@ -19,10 +19,10 @@
       "shares": 100,
       "avg_cost": 28.48,
       "entry_date": "2026-07-13",
-      "current_price": 30.28,
-      "stop_loss": 25.93,
+      "current_price": 29.12,
+      "stop_loss": 24.72,
       "name": "巨人网络",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 30.28,
       "trailing_activated": false,
       "absent_days": 0
@@ -31,10 +31,10 @@
       "shares": 100,
       "avg_cost": 7.2,
       "entry_date": "2026-07-15",
-      "current_price": 7.31,
-      "stop_loss": 6.55,
+      "current_price": 6.89,
+      "stop_loss": 6.15,
       "name": "四川长虹",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 7.44,
       "trailing_activated": false,
       "absent_days": 0
@@ -106,6 +106,14 @@
       "cash": 3094.74,
       "position_value": 6754.0,
       "return_pct": -1.51
+    },
+    {
+      "date": "2026-07-19",
+      "time": "15:06",
+      "equity": 9433.74,
+      "cash": 3094.74,
+      "position_value": 6339.0,
+      "return_pct": -5.66
     }
   ],
   "order_log": [
