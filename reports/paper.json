@@ -1,28 +1,16 @@
 {
-  "updated": "2026-07-19",
-  "cash": 3094.737,
+  "updated": "2026-07-20",
+  "cash": 5866.957,
   "initial_cash": 10000,
   "positions": {
-    "002261": {
-      "shares": 100,
-      "avg_cost": 33.0,
-      "entry_date": "2026-07-13",
-      "current_price": 27.38,
-      "stop_loss": 22.74,
-      "name": "拓维信息",
-      "days_held": 6,
-      "peak_price": 33.0,
-      "trailing_activated": false,
-      "absent_days": 0
-    },
     "002558": {
       "shares": 100,
       "avg_cost": 28.48,
       "entry_date": "2026-07-13",
-      "current_price": 29.12,
-      "stop_loss": 24.72,
+      "current_price": 29.98,
+      "stop_loss": 25.51,
       "name": "巨人网络",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 30.28,
       "trailing_activated": false,
       "absent_days": 0
@@ -31,16 +19,26 @@
       "shares": 100,
       "avg_cost": 7.2,
       "entry_date": "2026-07-15",
-      "current_price": 6.89,
+      "current_price": 6.97,
       "stop_loss": 6.15,
       "name": "四川长虹",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 7.44,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     }
   },
-  "pending": {},
+  "pending": {
+    "002422": {
+      "shares": 100,
+      "target_price": 47.8,
+      "stop_loss": 38.2,
+      "signal_date": "2026-07-20",
+      "name": "科伦药业",
+      "side": "buy",
+      "created_time": "18:58"
+    }
+  },
   "history": [
     {
       "symbol": "600667",
@@ -55,6 +53,21 @@
       "pnl_pct": -0.76,
       "commission": 5.0,
       "stamp_duty": 2.26,
+      "reason": "卖出信号"
+    },
+    {
+      "symbol": "002261",
+      "name": "拓维信息",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 33.0,
+      "exit_price": 27.8,
+      "exit_date": "2026-07-20",
+      "entry_date": "2026-07-13",
+      "pnl": -527.78,
+      "pnl_pct": -15.99,
+      "commission": 5.0,
+      "stamp_duty": 2.78,
       "reason": "卖出信号"
     }
   ],
@@ -114,6 +127,14 @@
       "cash": 3094.74,
       "position_value": 6339.0,
       "return_pct": -5.66
+    },
+    {
+      "date": "2026-07-20",
+      "time": "18:58",
+      "equity": 9561.96,
+      "cash": 5866.96,
+      "position_value": 3695.0,
+      "return_pct": -4.38
     }
   ],
   "order_log": [
@@ -231,6 +252,31 @@
       "cash_before": 3819.74,
       "cash_after": 3094.74,
       "reason": ""
+    },
+    {
+      "time": "2026-07-20 18:58",
+      "event": "ORDER_FILLED",
+      "symbol": "002261",
+      "name": "拓维信息",
+      "side": "sell",
+      "shares": 100,
+      "price": 27.8,
+      "value": 2780.0,
+      "commission": 5.0,
+      "stamp_duty": 2.78,
+      "cash_before": 3094.74,
+      "cash_after": 5866.96,
+      "reason": "卖出信号"
+    },
+    {
+      "time": "2026-07-20 18:58",
+      "event": "ORDER_CREATED",
+      "symbol": "002422",
+      "name": "科伦药业",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 47.8,
+      "stop_loss": 38.2
     }
   ]
 }
