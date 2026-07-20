@@ -90,8 +90,7 @@ h3{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;
 <div class="ft" id="ft"></div>
 
 <script>
-var D={}; // will be replaced by inline data
-var D={};
+var D=/*DATA*/{};
 async function load(){
   try{
     var r=await fetch('reports/tracker.json?v=2026-07-20_18-58-48&t='+Date.now(),{cache:'no-cache'});
