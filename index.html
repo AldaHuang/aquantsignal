@@ -199,14 +199,19 @@ function renderPaper(){
 
   // Timeline: trades + orders merged
   var tl=[];
-  (pp.history||[]).forEach(function(t){tl.push({tp:'trade',d:t.exit_date||t.entry_date,n:t.name||t.symbol,pnl:t.pnl,detail:t.shares+'股 '+t.entry_price+'→'+t.exit_price,reason:t.reason});});
+  (pp.history||[]).forEach(function(t){tl.push({tp:'trade',d:t.exit_date||t.entry_date,n:t.name||t.symbol,pnl:t.pnl,side:t.side,shares:t.shares,detail:t.shares+'股 '+t.entry_price+'→'+t.exit_price,reason:t.reason});});
   (pp.order_log||[]).forEach(function(o){tl.push({tp:'order',d:o.time,n:o.name||o.symbol,side:o.side,shares:o.shares,price:o.price||o.target_price,reason:o.reason,event:o.event});});
   tl.sort(function(a,b){return(b.d||'').localeCompare(a.d||'')});
   if(tl.length){h+='<h3>活动</h3>';
-    tl.slice(0,12).forEach(function(t){
-      var ic=t.tp==='trade'?(t.pnl>0?'🔴':'🟢'):(t.event==='ORDER_FILLED'?'✅':'📝');
-      var xt=t.tp==='trade'?' <span style=font-family:var(--mono);color:'+(t.pnl>0?'var(--up)':'var(--dn)')+'>¥'+(t.pnl>0?'+':'')+(t.pnl||0).toFixed(0)+'</span>':'';
-      h+='<div class=evt><span class=tt>'+ic+' '+(t.d||'').slice(5,16)+'</span><span class=tx>'+e(t.n||'')+' '+e(t.detail||'')+xt+'</span></div>';
+    tl.slice(0,15).forEach(function(t){
+      var side=(t.side||''),isBuy=side==='buy',isSell=side==='sell',isTrade=t.tp==='trade';
+      var label=isTrade?(t.pnl>0?'<b style=color:var(--up)>卖出盈利</b>':'<b style=color:var(--dn)>卖出亏损</b>'):(isBuy?'<b style=color:var(--dn)>买入</b>':'<b style=color:var(--up)>卖出</b>');
+      var ic=isTrade?'📊':(isBuy?'🟢':'🔴');
+      var xt='';
+      if(isTrade) xt='  <span style=font-family:var(--mono);color:'+(t.pnl>0?'var(--up)':'var(--dn))+';font-weight:600>¥'+(t.pnl>0?'+':'')+(t.pnl||0).toFixed(0)+'</span>';
+      else xt='  <span style=color:var(--dim)>¥'+(t.price||0).toFixed(2)+' × '+(t.shares||0)+'股</span>';
+      h+='<div class="evt" style="padding:5px 0;border-bottom:1px solid rgba(255,255,255,.03)"><span style=color:var(--dim);white-space:nowrap;min-width:85px;font-size:10px>'+ic+' '+(t.d||'').slice(5,16)+'</span><span style=flex:1;font-size:11px>'+label+' '+e(t.n||'')+xt+'</span></div>';
+      if(t.reason) h+='<div style="font-size:9px;color:var(--dim);padding:0 0 3px 90px">'+e(t.reason)+'</div>';
     });
   }
   document.getElementById('tab-a').innerHTML=h;
