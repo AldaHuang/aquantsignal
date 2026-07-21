@@ -182,23 +182,11 @@ def _stamp_index(today):
         with open(idx_path, "w") as f:
             f.write(html)
 
-    # Regenerate now.html with embedded data
-    if os.path.exists(now_path):
-        with open(now_path) as f:
-            html = f.read()
-        # Replace the inline data blob
-        html = re.sub(
-            r'var D=\{.*?\};',
-            f'var D={json.dumps(data, ensure_ascii=False)};',
-            html, count=1, flags=re.DOTALL
-        )
-        # Update timestamp display
-        html = html.replace(
-            "document.getElementById('ts').textContent=(D._version||'').slice(0,16)",
-            f"document.getElementById('ts').textContent='{version[:16]}'"
-        )
-        with open(now_path, "w") as f:
-            f.write(html)
+    # Regenerate now.html using the template generator
+    gen_script = os.path.join(ROOT, "generate_now.py")
+    if os.path.exists(gen_script):
+        import subprocess
+        subprocess.run([sys.executable, gen_script], capture_output=True)
 
 
 if __name__ == "__main__":
