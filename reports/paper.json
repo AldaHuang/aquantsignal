@@ -1,6 +1,6 @@
 {
   "updated": "2026-07-21",
-  "cash": 1195.9570000000003,
+  "cash": 1889.2580000000003,
   "initial_cash": 10000,
   "positions": {
     "002558": {
@@ -10,22 +10,10 @@
       "current_price": 29.87,
       "stop_loss": 25.41,
       "name": "巨人网络",
-      "days_held": 8,
+      "days_held": 9,
       "peak_price": 30.28,
       "trailing_activated": false,
       "absent_days": 0
-    },
-    "600839": {
-      "shares": 100,
-      "avg_cost": 7.2,
-      "entry_date": "2026-07-15",
-      "current_price": 6.99,
-      "stop_loss": 6.15,
-      "name": "四川长虹",
-      "days_held": 7,
-      "peak_price": 7.44,
-      "trailing_activated": false,
-      "absent_days": 2
     },
     "002422": {
       "shares": 100,
@@ -34,7 +22,7 @@
       "current_price": 47.36,
       "stop_loss": 38.11,
       "name": "科伦药业",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 47.36,
       "trailing_activated": false,
       "absent_days": 0
@@ -71,6 +59,21 @@
       "commission": 5.0,
       "stamp_duty": 2.78,
       "reason": "卖出信号"
+    },
+    {
+      "symbol": "600839",
+      "name": "四川长虹",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 7.2,
+      "exit_price": 6.99,
+      "exit_date": "2026-07-21",
+      "entry_date": "2026-07-15",
+      "pnl": -26.7,
+      "pnl_pct": -3.71,
+      "commission": 5.0,
+      "stamp_duty": 0.7,
+      "reason": "信号消失"
     }
   ],
   "equity_log": [
@@ -145,6 +148,14 @@
       "cash": 1195.96,
       "position_value": 8422.0,
       "return_pct": -3.82
+    },
+    {
+      "date": "2026-07-21",
+      "time": "22:29",
+      "equity": 9612.26,
+      "cash": 1889.26,
+      "position_value": 7723.0,
+      "return_pct": -3.88
     }
   ],
   "order_log": [
@@ -302,6 +313,21 @@
       "cash_before": 5866.96,
       "cash_after": 1195.96,
       "reason": ""
+    },
+    {
+      "time": "2026-07-21 22:29",
+      "event": "ORDER_FILLED",
+      "symbol": "600839",
+      "name": "四川长虹",
+      "side": "sell",
+      "shares": 100,
+      "price": 6.99,
+      "value": 699.0,
+      "commission": 5.0,
+      "stamp_duty": 0.7,
+      "cash_before": 1195.96,
+      "cash_after": 1889.26,
+      "reason": "信号消失"
     }
   ]
 }
