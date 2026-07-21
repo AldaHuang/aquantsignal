@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-20",
-  "cash": 5866.957,
+  "updated": "2026-07-21",
+  "cash": 1195.9570000000003,
   "initial_cash": 10000,
   "positions": {
     "002558": {
       "shares": 100,
       "avg_cost": 28.48,
       "entry_date": "2026-07-13",
-      "current_price": 29.98,
-      "stop_loss": 25.51,
+      "current_price": 29.87,
+      "stop_loss": 25.41,
       "name": "巨人网络",
-      "days_held": 7,
+      "days_held": 8,
       "peak_price": 30.28,
       "trailing_activated": false,
       "absent_days": 0
@@ -19,26 +19,28 @@
       "shares": 100,
       "avg_cost": 7.2,
       "entry_date": "2026-07-15",
-      "current_price": 6.97,
+      "current_price": 6.99,
       "stop_loss": 6.15,
       "name": "四川长虹",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 7.44,
       "trailing_activated": false,
-      "absent_days": 1
-    }
-  },
-  "pending": {
+      "absent_days": 2
+    },
     "002422": {
       "shares": 100,
-      "target_price": 47.8,
-      "stop_loss": 38.2,
-      "signal_date": "2026-07-20",
+      "avg_cost": 46.66,
+      "entry_date": "2026-07-21",
+      "current_price": 47.36,
+      "stop_loss": 38.11,
       "name": "科伦药业",
-      "side": "buy",
-      "created_time": "18:58"
+      "days_held": 1,
+      "peak_price": 47.36,
+      "trailing_activated": false,
+      "absent_days": 0
     }
   },
+  "pending": {},
   "history": [
     {
       "symbol": "600667",
@@ -135,6 +137,14 @@
       "cash": 5866.96,
       "position_value": 3695.0,
       "return_pct": -4.38
+    },
+    {
+      "date": "2026-07-21",
+      "time": "22:11",
+      "equity": 9617.96,
+      "cash": 1195.96,
+      "position_value": 8422.0,
+      "return_pct": -3.82
     }
   ],
   "order_log": [
@@ -277,6 +287,21 @@
       "shares": 100,
       "target_price": 47.8,
       "stop_loss": 38.2
+    },
+    {
+      "time": "2026-07-21 22:11",
+      "event": "ORDER_FILLED",
+      "symbol": "002422",
+      "name": "科伦药业",
+      "side": "buy",
+      "shares": 100,
+      "price": 46.66,
+      "value": 4666.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "cash_before": 5866.96,
+      "cash_after": 1195.96,
+      "reason": ""
     }
   ]
 }
