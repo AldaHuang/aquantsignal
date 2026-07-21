@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="zh"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><title>aquant</title>
+<style>
+:root{--bg:#0a0a0a;--s1:#141414;--s2:#1c1c1c;--bd:#2a2a2a;--tx:#c8c8c8;--dim:#666;--up:#c0392b;--dn:#27ae60;--ac:#d47800}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--tx);max-width:480px;margin:0 auto;padding:0 12px 80px;min-height:100vh;-webkit-font-smoothing:antialiased}
+h3{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;font-weight:500;margin:16px 0 6px}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;padding:16px 0 8px;border-bottom:1px solid var(--bd);margin-bottom:12px}
+.hd .logo{font-size:18px;font-weight:700;color:#fff;letter-spacing:-.5px}.hd .logo em{font-style:normal;color:var(--ac)}
+.hd .ts{font-size:11px;color:var(--dim);font-family:monospace}
+.nv{display:flex;gap:6px;margin:10px 0 14px}
+.nv span{flex:1;text-align:center;padding:9px 0;border-radius:6px;font-size:13px;color:var(--dim);cursor:pointer}
+.nv span.on{background:var(--s2);color:#fff;font-weight:600}
+.cd{background:var(--s1);border:1px solid var(--bd);border-radius:8px;padding:12px;margin:6px 0}
+.cd .r{display:flex;justify-content:space-between;align-items:center}
+.cd .nm{font-size:15px;font-weight:600;color:#fff}.cd .code{font-family:monospace;font-size:11px;color:var(--dim);margin-left:4px}
+.cd .pr{font-family:monospace;font-size:15px;color:#fff}
+.cd .sc{font-family:monospace;font-size:12px;color:var(--dim)}.cd .sc b{color:var(--ac)}
+.cd .rs{font-size:12px;color:var(--dim);line-height:1.6;margin:4px 0;padding-top:4px;border-top:1px solid rgba(255,255,255,.04)}
+.cd .tp{font-family:monospace;font-size:11px;color:var(--ac);padding:4px 6px;background:rgba(212,120,0,.06);border-radius:4px;border-left:2px solid var(--ac);margin-top:4px}
+.tg{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600}
+.tg-up{background:rgba(192,57,43,.15);color:var(--up)}.tg-dn{background:rgba(39,174,96,.12);color:var(--dn)}.tg-wt{background:rgba(212,120,0,.12);color:var(--ac)}
+.eq{font-family:monospace;font-size:36px;font-weight:700;line-height:1}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px;margin:8px 0;font-size:13px}
+.stats .lb{color:var(--dim)}.stats .vl{font-family:monospace;text-align:right}
+.dt{font-size:11px;color:var(--dim);font-family:monospace}
+.evt{font-size:11px;padding:3px 0;display:flex;gap:6px}
+.pl{width:100%;font-size:12px;border-collapse:collapse}
+.pl th{font-size:10px;color:var(--dim);text-align:left;padding:6px 4px;border-bottom:1px solid var(--bd);font-weight:500}
+.pl td{padding:7px 4px;border-bottom:1px solid rgba(255,255,255,.04)}
+.wr{display:flex;align-items:center;padding:6px 0;font-size:13px}
+.wr .lb{flex:1;font-family:monospace}.wr .bar{flex:2;margin:0 10px;height:4px;background:var(--s2);border-radius:2px;overflow:hidden}
+.wr .bar div{height:100%;border-radius:2px;background:var(--ac)}
+.lg-day{background:var(--s1);border:1px solid var(--bd);border-radius:8px;padding:10px 12px;margin:8px 0}
+.lg-day .dt{font-size:13px;font-weight:600;color:var(--ac);margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--bd)}
+.lg-item{font-size:11px;color:var(--dim);padding:2px 0 2px 8px;margin:1px 0;border-left:2px solid var(--bd);line-height:1.6}
+.lg-add{border-left-color:var(--up)}.lg-rm{border-left-color:var(--dn)}.lg-st{border-left-color:var(--ac)}
+.tab{display:none}.tab.on{display:block}
+.emp{text-align:center;color:var(--dim);padding:30px;font-size:13px}
+.ft{text-align:center;color:#444;font-size:10px;padding:20px 0;font-family:monospace}
+</style></head><body>
+<div class=hd><div><span class=logo><em>◆</em> aquant</span></div><div class=ts id=ts></div></div>
+<div class=nv><span class=on data-t=r>推荐</span><span data-t=p>交易指令</span><span data-t=a>模拟盘</span><span data-t=l>日志</span></div>
+<div id=tr class="tab on"></div><div id=tp class=tab></div><div id=ta class=tab></div><div id=tl class=tab></div>
+<div class=ft id=ft></div>
+<script>
+var D=__DATA_JSON__;
+document.querySelectorAll('.nv span').forEach(function(s){s.onclick=function(){show(this.dataset.t)}});
+document.getElementById('ts').textContent='__VERSION__';
+show('r');
+function show(t){
+  document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+  document.getElementById('t'+t).classList.add('on');
+  document.querySelectorAll('.nv span').forEach(function(s,i){s.classList.toggle('on',i===['r','p','a','l'].indexOf(t));});
+  if(t=='r')showRec();if(t=='p')showPlan();if(t=='a')showPaper();if(t=='l')showLog();
+}
+function showRec(){
+  var picks=((D.records||[]).slice(-1)[0]||{}).picks||[];
+  var h='';picks.forEach(function(p){
+    var tc=p.verdict=='买入'?'tg-up':p.verdict=='卖出'?'tg-dn':'tg-wt';
+    h+='<div class=cd><div class=r><span class=nm>'+esc(p.name)+'<span class=code>'+esc(p.symbol)+'</span></span><span class=pr>¥'+(p.price||0).toFixed(2)+'</span></div>';
+    h+='<div class=r><span class=sc>评分 <b>'+(p.score||0)+'</b>/100</span><span class="tg '+tc+'">'+esc(p.verdict||'观望')+'</span></div>';
+    var rs=(p.reasons||[]).filter(function(r){return r.indexOf('止损')!==0}).slice(0,3).join(' · ');
+    if(rs)h+='<div class=rs>'+esc(rs)+'</div>';
+    if(p.stop_loss)h+='<div class=tp>止损 ¥'+p.stop_loss.toFixed(2)+' | 止盈 ¥'+(p.take_profit||0).toFixed(2)+' | 仓位 '+(p.position_pct||0)+'%</div>';
+    h+='</div>';
+  });
+  document.getElementById('tr').innerHTML=h||'<div class=emp>暂无推荐</div>';
+}
+function showPlan(){
+  var picks=((D.records||[]).slice(-1)[0]||{}).picks||[];
+  var buys=picks.filter(function(p){return p.verdict=='买入'||p.verdict=='关注'});
+  if(!buys.length){document.getElementById('tp').innerHTML='<div class=emp>暂无买入信号</div>';return}
+  var h='<table class=pl><tr><th>股票</th><th>买入</th><th>止损</th><th>止盈</th><th>仓位</th><th>风险</th></tr>';
+  buys.forEach(function(p){h+='<tr><td>'+esc(p.name)+'</td><td>¥'+(p.entry||p.price||0).toFixed(2)+'</td><td style=color:#c0392b>¥'+(p.stop_loss||0).toFixed(2)+'</td><td style=color:#27ae60>¥'+(p.take_profit||0).toFixed(2)+'</td><td>'+(p.position_pct||0)+'%</td><td>'+(p.risk_pct||0).toFixed(1)+'%</td></tr>'});
+  h+='</table>';document.getElementById('tp').innerHTML=h;
+}
+function showPaper(){
+  var pp=D.paper||{},h='',ret=((pp.equity||10000)-(pp.initial_cash||10000))/(pp.initial_cash||10000)*100;
+  var c=ret>=0?'#c0392b':'#27ae60';
+  h+='<div class=cd><div class=r><span style=color:#666>总资产</span><span class=eq style=color:'+c+'>¥'+(pp.equity||0).toFixed(0)+'</span></div>';
+  h+='<div class=stats><span class=lb>收益率</span><span class=vl style=color:'+c+'>'+ret.toFixed(1)+'%</span><span class=lb>可用现金</span><span class=vl>¥'+(pp.cash||0).toFixed(0)+'</span><span class=lb>持仓</span><span class=vl>'+(pp.positions||0)+' 只</span><span class=lb>交易</span><span class=vl>'+(pp.total_trades||0)+' 笔</span></div>';
+  var bm=D.benchmark;if(bm){var bmRet=bm.return_pct||0,bmC=bmRet>=0?'#c0392b':'#27ae60',diff=ret-bmRet,diffC=diff>0?'#c0392b':'#27ae60';h+='<div style=display:flex;justify-content:space-between;padding:4px 12px;margin:4px 0;font-size:12px;background:#141414;border-radius:6px><span style=color:#666>vs '+esc(bm.name)+'</span><span style=color:'+bmC+'>'+bmRet.toFixed(1)+'%</span><span style=font-weight:600;color:'+diffC+'>超额 '+(diff>0?'+':'')+diff.toFixed(1)+'%</span></div>'}</div>';
+  (pp.positions_list||[]).forEach(function(p){var pc=p.pnl_pct>=0?'#c0392b':'#27ae60';h+='<div class=cd><div class=r><span class=nm>'+esc(p.name)+'</span><span style=font-size:14px;color:'+pc+';font-weight:600>'+(p.pnl_pct>0?'+':'')+(p.pnl_pct||0).toFixed(1)+'%</span></div><div class=dt>'+p.shares+'股 | 成本¥'+(p.avg_cost||0).toFixed(2)+' → 现¥'+(p.current_price||0).toFixed(2)+' | 市值¥'+(p.market_value||0).toFixed(0)+'</div></div>'});
+  var hist=pp.history||[];
+  if(hist.length){h+='<h3>已平仓</h3>';var totalPnl=0;hist.slice(-10).reverse().forEach(function(t){totalPnl+=t.pnl||0;var cl=(t.pnl||0)>=0?'#c0392b':'#27ae60';h+='<div class=cd style=padding:10px><div class=r><span class=nm>'+esc(t.name||t.symbol)+'</span><span style=font-size:16px;font-weight:700;color:'+cl+'>¥'+(t.pnl>0?'+':'')+(t.pnl||0).toFixed(0)+'</span></div><div class=dt>'+esc(t.shares||'')+'股 | 买¥'+(t.entry_price||0).toFixed(2)+' → 卖¥'+(t.exit_price||0).toFixed(2)+' | '+esc(t.reason||'')+'</div><div class=dt style=font-size:10px>平仓: '+esc(t.exit_date||'')+'</div></div>'});}
+  var tl=[];
+  (pp.history||[]).forEach(function(t){tl.push({d:t.exit_date,n:t.name||t.symbol,pnl:t.pnl,side:t.side,shares:t.shares,price:t.exit_price,reason:t.reason})});
+  (pp.order_log||[]).forEach(function(o){tl.push({d:o.time,n:o.name,side:o.side,shares:o.shares,price:o.price||o.target_price,reason:o.reason,event:o.event})});
+  tl.sort(function(a,b){return(b.d||'').localeCompare(a.d||'')});
+  if(tl.length){h+='<h3>活动</h3>';tl.slice(0,15).forEach(function(t){var isBuy=t.side=='buy',label=isBuy?'买入':'卖出',cl=isBuy?'#27ae60':'#c0392b',ic=t.event=='ORDER_FILLED'?(isBuy?'🟢':'🔴'):'📊';h+='<div class=evt style=padding:5px 0;border-bottom:1px solid rgba(255,255,255,.03)><span style=font-size:10px;color:#666;min-width:85px>'+ic+' '+(t.d||'').slice(5,16)+'</span><span style=flex:1;font-size:11px><b style=color:'+cl+'>'+label+'</b> '+esc(t.n)+' <span style=color:#666>'+esc(t.shares||'')+'股 ¥'+(t.price||0).toFixed(2)+'</span></span></div>';if(t.reason)h+='<div style=font-size:9px;color:#666;padding:0 0 3px 90px>'+esc(t.reason)+'</div>'})};
+  document.getElementById('ta').innerHTML=h||'<div class=emp>暂无数据</div>';
+}
+function showLog(){
+  var h='',w=D.strategy_weights||{};h+='<h3>策略权重</h3>';
+  Object.keys(w).sort().forEach(function(k){var v=w[k];h+='<div class=wr><span class=lb>'+esc(k)+'</span><span class=bar><div style=width:'+Math.round(v/1.5*100)+'%></div></span><span>'+v.toFixed(2)+'</span></div>'});
+  var mr=D.market_regime||{};if(mr.regime){var rl={trending:'📈 趋势',ranging:'📊 震荡',mixed:'➖ 混合'};h+='<h3>市场状态</h3><div class=cd style=padding:8px 12px;font-size:13px>'+(rl[mr.regime]||mr.regime)+' (强度 '+mr.strength+')</div>'}
+  var cl=D.changelog||'';if(cl){h+='<h3>更新日志</h3>';var ss=cl.split(/\n(?=## \d{4}-\d{2}-\d{2})/);for(var si=0;si<Math.min(ss.length,6);si++){var sec=ss[si];if(!sec.trim())continue;var lines=sec.split('\n'),d='';if(lines[0].indexOf('## ')==0)d=lines[0].slice(3);h+='<div class=lg-day><div class=dt>'+esc(d)+'</div>';for(var li=1;li<lines.length;li++){var l=lines[li];if(l.indexOf('### ')==0){h+='<div style=font-size:11px;color:#ccc;margin:6px 0 2px>'+esc(l.slice(4))+'</div>';continue}if(l.indexOf('---')==0)continue;if(l.indexOf('- ')==0){var t=l.replace(/^- /,'').trim(),cls='lg-item';if(t.indexOf('新增')>=0)cls+=' lg-add';else if(t.indexOf('移除')>=0)cls+=' lg-rm';else if(t.indexOf('持续')>=0)cls+=' lg-st';h+='<div class='+cls+'>'+esc(t)+'</div>'}else if(l.trim())h+='<div style=font-size:10px;color:#666;padding:1px 0>'+esc(l)+'</div>'}h+='</div>'}}
+  document.getElementById('tl').innerHTML=h||'<div class=emp>暂无日志</div>';
+}
+function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+</script></body></html>
