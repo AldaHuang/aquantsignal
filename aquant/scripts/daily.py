@@ -64,6 +64,26 @@ def main():
         summary = trader.update(recs, feed)
         step(f"资产 ¥{summary['equity']:,.0f} | 持仓 {summary['positions']} | 交易 {summary['total_trades']}")
 
+    # ── 3.5. Benchmark vs CSI 300 ──
+    try:
+        idx_df = feed.get_index("000300", start="2026-06-25")
+        if idx_df is not None and len(idx_df) > 0:
+            bench_start = float(idx_df["close"].iloc[0])
+            bench_now = float(idx_df["close"].iloc[-1])
+            bench_return = (bench_now - bench_start) / bench_start * 100
+            step(f"沪深300: {bench_start:.0f}→{bench_now:.0f} ({bench_return:+.1f}%)")
+            # Store for phone display
+            data = load_history()
+            data["benchmark"] = {
+                "name": "沪深300",
+                "start": round(bench_start, 2),
+                "current": round(bench_now, 2),
+                "return_pct": round(bench_return, 2),
+            }
+            save_history(data)
+    except Exception:
+        pass
+
     # ── 4. Sync ALL data to tracker ──
     step("同步数据...")
     _full_sync(today)
@@ -146,25 +166,47 @@ def _full_sync(today):
 
 
 def _stamp_index(today):
-    """Update index.html with today's version key for cache busting."""
-    idx_path = os.path.join(ROOT, "index.html")
-    tracker_path = os.path.join(ROOT, "reports", "tracker.json")
-    if not os.path.exists(idx_path) or not os.path.exists(tracker_path):
-        return
-    import json
-    with open(tracker_path) as f:
-        version = json.load(f).get("_version", today).replace(" ", "_").replace(":", "-")
-    with open(idx_path) as f:
-        html = f.read()
-    # Replace version key in fetch URL
+    """Update index.html version key + regenerate now.html with fresh data."""
     import re
-    html = re.sub(
-        r"fetch\('reports/tracker\.json\?v=[^']*&t=",
-        f"fetch('reports/tracker.json?v={version}&t=",
-        html
-    )
-    with open(idx_path, "w") as f:
-        f.write(html)
+    idx_path = os.path.join(ROOT, "index.html")
+    now_path = os.path.join(ROOT, "now.html")
+    tracker_path = os.path.join(ROOT, "reports", "tracker.json")
+    if not os.path.exists(tracker_path):
+        return
+
+    with open(tracker_path) as f:
+        data = json.load(f)
+    version = data.get("_version", today).replace(" ", "_").replace(":", "-")
+
+    # Update index.html fetch URL
+    if os.path.exists(idx_path):
+        with open(idx_path) as f:
+            html = f.read()
+        html = re.sub(
+            r"fetch\('reports/tracker\.json\?v=[^']*&t=",
+            f"fetch('reports/tracker.json?v={version}&t=",
+            html
+        )
+        with open(idx_path, "w") as f:
+            f.write(html)
+
+    # Regenerate now.html with embedded data
+    if os.path.exists(now_path):
+        with open(now_path) as f:
+            html = f.read()
+        # Replace the inline data blob
+        html = re.sub(
+            r'var D=\{.*?\};',
+            f'var D={json.dumps(data, ensure_ascii=False)};',
+            html, count=1, flags=re.DOTALL
+        )
+        # Update timestamp display
+        html = html.replace(
+            "document.getElementById('ts').textContent=(D._version||'').slice(0,16)",
+            f"document.getElementById('ts').textContent='{version[:16]}'"
+        )
+        with open(now_path, "w") as f:
+            f.write(html)
 
 
 if __name__ == "__main__":
