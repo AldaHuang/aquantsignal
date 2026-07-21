@@ -64,29 +64,9 @@ def main():
         summary = trader.update(recs, feed)
         step(f"资产 ¥{summary['equity']:,.0f} | 持仓 {summary['positions']} | 交易 {summary['total_trades']}")
 
-    # ── 3.5. Benchmark vs CSI 300 ──
-    try:
-        idx_df = feed.get_index("000300", start="2026-06-25")
-        if idx_df is not None and len(idx_df) > 0:
-            bench_start = float(idx_df["close"].iloc[0])
-            bench_now = float(idx_df["close"].iloc[-1])
-            bench_return = (bench_now - bench_start) / bench_start * 100
-            step(f"沪深300: {bench_start:.0f}→{bench_now:.0f} ({bench_return:+.1f}%)")
-            # Store for phone display
-            data = load_history()
-            data["benchmark"] = {
-                "name": "沪深300",
-                "start": round(bench_start, 2),
-                "current": round(bench_now, 2),
-                "return_pct": round(bench_return, 2),
-            }
-            save_history(data)
-    except Exception:
-        pass
-
-    # ── 4. Sync ALL data to tracker ──
+    # ── 4. Sync ALL data to tracker (paper + benchmark + changelog) ──
     step("同步数据...")
-    _full_sync(today)
+    _full_sync(today, feed)
 
     # ── 5. Learning ──
     from aquant.live.tracker import update_strategy_weights, get_learning_status
@@ -110,8 +90,8 @@ def main():
     log.info("Done: %s", datetime.now().strftime("%H:%M"))
 
 
-def _full_sync(today):
-    """Sync paper + klines + changelog to tracker.json in one atomic write."""
+def _full_sync(today, feed=None):
+    """Sync paper + klines + changelog + benchmark to tracker.json."""
     tracker_path = "reports/tracker.json"
     if not os.path.exists(tracker_path):
         return
@@ -119,6 +99,18 @@ def _full_sync(today):
         tracker = json.load(f)
 
     tracker["_version"] = f"{today} {datetime.now().strftime('%H:%M:%S')}"
+
+    # Benchmark vs CSI 300
+    if feed and "benchmark" not in tracker:
+        try:
+            idx_df = feed.get_index("000300", start="2026-06-25")
+            if idx_df is not None and len(idx_df) > 0:
+                bs = float(idx_df["close"].iloc[0])
+                bn = float(idx_df["close"].iloc[-1])
+                tracker["benchmark"] = {"name": "沪深300", "start": round(bs, 2),
+                    "current": round(bn, 2), "return_pct": round((bn-bs)/bs*100, 2)}
+        except Exception:
+            pass
 
     # Paper data
     paper_path = "reports/paper.json"
