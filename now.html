@@ -98,6 +98,7 @@ function showLog(){
   var h="",w=D.strategy_weights||{};h+="<h3>策略权重</h3>";
   Object.keys(w).sort().forEach(function(k){var v=w[k];h+="<div class=wr><span class=lb>"+esc(k)+"</span><span class=bar><div style=width:"+Math.round(v/1.5*100)+"%></div></span><span>"+v.toFixed(2)+"</span></div>"});
   var mr=D.market_regime||{};if(mr.regime){var rl={trending:"&#x1F4C8; 趋势",ranging:"&#x1F4CA; 震荡",mixed:"&#x2796; 混合"};h+="<h3>市场状态</h3><div class=cd style=padding:8px 12px;font-size:13px>"+(rl[mr.regime]||mr.regime)+" (强度 "+mr.strength+")</div>"}
+  var cl=D.changelog||"";if(cl){h+="<h3>更新日志</h3>";var ss=cl.split(/\n(?=## \d{4}-\d{2}-\d{2})/);for(var si=0;si<Math.min(ss.length,6);si++){var sec=ss[si];if(!sec.trim())continue;var lines=sec.split("\n"),d="";if(lines[0].indexOf("## ")==0)d=lines[0].slice(3);h+="<div class=lg-day><div class=dt>"+esc(d)+"</div>";for(var li=1;li<lines.length;li++){var l=lines[li];if(l.indexOf("### ")==0){h+="<div style=font-size:11px;color:#ccc;margin:6px 0 2px>"+esc(l.slice(4))+"</div>";continue}if(l.indexOf("---")==0)continue;if(l.indexOf("- ")==0){var t=l.replace(/^- /,"").trim(),cls="lg-item";if(t.indexOf("新增")>=0)cls+=" lg-add";else if(t.indexOf("移除")>=0)cls+=" lg-rm";else if(t.indexOf("持续")>=0)cls+=" lg-st";h+="<div class="+cls+">"+esc(t)+"</div>"}else if(l.trim())h+="<div style=font-size:10px;color:var(--dim);padding:1px 0>"+esc(l)+"</div>"}h+="</div>"}}
   document.getElementById("tl").innerHTML=h||"<div class=emp>暂无日志</div>";
 }
 
