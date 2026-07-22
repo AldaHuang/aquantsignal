@@ -10,7 +10,7 @@ DEFAULTS = {
         "default_adjust": "qfq",
     },
     "backtest": {
-        "initial_cash": 10_000,
+        "initial_cash": 50_000,
         "commission": 0.0003,
         "stamp_duty": 0.001,
         "min_commission": 5.0,

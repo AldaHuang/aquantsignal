@@ -1,341 +1,87 @@
 {
-  "updated": "2026-07-21",
-  "cash": 1889.2580000000003,
-  "initial_cash": 10000,
+  "updated": "2026-07-22",
+  "cash": 42266.0,
+  "initial_cash": 50000,
   "positions": {
     "002558": {
       "shares": 100,
-      "avg_cost": 28.48,
-      "entry_date": "2026-07-13",
-      "current_price": 29.87,
+      "avg_cost": 28.02,
+      "entry_date": "2026-07-22",
+      "current_price": 28.02,
       "stop_loss": 25.41,
-      "name": "巨人网络",
-      "days_held": 10,
-      "peak_price": 30.28,
-      "trailing_activated": false,
-      "absent_days": 0
+      "name": "巨人网络"
     },
     "002422": {
       "shares": 100,
-      "avg_cost": 46.66,
-      "entry_date": "2026-07-21",
-      "current_price": 47.36,
+      "avg_cost": 49.22,
+      "entry_date": "2026-07-22",
+      "current_price": 49.22,
       "stop_loss": 38.11,
-      "name": "科伦药业",
-      "days_held": 3,
-      "peak_price": 47.36,
-      "trailing_activated": false,
-      "absent_days": 0
+      "name": "科伦药业"
     }
   },
   "pending": {},
-  "history": [
-    {
-      "symbol": "600667",
-      "name": "太极实业",
-      "side": "sell",
-      "shares": 100,
-      "entry_price": 22.73,
-      "exit_price": 22.63,
-      "exit_date": "2026-07-14",
-      "entry_date": "2026-07-13",
-      "pnl": -17.26,
-      "pnl_pct": -0.76,
-      "commission": 5.0,
-      "stamp_duty": 2.26,
-      "reason": "卖出信号"
-    },
-    {
-      "symbol": "002261",
-      "name": "拓维信息",
-      "side": "sell",
-      "shares": 100,
-      "entry_price": 33.0,
-      "exit_price": 27.8,
-      "exit_date": "2026-07-20",
-      "entry_date": "2026-07-13",
-      "pnl": -527.78,
-      "pnl_pct": -15.99,
-      "commission": 5.0,
-      "stamp_duty": 2.78,
-      "reason": "卖出信号"
-    },
-    {
-      "symbol": "600839",
-      "name": "四川长虹",
-      "side": "sell",
-      "shares": 100,
-      "entry_price": 7.2,
-      "exit_price": 6.99,
-      "exit_date": "2026-07-21",
-      "entry_date": "2026-07-15",
-      "pnl": -26.7,
-      "pnl_pct": -3.71,
-      "commission": 5.0,
-      "stamp_duty": 0.7,
-      "reason": "信号消失"
-    }
-  ],
+  "history": [],
   "equity_log": [
     {
-      "date": "2026-07-13",
-      "time": "20:44",
-      "equity": 9985.0,
-      "cash": 1564.0,
-      "position_value": 8421.0,
-      "return_pct": -0.15
-    },
-    {
-      "date": "2026-07-14",
-      "time": "22:51",
-      "equity": 9565.74,
-      "cash": 3819.74,
-      "position_value": 5746.0,
-      "return_pct": -4.34
-    },
-    {
-      "date": "2026-07-15",
-      "time": "19:39",
-      "equity": 9607.74,
-      "cash": 3094.74,
-      "position_value": 6513.0,
-      "return_pct": -3.92
-    },
-    {
-      "date": "2026-07-15",
-      "time": "20:58",
-      "equity": 9607.74,
-      "cash": 3094.74,
-      "position_value": 6513.0,
-      "return_pct": -3.92
-    },
-    {
-      "date": "2026-07-16",
-      "time": "22:45",
-      "equity": 9848.74,
-      "cash": 3094.74,
-      "position_value": 6754.0,
-      "return_pct": -1.51
-    },
-    {
-      "date": "2026-07-16",
-      "time": "22:46",
-      "equity": 9848.74,
-      "cash": 3094.74,
-      "position_value": 6754.0,
-      "return_pct": -1.51
-    },
-    {
-      "date": "2026-07-19",
-      "time": "15:06",
-      "equity": 9433.74,
-      "cash": 3094.74,
-      "position_value": 6339.0,
-      "return_pct": -5.66
-    },
-    {
-      "date": "2026-07-20",
-      "time": "18:58",
-      "equity": 9561.96,
-      "cash": 5866.96,
-      "position_value": 3695.0,
-      "return_pct": -4.38
-    },
-    {
-      "date": "2026-07-21",
-      "time": "22:11",
-      "equity": 9617.96,
-      "cash": 1195.96,
-      "position_value": 8422.0,
-      "return_pct": -3.82
-    },
-    {
-      "date": "2026-07-21",
-      "time": "22:29",
-      "equity": 9612.26,
-      "cash": 1889.26,
-      "position_value": 7723.0,
-      "return_pct": -3.88
-    },
-    {
-      "date": "2026-07-21",
-      "time": "22:36",
-      "equity": 9612.26,
-      "cash": 1889.26,
-      "position_value": 7723.0,
-      "return_pct": -3.88
+      "date": "2026-07-22",
+      "time": "21:24",
+      "equity": 49990.0,
+      "cash": 42266.0,
+      "position_value": 7724.0,
+      "return_pct": -0.02
     }
   ],
   "order_log": [
     {
-      "time": "2026-07-13 20:44",
-      "event": "ORDER_CREATED",
-      "symbol": "002261",
-      "name": "拓维信息",
-      "side": "buy",
-      "shares": 100,
-      "target_price": 33.0,
-      "stop_loss": 29.46
-    },
-    {
-      "time": "2026-07-13 20:44",
+      "time": "2026-07-22 21:24",
       "event": "ORDER_CREATED",
       "symbol": "002558",
       "name": "巨人网络",
       "side": "buy",
       "shares": 100,
-      "target_price": 28.48,
-      "stop_loss": 24.3
+      "target_price": 29.87,
+      "stop_loss": 25.41
     },
     {
-      "time": "2026-07-13 20:44",
+      "time": "2026-07-22 21:24",
       "event": "ORDER_CREATED",
-      "symbol": "600667",
-      "name": "太极实业",
+      "symbol": "002422",
+      "name": "科伦药业",
       "side": "buy",
       "shares": 100,
-      "target_price": 22.73,
-      "stop_loss": 16.57
+      "target_price": 47.36,
+      "stop_loss": 38.11
     },
     {
-      "time": "2026-07-13 20:45",
-      "event": "ORDER_FILLED",
-      "symbol": "002261",
-      "name": "拓维信息",
-      "side": "buy",
-      "shares": 100,
-      "price": 33.0,
-      "value": 3300.0,
-      "commission": 5.0,
-      "stamp_duty": 0,
-      "cash_before": 10000,
-      "cash_after": 6695.0,
-      "reason": ""
-    },
-    {
-      "time": "2026-07-13 20:45",
+      "time": "2026-07-22 21:25",
       "event": "ORDER_FILLED",
       "symbol": "002558",
       "name": "巨人网络",
       "side": "buy",
       "shares": 100,
-      "price": 28.48,
-      "value": 2848.0,
+      "price": 28.02,
+      "value": 2802.0,
       "commission": 5.0,
       "stamp_duty": 0,
-      "cash_before": 6695.0,
-      "cash_after": 3842.0,
+      "cash_before": 50000,
+      "cash_after": 47193.0,
       "reason": ""
     },
     {
-      "time": "2026-07-13 20:45",
-      "event": "ORDER_FILLED",
-      "symbol": "600667",
-      "name": "太极实业",
-      "side": "buy",
-      "shares": 100,
-      "price": 22.73,
-      "value": 2273.0,
-      "commission": 5.0,
-      "stamp_duty": 0,
-      "cash_before": 3842.0,
-      "cash_after": 1564.0,
-      "reason": ""
-    },
-    {
-      "time": "2026-07-14 22:51",
-      "event": "ORDER_FILLED",
-      "symbol": "600667",
-      "name": "太极实业",
-      "side": "sell",
-      "shares": 100,
-      "price": 22.63,
-      "value": 2263.0,
-      "commission": 5.0,
-      "stamp_duty": 2.26,
-      "cash_before": 1564.0,
-      "cash_after": 3819.74,
-      "reason": "卖出信号"
-    },
-    {
-      "time": "2026-07-14 22:51",
-      "event": "ORDER_CREATED",
-      "symbol": "600839",
-      "name": "四川长虹",
-      "side": "buy",
-      "shares": 100,
-      "target_price": 7.15,
-      "stop_loss": 6.4
-    },
-    {
-      "time": "2026-07-15 19:39",
-      "event": "ORDER_FILLED",
-      "symbol": "600839",
-      "name": "四川长虹",
-      "side": "buy",
-      "shares": 100,
-      "price": 7.2,
-      "value": 720.0,
-      "commission": 5.0,
-      "stamp_duty": 0,
-      "cash_before": 3819.74,
-      "cash_after": 3094.74,
-      "reason": ""
-    },
-    {
-      "time": "2026-07-20 18:58",
-      "event": "ORDER_FILLED",
-      "symbol": "002261",
-      "name": "拓维信息",
-      "side": "sell",
-      "shares": 100,
-      "price": 27.8,
-      "value": 2780.0,
-      "commission": 5.0,
-      "stamp_duty": 2.78,
-      "cash_before": 3094.74,
-      "cash_after": 5866.96,
-      "reason": "卖出信号"
-    },
-    {
-      "time": "2026-07-20 18:58",
-      "event": "ORDER_CREATED",
-      "symbol": "002422",
-      "name": "科伦药业",
-      "side": "buy",
-      "shares": 100,
-      "target_price": 47.8,
-      "stop_loss": 38.2
-    },
-    {
-      "time": "2026-07-21 22:11",
+      "time": "2026-07-22 21:25",
       "event": "ORDER_FILLED",
       "symbol": "002422",
       "name": "科伦药业",
       "side": "buy",
       "shares": 100,
-      "price": 46.66,
-      "value": 4666.0,
+      "price": 49.22,
+      "value": 4922.0,
       "commission": 5.0,
       "stamp_duty": 0,
-      "cash_before": 5866.96,
-      "cash_after": 1195.96,
+      "cash_before": 47193.0,
+      "cash_after": 42266.0,
       "reason": ""
-    },
-    {
-      "time": "2026-07-21 22:29",
-      "event": "ORDER_FILLED",
-      "symbol": "600839",
-      "name": "四川长虹",
-      "side": "sell",
-      "shares": 100,
-      "price": 6.99,
-      "value": 699.0,
-      "commission": 5.0,
-      "stamp_duty": 0.7,
-      "cash_before": 1195.96,
-      "cash_after": 1889.26,
-      "reason": "信号消失"
     }
   ]
 }

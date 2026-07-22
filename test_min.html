@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Test</title>
+<style>body{background:#0a0a0a;color:#fff;padding:20px;font-family:sans-serif}</style>
+</head><body>
+<div id="out">Loading...</div>
+<script>
+try {
+  var D = {"test": "hello", "records": [{"picks": [{"name": "测试", "symbol": "000001", "price": 10.5, "score": 50, "verdict": "买入"}]}]};
+  var picks = D.records[0].picks;
+  document.getElementById("out").innerHTML = "OK: " + picks.length + " picks, first=" + picks[0].name;
+} catch(e) {
+  document.getElementById("out").innerHTML = "ERROR: " + e.message;
+}
+</script>
+</body></html>
