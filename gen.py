@@ -62,6 +62,19 @@ for pos in pp.get("positions_list", []):
     pc = "#c0392b" if pos.get("pnl_pct", 0) >= 0 else "#27ae60"
     paper_html += f'<div class=cd><div class=r><span class=nm>{esc(pos["name"])}</span><span style=font-size:14px;font-weight:600;color:{pc}>{pos.get("pnl_pct",0):+.1f}%</span></div><div class=dt>{pos["shares"]}股 | 成本¥{pos.get("avg_cost",0):.2f} → 现¥{pos.get("current_price",0):.2f} | 市值¥{pos.get("market_value",0):,.0f}</div></div>'
 
+# Activity timeline (order_log)
+olog = pp.get("order_log", [])
+if olog:
+    paper_html += '<h3>操作记录</h3>'
+    for o in reversed(olog[-20:]):
+        side = o.get("side", "")
+        isBuy = side == "buy"
+        icon = "🟢" if isBuy else "🔴"
+        label = "买入" if isBuy else "卖出"
+        cl = "#27ae60" if isBuy else "#c0392b"
+        t = o.get("time", "")[5:16]
+        paper_html += f'<div style=font-size:11px;padding:3px 0;display:flex;gap:6px><span style=color:#666;min-width:85px;font-size:10px>{icon} {t}</span><span style=flex:1><b style=color:{cl}>{label}</b> {esc(o.get("name",""))} {o.get("shares","")}股 ¥{o.get("price",o.get("target_price",0)):.2f}</span></div>'
+
 hist = pp.get("history", [])
 if hist:
     paper_html += '<h3>已平仓</h3>'
