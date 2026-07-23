@@ -93,7 +93,7 @@ h3{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;
 var D={};
 async function load(){
   try{
-    var r=await fetch('reports/tracker.json?v=2026-07-21_22-36-22&t='+Date.now(),{cache:'no-cache'});
+    var r=await fetch('reports/tracker.json?v=2026-07-23_16-08-47&t='+Date.now(),{cache:'no-cache'});
     D=await r.json();
     var v=D._version||'';
     document.getElementById('ts').textContent=v.slice(0,16);
