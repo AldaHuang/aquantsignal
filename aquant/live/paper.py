@@ -57,6 +57,9 @@ class PaperTrader:
         # ── Step 2: Exit rules on existing positions ──
         for sym in list(self.positions):
             pos = self.positions[sym]
+            # Skip positions just filled today (avoid immediate stop-out on gap)
+            if pos.pop("filled_today", False):
+                continue
             pos.setdefault("days_held", 0)
             pos.setdefault("peak_price", pos.get("avg_cost", 0))
             pos.setdefault("trailing_activated", False)
@@ -240,6 +243,7 @@ class PaperTrader:
                     "entry_date": fill_date, "current_price": price,
                     "stop_loss": order.get("stop_loss", 0),
                     "name": order.get("name", sym),
+                    "filled_today": True,
                 }
 
         else:  # sell
