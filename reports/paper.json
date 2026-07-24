@@ -1,34 +1,41 @@
 {
-  "updated": "2026-07-23",
-  "cash": 42034.459,
+  "updated": "2026-07-24",
+  "cash": 44445.041000000005,
   "initial_cash": 50000,
   "positions": {
     "002422": {
       "shares": 100,
       "avg_cost": 49.22,
       "entry_date": "2026-07-22",
-      "current_price": 51.35,
-      "stop_loss": 42.34,
+      "current_price": 46.65,
+      "stop_loss": 37.96,
       "name": "科伦药业",
-      "days_held": 3,
+      "days_held": 4,
       "peak_price": 51.35,
-      "trailing_activated": false,
-      "absent_days": 0
-    },
-    "002558": {
-      "shares": 100,
-      "avg_cost": 27.6,
-      "entry_date": "2026-07-23",
-      "current_price": 25.26,
-      "stop_loss": 20.56,
-      "name": "巨人网络",
-      "days_held": 2,
-      "peak_price": 27.6,
       "trailing_activated": false,
       "absent_days": 0
     }
   },
-  "pending": {},
+  "pending": {
+    "300779": {
+      "shares": 100,
+      "target_price": 77.22,
+      "stop_loss": 66.04,
+      "signal_date": "2026-07-24",
+      "name": "惠城环保",
+      "side": "buy",
+      "created_time": "18:43"
+    },
+    "600406": {
+      "shares": 100,
+      "target_price": 23.58,
+      "stop_loss": 22.18,
+      "signal_date": "2026-07-24",
+      "name": "国电南瑞",
+      "side": "buy",
+      "created_time": "18:43"
+    }
+  },
   "history": [
     {
       "symbol": "002558",
@@ -44,6 +51,21 @@
       "commission": 5.0,
       "stamp_duty": 2.54,
       "reason": "止损触发"
+    },
+    {
+      "symbol": "002558",
+      "name": "巨人网络",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 27.6,
+      "exit_price": 24.18,
+      "exit_date": "2026-07-24",
+      "entry_date": "2026-07-23",
+      "pnl": -349.42,
+      "pnl_pct": -12.66,
+      "commission": 5.0,
+      "stamp_duty": 2.42,
+      "reason": "卖出信号"
     }
   ],
   "equity_log": [
@@ -78,6 +100,14 @@
       "cash": 42034.46,
       "position_value": 7661.0,
       "return_pct": -0.61
+    },
+    {
+      "date": "2026-07-24",
+      "time": "18:43",
+      "equity": 49110.04,
+      "cash": 44445.04,
+      "position_value": 4665.0,
+      "return_pct": -1.78
     }
   ],
   "order_log": [
@@ -170,6 +200,41 @@
       "cash_before": 44799.46,
       "cash_after": 42034.46,
       "reason": ""
+    },
+    {
+      "time": "2026-07-24 18:43",
+      "event": "ORDER_FILLED",
+      "symbol": "002558",
+      "name": "巨人网络",
+      "side": "sell",
+      "shares": 100,
+      "price": 24.18,
+      "value": 2418.0,
+      "commission": 5.0,
+      "stamp_duty": 2.42,
+      "cash_before": 42034.46,
+      "cash_after": 44445.04,
+      "reason": "卖出信号"
+    },
+    {
+      "time": "2026-07-24 18:43",
+      "event": "ORDER_CREATED",
+      "symbol": "300779",
+      "name": "惠城环保",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 77.22,
+      "stop_loss": 66.04
+    },
+    {
+      "time": "2026-07-24 18:43",
+      "event": "ORDER_CREATED",
+      "symbol": "600406",
+      "name": "国电南瑞",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 23.58,
+      "stop_loss": 22.18
     }
   ]
 }
