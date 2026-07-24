@@ -14,7 +14,10 @@ PAPER_FILE = os.path.join(os.path.dirname(__file__), "..", "..", "reports", "pap
 
 
 class PaperTrader:
-    def __init__(self, initial_cash=10_000):
+    def __init__(self, initial_cash=None):
+        if initial_cash is None:
+            from aquant.config import get
+            initial_cash = get("backtest.initial_cash", 50_000)
         data = _load()
         self.cash = data.get("cash", initial_cash)
         self.initial_cash = data.get("initial_cash", initial_cash)
