@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24",
+  "updated": "2026-07-27",
   "cash": 35240.0,
   "initial_cash": 50000,
   "positions": {
@@ -7,28 +7,28 @@
       "shares": 100,
       "avg_cost": 77.22,
       "entry_date": "2026-07-24",
-      "current_price": 77.22,
-      "stop_loss": 66.04,
+      "current_price": 79.46,
+      "stop_loss": 66.98,
       "name": "惠城环保",
-      "filled_today": true
+      "absent_days": 0
     },
     "600406": {
       "shares": 100,
       "avg_cost": 23.58,
       "entry_date": "2026-07-24",
-      "current_price": 23.58,
-      "stop_loss": 22.18,
+      "current_price": 23.9,
+      "stop_loss": 22.47,
       "name": "国电南瑞",
-      "filled_today": true
+      "absent_days": 0
     },
     "002422": {
       "shares": 100,
       "avg_cost": 46.65,
       "entry_date": "2026-07-24",
-      "current_price": 46.65,
-      "stop_loss": 37.96,
+      "current_price": 47.51,
+      "stop_loss": 39.11,
       "name": "科伦药业",
-      "filled_today": true
+      "absent_days": 0
     }
   },
   "pending": {},
@@ -41,6 +41,14 @@
       "cash": 35240.0,
       "position_value": 14745.0,
       "return_pct": -0.03
+    },
+    {
+      "date": "2026-07-27",
+      "time": "21:08",
+      "equity": 50327.0,
+      "cash": 35240.0,
+      "position_value": 15087.0,
+      "return_pct": 0.65
     }
   ],
   "order_log": [
