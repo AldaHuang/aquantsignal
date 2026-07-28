@@ -4,12 +4,7 @@
 
 MARKER="$HOME/.aquant/last_run"
 TODAY=$(date +%Y-%m-%d)
-NOW_H=$(date +%H)
 
-# 只在 15:30-23:59 之间运行
-if [ "$NOW_H" -lt 15 ]; then
-  exit 0
-fi
 
 # 今天已跑过则跳过
 if [ -f "$MARKER" ]; then
