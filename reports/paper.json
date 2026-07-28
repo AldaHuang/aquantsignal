@@ -11,7 +11,7 @@
       "stop_loss": 64.38,
       "name": "惠城环保",
       "absent_days": 0,
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 77.22,
       "trailing_activated": false
     },
@@ -23,7 +23,7 @@
       "stop_loss": 22.1,
       "name": "国电南瑞",
       "absent_days": 0,
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 23.58,
       "trailing_activated": false
     },
@@ -35,7 +35,7 @@
       "stop_loss": 36.77,
       "name": "科伦药业",
       "absent_days": 0,
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 46.65,
       "trailing_activated": false
     }
@@ -70,6 +70,14 @@
     {
       "date": "2026-07-28",
       "time": "21:09",
+      "equity": 49816.0,
+      "cash": 35240.0,
+      "position_value": 14576.0,
+      "return_pct": -0.37
+    },
+    {
+      "date": "2026-07-28",
+      "time": "21:13",
       "equity": 49816.0,
       "cash": 35240.0,
       "position_value": 14576.0,
