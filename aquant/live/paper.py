@@ -13,6 +13,11 @@ log = logging.getLogger(__name__)
 PAPER_FILE = os.path.join(os.path.dirname(__file__), "..", "..", "reports", "paper.json")
 
 
+def _sector_key(symbol):
+    """Extract sector from symbol prefix (first 3 digits as proxy)."""
+    return symbol[:3] if len(symbol) >= 3 else symbol
+
+
 class PaperTrader:
     def __init__(self, initial_cash=None):
         if initial_cash is None:
@@ -139,6 +144,13 @@ class PaperTrader:
         for _, sym, r in new_buys:
             if len(self.positions) + len(self.pending) >= max_positions:
                 break
+            # Sector concentration check: skip if same sector already > 50%
+            sec = _sector_key(sym)
+            total_pos = len(self.positions) + len(self.pending) + 1  # +1 for this buy
+            same_sec = sum(1 for s in self.positions if _sector_key(s) == sec)
+            same_sec += sum(1 for s in self.pending if _sector_key(s) == sec)
+            if (same_sec + 1) / total_pos > 0.5 and total_pos >= 3:
+                continue  # would concentrate too much in one sector
             price = r.price
             lot_cost = price * 100 * 1.0003
             if lot_cost > remaining_cash:

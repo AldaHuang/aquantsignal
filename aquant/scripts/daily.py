@@ -83,7 +83,7 @@ def main():
 
     # ── 7. Git push ──
     step("推送 GitHub...")
-    os.system("git add index.html reports/tracker.json reports/paper.json CHANGELOG.md watchlist.txt go.html")
+    os.system("git add now.html index.html reports/tracker.json reports/paper.json CHANGELOG.md watchlist.txt")
     os.system(f"git commit -m '{today} 每日推荐更新' 2>/dev/null || true")
     os.system("git push origin main 2>&1 | tail -1")
 
@@ -182,11 +182,11 @@ def _stamp_index(today):
         with open(idx_path, "w") as f:
             f.write(html)
 
-    # Regenerate now.html using the template generator
-    gen_script = os.path.join(ROOT, "generate_now.py")
+    # Regenerate now.html using gen.py (server-rendered, no JS data)
+    gen_script = os.path.join(ROOT, "gen.py")
     if os.path.exists(gen_script):
         import subprocess
-        subprocess.run([sys.executable, gen_script], capture_output=True)
+        subprocess.run([sys.executable, gen_script], check=True)
 
 
 if __name__ == "__main__":

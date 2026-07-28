@@ -327,14 +327,27 @@ def _build_trade_plan(rec, feed):
 
     rec.atr = round(atr, 2)
 
-    # Suggested entry: current price (or next bar's open)
+    # Dynamic multipliers based on volatility percentile
+    # Low vol → tighter stops (1.5×), high vol → wider stops (2.5×)
+    recent_atr = df["close"].pct_change().rolling(14).std().iloc[-1]
+    hist_atr = df["close"].pct_change().rolling(60).std()
+    hist_atr = float(hist_atr.dropna().quantile(0.5)) if len(hist_atr.dropna()) > 0 else recent_atr
+    vol_ratio = recent_atr / (hist_atr + 0.001)
+    if vol_ratio > 1.5:
+        sl_mult, tp_mult = 2.5, 4.0      # high vol: wider stops
+    elif vol_ratio > 1.0:
+        sl_mult, tp_mult = 2.0, 3.0      # normal
+    else:
+        sl_mult, tp_mult = 1.5, 2.5      # low vol: tighter stops
+
+    # Suggested entry: current price
     rec.entry = price
 
-    # Stop loss: entry - 2×ATR for longs
-    rec.stop_loss = round(price - 2.0 * atr, 2)
+    # Stop loss: entry - sl_mult×ATR
+    rec.stop_loss = round(price - sl_mult * atr, 2)
 
-    # Take profit: entry + 3×ATR (1.5:1 reward-to-risk)
-    rec.take_profit = round(price + 3.0 * atr, 2)
+    # Take profit: entry + tp_mult×ATR
+    rec.take_profit = round(price + tp_mult * atr, 2)
 
     # Position sizing: risk 2% of 10k = 200 CNY per trade
     risk_per_share = price - rec.stop_loss
