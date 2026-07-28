@@ -287,9 +287,26 @@ def _score_stock(symbol, strategy_results, feed):
 
     # Affordability check
     lot_cost = price * 100
-    if lot_cost > 10_000:
+    if lot_cost > 50_000:
         rec.reasons.append(f"一手需 ¥{lot_cost:,.0f}，资金不足")
         rec.score = max(0, rec.score - 15)
+
+    # ── Volume confirmation ──
+    try:
+        df = feed.get(symbol, start="2024-01-01")
+        if df is not None and len(df) > 40:
+            recent_vol = df["volume"].iloc[-5:].mean()
+            avg_vol = df["volume"].iloc[-40:].mean()
+            if avg_vol > 0:
+                vol_ratio = recent_vol / avg_vol
+                if vol_ratio > 1.5:
+                    rec.score = min(100, rec.score + 10)
+                    rec.reasons.append("放量明显(vol×{:.1f})".format(vol_ratio))
+                elif vol_ratio < 0.5:
+                    rec.score = max(0, rec.score - 10)
+                    rec.reasons.append("缩量明显(vol×{:.1f})".format(vol_ratio))
+    except Exception:
+        pass
 
     # ── Trade plan ──
     if rec.verdict in ("买入", "关注"):
