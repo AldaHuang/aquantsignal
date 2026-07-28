@@ -1,163 +1,122 @@
 {
   "updated": "2026-07-28",
-  "cash": 35240.0,
+  "cash": 35409.0,
   "initial_cash": 50000,
   "positions": {
     "300779": {
       "shares": 100,
-      "avg_cost": 77.22,
-      "entry_date": "2026-07-24",
+      "avg_cost": 76.99,
+      "entry_date": "2026-07-28",
       "current_price": 76.99,
-      "stop_loss": 64.38,
+      "stop_loss": 61.22,
       "name": "惠城环保",
-      "absent_days": 0,
-      "days_held": 3,
-      "peak_price": 77.22,
-      "trailing_activated": false
+      "filled_today": true
     },
     "600406": {
       "shares": 100,
-      "avg_cost": 23.58,
-      "entry_date": "2026-07-24",
+      "avg_cost": 23.56,
+      "entry_date": "2026-07-28",
       "current_price": 23.56,
-      "stop_loss": 22.1,
+      "stop_loss": 21.73,
       "name": "国电南瑞",
-      "absent_days": 0,
-      "days_held": 3,
-      "peak_price": 23.58,
-      "trailing_activated": false
+      "filled_today": true
     },
     "002422": {
       "shares": 100,
-      "avg_cost": 46.65,
-      "entry_date": "2026-07-24",
+      "avg_cost": 45.21,
+      "entry_date": "2026-07-28",
       "current_price": 45.21,
-      "stop_loss": 36.77,
+      "stop_loss": 34.66,
       "name": "科伦药业",
-      "absent_days": 0,
-      "days_held": 3,
-      "peak_price": 46.65,
-      "trailing_activated": false
+      "filled_today": true
     }
   },
   "pending": {},
   "history": [],
   "equity_log": [
     {
-      "date": "2026-07-24",
-      "time": "19:14",
+      "date": "2026-07-28",
+      "time": "22:25",
       "equity": 49985.0,
-      "cash": 35240.0,
-      "position_value": 14745.0,
+      "cash": 35409.0,
+      "position_value": 14576.0,
       "return_pct": -0.03
-    },
-    {
-      "date": "2026-07-27",
-      "time": "21:08",
-      "equity": 50327.0,
-      "cash": 35240.0,
-      "position_value": 15087.0,
-      "return_pct": 0.65
-    },
-    {
-      "date": "2026-07-28",
-      "time": "21:03",
-      "equity": 49816.0,
-      "cash": 35240.0,
-      "position_value": 14576.0,
-      "return_pct": -0.37
-    },
-    {
-      "date": "2026-07-28",
-      "time": "21:09",
-      "equity": 49816.0,
-      "cash": 35240.0,
-      "position_value": 14576.0,
-      "return_pct": -0.37
-    },
-    {
-      "date": "2026-07-28",
-      "time": "21:13",
-      "equity": 49816.0,
-      "cash": 35240.0,
-      "position_value": 14576.0,
-      "return_pct": -0.37
     }
   ],
   "order_log": [
     {
-      "time": "2026-07-24 19:14",
+      "time": "2026-07-28 22:25",
       "event": "ORDER_CREATED",
       "symbol": "300779",
       "name": "惠城环保",
       "side": "buy",
       "shares": 100,
-      "target_price": 77.22,
-      "stop_loss": 66.04
+      "target_price": 76.99,
+      "stop_loss": 61.22
     },
     {
-      "time": "2026-07-24 19:14",
+      "time": "2026-07-28 22:25",
       "event": "ORDER_CREATED",
       "symbol": "600406",
       "name": "国电南瑞",
       "side": "buy",
       "shares": 100,
-      "target_price": 23.58,
-      "stop_loss": 22.18
+      "target_price": 23.56,
+      "stop_loss": 21.73
     },
     {
-      "time": "2026-07-24 19:14",
+      "time": "2026-07-28 22:25",
       "event": "ORDER_CREATED",
       "symbol": "002422",
       "name": "科伦药业",
       "side": "buy",
       "shares": 100,
-      "target_price": 46.65,
-      "stop_loss": 37.96
+      "target_price": 45.21,
+      "stop_loss": 34.66
     },
     {
-      "time": "2026-07-24 19:14",
+      "time": "2026-07-28 22:25",
       "event": "ORDER_FILLED",
       "symbol": "300779",
       "name": "惠城环保",
       "side": "buy",
       "shares": 100,
-      "price": 77.22,
-      "value": 7722.0,
+      "price": 76.99,
+      "value": 7699.0,
       "commission": 5.0,
       "stamp_duty": 0,
       "cash_before": 50000,
-      "cash_after": 42273.0,
+      "cash_after": 42296.0,
       "reason": ""
     },
     {
-      "time": "2026-07-24 19:14",
+      "time": "2026-07-28 22:25",
       "event": "ORDER_FILLED",
       "symbol": "600406",
       "name": "国电南瑞",
       "side": "buy",
       "shares": 100,
-      "price": 23.58,
-      "value": 2358.0,
+      "price": 23.56,
+      "value": 2356.0,
       "commission": 5.0,
       "stamp_duty": 0,
-      "cash_before": 42273.0,
-      "cash_after": 39910.0,
+      "cash_before": 42296.0,
+      "cash_after": 39935.0,
       "reason": ""
     },
     {
-      "time": "2026-07-24 19:14",
+      "time": "2026-07-28 22:25",
       "event": "ORDER_FILLED",
       "symbol": "002422",
       "name": "科伦药业",
       "side": "buy",
       "shares": 100,
-      "price": 46.65,
-      "value": 4665.0,
+      "price": 45.21,
+      "value": 4521.0,
       "commission": 5.0,
       "stamp_duty": 0,
-      "cash_before": 39910.0,
-      "cash_after": 35240.0,
+      "cash_before": 39935.0,
+      "cash_after": 35409.0,
       "reason": ""
     }
   ]
