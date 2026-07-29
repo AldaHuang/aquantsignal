@@ -222,6 +222,34 @@ class DataFeed:
         """Return summary of cached data."""
         return self.cache.stats()
 
+    def get_intraday(self, symbol, scale=5, datalen=60):
+        """Get intraday minute-level kline data. scale: 5/15/30/60 minutes."""
+        from aquant.data.symbols import normalize, is_sh
+        symbol = normalize(symbol)
+        prefix = "sh" if is_sh(symbol) else "sz"
+        ssl_ctx = _ssl_context()
+
+        url = (f"{self.SINA_URL}?symbol={prefix}{symbol}"
+               f"&scale={scale}&ma=no&datalen={datalen}")
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0",
+            "Referer": "https://finance.sina.com.cn/",
+        })
+        resp = urllib.request.urlopen(req, timeout=15, context=ssl_ctx)
+        raw = json.loads(resp.read().decode("gbk"))
+        if not raw:
+            return None
+        df = pd.DataFrame(raw)
+        df.rename(columns={"day": "time", "open": "open", "high": "high",
+                          "low": "low", "close": "close", "volume": "volume"}, inplace=True)
+        keep = [c for c in ["time", "open", "high", "low", "close", "volume"] if c in df.columns]
+        df = df[keep].copy()
+        df["time"] = pd.to_datetime(df["time"])
+        for c in ["open", "high", "low", "close", "volume"]:
+            if c in df.columns:
+                df[c] = pd.to_numeric(df[c], errors="coerce")
+        return df
+
     def get_symbol_list(self):
         """Return list of all A-share symbols."""
         spot = self.get_realtime()

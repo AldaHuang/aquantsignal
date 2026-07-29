@@ -86,19 +86,30 @@ class PaperTrader:
                 pos["days_held"] += 1
                 pos["peak_price"] = max(pos["peak_price"], close)
 
-                # A: Take-profit
-                if close >= entry + 3 * risk_dist:
-                    self._close_position(sym, close, today, "止盈触发")
+                # Check intraday data for more precise exit triggers
+                intra_low, intra_high = low, high
+                try:
+                    idf = feed.get_intraday(sym, scale=5, datalen=60)
+                    if idf is not None and len(idf) > 0:
+                        intra_low = float(idf["low"].min())
+                        intra_high = float(idf["high"].max())
+                except Exception:
+                    pass
+
+                # A: Take-profit (check intraday high first)
+                if intra_high >= entry + 3 * risk_dist:
+                    exit_price = entry + 3 * risk_dist
+                    self._close_position(sym, exit_price, today, "止盈触发(盘中)")
                     continue
 
                 # B: Trailing stop (lock profit after +1.5x risk)
-                if close >= entry + 1.5 * risk_dist and not pos["trailing_activated"]:
+                if intra_high >= entry + 1.5 * risk_dist and not pos["trailing_activated"]:
                     pos["trailing_activated"] = True
                     pos["stop_loss"] = entry
 
-                # C: Stop loss
-                if low <= pos["stop_loss"]:
-                    self._close_position(sym, pos["stop_loss"], today, "止损触发")
+                # C: Stop loss (check intraday low first)
+                if intra_low <= pos["stop_loss"]:
+                    self._close_position(sym, pos["stop_loss"], today, "止损触发(盘中)")
                     continue
 
                 # D: Time exit (>20 days, no profit)
@@ -176,12 +187,12 @@ class PaperTrader:
                 "stop_loss": round(stop_loss, 2),
             })
 
-        # ── Step 3.5: Fill immediately if starting fresh (show positions now) ──
+        # ── Step 3.5: On fresh start, fill at today's open (closest to tomorrow's open) ──
         if feed and self.pending and not self.positions:
             for sym, order in list(self.pending.items()):
                 try:
                     df = feed.get(sym, force_refresh=True)
-                    fill_price = float(df["close"].iloc[-1])
+                    fill_price = float(df["open"].iloc[-1])  # today's open ≈ tomorrow's open
                     target = order["target_price"]
                     if 0.5 * target < fill_price < 2.0 * target:
                         order["symbol"] = sym
