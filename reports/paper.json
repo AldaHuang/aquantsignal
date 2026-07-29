@@ -1,31 +1,25 @@
 {
   "updated": "2026-07-29",
-  "cash": 43293.0,
+  "cash": 43046.0,
   "initial_cash": 50000,
   "positions": {
     "600406": {
       "shares": 100,
-      "avg_cost": 23.93,
+      "avg_cost": 23.9,
       "entry_date": "2026-07-29",
       "current_price": 23.93,
       "stop_loss": 22.57,
       "name": "国电南瑞",
-      "absent_days": 0,
-      "days_held": 1,
-      "peak_price": 23.93,
-      "trailing_activated": false
+      "filled_today": true
     },
     "002422": {
       "shares": 100,
-      "avg_cost": 43.04,
+      "avg_cost": 45.54,
       "entry_date": "2026-07-29",
       "current_price": 43.04,
       "stop_loss": 32.4,
       "name": "科伦药业",
-      "absent_days": 0,
-      "days_held": 1,
-      "peak_price": 43.04,
-      "trailing_activated": false
+      "filled_today": true
     }
   },
   "pending": {},
@@ -33,32 +27,16 @@
   "equity_log": [
     {
       "date": "2026-07-29",
-      "time": "18:05",
-      "equity": 49990.0,
-      "cash": 43293.0,
+      "time": "19:37",
+      "equity": 49743.0,
+      "cash": 43046.0,
       "position_value": 6697.0,
-      "return_pct": -0.02
-    },
-    {
-      "date": "2026-07-29",
-      "time": "18:08",
-      "equity": 49990.0,
-      "cash": 43293.0,
-      "position_value": 6697.0,
-      "return_pct": -0.02
-    },
-    {
-      "date": "2026-07-29",
-      "time": "18:22",
-      "equity": 49990.0,
-      "cash": 43293.0,
-      "position_value": 6697.0,
-      "return_pct": -0.02
+      "return_pct": -0.51
     }
   ],
   "order_log": [
     {
-      "time": "2026-07-29 18:05",
+      "time": "2026-07-29 19:37",
       "event": "ORDER_CREATED",
       "symbol": "600406",
       "name": "国电南瑞",
@@ -68,7 +46,7 @@
       "stop_loss": 22.57
     },
     {
-      "time": "2026-07-29 18:05",
+      "time": "2026-07-29 19:37",
       "event": "ORDER_CREATED",
       "symbol": "002422",
       "name": "科伦药业",
@@ -78,34 +56,40 @@
       "stop_loss": 32.4
     },
     {
-      "time": "2026-07-29 18:05",
+      "time": "2026-07-29 19:37",
       "event": "ORDER_FILLED",
       "symbol": "600406",
       "name": "国电南瑞",
       "side": "buy",
       "shares": 100,
-      "price": 23.93,
-      "value": 2393.0,
+      "price": 23.9,
+      "value": 2390.0,
       "commission": 5.0,
       "stamp_duty": 0,
+      "total_cost": 2395.0,
       "cash_before": 50000,
-      "cash_after": 47602.0,
-      "reason": ""
+      "cash_after": 47605.0,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
     },
     {
-      "time": "2026-07-29 18:05",
+      "time": "2026-07-29 19:37",
       "event": "ORDER_FILLED",
       "symbol": "002422",
       "name": "科伦药业",
       "side": "buy",
       "shares": 100,
-      "price": 43.04,
-      "value": 4304.0,
+      "price": 45.54,
+      "value": 4554.0,
       "commission": 5.0,
       "stamp_duty": 0,
-      "cash_before": 47602.0,
-      "cash_after": 43293.0,
-      "reason": ""
+      "total_cost": 4559.0,
+      "cash_before": 47605.0,
+      "cash_after": 43046.0,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
     }
   ]
 }
