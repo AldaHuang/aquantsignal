@@ -303,15 +303,18 @@ class PaperTrader:
             if pos["shares"] < 100:
                 del self.positions[sym]
 
-        # ── Log every fill ──
+        # ── Log every fill with full details ──
         self._log_event("ORDER_FILLED", sym, {
             "name": order.get("name", sym), "side": side, "shares": shares,
             "price": round(price, 2), "value": round(value, 2),
             "commission": round(commission, 2),
             "stamp_duty": round(stamp_duty, 2),
+            "total_cost": round(value + commission + stamp_duty, 2),
             "cash_before": round(cash_before, 2),
             "cash_after": round(self.cash, 2),
             "reason": order.get("reason", ""),
+            "pnl": round(pnl, 2) if side == "sell" else 0,
+            "pnl_pct": round(pnl_pct, 2) if side == "sell" else 0,
         })
 
     def _close_position(self, sym, price, date_str, reason):

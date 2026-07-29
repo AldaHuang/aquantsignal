@@ -65,15 +65,39 @@ for pos in pp.get("positions_list", []):
 # Activity timeline (order_log)
 olog = pp.get("order_log", [])
 if olog:
-    paper_html += '<h3>操作记录</h3>'
-    for o in reversed(olog[-20:]):
+    paper_html += '<h3>成交明细</h3>'
+    for o in reversed(olog[-30:]):
         side = o.get("side", "")
         isBuy = side == "buy"
         icon = "🟢" if isBuy else "🔴"
         label = "买入" if isBuy else "卖出"
         cl = "#27ae60" if isBuy else "#c0392b"
-        t = o.get("time", "")[5:16]
-        paper_html += f'<div style=font-size:11px;padding:3px 0;display:flex;gap:6px><span style=color:#666;min-width:85px;font-size:10px>{icon} {t}</span><span style=flex:1><b style=color:{cl}>{label}</b> {esc(o.get("name",""))} {o.get("shares","")}股 ¥{o.get("price",o.get("target_price",0)):.2f}</span></div>'
+        t = o.get("time", "")[:16]
+        shares = o.get("shares", 0)
+        price = o.get("price", o.get("target_price", 0))
+        value = o.get("value", shares * price)
+        comm = o.get("commission", 0)
+        tax = o.get("stamp_duty", 0)
+        total = o.get("total_cost", value + comm + tax)
+        pnl = o.get("pnl", 0)
+        pnl_pct = o.get("pnl_pct", 0)
+        cash_after = o.get("cash_after", 0)
+        reason = o.get("reason", "")
+        paper_html += f'<div class=cd style=padding:8px 10px;margin:3px 0>'
+        paper_html += f'<div style=display:flex;justify-content:space-between;align-items:center>'
+        paper_html += f'<span><b style=color:{cl}>{icon} {label}</b> <span style=font-size:12px>{esc(o.get("name",""))}</span></span>'
+        paper_html += f'<span style=font-size:11px;color:#666;font-family:monospace>{t}</span></div>'
+        paper_html += f'<div style=display:flex;justify-content:space-between;font-size:11px;color:#666;margin-top:2px>'
+        paper_html += f'<span>{shares}股 × ¥{price:.2f} = ¥{value:,.0f}</span>'
+        if comm or tax:
+            paper_html += f'<span>佣金¥{comm:.1f}' + (f' 印花税¥{tax:.1f}' if tax > 0 else '') + '</span>'
+        paper_html += '</div>'
+        if pnl != 0:
+            pc = "#c0392b" if pnl > 0 else "#27ae60"
+            paper_html += f'<div style=font-size:12px;color:{pc};font-weight:600;margin-top:2px>盈亏 ¥{pnl:+.2f} ({pnl_pct:+.2f}%) | 剩余 ¥{cash_after:,.0f}</div>'
+        if reason:
+            paper_html += f'<div style=font-size:10px;color:#d47800;margin-top:2px>{esc(reason)}</div>'
+        paper_html += '</div>'
 
 hist = pp.get("history", [])
 if hist:
