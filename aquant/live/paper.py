@@ -65,13 +65,14 @@ class PaperTrader:
         # ── Step 2: Exit rules on existing positions ──
         for sym in list(self.positions):
             pos = self.positions[sym]
-            # Skip positions just filled today (avoid immediate stop-out on gap)
-            if pos.pop("filled_today", False):
-                continue
+            # Ensure all keys exist (even for positions from older runs)
             pos.setdefault("days_held", 0)
             pos.setdefault("peak_price", pos.get("avg_cost", 0))
             pos.setdefault("trailing_activated", False)
             pos.setdefault("absent_days", 0)
+            # Skip positions just filled today (avoid immediate stop-out on gap)
+            if pos.pop("filled_today", False):
+                continue
 
             if not feed: continue
 

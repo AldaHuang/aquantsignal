@@ -41,6 +41,8 @@ def main():
             command="recommend", auto=True, top_n=20, max_price=100,
             no_star=True, no_save=False, no_update=False, save=True,
             update_watchlist=True, watchlist=None, symbols=None, min_score=0, top=20,
+            plot=False, mock=False, param=None, start=None, end=None,
+            cash=None, fill_at=None, trades=20, port=8501,
         )
         cmd_recommend(ns)
     except SystemExit:
