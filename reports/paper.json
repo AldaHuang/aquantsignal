@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29",
+  "updated": "2026-07-31",
   "cash": 43046.0,
   "initial_cash": 50000,
   "positions": {
@@ -7,19 +7,25 @@
       "shares": 100,
       "avg_cost": 23.9,
       "entry_date": "2026-07-29",
-      "current_price": 23.93,
-      "stop_loss": 22.57,
+      "current_price": 24.35,
+      "stop_loss": 23.01,
       "name": "国电南瑞",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 23.9,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "002422": {
       "shares": 100,
       "avg_cost": 45.54,
       "entry_date": "2026-07-29",
-      "current_price": 43.04,
+      "current_price": 43.44,
       "stop_loss": 32.4,
       "name": "科伦药业",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 45.54,
+      "trailing_activated": false,
+      "absent_days": 1
     }
   },
   "pending": {},
@@ -32,6 +38,14 @@
       "cash": 43046.0,
       "position_value": 6697.0,
       "return_pct": -0.51
+    },
+    {
+      "date": "2026-07-31",
+      "time": "18:45",
+      "equity": 49825.0,
+      "cash": 43046.0,
+      "position_value": 6779.0,
+      "return_pct": -0.35
     }
   ],
   "order_log": [
