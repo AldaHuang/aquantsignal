@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-02",
-  "cash": 43046.0,
+  "updated": "2026-08-03",
+  "cash": 47380.656,
   "initial_cash": 50000,
   "positions": {
     "600406": {
@@ -10,26 +10,30 @@
       "current_price": 24.35,
       "stop_loss": 23.01,
       "name": "国电南瑞",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 24.35,
       "trailing_activated": false,
       "absent_days": 0
-    },
-    "002422": {
-      "shares": 100,
-      "avg_cost": 45.54,
-      "entry_date": "2026-07-29",
-      "current_price": 43.44,
-      "stop_loss": 32.4,
-      "name": "科伦药业",
-      "days_held": 1,
-      "peak_price": 45.54,
-      "trailing_activated": false,
-      "absent_days": 2
     }
   },
   "pending": {},
-  "history": [],
+  "history": [
+    {
+      "symbol": "002422",
+      "name": "科伦药业",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 45.54,
+      "exit_price": 43.44,
+      "exit_date": "2026-08-03",
+      "entry_date": "2026-07-29",
+      "pnl": -219.34,
+      "pnl_pct": -4.82,
+      "commission": 5.0,
+      "stamp_duty": 4.34,
+      "reason": "信号消失"
+    }
+  ],
   "equity_log": [
     {
       "date": "2026-07-29",
@@ -54,6 +58,14 @@
       "cash": 43046.0,
       "position_value": 6779.0,
       "return_pct": -0.35
+    },
+    {
+      "date": "2026-08-03",
+      "time": "09:22",
+      "equity": 49815.66,
+      "cash": 47380.66,
+      "position_value": 2435.0,
+      "return_pct": -0.37
     }
   ],
   "order_log": [
@@ -112,6 +124,24 @@
       "reason": "",
       "pnl": 0,
       "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-03 09:22",
+      "event": "ORDER_FILLED",
+      "symbol": "002422",
+      "name": "科伦药业",
+      "side": "sell",
+      "shares": 100,
+      "price": 43.44,
+      "value": 4344.0,
+      "commission": 5.0,
+      "stamp_duty": 4.34,
+      "total_cost": 4353.34,
+      "cash_before": 43046.0,
+      "cash_after": 47380.66,
+      "reason": "信号消失",
+      "pnl": -219.34,
+      "pnl_pct": -4.82
     }
   ]
 }
