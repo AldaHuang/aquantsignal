@@ -1,30 +1,30 @@
 {
-  "updated": "2026-08-03",
-  "cash": 47380.656,
+  "updated": "2026-08-04",
+  "cash": 41428.209,
   "initial_cash": 50000,
   "positions": {
-    "600406": {
+    "300779": {
       "shares": 100,
-      "avg_cost": 23.9,
-      "entry_date": "2026-07-29",
-      "current_price": 25.07,
-      "stop_loss": 23.71,
-      "name": "国电南瑞",
-      "days_held": 3,
-      "peak_price": 25.07,
+      "avg_cost": 83.87,
+      "entry_date": "2026-08-04",
+      "current_price": 82.43,
+      "stop_loss": 63.73,
+      "name": "惠城环保",
+      "days_held": 0,
+      "peak_price": 83.87,
       "trailing_activated": false,
       "absent_days": 0
     }
   },
   "pending": {
-    "300779": {
+    "600406": {
       "shares": 100,
-      "target_price": 82.43,
-      "stop_loss": 63.73,
-      "signal_date": "2026-08-03",
-      "name": "惠城环保",
+      "target_price": 25.07,
+      "stop_loss": 23.71,
+      "signal_date": "2026-08-04",
+      "name": "国电南瑞",
       "side": "buy",
-      "created_time": "18:12"
+      "created_time": "10:18"
     }
   },
   "history": [
@@ -42,6 +42,21 @@
       "commission": 5.0,
       "stamp_duty": 4.34,
       "reason": "信号消失"
+    },
+    {
+      "symbol": "600406",
+      "name": "国电南瑞",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 23.9,
+      "exit_price": 24.47,
+      "exit_date": "2026-08-04",
+      "entry_date": "2026-07-29",
+      "pnl": 49.55,
+      "pnl_pct": 2.07,
+      "commission": 5.0,
+      "stamp_duty": 2.45,
+      "reason": "止盈触发(盘中)"
     }
   ],
   "equity_log": [
@@ -84,6 +99,14 @@
       "cash": 47380.66,
       "position_value": 2507.0,
       "return_pct": -0.22
+    },
+    {
+      "date": "2026-08-04",
+      "time": "10:18",
+      "equity": 49671.21,
+      "cash": 41428.21,
+      "position_value": 8243.0,
+      "return_pct": -0.66
     }
   ],
   "order_log": [
@@ -170,6 +193,52 @@
       "shares": 100,
       "target_price": 82.43,
       "stop_loss": 63.73
+    },
+    {
+      "time": "2026-08-04 10:18",
+      "event": "ORDER_FILLED",
+      "symbol": "300779",
+      "name": "惠城环保",
+      "side": "buy",
+      "shares": 100,
+      "price": 83.87,
+      "value": 8387.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 8392.0,
+      "cash_before": 47380.66,
+      "cash_after": 38988.66,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-04 10:19",
+      "event": "ORDER_FILLED",
+      "symbol": "600406",
+      "name": "国电南瑞",
+      "side": "sell",
+      "shares": 100,
+      "price": 24.47,
+      "value": 2447.0,
+      "commission": 5.0,
+      "stamp_duty": 2.45,
+      "total_cost": 2454.45,
+      "cash_before": 38988.66,
+      "cash_after": 41428.21,
+      "reason": "止盈触发(盘中)",
+      "pnl": 49.55,
+      "pnl_pct": 2.07
+    },
+    {
+      "time": "2026-08-04 10:19",
+      "event": "ORDER_CREATED",
+      "symbol": "600406",
+      "name": "国电南瑞",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 25.07,
+      "stop_loss": 23.71
     }
   ]
 }
