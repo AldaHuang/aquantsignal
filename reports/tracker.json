@@ -14554,94 +14554,119 @@
     },
     {
       "date": "2026-08-06",
-      "time": "01:19",
+      "time": "21:05",
       "picks": [
+        {
+          "symbol": "000506",
+          "name": "招金黄金",
+          "verdict": "买入",
+          "score": 75,
+          "price": 16.48,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号新鲜（近期触发）",
+            "历史回测表现一般，谨慎",
+            "放量明显(vol×1.6)",
+            "止损¥14.44(-12.4%) 止盈¥19.53(+18.5%) 仓位16%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 16.48,
+          "stop_loss": 14.44,
+          "take_profit": 19.53,
+          "atr": 1.02,
+          "position_pct": 16,
+          "risk_pct": 2.0
+        },
         {
           "symbol": "300209",
           "name": "行云科技",
           "verdict": "买入",
           "score": 67,
-          "price": 36.97,
+          "price": 34.67,
           "reasons": [
             "2/3 策略看多（均线交叉, 海龟突破）",
             "信号较新",
             "历史回测表现一般，谨慎",
-            "放量明显(vol×1.6)",
-            "止损¥27.35(-26.0%) 止盈¥52.36(+41.6%) 仓位36%"
+            "放量明显(vol×1.8)",
+            "止损¥25.18(-27.4%) 止盈¥49.85(+43.8%) 仓位34%"
           ],
           "signals": {
             "均线交叉": "BUY",
             "海龟突破": "BUY",
             "布林回归": "SELL"
           },
-          "entry": 36.97,
-          "stop_loss": 27.35,
-          "take_profit": 52.36,
-          "atr": 3.85,
-          "position_pct": 36,
-          "risk_pct": 9.6
+          "entry": 34.67,
+          "stop_loss": 25.18,
+          "take_profit": 49.85,
+          "atr": 3.79,
+          "position_pct": 34,
+          "risk_pct": 9.5
         },
         {
-          "symbol": "300779",
-          "name": "惠城环保",
+          "symbol": "000426",
+          "name": "兴业银锡",
           "verdict": "买入",
-          "score": 50,
-          "price": 86.61,
+          "score": 62,
+          "price": 37.58,
           "reasons": [
             "2/3 策略看多（均线交叉, 海龟突破）",
-            "信号较旧，需确认",
-            "历史回测表现一般，谨慎",
-            "止损¥68.42(-21.0%) 止盈¥115.71(+33.6%) 仓位86%"
+            "信号较新",
+            "历史回测表现尚可",
+            "止损¥31.73(-15.6%) 止盈¥46.94(+24.9%) 仓位37%"
           ],
           "signals": {
             "均线交叉": "BUY",
             "海龟突破": "BUY",
             "布林回归": "SELL"
           },
-          "entry": 86.61,
-          "stop_loss": 68.42,
-          "take_profit": 115.71,
-          "atr": 7.27,
-          "position_pct": 86,
-          "risk_pct": 18.2
+          "entry": 37.58,
+          "stop_loss": 31.73,
+          "take_profit": 46.94,
+          "atr": 2.34,
+          "position_pct": 37,
+          "risk_pct": 5.8
         },
         {
-          "symbol": "600406",
-          "name": "国电南瑞",
+          "symbol": "601872",
+          "name": "招商轮船",
           "verdict": "买入",
-          "score": 46,
-          "price": 24.54,
+          "score": 52,
+          "price": 17.88,
           "reasons": [
             "2/3 策略看多（均线交叉, 海龟突破）",
             "信号较新",
             "历史回测表现一般，谨慎",
-            "止损¥23.13(-5.7%) 止盈¥26.66(+8.6%) 仓位24%"
+            "止损¥15.97(-10.7%) 止盈¥20.74(+16.0%) 仓位17%"
           ],
           "signals": {
             "均线交叉": "BUY",
             "海龟突破": "BUY",
             "布林回归": "SELL"
           },
-          "entry": 24.54,
-          "stop_loss": 23.13,
-          "take_profit": 26.66,
-          "atr": 0.71,
-          "position_pct": 24,
-          "risk_pct": 1.4
+          "entry": 17.88,
+          "stop_loss": 15.97,
+          "take_profit": 20.74,
+          "atr": 0.95,
+          "position_pct": 17,
+          "risk_pct": 1.9
         },
         {
           "symbol": "301526",
           "name": "国际复材",
           "verdict": "卖出",
-          "score": 41,
-          "price": 34.19,
+          "score": 46,
+          "price": 35.2,
           "reasons": [
-            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
-            "信号较旧，需确认",
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
             "历史回测表现优秀"
           ],
           "signals": {
-            "均线交叉": "SELL",
+            "均线交叉": "BUY",
             "海龟突破": "SELL",
             "布林回归": "SELL"
           },
@@ -14653,16 +14678,39 @@
           "risk_pct": 0.0
         },
         {
-          "symbol": "000506",
-          "name": "招金黄金",
-          "verdict": "卖出",
-          "score": 36,
-          "price": 15.62,
+          "symbol": "600406",
+          "name": "国电南瑞",
+          "verdict": "买入",
+          "score": 46,
+          "price": 24.17,
           "reasons": [
-            "2/3 策略看空（海龟突破, 布林回归）",
+            "2/3 策略看多（均线交叉, 海龟突破）",
             "信号较新",
             "历史回测表现一般，谨慎",
-            "放量明显(vol×1.6)"
+            "止损¥22.76(-5.8%) 止盈¥26.29(+8.8%) 仓位24%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 24.17,
+          "stop_loss": 22.76,
+          "take_profit": 26.29,
+          "atr": 0.71,
+          "position_pct": 24,
+          "risk_pct": 1.4
+        },
+        {
+          "symbol": "601138",
+          "name": "工业富联",
+          "verdict": "卖出",
+          "score": 37,
+          "price": 68.27,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号新鲜（近期触发）",
+            "历史回测表现一般，谨慎"
           ],
           "signals": {
             "均线交叉": "BUY",
@@ -14680,8 +14728,8 @@
           "symbol": "002558",
           "name": "巨人网络",
           "verdict": "卖出",
-          "score": 31,
-          "price": 30.07,
+          "score": 30,
+          "price": 29.26,
           "reasons": [
             "2/3 策略看空（海龟突破, 布林回归）",
             "信号较新",
@@ -14704,7 +14752,7 @@
           "name": "珂玛科技",
           "verdict": "卖出",
           "score": 27,
-          "price": 93.73,
+          "price": 95.57,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14723,11 +14771,34 @@
           "risk_pct": 0.0
         },
         {
+          "symbol": "600497",
+          "name": "驰宏锌锗",
+          "verdict": "卖出",
+          "score": 27,
+          "price": 10.32,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
           "symbol": "301511",
           "name": "德福科技",
           "verdict": "卖出",
           "score": 26,
-          "price": 76.76,
+          "price": 78.22,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14750,7 +14821,7 @@
           "name": "旭光电子",
           "verdict": "卖出",
           "score": 25,
-          "price": 25.37,
+          "price": 26.48,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14773,7 +14844,7 @@
           "name": "铜冠铜箔",
           "verdict": "卖出",
           "score": 25,
-          "price": 94.9,
+          "price": 99.0,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14796,7 +14867,7 @@
           "name": "智微智能",
           "verdict": "卖出",
           "score": 24,
-          "price": 77.01,
+          "price": 83.54,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14815,34 +14886,11 @@
           "risk_pct": 0.0
         },
         {
-          "symbol": "000426",
-          "name": "兴业银锡",
-          "verdict": "卖出",
-          "score": 24,
-          "price": 36.3,
-          "reasons": [
-            "2/3 策略看空（海龟突破, 布林回归）",
-            "信号较旧，需确认",
-            "历史回测表现尚可"
-          ],
-          "signals": {
-            "均线交叉": "BUY",
-            "海龟突破": "SELL",
-            "布林回归": "SELL"
-          },
-          "entry": 0.0,
-          "stop_loss": 0.0,
-          "take_profit": 0.0,
-          "atr": 0.0,
-          "position_pct": 0,
-          "risk_pct": 0.0
-        },
-        {
           "symbol": "002484",
           "name": "江海股份",
           "verdict": "卖出",
           "score": 24,
-          "price": 64.24,
+          "price": 65.09,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14865,7 +14913,7 @@
           "name": "中钨高新",
           "verdict": "卖出",
           "score": 23,
-          "price": 57.43,
+          "price": 62.5,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14888,7 +14936,7 @@
           "name": "东材科技",
           "verdict": "卖出",
           "score": 23,
-          "price": 39.33,
+          "price": 41.76,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14907,34 +14955,11 @@
           "risk_pct": 0.0
         },
         {
-          "symbol": "601138",
-          "name": "工业富联",
-          "verdict": "卖出",
-          "score": 22,
-          "price": 65.92,
-          "reasons": [
-            "2/3 策略看空（均线交叉, 海龟突破）",
-            "信号较旧，需确认",
-            "历史回测表现一般，谨慎"
-          ],
-          "signals": {
-            "均线交叉": "SELL",
-            "海龟突破": "SELL",
-            "布林回归": "BUY"
-          },
-          "entry": 0.0,
-          "stop_loss": 0.0,
-          "take_profit": 0.0,
-          "atr": 0.0,
-          "position_pct": 0,
-          "risk_pct": 0.0
-        },
-        {
           "symbol": "002536",
           "name": "飞龙股份",
           "verdict": "卖出",
           "score": 21,
-          "price": 38.17,
+          "price": 37.85,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14956,8 +14981,8 @@
           "symbol": "600667",
           "name": "太极实业",
           "verdict": "卖出",
-          "score": 19,
-          "price": 18.45,
+          "score": 20,
+          "price": 19.17,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14980,7 +15005,439 @@
           "name": "信维通信",
           "verdict": "卖出",
           "score": 18,
-          "price": 63.95,
+          "price": 65.38,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        }
+      ],
+      "validation": {
+        "checked_date": "2026-08-07",
+        "direction_accuracy": 1.0,
+        "avg_gap_pct": 1.18
+      }
+    },
+    {
+      "date": "2026-08-07",
+      "time": "09:36",
+      "picks": [
+        {
+          "symbol": "000506",
+          "name": "招金黄金",
+          "verdict": "买入",
+          "score": 75,
+          "price": 16.48,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号新鲜（近期触发）",
+            "历史回测表现一般，谨慎",
+            "放量明显(vol×1.6)",
+            "止损¥14.44(-12.4%) 止盈¥19.53(+18.5%) 仓位16%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 16.48,
+          "stop_loss": 14.44,
+          "take_profit": 19.53,
+          "atr": 1.02,
+          "position_pct": 16,
+          "risk_pct": 2.0
+        },
+        {
+          "symbol": "300209",
+          "name": "行云科技",
+          "verdict": "买入",
+          "score": 64,
+          "price": 34.67,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "放量明显(vol×1.8)",
+            "止损¥25.18(-27.4%) 止盈¥49.85(+43.8%) 仓位34%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 34.67,
+          "stop_loss": 25.18,
+          "take_profit": 49.85,
+          "atr": 3.79,
+          "position_pct": 34,
+          "risk_pct": 9.5
+        },
+        {
+          "symbol": "000426",
+          "name": "兴业银锡",
+          "verdict": "买入",
+          "score": 62,
+          "price": 37.58,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现尚可",
+            "止损¥31.73(-15.6%) 止盈¥46.94(+24.9%) 仓位37%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 37.58,
+          "stop_loss": 31.73,
+          "take_profit": 46.94,
+          "atr": 2.34,
+          "position_pct": 37,
+          "risk_pct": 5.8
+        },
+        {
+          "symbol": "601872",
+          "name": "招商轮船",
+          "verdict": "买入",
+          "score": 52,
+          "price": 17.88,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "止损¥15.97(-10.7%) 止盈¥20.74(+16.0%) 仓位17%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 17.88,
+          "stop_loss": 15.97,
+          "take_profit": 20.74,
+          "atr": 0.95,
+          "position_pct": 17,
+          "risk_pct": 1.9
+        },
+        {
+          "symbol": "301526",
+          "name": "国际复材",
+          "verdict": "卖出",
+          "score": 46,
+          "price": 35.2,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现优秀"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600406",
+          "name": "国电南瑞",
+          "verdict": "买入",
+          "score": 46,
+          "price": 24.17,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "止损¥22.76(-5.8%) 止盈¥26.29(+8.8%) 仓位24%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 24.17,
+          "stop_loss": 22.76,
+          "take_profit": 26.29,
+          "atr": 0.71,
+          "position_pct": 24,
+          "risk_pct": 1.4
+        },
+        {
+          "symbol": "601138",
+          "name": "工业富联",
+          "verdict": "卖出",
+          "score": 37,
+          "price": 68.27,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号新鲜（近期触发）",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002558",
+          "name": "巨人网络",
+          "verdict": "卖出",
+          "score": 27,
+          "price": 29.26,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600497",
+          "name": "驰宏锌锗",
+          "verdict": "卖出",
+          "score": 27,
+          "price": 10.32,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "301511",
+          "name": "德福科技",
+          "verdict": "卖出",
+          "score": 26,
+          "price": 78.22,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "301611",
+          "name": "珂玛科技",
+          "verdict": "卖出",
+          "score": 25,
+          "price": 95.57,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "301217",
+          "name": "铜冠铜箔",
+          "verdict": "卖出",
+          "score": 25,
+          "price": 99.0,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "001339",
+          "name": "智微智能",
+          "verdict": "卖出",
+          "score": 24,
+          "price": 83.54,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002484",
+          "name": "江海股份",
+          "verdict": "卖出",
+          "score": 24,
+          "price": 65.09,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600353",
+          "name": "旭光电子",
+          "verdict": "卖出",
+          "score": 23,
+          "price": 26.48,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "000657",
+          "name": "中钨高新",
+          "verdict": "卖出",
+          "score": 23,
+          "price": 62.5,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "601208",
+          "name": "东材科技",
+          "verdict": "卖出",
+          "score": 23,
+          "price": 41.76,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002536",
+          "name": "飞龙股份",
+          "verdict": "卖出",
+          "score": 21,
+          "price": 37.85,
           "reasons": [
             "2/3 策略看空（均线交叉, 海龟突破）",
             "信号较旧，需确认",
@@ -14999,20 +15456,1475 @@
           "risk_pct": 0.0
         },
         {
-          "symbol": "601872",
-          "name": "招商轮船",
+          "symbol": "600667",
+          "name": "太极实业",
+          "verdict": "卖出",
+          "score": 20,
+          "price": 19.17,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "300136",
+          "name": "信维通信",
           "verdict": "卖出",
           "score": 16,
-          "price": 18.1,
+          "price": 65.38,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        }
+      ],
+      "validation": {
+        "checked_date": "2026-08-08",
+        "direction_accuracy": 0.6,
+        "avg_gap_pct": 0.18
+      }
+    },
+    {
+      "date": "2026-08-08",
+      "time": "11:17",
+      "picks": [
+        {
+          "symbol": "300209",
+          "name": "行云科技",
+          "verdict": "买入",
+          "score": 64,
+          "price": 37.19,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "放量明显(vol×1.9)",
+            "止损¥27.73(-25.4%) 止盈¥52.32(+40.7%) 仓位37%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 37.19,
+          "stop_loss": 27.73,
+          "take_profit": 52.32,
+          "atr": 3.78,
+          "position_pct": 37,
+          "risk_pct": 9.5
+        },
+        {
+          "symbol": "000506",
+          "name": "招金黄金",
+          "verdict": "买入",
+          "score": 62,
+          "price": 18.13,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现尚可",
+            "止损¥15.94(-12.1%) 止盈¥21.41(+18.1%) 仓位18%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 18.13,
+          "stop_loss": 15.94,
+          "take_profit": 21.41,
+          "atr": 1.1,
+          "position_pct": 18,
+          "risk_pct": 2.2
+        },
+        {
+          "symbol": "000426",
+          "name": "兴业银锡",
+          "verdict": "买入",
+          "score": 59,
+          "price": 39.48,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现尚可",
+            "止损¥33.62(-14.8%) 止盈¥48.86(+23.8%) 仓位39%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 39.48,
+          "stop_loss": 33.62,
+          "take_profit": 48.86,
+          "atr": 2.35,
+          "position_pct": 39,
+          "risk_pct": 5.9
+        },
+        {
+          "symbol": "601872",
+          "name": "招商轮船",
+          "verdict": "买入",
+          "score": 49,
+          "price": 17.98,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "止损¥16.05(-10.7%) 止盈¥20.87(+16.1%) 仓位17%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 17.98,
+          "stop_loss": 16.05,
+          "take_profit": 20.87,
+          "atr": 0.96,
+          "position_pct": 17,
+          "risk_pct": 1.9
+        },
+        {
+          "symbol": "301526",
+          "name": "国际复材",
+          "verdict": "卖出",
+          "score": 46,
+          "price": 38.32,
           "reasons": [
             "2/3 策略看空（海龟突破, 布林回归）",
-            "信号较旧，需确认",
+            "信号较新",
+            "历史回测表现优秀"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600406",
+          "name": "国电南瑞",
+          "verdict": "买入",
+          "score": 46,
+          "price": 24.12,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "止损¥22.87(-5.2%) 止盈¥26.00(+7.8%) 仓位24%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 24.12,
+          "stop_loss": 22.87,
+          "take_profit": 26.0,
+          "atr": 0.63,
+          "position_pct": 24,
+          "risk_pct": 1.2
+        },
+        {
+          "symbol": "000657",
+          "name": "中钨高新",
+          "verdict": "卖出",
+          "score": 35,
+          "price": 67.01,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600667",
+          "name": "太极实业",
+          "verdict": "卖出",
+          "score": 35,
+          "price": 19.53,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号新鲜（近期触发）",
             "历史回测表现一般，谨慎"
           ],
           "signals": {
             "均线交叉": "BUY",
             "海龟突破": "SELL",
             "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "601208",
+          "name": "东材科技",
+          "verdict": "卖出",
+          "score": 35,
+          "price": 45.94,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "001339",
+          "name": "智微智能",
+          "verdict": "卖出",
+          "score": 34,
+          "price": 84.65,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "601138",
+          "name": "工业富联",
+          "verdict": "卖出",
+          "score": 34,
+          "price": 68.18,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "301511",
+          "name": "德福科技",
+          "verdict": "卖出",
+          "score": 27,
+          "price": 90.9,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002558",
+          "name": "巨人网络",
+          "verdict": "卖出",
+          "score": 27,
+          "price": 29.34,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002422",
+          "name": "科伦药业",
+          "verdict": "卖出",
+          "score": 26,
+          "price": 45.44,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002484",
+          "name": "江海股份",
+          "verdict": "卖出",
+          "score": 24,
+          "price": 67.58,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600497",
+          "name": "驰宏锌锗",
+          "verdict": "卖出",
+          "score": 24,
+          "price": 10.45,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600353",
+          "name": "旭光电子",
+          "verdict": "卖出",
+          "score": 23,
+          "price": 28.03,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002536",
+          "name": "飞龙股份",
+          "verdict": "卖出",
+          "score": 22,
+          "price": 39.61,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600226",
+          "name": "亨通股份",
+          "verdict": "卖出",
+          "score": 18,
+          "price": 6.17,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "300136",
+          "name": "信维通信",
+          "verdict": "卖出",
+          "score": 16,
+          "price": 68.12,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        }
+      ],
+      "validation": {
+        "checked_date": "2026-08-09",
+        "direction_accuracy": 0.4,
+        "avg_gap_pct": -4.02
+      }
+    },
+    {
+      "date": "2026-08-09",
+      "time": "08:23",
+      "picks": [
+        {
+          "symbol": "300209",
+          "name": "行云科技",
+          "verdict": "买入",
+          "score": 64,
+          "price": 37.19,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "放量明显(vol×1.9)",
+            "止损¥27.73(-25.4%) 止盈¥52.32(+40.7%) 仓位37%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 37.19,
+          "stop_loss": 27.73,
+          "take_profit": 52.32,
+          "atr": 3.78,
+          "position_pct": 37,
+          "risk_pct": 9.5
+        },
+        {
+          "symbol": "000426",
+          "name": "兴业银锡",
+          "verdict": "买入",
+          "score": 59,
+          "price": 39.48,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现尚可",
+            "止损¥33.62(-14.8%) 止盈¥48.86(+23.8%) 仓位39%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 39.48,
+          "stop_loss": 33.62,
+          "take_profit": 48.86,
+          "atr": 2.35,
+          "position_pct": 39,
+          "risk_pct": 5.9
+        },
+        {
+          "symbol": "000506",
+          "name": "招金黄金",
+          "verdict": "买入",
+          "score": 58,
+          "price": 18.13,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现尚可",
+            "止损¥15.94(-12.1%) 止盈¥21.41(+18.1%) 仓位18%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 18.13,
+          "stop_loss": 15.94,
+          "take_profit": 21.41,
+          "atr": 1.1,
+          "position_pct": 18,
+          "risk_pct": 2.2
+        },
+        {
+          "symbol": "601872",
+          "name": "招商轮船",
+          "verdict": "买入",
+          "score": 49,
+          "price": 17.98,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "止损¥16.05(-10.7%) 止盈¥20.87(+16.1%) 仓位17%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 17.98,
+          "stop_loss": 16.05,
+          "take_profit": 20.87,
+          "atr": 0.96,
+          "position_pct": 17,
+          "risk_pct": 1.9
+        },
+        {
+          "symbol": "600406",
+          "name": "国电南瑞",
+          "verdict": "买入",
+          "score": 46,
+          "price": 24.12,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "止损¥22.87(-5.2%) 止盈¥26.00(+7.8%) 仓位24%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 24.12,
+          "stop_loss": 22.87,
+          "take_profit": 26.0,
+          "atr": 0.63,
+          "position_pct": 24,
+          "risk_pct": 1.2
+        },
+        {
+          "symbol": "301526",
+          "name": "国际复材",
+          "verdict": "卖出",
+          "score": 43,
+          "price": 38.32,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现优秀"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "000657",
+          "name": "中钨高新",
+          "verdict": "卖出",
+          "score": 32,
+          "price": 67.01,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "601208",
+          "name": "东材科技",
+          "verdict": "卖出",
+          "score": 32,
+          "price": 45.94,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "601138",
+          "name": "工业富联",
+          "verdict": "卖出",
+          "score": 31,
+          "price": 68.18,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "001339",
+          "name": "智微智能",
+          "verdict": "卖出",
+          "score": 30,
+          "price": 84.65,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600667",
+          "name": "太极实业",
+          "verdict": "卖出",
+          "score": 28,
+          "price": 19.53,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "301511",
+          "name": "德福科技",
+          "verdict": "卖出",
+          "score": 27,
+          "price": 90.9,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002558",
+          "name": "巨人网络",
+          "verdict": "卖出",
+          "score": 27,
+          "price": 29.34,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002422",
+          "name": "科伦药业",
+          "verdict": "卖出",
+          "score": 26,
+          "price": 45.44,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002484",
+          "name": "江海股份",
+          "verdict": "卖出",
+          "score": 24,
+          "price": 67.58,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600497",
+          "name": "驰宏锌锗",
+          "verdict": "卖出",
+          "score": 24,
+          "price": 10.45,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600353",
+          "name": "旭光电子",
+          "verdict": "卖出",
+          "score": 23,
+          "price": 28.03,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002536",
+          "name": "飞龙股份",
+          "verdict": "卖出",
+          "score": 22,
+          "price": 39.61,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600226",
+          "name": "亨通股份",
+          "verdict": "卖出",
+          "score": 18,
+          "price": 6.17,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "300136",
+          "name": "信维通信",
+          "verdict": "卖出",
+          "score": 16,
+          "price": 68.12,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        }
+      ],
+      "validation": {
+        "checked_date": "2026-08-10",
+        "direction_accuracy": 0.4,
+        "avg_gap_pct": -4.02
+      }
+    },
+    {
+      "date": "2026-08-10",
+      "time": "21:35",
+      "picks": [
+        {
+          "symbol": "000603",
+          "name": "盛达资源",
+          "verdict": "买入",
+          "score": 65,
+          "price": 37.12,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "放量明显(vol×1.8)",
+            "止损¥32.68(-12.0%) 止盈¥43.78(+17.9%) 仓位37%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 37.12,
+          "stop_loss": 32.68,
+          "take_profit": 43.78,
+          "atr": 2.22,
+          "position_pct": 37,
+          "risk_pct": 4.4
+        },
+        {
+          "symbol": "300209",
+          "name": "行云科技",
+          "verdict": "买入",
+          "score": 64,
+          "price": 38.39,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "放量明显(vol×2.0)",
+            "止损¥29.02(-24.4%) 止盈¥53.38(+39.0%) 仓位38%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 38.39,
+          "stop_loss": 29.02,
+          "take_profit": 53.38,
+          "atr": 3.75,
+          "position_pct": 38,
+          "risk_pct": 9.4
+        },
+        {
+          "symbol": "000506",
+          "name": "招金黄金",
+          "verdict": "买入",
+          "score": 59,
+          "price": 19.94,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现尚可",
+            "止损¥17.59(-11.8%) 止盈¥23.46(+17.7%) 仓位19%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 19.94,
+          "stop_loss": 17.59,
+          "take_profit": 23.46,
+          "atr": 1.17,
+          "position_pct": 19,
+          "risk_pct": 2.4
+        },
+        {
+          "symbol": "000426",
+          "name": "兴业银锡",
+          "verdict": "买入",
+          "score": 59,
+          "price": 40.67,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现尚可",
+            "止损¥34.98(-14.0%) 止盈¥49.77(+22.4%) 仓位40%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 40.67,
+          "stop_loss": 34.98,
+          "take_profit": 49.77,
+          "atr": 2.27,
+          "position_pct": 40,
+          "risk_pct": 5.7
+        },
+        {
+          "symbol": "601872",
+          "name": "招商轮船",
+          "verdict": "买入",
+          "score": 49,
+          "price": 18.18,
+          "reasons": [
+            "2/3 策略看多（均线交叉, 海龟突破）",
+            "信号较新",
+            "历史回测表现一般，谨慎",
+            "止损¥16.28(-10.5%) 止盈¥21.04(+15.7%) 仓位18%"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "BUY",
+            "布林回归": "SELL"
+          },
+          "entry": 18.18,
+          "stop_loss": 16.28,
+          "take_profit": 21.04,
+          "atr": 0.95,
+          "position_pct": 18,
+          "risk_pct": 1.9
+        },
+        {
+          "symbol": "301526",
+          "name": "国际复材",
+          "verdict": "卖出",
+          "score": 43,
+          "price": 38.12,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现优秀"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "301511",
+          "name": "德福科技",
+          "verdict": "卖出",
+          "score": 39,
+          "price": 88.7,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "000657",
+          "name": "中钨高新",
+          "verdict": "卖出",
+          "score": 37,
+          "price": 72.8,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "601208",
+          "name": "东材科技",
+          "verdict": "卖出",
+          "score": 37,
+          "price": 45.38,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002484",
+          "name": "江海股份",
+          "verdict": "卖出",
+          "score": 36,
+          "price": 66.11,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "601138",
+          "name": "工业富联",
+          "verdict": "卖出",
+          "score": 31,
+          "price": 69.18,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600667",
+          "name": "太极实业",
+          "verdict": "卖出",
+          "score": 31,
+          "price": 19.27,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002378",
+          "name": "章源钨业",
+          "verdict": "卖出",
+          "score": 29,
+          "price": 28.28,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "000547",
+          "name": "航天发展",
+          "verdict": "卖出",
+          "score": 28,
+          "price": 16.39,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002558",
+          "name": "巨人网络",
+          "verdict": "卖出",
+          "score": 27,
+          "price": 29.79,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600497",
+          "name": "驰宏锌锗",
+          "verdict": "卖出",
+          "score": 24,
+          "price": 10.73,
+          "reasons": [
+            "2/3 策略看空（海龟突破, 布林回归）",
+            "信号较新",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "BUY",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "600353",
+          "name": "旭光电子",
+          "verdict": "卖出",
+          "score": 23,
+          "price": 27.3,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现尚可"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002422",
+          "name": "科伦药业",
+          "verdict": "卖出",
+          "score": 23,
+          "price": 46.41,
+          "reasons": [
+            "3/3 策略看空（均线交叉, 海龟突破, 布林回归）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "SELL"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "002536",
+          "name": "飞龙股份",
+          "verdict": "卖出",
+          "score": 22,
+          "price": 39.52,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
+          },
+          "entry": 0.0,
+          "stop_loss": 0.0,
+          "take_profit": 0.0,
+          "atr": 0.0,
+          "position_pct": 0,
+          "risk_pct": 0.0
+        },
+        {
+          "symbol": "300136",
+          "name": "信维通信",
+          "verdict": "卖出",
+          "score": 16,
+          "price": 68.36,
+          "reasons": [
+            "2/3 策略看空（均线交叉, 海龟突破）",
+            "信号较旧，需确认",
+            "历史回测表现一般，谨慎"
+          ],
+          "signals": {
+            "均线交叉": "SELL",
+            "海龟突破": "SELL",
+            "布林回归": "BUY"
           },
           "entry": 0.0,
           "stop_loss": 0.0,
@@ -15030,191 +16942,96 @@
     "布林回归": 0.93
   },
   "paper": {
-    "equity": 50048.21,
-    "cash": 38933.21,
+    "equity": 50714.0,
+    "cash": 32179.0,
     "pending_cash": 0,
-    "free_cash": 38933.21,
+    "free_cash": 32179.0,
     "initial_cash": 50000,
-    "total_pnl": -169.79000000000002,
-    "total_trades": 2,
-    "positions": 2,
-    "history": [
-      {
-        "symbol": "002422",
-        "name": "科伦药业",
-        "side": "sell",
-        "shares": 100,
-        "entry_price": 45.54,
-        "exit_price": 43.44,
-        "exit_date": "2026-08-03",
-        "entry_date": "2026-07-29",
-        "pnl": -219.34,
-        "pnl_pct": -4.82,
-        "commission": 5.0,
-        "stamp_duty": 4.34,
-        "reason": "信号消失"
-      },
-      {
-        "symbol": "600406",
-        "name": "国电南瑞",
-        "side": "sell",
-        "shares": 100,
-        "entry_price": 23.9,
-        "exit_price": 24.47,
-        "exit_date": "2026-08-04",
-        "entry_date": "2026-07-29",
-        "pnl": 49.55,
-        "pnl_pct": 2.07,
-        "commission": 5.0,
-        "stamp_duty": 2.45,
-        "reason": "止盈触发(盘中)"
-      }
-    ],
+    "total_pnl": 0,
+    "total_trades": 0,
+    "positions": 3,
+    "history": [],
     "order_log": [
       {
-        "time": "2026-07-29 19:37",
+        "time": "2026-08-10 21:35",
         "event": "ORDER_CREATED",
-        "symbol": "600406",
-        "name": "国电南瑞",
+        "symbol": "000603",
+        "name": "盛达资源",
         "side": "buy",
-        "shares": 100,
-        "target_price": 23.93,
-        "stop_loss": 22.57
+        "shares": 200,
+        "target_price": 37.12,
+        "stop_loss": 32.68
       },
       {
-        "time": "2026-07-29 19:37",
+        "time": "2026-08-10 21:35",
         "event": "ORDER_CREATED",
-        "symbol": "002422",
-        "name": "科伦药业",
+        "symbol": "300209",
+        "name": "行云科技",
         "side": "buy",
         "shares": 100,
-        "target_price": 43.04,
-        "stop_loss": 32.4
+        "target_price": 38.39,
+        "stop_loss": 29.02
       },
       {
-        "time": "2026-07-29 19:37",
+        "time": "2026-08-10 21:35",
+        "event": "ORDER_CREATED",
+        "symbol": "601872",
+        "name": "招商轮船",
+        "side": "buy",
+        "shares": 400,
+        "target_price": 18.18,
+        "stop_loss": 16.28
+      },
+      {
+        "time": "2026-08-10 21:35",
         "event": "ORDER_FILLED",
-        "symbol": "600406",
-        "name": "国电南瑞",
+        "symbol": "000603",
+        "name": "盛达资源",
         "side": "buy",
-        "shares": 100,
-        "price": 23.9,
-        "value": 2390.0,
+        "shares": 200,
+        "price": 34.52,
+        "value": 6904.0,
         "commission": 5.0,
         "stamp_duty": 0,
-        "total_cost": 2395.0,
+        "total_cost": 6909.0,
         "cash_before": 50000,
-        "cash_after": 47605.0,
+        "cash_after": 43091.0,
         "reason": "",
         "pnl": 0,
         "pnl_pct": 0
       },
       {
-        "time": "2026-07-29 19:37",
+        "time": "2026-08-10 21:35",
         "event": "ORDER_FILLED",
-        "symbol": "002422",
-        "name": "科伦药业",
+        "symbol": "300209",
+        "name": "行云科技",
         "side": "buy",
         "shares": 100,
-        "price": 45.54,
-        "value": 4554.0,
+        "price": 37.22,
+        "value": 3722.0,
         "commission": 5.0,
         "stamp_duty": 0,
-        "total_cost": 4559.0,
-        "cash_before": 47605.0,
-        "cash_after": 43046.0,
+        "total_cost": 3727.0,
+        "cash_before": 43091.0,
+        "cash_after": 39364.0,
         "reason": "",
         "pnl": 0,
         "pnl_pct": 0
       },
       {
-        "time": "2026-08-03 09:22",
+        "time": "2026-08-10 21:35",
         "event": "ORDER_FILLED",
-        "symbol": "002422",
-        "name": "科伦药业",
-        "side": "sell",
-        "shares": 100,
-        "price": 43.44,
-        "value": 4344.0,
-        "commission": 5.0,
-        "stamp_duty": 4.34,
-        "total_cost": 4353.34,
-        "cash_before": 43046.0,
-        "cash_after": 47380.66,
-        "reason": "信号消失",
-        "pnl": -219.34,
-        "pnl_pct": -4.82
-      },
-      {
-        "time": "2026-08-03 18:12",
-        "event": "ORDER_CREATED",
-        "symbol": "300779",
-        "name": "惠城环保",
+        "symbol": "601872",
+        "name": "招商轮船",
         "side": "buy",
-        "shares": 100,
-        "target_price": 82.43,
-        "stop_loss": 63.73
-      },
-      {
-        "time": "2026-08-04 10:18",
-        "event": "ORDER_FILLED",
-        "symbol": "300779",
-        "name": "惠城环保",
-        "side": "buy",
-        "shares": 100,
-        "price": 83.87,
-        "value": 8387.0,
+        "shares": 400,
+        "price": 17.95,
+        "value": 7180.0,
         "commission": 5.0,
         "stamp_duty": 0,
-        "total_cost": 8392.0,
-        "cash_before": 47380.66,
-        "cash_after": 38988.66,
-        "reason": "",
-        "pnl": 0,
-        "pnl_pct": 0
-      },
-      {
-        "time": "2026-08-04 10:19",
-        "event": "ORDER_FILLED",
-        "symbol": "600406",
-        "name": "国电南瑞",
-        "side": "sell",
-        "shares": 100,
-        "price": 24.47,
-        "value": 2447.0,
-        "commission": 5.0,
-        "stamp_duty": 2.45,
-        "total_cost": 2454.45,
-        "cash_before": 38988.66,
-        "cash_after": 41428.21,
-        "reason": "止盈触发(盘中)",
-        "pnl": 49.55,
-        "pnl_pct": 2.07
-      },
-      {
-        "time": "2026-08-04 10:19",
-        "event": "ORDER_CREATED",
-        "symbol": "600406",
-        "name": "国电南瑞",
-        "side": "buy",
-        "shares": 100,
-        "target_price": 25.07,
-        "stop_loss": 23.71
-      },
-      {
-        "time": "2026-08-06 01:19",
-        "event": "ORDER_FILLED",
-        "symbol": "600406",
-        "name": "国电南瑞",
-        "side": "buy",
-        "shares": 100,
-        "price": 24.9,
-        "value": 2490.0,
-        "commission": 5.0,
-        "stamp_duty": 0,
-        "total_cost": 2495.0,
-        "cash_before": 41428.21,
-        "cash_after": 38933.21,
+        "total_cost": 7185.0,
+        "cash_before": 39364.0,
+        "cash_after": 32179.0,
         "reason": "",
         "pnl": 0,
         "pnl_pct": 0
@@ -15222,32 +17039,44 @@
     ],
     "positions_list": [
       {
-        "symbol": "300779",
-        "name": "惠城环保",
-        "shares": 100,
-        "avg_cost": 83.87,
-        "current_price": 86.61,
-        "market_value": 8661.0,
-        "pnl_pct": 3.27,
-        "entry_date": "2026-08-04",
-        "stop_loss": 68.42,
-        "days_held": 1
+        "symbol": "000603",
+        "name": "盛达资源",
+        "shares": 200,
+        "avg_cost": 34.52,
+        "current_price": 37.12,
+        "market_value": 7424.0,
+        "pnl_pct": 7.53,
+        "entry_date": "2026-08-10",
+        "stop_loss": 32.68,
+        "days_held": 0
       },
       {
-        "symbol": "600406",
-        "name": "国电南瑞",
+        "symbol": "300209",
+        "name": "行云科技",
         "shares": 100,
-        "avg_cost": 24.9,
-        "current_price": 24.54,
-        "market_value": 2454.0,
-        "pnl_pct": -1.45,
-        "entry_date": "2026-08-06",
-        "stop_loss": 23.13,
+        "avg_cost": 37.22,
+        "current_price": 38.39,
+        "market_value": 3839.0,
+        "pnl_pct": 3.14,
+        "entry_date": "2026-08-10",
+        "stop_loss": 29.02,
+        "days_held": 0
+      },
+      {
+        "symbol": "601872",
+        "name": "招商轮船",
+        "shares": 400,
+        "avg_cost": 17.95,
+        "current_price": 18.18,
+        "market_value": 7272.0,
+        "pnl_pct": 1.28,
+        "entry_date": "2026-08-10",
+        "stop_loss": 16.28,
         "days_held": 0
       }
     ]
   },
-  "changelog": "# aquant 更新日志\n\n每日自动生成 — 追踪推荐演变和策略自适应\n\n---\n\n## 2026-08-06\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**新增 20 只：**\n\n- 🔴 **行云科技** (300209) — 买入 — 评分67，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **惠城环保** (300779) — 买入 — 评分50，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **国电南瑞** (600406) — 买入 — 评分46，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **国际复材** (301526) — 卖出 — 评分41，均线交叉+海龟突破+布林回归看空，历史回测表现优秀\n- 🔴 **招金黄金** (000506) — 卖出 — 评分36，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **巨人网络** (002558) — 卖出 — 评分31，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **珂玛科技** (301611) — 卖出 — 评分27，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **德福科技** (301511) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **旭光电子** (600353) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **铜冠铜箔** (301217) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **智微智能** (001339) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **兴业银锡** (000426) — 卖出 — 评分24，均线交叉看多，海龟突破+布林回归看空，历史回测表现尚可\n- 🔴 **江海股份** (002484) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **中钨高新** (000657) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **东材科技** (601208) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **工业富联** (601138) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **飞龙股份** (002536) — 卖出 — 评分21，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **太极实业** (600667) — 卖出 — 评分19，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **信维通信** (300136) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **招商轮船** (601872) — 卖出 — 评分16，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n\n---\n\n## 2026-08-04\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**持续推荐 20 只：**\n\n- **惠城环保** (300779) — 评分 60 (60→60 →)\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 33 (36→33 ↓)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **招金黄金** (000506) — 评分 29 (29→29 →)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **飞龙股份** (002536) — 评分 24 (24→24 →)\n- **中钨高新** (000657) — 评分 23 (24→23 →)\n- **江海股份** (002484) — 评分 23 (25→23 →)\n- **XD工业富** (601138) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (21→21 →)\n- **太极实业** (600667) — 评分 21 (22→21 →)\n- **科伦药业** (002422) — 评分 19 (19→19 →)\n- **信维通信** (300136) — 评分 18 (18→18 →)\n- **利通电子** (603629) — 评分 17 (17→17 →)\n- **招商轮船** (601872) — 评分 16 (19→16 ↓)\n\n---\n\n## 2026-08-04\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**持续推荐 20 只：**\n\n- **惠城环保** (300779) — 评分 60 (60→60 →)\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 33 (36→33 ↓)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **招金黄金** (000506) — 评分 29 (29→29 →)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **飞龙股份** (002536) — 评分 24 (24→24 →)\n- **中钨高新** (000657) — 评分 23 (24→23 →)\n- **江海股份** (002484) — 评分 23 (25→23 →)\n- **XD工业富** (601138) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (21→21 →)\n- **太极实业** (600667) — 评分 21 (22→21 →)\n- **科伦药业** (002422) — 评分 19 (19→19 →)\n- **信维通信** (300136) — 评分 18 (18→18 →)\n- **利通电子** (603629) — 评分 17 (17→17 →)\n- **招商轮船** (601872) — 评分 16 (19→16 ↓)\n\n---\n\n## 2026-08-03\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**新增 2 只：**\n\n- 🔴 **惠城环保** (300779) — 买入 — 评分60，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **科伦药业** (002422) — 卖出 — 评分19，海龟突破看多，均线交叉+布林回归看空，历史回测表现一般，谨慎\n\n**移除 2 只：**\n\n- 🟢 **东材科技** (601208) — 曾卖出 — 评分过低(23)，被新候选替代\n- 🟢 **兴森科技** (002436) — 曾卖出 — 评分过低(19)，被新候选替代\n\n**持续推荐 18 只：**\n\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 36 (33→36 ↑)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **招金黄金** (000506) — 评分 29 (26→29 ↑)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (26→25 →)\n- **江海股份** (002484) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **中钨高新** (000657) — 评分 24 (24→24 →)\n- **飞龙股份** (002536) — 评分 24 (24→24 →)\n- **XD工业富** (601138) — 评分 22 (22→22 →)\n- **太极实业** (600667) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (21→21 →)\n- **招商轮船** (601872) — 评分 19 (19→19 →)\n- **信维通信** (300136) — 评分 18 (18→18 →)\n- **利通电子** (603629) — 评分 17 (17→17 →)\n\n---\n\n## 2026-08-03\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**新增 2 只：**\n\n- 🔴 **惠城环保** (300779) — 买入 — 评分60，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **科伦药业** (002422) — 卖出 — 评分19，海龟突破看多，均线交叉+布林回归看空，历史回测表现一般，谨慎\n\n**移除 2 只：**\n\n- 🟢 **东材科技** (601208) — 曾卖出 — 评分过低(23)，被新候选替代\n- 🟢 **兴森科技** (002436) — 曾卖出 — 评分过低(19)，被新候选替代\n\n**持续推荐 18 只：**\n\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 36 (33→36 ↑)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **招金黄金** (000506) — 评分 29 (26→29 ↑)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (26→25 →)\n- **江海股份** (002484) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **中钨高新** (000657) — 评分 24 (24→24 →)\n- **飞龙股份** (002536) — 评分 24 (24→24 →)\n- **XD工业富** (601138) — 评分 22 (22→22 →)\n- **太极实业** (600667) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (21→21 →)\n- **招商轮船** (601872) — 评分 19 (19→19 →)\n- **信维通信** (300136) — 评分 18 (18→18 →)\n- **利通电子** (603629) — 评分 17 (17→17 →)\n\n---\n\n## 2026-08-03\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**持续推荐 20 只：**\n\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 33 (33→33 →)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **招金黄金** (000506) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (26→25 →)\n- **江海股份** (002484) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **中钨高新** (000657) — 评分 24 (24→24 →)\n- **002536** (002536) — 评分 24 (24→24 →)\n- **东材科技** (601208) — 评分 23 (23→23 →)\n- **工业富联** (601138) — 评分 22 (22→22 →)\n- **太极实业** (600667) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (21→21 →)\n- **招商轮船** (601872) — 评分 19 (19→19 →)\n- **兴森科技** (002436) — 评分 19 (19→19 →)\n- **信维通信** (300136) — 评分 18 (18→18 →)\n- **利通电子** (603629) — 评分 17 (17→17 →)\n\n---\n\n## 2026-08-03\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**持续推荐 20 只：**\n\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 33 (33→33 →)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **招金黄金** (000506) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (26→25 →)\n- **江海股份** (002484) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **中钨高新** (000657) — 评分 24 (24→24 →)\n- **002536** (002536) — 评分 24 (24→24 →)\n- **东材科技** (601208) — 评分 23 (23→23 →)\n- **工业富联** (601138) — 评分 22 (22→22 →)\n- **太极实业** (600667) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (21→21 →)\n- **招商轮船** (601872) — 评分 19 (19→19 →)\n- **兴森科技** (002436) — 评分 19 (19→19 →)\n- **信维通信** (300136) — 评分 18 (18→18 →)\n- **利通电子** (603629) — 评分 17 (17→17 →)\n\n---\n\n## 2026-08-02\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**新增 20 只：**\n\n- 🔴 **国电南瑞** (600406) — 买入 — 评分46，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **国际复材** (301526) — 卖出 — 评分44，均线交叉+海龟突破+布林回归看空，历史回测表现优秀\n- 🔴 **嘉美包装** (002969) — 卖出 — 评分33，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **巨人网络** (002558) — 卖出 — 评分31，均线交叉+海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **珂玛科技** (301611) — 卖出 — 评分28，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **旭光电子** (600353) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **德福科技** (301511) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **招金黄金** (000506) — 卖出 — 评分26，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **江海股份** (002484) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **铜冠铜箔** (301217) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **中钨高新** (000657) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **飞龙股份** (002536) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **东材科技** (601208) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **工业富联** (601138) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **太极实业** (600667) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **华工科技** (000988) — 卖出 — 评分21，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **招商轮船** (601872) — 卖出 — 评分19，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **兴森科技** (002436) — 卖出 — 评分19，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **信维通信** (300136) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **利通电子** (603629) — 卖出 — 评分17，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n\n---\n\n## 2026-08-02\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**新增 20 只：**\n\n- 🔴 **国电南瑞** (600406) — 买入 — 评分46，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **国际复材** (301526) — 卖出 — 评分44，均线交叉+海龟突破+布林回归看空，历史回测表现优秀\n- 🔴 **嘉美包装** (002969) — 卖出 — 评分33，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **巨人网络** (002558) — 卖出 — 评分31，均线交叉+海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **珂玛科技** (301611) — 卖出 — 评分28，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **旭光电子** (600353) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **德福科技** (301511) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **招金黄金** (000506) — 卖出 — 评分26，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **江海股份** (002484) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **铜冠铜箔** (301217) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **中钨高新** (000657) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **飞龙股份** (002536) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **东材科技** (601208) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **工业富联** (601138) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **太极实业** (600667) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **华工科技** (000988) — 卖出 — 评分21，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **招商轮船** (601872) — 卖出 — 评分19，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **兴森科技** (002436) — 卖出 — 评分19，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **信维通信** (300136) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **利通电子** (603629) — 卖出 — 评分17，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n\n---\n\n## 2026-07-31\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**新增 20 只：**\n\n- 🔴 **国际复材** (301526) — 卖出 — 评分48，均线交叉+海龟突破+布林回归看空，历史回测表现优秀\n- 🔴 **国电南瑞** (600406) — 买入 — 评分46，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **巨人网络** (002558) — 卖出 — 评分37，均线交叉+海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **嘉美包装** (002969) — 卖出 — 评分36，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **招金黄金** (000506) — 卖出 — 评分29，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **珂玛科技** (301611) — 卖出 — 评分28，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **飞龙股份** (002536) — 卖出 — 评分28，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **旭光电子** (600353) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **德福科技** (301511) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **江海股份** (002484) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **铜冠铜箔** (301217) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **中钨高新** (000657) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **东材科技** (601208) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **工业富联** (601138) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **太极实业** (600667) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **华工科技** (000988) — 卖出 — 评分21，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **招商轮船** (601872) — 卖出 — 评分19，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **兴森科技** (002436) — 卖出 — 评分19，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **信维通信** (300136) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **利通电子** (603629) — 卖出 — 评分17，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n\n---\n\n## 2026-07-31\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**新增 20 只：**\n\n- 🔴 **国际复材** (301526) — 卖出 — 评分48，均线交叉+海龟突破+布林回归看空，历史回测表现优秀\n- 🔴 **国电南瑞** (600406) — 买入 — 评分46，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **巨人网络** (002558) — 卖出 — 评分37，均线交叉+海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **嘉美包装** (002969) — 卖出 — 评分36，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **招金黄金** (000506) — 卖出 — 评分29，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **珂玛科技** (301611) — 卖出 — 评分28，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **飞龙股份** (002536) — 卖出 — 评分28，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **旭光电子** (600353) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **德福科技** (301511) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **江海股份** (002484) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **铜冠铜箔** (301217) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **中钨高新** (000657) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **东材科技** (601208) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **工业富联** (601138) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **太极实业** (600667) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **华工科技** (000988) — 卖出 — 评分21，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **招商轮船** (601872) — 卖出 — 评分19，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **兴森科技** (002436) — 卖出 — 评分19，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **信维通信** (300136) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **利通电子** (603629) — 卖出 — 评分17，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n\n---\n\n## 2026-07-31\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**新增 20 只：**\n\n- 🔴 **国际复材** (301526) — 卖出 — 评分48，均线交叉+海龟突破+布林回归看空，历史回测表现优秀\n- 🔴 **国电南瑞** (600406) — 买入 — 评分46，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **巨人网络** (002558) — 卖出 — 评分37，均线交叉+海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **嘉美包装** (002969) — 卖出 — 评分36，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **招金黄金** (000506) — 卖出 — 评分29，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **珂玛科技** (301611) — 卖出 — 评分28，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **飞龙股份** (002536) — 卖出 — 评分28，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **旭光电子** (600353) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **德福科技** (301511) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **江海股份** (002484) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **铜冠铜箔** (301217) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **中钨高新** (000657) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **东材科技** (601208) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **工业富联** (601138) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **太极实业** (600667) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **华工科技** (000988) — 卖出 — 评分21，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **招商轮船** (601872) — 卖出 — 评分19，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **兴森科技** (002436) — 卖出 — 评分19，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **信维通信** (300136) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **利通电子** (603629) — 卖出 — 评分17，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n\n---\n\n## 2026-07-31\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630",
+  "changelog": "# aquant 更新日志\n\n每日自动生成 — 追踪推荐演变和策略自适应\n\n---\n\n## 2026-08-10\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**新增 3 只：**\n\n- 🔴 **盛达资源** (000603) — 买入 — 评分65，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **章源钨业** (002378) — 卖出 — 评分29，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **航天发展** (000547) — 卖出 — 评分28，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n\n**移除 3 只：**\n\n- 🟢 **国电南瑞** (600406) — 曾买入 — 夏普排名下滑，新候选表现更优\n- 🟢 **智微智能** (001339) — 曾卖出 — 所有策略转空，建议卖出\n- 🟢 **亨通股份** (600226) — 曾卖出 — 评分过低(18)，被新候选替代\n\n**持续推荐 17 只：**\n\n- **行云科技** (300209) — 评分 64 (64→64 →)\n- **招金黄金** (000506) — 评分 59 (58→59 →)\n- **兴业银锡** (000426) — 评分 59 (59→59 →)\n- **招商轮船** (601872) — 评分 49 (49→49 →)\n- **国际复材** (301526) — 评分 43 (43→43 →)\n- **德福科技** (301511) — 评分 39 (27→39 ↑)\n- **中钨高新** (000657) — 评分 37 (32→37 ↑)\n- **东材科技** (601208) — 评分 37 (32→37 ↑)\n- **江海股份** (002484) — 评分 36 (24→36 ↑)\n- **工业富联** (601138) — 评分 31 (31→31 →)\n- **太极实业** (600667) — 评分 31 (28→31 ↑)\n- **巨人网络** (002558) — 评分 27 (27→27 →)\n- **驰宏锌锗** (600497) — 评分 24 (24→24 →)\n- **旭光电子** (600353) — 评分 23 (23→23 →)\n- **科伦药业** (002422) — 评分 23 (26→23 ↓)\n- **飞龙股份** (002536) — 评分 22 (22→22 →)\n- **信维通信** (300136) — 评分 16 (16→16 →)\n\n---\n\n## 2026-08-10\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**新增 3 只：**\n\n- 🔴 **盛达资源** (000603) — 买入 — 评分65，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **章源钨业** (002378) — 卖出 — 评分29，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **航天发展** (000547) — 卖出 — 评分28，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n\n**移除 3 只：**\n\n- 🟢 **国电南瑞** (600406) — 曾买入 — 夏普排名下滑，新候选表现更优\n- 🟢 **智微智能** (001339) — 曾卖出 — 所有策略转空，建议卖出\n- 🟢 **亨通股份** (600226) — 曾卖出 — 评分过低(18)，被新候选替代\n\n**持续推荐 17 只：**\n\n- **行云科技** (300209) — 评分 64 (64→64 →)\n- **招金黄金** (000506) — 评分 59 (58→59 →)\n- **兴业银锡** (000426) — 评分 59 (59→59 →)\n- **招商轮船** (601872) — 评分 49 (49→49 →)\n- **国际复材** (301526) — 评分 43 (43→43 →)\n- **德福科技** (301511) — 评分 39 (27→39 ↑)\n- **中钨高新** (000657) — 评分 37 (32→37 ↑)\n- **东材科技** (601208) — 评分 37 (32→37 ↑)\n- **江海股份** (002484) — 评分 36 (24→36 ↑)\n- **工业富联** (601138) — 评分 31 (31→31 →)\n- **太极实业** (600667) — 评分 31 (28→31 ↑)\n- **巨人网络** (002558) — 评分 27 (27→27 →)\n- **驰宏锌锗** (600497) — 评分 24 (24→24 →)\n- **旭光电子** (600353) — 评分 23 (23→23 →)\n- **科伦药业** (002422) — 评分 23 (26→23 ↓)\n- **飞龙股份** (002536) — 评分 22 (22→22 →)\n- **信维通信** (300136) — 评分 16 (16→16 →)\n\n---\n\n## 2026-08-10\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**新增 2 只：**\n\n- 🔴 **盛达资源** (000603) — 买入 — 评分64，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **航天发展** (000547) — 卖出 — 评分28，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n\n**移除 2 只：**\n\n- 🟢 **招商轮船** (601872) — 曾买入 — 夏普排名下滑，新候选表现更优\n- 🟢 **科伦药业** (002422) — 曾卖出 — 所有策略转空，建议卖出\n\n**持续推荐 18 只：**\n\n- **行云科技** (300209) — 评分 64 (64→64 →)\n- **兴业银锡** (000426) — 评分 59 (59→59 →)\n- **招金黄金** (000506) — 评分 58 (58→58 →)\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 43 (43→43 →)\n- **中钨高新** (000657) — 评分 32 (32→32 →)\n- **东材科技** (601208) — 评分 32 (32→32 →)\n- **工业富联** (601138) — 评分 31 (31→31 →)\n- **智微智能** (001339) — 评分 30 (30→30 →)\n- **太极实业** (600667) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 27 (27→27 →)\n- **巨人网络** (002558) — 评分 27 (27→27 →)\n- **江海股份** (002484) — 评分 24 (24→24 →)\n- **驰宏锌锗** (600497) — 评分 24 (24→24 →)\n- **旭光电子** (600353) — 评分 23 (23→23 →)\n- **飞龙股份** (002536) — 评分 22 (22→22 →)\n- **亨通股份** (600226) — 评分 18 (18→18 →)\n- **信维通信** (300136) — 评分 16 (16→16 →)\n\n---\n\n## 2026-08-09\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**持续推荐 20 只：**\n\n- **行云科技** (300209) — 评分 64 (64→64 →)\n- **兴业银锡** (000426) — 评分 59 (59→59 →)\n- **招金黄金** (000506) — 评分 58 (62→58 ↓)\n- **招商轮船** (601872) — 评分 49 (49→49 →)\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 43 (46→43 ↓)\n- **中钨高新** (000657) — 评分 32 (35→32 ↓)\n- **东材科技** (601208) — 评分 32 (35→32 ↓)\n- **工业富联** (601138) — 评分 31 (34→31 ↓)\n- **智微智能** (001339) — 评分 30 (34→30 ↓)\n- **太极实业** (600667) — 评分 28 (35→28 ↓)\n- **德福科技** (301511) — 评分 27 (27→27 →)\n- **巨人网络** (002558) — 评分 27 (27→27 →)\n- **科伦药业** (002422) — 评分 26 (26→26 →)\n- **江海股份** (002484) — 评分 24 (24→24 →)\n- **驰宏锌锗** (600497) — 评分 24 (24→24 →)\n- **旭光电子** (600353) — 评分 23 (23→23 →)\n- **飞龙股份** (002536) — 评分 22 (22→22 →)\n- **亨通股份** (600226) — 评分 18 (18→18 →)\n- **信维通信** (300136) — 评分 16 (16→16 →)\n\n---\n\n## 2026-08-08\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**新增 2 只：**\n\n- 🔴 **科伦药业** (002422) — 卖出 — 评分26，均线交叉+海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **亨通股份** (600226) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n\n**移除 2 只：**\n\n- 🟢 **珂玛科技** (301611) — 曾卖出 — 评分过低(25)，被新候选替代\n- 🟢 **铜冠铜箔** (301217) — 曾卖出 — 评分过低(25)，被新候选替代\n\n**持续推荐 18 只：**\n\n- **行云科技** (300209) — 评分 64 (64→64 →)\n- **招金黄金** (000506) — 评分 62 (75→62 ↓)\n- **兴业银锡** (000426) — 评分 59 (62→59 ↓)\n- **招商轮船** (601872) — 评分 49 (52→49 ↓)\n- **国际复材** (301526) — 评分 46 (46→46 →)\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **中钨高新** (000657) — 评分 35 (23→35 ↑)\n- **太极实业** (600667) — 评分 35 (20→35 ↑)\n- **东材科技** (601208) — 评分 35 (23→35 ↑)\n- **智微智能** (001339) — 评分 34 (24→34 ↑)\n- **工业富联** (601138) — 评分 34 (37→34 ↓)\n- **德福科技** (301511) — 评分 27 (26→27 →)\n- **巨人网络** (002558) — 评分 27 (27→27 →)\n- **江海股份** (002484) — 评分 24 (24→24 →)\n- **驰宏锌锗** (600497) — 评分 24 (27→24 ↓)\n- **旭光电子** (600353) — 评分 23 (23→23 →)\n- **飞龙股份** (002536) — 评分 22 (21→22 →)\n- **信维通信** (300136) — 评分 16 (16→16 →)\n\n---\n\n## 2026-08-07\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**持续推荐 20 只：**\n\n- **招金黄金** (000506) — 评分 75 (75→75 →)\n- **行云科技** (300209) — 评分 64 (67→64 ↓)\n- **兴业银锡** (000426) — 评分 62 (62→62 →)\n- **招商轮船** (601872) — 评分 52 (52→52 →)\n- **国际复材** (301526) — 评分 46 (46→46 →)\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **工业富联** (601138) — 评分 37 (37→37 →)\n- **巨人网络** (002558) — 评分 27 (30→27 ↓)\n- **驰宏锌锗** (600497) — 评分 27 (27→27 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **珂玛科技** (301611) — 评分 25 (27→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **智微智能** (001339) — 评分 24 (24→24 →)\n- **江海股份** (002484) — 评分 24 (24→24 →)\n- **旭光电子** (600353) — 评分 23 (25→23 →)\n- **中钨高新** (000657) — 评分 23 (23→23 →)\n- **东材科技** (601208) — 评分 23 (23→23 →)\n- **飞龙股份** (002536) — 评分 21 (21→21 →)\n- **太极实业** (600667) — 评分 20 (20→20 →)\n- **信维通信** (300136) — 评分 16 (18→16 →)\n\n---\n\n## 2026-08-06\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**新增 20 只：**\n\n- 🔴 **招金黄金** (000506) — 买入 — 评分75，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **行云科技** (300209) — 买入 — 评分67，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **兴业银锡** (000426) — 买入 — 评分62，均线交叉+海龟突破看多，布林回归看空，历史回测表现尚可\n- 🔴 **招商轮船** (601872) — 买入 — 评分52，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **国际复材** (301526) — 卖出 — 评分46，均线交叉看多，海龟突破+布林回归看空，历史回测表现优秀\n- 🔴 **国电南瑞** (600406) — 买入 — 评分46，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **工业富联** (601138) — 卖出 — 评分37，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **巨人网络** (002558) — 卖出 — 评分30，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **珂玛科技** (301611) — 卖出 — 评分27，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **驰宏锌锗** (600497) — 卖出 — 评分27，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **德福科技** (301511) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **旭光电子** (600353) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **铜冠铜箔** (301217) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **智微智能** (001339) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **江海股份** (002484) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **中钨高新** (000657) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **东材科技** (601208) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **飞龙股份** (002536) — 卖出 — 评分21，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **太极实业** (600667) — 卖出 — 评分20，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **信维通信** (300136) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n\n---\n\n## 2026-08-06\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**新增 20 只：**\n\n- 🔴 **行云科技** (300209) — 买入 — 评分67，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **惠城环保** (300779) — 买入 — 评分50，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **国电南瑞** (600406) — 买入 — 评分46，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **国际复材** (301526) — 卖出 — 评分41，均线交叉+海龟突破+布林回归看空，历史回测表现优秀\n- 🔴 **招金黄金** (000506) — 卖出 — 评分36，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **巨人网络** (002558) — 卖出 — 评分31，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **珂玛科技** (301611) — 卖出 — 评分27，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **德福科技** (301511) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **旭光电子** (600353) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **铜冠铜箔** (301217) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **智微智能** (001339) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **兴业银锡** (000426) — 卖出 — 评分24，均线交叉看多，海龟突破+布林回归看空，历史回测表现尚可\n- 🔴 **江海股份** (002484) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **中钨高新** (000657) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **东材科技** (601208) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **工业富联** (601138) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **飞龙股份** (002536) — 卖出 — 评分21，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **太极实业** (600667) — 卖出 — 评分19，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **信维通信** (300136) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **招商轮船** (601872) — 卖出 — 评分16，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n\n---\n\n## 2026-08-06\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**新增 20 只：**\n\n- 🔴 **行云科技** (300209) — 买入 — 评分67，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **惠城环保** (300779) — 买入 — 评分50，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **国电南瑞** (600406) — 买入 — 评分46，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **国际复材** (301526) — 卖出 — 评分41，均线交叉+海龟突破+布林回归看空，历史回测表现优秀\n- 🔴 **招金黄金** (000506) — 卖出 — 评分36，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **巨人网络** (002558) — 卖出 — 评分31，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n- 🔴 **珂玛科技** (301611) — 卖出 — 评分27，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **德福科技** (301511) — 卖出 — 评分26，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **旭光电子** (600353) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **铜冠铜箔** (301217) — 卖出 — 评分25，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **智微智能** (001339) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **兴业银锡** (000426) — 卖出 — 评分24，均线交叉看多，海龟突破+布林回归看空，历史回测表现尚可\n- 🔴 **江海股份** (002484) — 卖出 — 评分24，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **中钨高新** (000657) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **东材科技** (601208) — 卖出 — 评分23，布林回归看多，均线交叉+海龟突破看空，历史回测表现尚可\n- 🔴 **工业富联** (601138) — 卖出 — 评分22，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **飞龙股份** (002536) — 卖出 — 评分21，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **太极实业** (600667) — 卖出 — 评分19，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **信维通信** (300136) — 卖出 — 评分18，布林回归看多，均线交叉+海龟突破看空，历史回测表现一般，谨慎\n- 🔴 **招商轮船** (601872) — 卖出 — 评分16，均线交叉看多，海龟突破+布林回归看空，历史回测表现一般，谨慎\n\n---\n\n## 2026-08-04\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-170 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-170 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-170 → 半停用)\n\n### 📋 推荐变化\n\n**持续推荐 20 只：**\n\n- **惠城环保** (300779) — 评分 60 (60→60 →)\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 33 (36→33 ↓)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **招金黄金** (000506) — 评分 29 (29→29 →)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **飞龙股份** (002536) — 评分 24 (24→24 →)\n- **中钨高新** (000657) — 评分 23 (24→23 →)\n- **江海股份** (002484) — 评分 23 (25→23 →)\n- **XD工业富** (601138) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (21→21 →)\n- **太极实业** (600667) — 评分 21 (22→21 →)\n- **科伦药业** (002422) — 评分 19 (19→19 →)\n- **信维通信** (300136) — 评分 18 (18→18 →)\n- **利通电子** (603629) — 评分 17 (17→17 →)\n- **招商轮船** (601872) — 评分 16 (19→16 ↓)\n\n---\n\n## 2026-08-04\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**持续推荐 20 只：**\n\n- **惠城环保** (300779) — 评分 60 (60→60 →)\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 33 (36→33 ↓)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **招金黄金** (000506) — 评分 29 (29→29 →)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **飞龙股份** (002536) — 评分 24 (24→24 →)\n- **中钨高新** (000657) — 评分 23 (24→23 →)\n- **江海股份** (002484) — 评分 23 (25→23 →)\n- **XD工业富** (601138) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (21→21 →)\n- **太极实业** (600667) — 评分 21 (22→21 →)\n- **科伦药业** (002422) — 评分 19 (19→19 →)\n- **信维通信** (300136) — 评分 18 (18→18 →)\n- **利通电子** (603629) — 评分 17 (17→17 →)\n- **招商轮船** (601872) — 评分 16 (19→16 ↓)\n\n---\n\n## 2026-08-03\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**新增 2 只：**\n\n- 🔴 **惠城环保** (300779) — 买入 — 评分60，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **科伦药业** (002422) — 卖出 — 评分19，海龟突破看多，均线交叉+布林回归看空，历史回测表现一般，谨慎\n\n**移除 2 只：**\n\n- 🟢 **东材科技** (601208) — 曾卖出 — 评分过低(23)，被新候选替代\n- 🟢 **兴森科技** (002436) — 曾卖出 — 评分过低(19)，被新候选替代\n\n**持续推荐 18 只：**\n\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 36 (33→36 ↑)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **招金黄金** (000506) — 评分 29 (26→29 ↑)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (26→25 →)\n- **江海股份** (002484) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **中钨高新** (000657) — 评分 24 (24→24 →)\n- **飞龙股份** (002536) — 评分 24 (24→24 →)\n- **XD工业富** (601138) — 评分 22 (22→22 →)\n- **太极实业** (600667) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (21→21 →)\n- **招商轮船** (601872) — 评分 19 (19→19 →)\n- **信维通信** (300136) — 评分 18 (18→18 →)\n- **利通电子** (603629) — 评分 17 (17→17 →)\n\n---\n\n## 2026-08-03\n\n### 策略权重（模拟盘盈亏驱动）\n\n- 均线交叉: **1.00** █████ (持续亏损 ¥-630 → 半停用)\n- 布林回归: **0.93** ████ (持续亏损 ¥-630 → 半停用)\n- 海龟突破: **0.80** ████ (持续亏损 ¥-630 → 半停用)\n\n### 📋 推荐变化\n\n**新增 2 只：**\n\n- 🔴 **惠城环保** (300779) — 买入 — 评分60，均线交叉+海龟突破看多，布林回归看空，历史回测表现一般，谨慎\n- 🔴 **科伦药业** (002422) — 卖出 — 评分19，海龟突破看多，均线交叉+布林回归看空，历史回测表现一般，谨慎\n\n**移除 2 只：**\n\n- 🟢 **东材科技** (601208) — 曾卖出 — 评分过低(23)，被新候选替代\n- 🟢 **兴森科技** (002436) — 曾卖出 — 评分过低(19)，被新候选替代\n\n**持续推荐 18 只：**\n\n- **国电南瑞** (600406) — 评分 46 (46→46 →)\n- **国际复材** (301526) — 评分 44 (44→44 →)\n- **嘉美包装** (002969) — 评分 36 (33→36 ↑)\n- **巨人网络** (002558) — 评分 31 (31→31 →)\n- **招金黄金** (000506) — 评分 29 (26→29 ↑)\n- **珂玛科技** (301611) — 评分 28 (28→28 →)\n- **德福科技** (301511) — 评分 26 (26→26 →)\n- **旭光电子** (600353) — 评分 25 (26→25 →)\n- **江海股份** (002484) — 评分 25 (25→25 →)\n- **铜冠铜箔** (301217) — 评分 25 (25→25 →)\n- **中钨高新** (000657) — 评分 24 (24→24 →)\n- **飞龙股份** (002536) — 评分 24 (24→24 →)\n- **XD工业富** (601138) — 评分 22 (22→22 →)\n- **太极实业** (600667) — 评分 22 (22→22 →)\n- **华工科技** (000988) — 评分 21 (",
   "klines": {
     "600839": {
       "dates": [
@@ -18490,7 +20319,7 @@
       ]
     }
   },
-  "_version": "2026-08-06 01:19:04",
+  "_version": "2026-08-10 21:35:52",
   "strategy_pnl": {
     "均线交叉": -169.79,
     "海龟突破": -169.79,
