@@ -58,6 +58,8 @@ if bm.get("return_pct") is not None:
     paper_html += f'<div style=display:flex;justify-content:space-between;padding:4px 8px;font-size:12px;background:rgba(255,255,255,.03);border-radius:4px><span style=color:#666>vs {esc(bm.get("name","CSI300"))}</span><span style=color:{cb}>{bmr:+.1f}%</span><span style=font-weight:600;color:{cd}>超额 {df:+.1f}%</span></div>'
 paper_html += "</div>"
 
+if pp.get("positions_list"):
+    paper_html += '<h3 style=color:#fff>💼 当前持仓</h3>'
 for pos in pp.get("positions_list", []):
     pc = "#c0392b" if pos.get("pnl_pct", 0) >= 0 else "#27ae60"
     paper_html += f'<div class=cd><div class=r><span class=nm>{esc(pos["name"])}</span><span style=font-size:14px;font-weight:600;color:{pc}>{pos.get("pnl_pct",0):+.1f}%</span></div><div class=dt>{pos["shares"]}股 | 成本¥{pos.get("avg_cost",0):.2f} → 现¥{pos.get("current_price",0):.2f} | 市值¥{pos.get("market_value",0):,.0f}</div></div>'
@@ -66,19 +68,19 @@ for pos in pp.get("positions_list", []):
 pend = pp.get("pending", {}) if isinstance(pp.get("pending"), dict) else {}
 pending_orders = [(s, o) for s, o in pend.items()]
 if pending_orders:
-    paper_html += '<h3>待成交</h3>'
+    paper_html += '<h3 style=color:#d47800>⏳ 待成交（明日开盘）</h3>'
     for s, o in pending_orders:
-        paper_html += f'<div class=cd style=padding:6px 10px;margin:2px 0;font-size:11px;color:#666;opacity:0.7>'
-        nm = o.get("name", s)
-        sh = o.get("shares", 0)
-        tp = o.get("target_price", 0)
-        paper_html += f'📝 {esc(nm)} {sh}股 目标¥{tp:.2f}'
-        paper_html += '</div>'
+        nm = o.get("name", s); sh = o.get("shares", 0); tp = o.get("target_price", 0)
+        paper_html += f'<div class=cd style=padding:8px 10px;margin:3px 0;border-left:3px solid #d47800>'
+        paper_html += f'<div style=display:flex;justify-content:space-between;font-size:12px>'
+        paper_html += f'<span style=color:#d47800>📝 待成交</span>'
+        paper_html += f'<span style=color:#fff;font-weight:600>{esc(nm)}</span>'
+        paper_html += f'<span style=color:#666;font-family:monospace>{sh}股 × ¥{tp:.2f}</span></div></div>'
 
 # Activity timeline (only fills, not pending orders)
 olog = [o for o in pp.get("order_log", []) if o.get("event") == "ORDER_FILLED"]
 if olog:
-    paper_html += '<h3>成交明细</h3>'
+    paper_html += '<h3 style=color:#27ae60>✅ 已成交</h3>'
     for o in reversed(olog[-30:]):
         side = o.get("side", "")
         isBuy = side == "buy"
@@ -121,7 +123,7 @@ if olog:
 
 hist = pp.get("history", [])
 if hist:
-    paper_html += '<h3>已平仓</h3>'
+    paper_html += '<h3 style=color:#c0392b>📊 已平仓</h3>'
     for t in reversed(hist[-10:]):
         cc = "#c0392b" if t.get("pnl", 0) >= 0 else "#27ae60"
         paper_html += f'<div class=cd><div class=r><span class=nm>{esc(t.get("name",t.get("symbol","")))})</span><span style=font-size:16px;font-weight:700;color:{cc}>¥{t.get("pnl",0):+.0f}</span></div><div class=dt>{t.get("shares","")}股 | 买¥{t.get("entry_price",0):.2f} → 卖¥{t.get("exit_price",0):.2f} | {esc(t.get("reason",""))}</div></div>'
