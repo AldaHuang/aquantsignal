@@ -62,8 +62,18 @@ for pos in pp.get("positions_list", []):
     pc = "#c0392b" if pos.get("pnl_pct", 0) >= 0 else "#27ae60"
     paper_html += f'<div class=cd><div class=r><span class=nm>{esc(pos["name"])}</span><span style=font-size:14px;font-weight:600;color:{pc}>{pos.get("pnl_pct",0):+.1f}%</span></div><div class=dt>{pos["shares"]}股 | 成本¥{pos.get("avg_cost",0):.2f} → 现¥{pos.get("current_price",0):.2f} | 市值¥{pos.get("market_value",0):,.0f}</div></div>'
 
-# Activity timeline (order_log)
-olog = pp.get("order_log", [])
+# Pending orders
+pend = pp.get("pending", {}) if isinstance(pp.get("pending"), dict) else {}
+pending_orders = [(s, o) for s, o in pend.items()]
+if pending_orders:
+    paper_html += '<h3>待成交</h3>'
+    for s, o in pending_orders:
+        paper_html += f'<div class=cd style=padding:6px 10px;margin:2px 0;font-size:11px;color:#666;opacity:0.7>'
+        paper_html += f'📝 {esc(o.get(\"name\",s))} {o.get(\"shares\",0)}股 目标¥{o.get(\"target_price\",0):.2f}'
+        paper_html += '</div>'
+
+# Activity timeline (only fills, not pending orders)
+olog = [o for o in pp.get("order_log", []) if o.get("event") == "ORDER_FILLED"]
 if olog:
     paper_html += '<h3>成交明细</h3>'
     for o in reversed(olog[-30:]):
@@ -83,9 +93,16 @@ if olog:
         pnl_pct = o.get("pnl_pct", 0)
         cash_after = o.get("cash_after", 0)
         reason = o.get("reason", "")
+        # Determine reason tag
+        rtag = ""
+        if "止盈" in reason: rtag = '<span style=font-size:9px;background:rgba(192,57,43,.15);color:#c0392b;padding:1px 4px;border-radius:2px;margin-left:4px>止盈</span>'
+        elif "止损" in reason: rtag = '<span style=font-size:9px;background:rgba(39,174,96,.12);color:#27ae60;padding:1px 4px;border-radius:2px;margin-left:4px>止损</span>'
+        elif "卖出信号" in reason: rtag = '<span style=font-size:9px;background:rgba(212,120,0,.12);color:#d47800;padding:1px 4px;border-radius:2px;margin-left:4px>信号</span>'
+        elif "信号消失" in reason: rtag = '<span style=font-size:9px;background:rgba(212,120,0,.12);color:#d47800;padding:1px 4px;border-radius:2px;margin-left:4px>退场</span>'
+        elif reason and isBuy: rtag = '<span style=font-size:9px;background:rgba(39,174,96,.08);color:#27ae60;padding:1px 4px;border-radius:2px;margin-left:4px>建仓</span>'
         paper_html += f'<div class=cd style=padding:8px 10px;margin:3px 0>'
         paper_html += f'<div style=display:flex;justify-content:space-between;align-items:center>'
-        paper_html += f'<span><b style=color:{cl}>{icon} {label}</b> <span style=font-size:12px>{esc(o.get("name",""))}</span></span>'
+        paper_html += f'<span><b style=color:{cl}>{icon} {label}</b> <span style=font-size:12px>{esc(o.get("name",""))}</span>{rtag}</span>'
         paper_html += f'<span style=font-size:11px;color:#666;font-family:monospace>{t}</span></div>'
         paper_html += f'<div style=display:flex;justify-content:space-between;font-size:11px;color:#666;margin-top:2px>'
         paper_html += f'<span>{shares}股 × ¥{price:.2f} = ¥{value:,.0f}</span>'
