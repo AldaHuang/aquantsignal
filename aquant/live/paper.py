@@ -38,7 +38,12 @@ class PaperTrader:
         now = datetime.now().strftime("%H:%M")
         rec_map = {r.symbol: r for r in recommendations}
 
-        # ── Step 1: Fill yesterday's pending orders at today's open ──
+        # Only fill/exits during market hours (after 9:30)
+        now_dt = datetime.now()
+        market_open = now_dt.hour > 9 or (now_dt.hour == 9 and now_dt.minute >= 30)
+
+        if market_open:
+            # ── Step 1: Fill yesterday's pending orders at today's open ──
         pending_copy = dict(self.pending)
         for sym, order in pending_copy.items():
             if not feed:
@@ -62,63 +67,52 @@ class PaperTrader:
             self._execute(order)
             del self.pending[sym]
 
-        # ── Step 2: Exit rules on existing positions ──
-        for sym in list(self.positions):
-            pos = self.positions[sym]
-            # Ensure all keys exist (even for positions from older runs)
-            pos.setdefault("days_held", 0)
-            pos.setdefault("peak_price", pos.get("avg_cost", 0))
-            pos.setdefault("trailing_activated", False)
-            pos.setdefault("absent_days", 0)
-            # Skip positions just filled today (avoid immediate stop-out on gap)
-            if pos.pop("filled_today", False):
-                continue
+        # ── Step 2: Exit rules (market hours only, same block as Step 1) ──
+            for sym in list(self.positions):
+                pos = self.positions[sym]
+                pos.setdefault("days_held", 0)
+                pos.setdefault("peak_price", pos.get("avg_cost", 0))
+                pos.setdefault("trailing_activated", False)
+                pos.setdefault("absent_days", 0)
+                if pos.pop("filled_today", False):
+                    continue
 
-            if not feed: continue
+                if not feed: continue
 
-            try:
-                df = feed.get(sym, force_refresh=True)
-                close = float(df["close"].iloc[-1])
-                high = float(df["high"].iloc[-1])
-                low = float(df["low"].iloc[-1])
-                entry = pos["avg_cost"]
-                stop_loss = pos.get("stop_loss", entry * 0.9)
-                risk_dist = entry - stop_loss if stop_loss < entry else entry * 0.05
-                pos["days_held"] += 1
-                pos["peak_price"] = max(pos["peak_price"], close)
-
-                # Check intraday data for more precise exit triggers
-                intra_low, intra_high = low, high
                 try:
-                    idf = feed.get_intraday(sym, scale=5, datalen=60)
-                    if idf is not None and len(idf) > 0:
-                        intra_low = float(idf["low"].min())
-                        intra_high = float(idf["high"].max())
+                    df = feed.get(sym, force_refresh=True)
+                    close = float(df["close"].iloc[-1])
+                    high = float(df["high"].iloc[-1])
+                    low = float(df["low"].iloc[-1])
+                    entry = pos["avg_cost"]
+                    stop_loss = pos.get("stop_loss", entry * 0.9)
+                    risk_dist = entry - stop_loss if stop_loss < entry else entry * 0.05
+                    pos["days_held"] += 1
+                    pos["peak_price"] = max(pos["peak_price"], close)
+
+                    intra_low, intra_high = low, high
+                    try:
+                        idf = feed.get_intraday(sym, scale=5, datalen=60)
+                        if idf is not None and len(idf) > 0:
+                            intra_low = float(idf["low"].min())
+                            intra_high = float(idf["high"].max())
+                    except Exception:
+                        pass
+
+                    if intra_high >= entry + 3 * risk_dist:
+                        self._close_position(sym, entry + 3 * risk_dist, today, "止盈触发(盘中)")
+                        continue
+                    if intra_high >= entry + 1.5 * risk_dist and not pos["trailing_activated"]:
+                        pos["trailing_activated"] = True
+                        pos["stop_loss"] = entry
+                    if intra_low <= pos["stop_loss"]:
+                        self._close_position(sym, pos["stop_loss"], today, "止损触发(盘中)")
+                        continue
+                    if pos["days_held"] >= 20 and close <= entry:
+                        self._close_position(sym, close, today, "超20日无盈利")
+                        continue
                 except Exception:
                     pass
-
-                # A: Take-profit (check intraday high first)
-                if intra_high >= entry + 3 * risk_dist:
-                    exit_price = entry + 3 * risk_dist
-                    self._close_position(sym, exit_price, today, "止盈触发(盘中)")
-                    continue
-
-                # B: Trailing stop (lock profit after +1.5x risk)
-                if intra_high >= entry + 1.5 * risk_dist and not pos["trailing_activated"]:
-                    pos["trailing_activated"] = True
-                    pos["stop_loss"] = entry
-
-                # C: Stop loss (check intraday low first)
-                if intra_low <= pos["stop_loss"]:
-                    self._close_position(sym, pos["stop_loss"], today, "止损触发(盘中)")
-                    continue
-
-                # D: Time exit (>20 days, no profit)
-                if pos["days_held"] >= 20 and close <= entry:
-                    self._close_position(sym, close, today, "超20日无盈利")
-                    continue
-            except Exception:
-                pass  # exit rule checks are best-effort
 
         # ── Step 2.5: Signal reversal (absent from recs 3+ days) ──
         for sym in list(self.positions):
@@ -164,18 +158,17 @@ class PaperTrader:
             if (same_sec + 1) / total_pos > 0.5 and total_pos >= 3:
                 continue  # would concentrate too much in one sector
             price = r.price
-            lot_cost = price * 100 * 1.0003
-            if lot_cost > remaining_cash:
-                continue  # can't afford even 1 lot
-            # Buy 1 lot per stock for diversification
-            shares = 100
-            cost = shares * price * 1.0003
-            if cost > remaining_cash:
-                shares = 100
-                cost = shares * price * 1.0003
-            if cost > remaining_cash:
+            stop_loss = getattr(r, 'stop_loss', price * 0.9)
+            # Position size: risk 2% of total capital per trade
+            risk_amount = (self.cash + sum(o.get("shares",0) * o.get("avg_cost",0)
+                          for o in self.positions.values())) * 0.02
+            risk_per_share = max(price - stop_loss, price * 0.03)
+            shares = int(risk_amount / risk_per_share / 100) * 100
+            shares = max(100, min(shares, int(self.cash * 0.15 / price / 100) * 100))
+            lot_cost = shares * price * 1.0003
+            if lot_cost > remaining_cash or shares < 100:
                 continue
-            remaining_cash -= cost
+            remaining_cash -= lot_cost
             stop_loss = getattr(r, 'stop_loss', 0)
             self.pending[sym] = {
                 "shares": shares, "target_price": price,

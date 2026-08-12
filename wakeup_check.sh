@@ -4,7 +4,12 @@
 
 MARKER="$HOME/.aquant/last_run"
 TODAY=$(date +%Y-%m-%d)
+NOW_H=$(date +%H | sed 's/^0//')  # strip leading zero
 
+# 只在 9:30-23:59 之间运行（开盘后到深夜）
+if [ "$NOW_H" -lt 9 ] || ([ "$NOW_H" -eq 9 ] && [ "$(date +%M)" -lt 30 ]); then
+  exit 0
+fi
 
 # 今天已跑过则跳过
 if [ -f "$MARKER" ]; then
