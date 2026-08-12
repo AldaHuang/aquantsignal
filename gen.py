@@ -69,7 +69,10 @@ if pending_orders:
     paper_html += '<h3>待成交</h3>'
     for s, o in pending_orders:
         paper_html += f'<div class=cd style=padding:6px 10px;margin:2px 0;font-size:11px;color:#666;opacity:0.7>'
-        paper_html += f'📝 {esc(o.get(\"name\",s))} {o.get(\"shares\",0)}股 目标¥{o.get(\"target_price\",0):.2f}'
+        nm = o.get("name", s)
+        sh = o.get("shares", 0)
+        tp = o.get("target_price", 0)
+        paper_html += f'📝 {esc(nm)} {sh}股 目标¥{tp:.2f}'
         paper_html += '</div>'
 
 # Activity timeline (only fills, not pending orders)
