@@ -137,6 +137,7 @@ def _full_sync(today, feed=None):
             "cash": round(paper.get("cash", 0), 2),
             "pending_cash": round(pdc, 2),
             "free_cash": round(paper.get("cash", 0) - pdc, 2),
+            "pending": paper.get("pending", {}),
             "initial_cash": paper.get("initial_cash", 10000),
             "total_pnl": sum(t.get("pnl", 0) for t in paper.get("history", [])),
             "total_trades": len(paper.get("history", [])),
