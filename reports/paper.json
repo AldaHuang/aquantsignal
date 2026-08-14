@@ -1,6 +1,6 @@
 {
   "updated": "2026-08-14",
-  "cash": 32288.464999999997,
+  "cash": 22658.464999999997,
   "initial_cash": 50000,
   "positions": {
     "300209": {
@@ -10,10 +10,10 @@
       "current_price": 38.93,
       "stop_loss": 28.94,
       "name": "行云科技",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 38.93,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 0
     },
     "000506": {
       "shares": 200,
@@ -22,7 +22,7 @@
       "current_price": 17.64,
       "stop_loss": 14.96,
       "name": "招金黄金",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 21.0,
       "trailing_activated": false,
       "absent_days": 0
@@ -34,7 +34,7 @@
       "current_price": 10.09,
       "stop_loss": 9.2,
       "name": "驰宏锌锗",
-      "days_held": 3,
+      "days_held": 4,
       "peak_price": 10.52,
       "trailing_activated": false,
       "absent_days": 0
@@ -46,32 +46,37 @@
       "current_price": 37.89,
       "stop_loss": 33.46,
       "name": "兴业银锡",
-      "days_held": 3,
+      "days_held": 4,
       "peak_price": 40.07,
       "trailing_activated": false,
       "absent_days": 0
-    }
-  },
-  "pending": {
+    },
     "002031": {
       "shares": 800,
-      "target_price": 5.94,
+      "avg_cost": 6.15,
+      "entry_date": "2026-08-14",
+      "current_price": 5.94,
       "stop_loss": 5.28,
-      "signal_date": "2026-08-14",
       "name": "巨轮智能",
-      "side": "buy",
-      "created_time": "17:04"
+      "days_held": 0,
+      "peak_price": 6.15,
+      "trailing_activated": false,
+      "absent_days": 1
     },
     "600667": {
       "shares": 200,
-      "target_price": 22.95,
+      "avg_cost": 23.5,
+      "entry_date": "2026-08-14",
+      "current_price": 22.95,
       "stop_loss": 18.52,
-      "signal_date": "2026-08-14",
       "name": "太极实业",
-      "side": "buy",
-      "created_time": "17:04"
+      "days_held": 0,
+      "peak_price": 23.5,
+      "trailing_activated": false,
+      "absent_days": 1
     }
   },
+  "pending": {},
   "history": [
     {
       "symbol": "000603",
@@ -205,6 +210,14 @@
       "cash": 32288.46,
       "position_value": 16255.0,
       "return_pct": -2.91
+    },
+    {
+      "date": "2026-08-14",
+      "time": "18:04",
+      "equity": 48255.46,
+      "cash": 22658.46,
+      "position_value": 25597.0,
+      "return_pct": -3.49
     }
   ],
   "order_log": [
@@ -569,6 +582,42 @@
       "shares": 200,
       "target_price": 22.95,
       "stop_loss": 18.52
+    },
+    {
+      "time": "2026-08-14 18:04",
+      "event": "ORDER_FILLED",
+      "symbol": "002031",
+      "name": "巨轮智能",
+      "side": "buy",
+      "shares": 800,
+      "price": 6.15,
+      "value": 4920.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 4925.0,
+      "cash_before": 32288.46,
+      "cash_after": 27363.46,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-14 18:04",
+      "event": "ORDER_FILLED",
+      "symbol": "600667",
+      "name": "太极实业",
+      "side": "buy",
+      "shares": 200,
+      "price": 23.5,
+      "value": 4700.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 4705.0,
+      "cash_before": 27363.46,
+      "cash_after": 22658.46,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
     }
   ]
 }
