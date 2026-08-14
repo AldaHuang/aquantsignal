@@ -1,16 +1,16 @@
 {
-  "updated": "2026-08-12",
-  "cash": 34866.096,
+  "updated": "2026-08-14",
+  "cash": 15694.095999999998,
   "initial_cash": 50000,
   "positions": {
     "300209": {
       "shares": 100,
       "avg_cost": 37.22,
       "entry_date": "2026-08-10",
-      "current_price": 34.92,
-      "stop_loss": 25.43,
+      "current_price": 35.35,
+      "stop_loss": 25.47,
       "name": "行云科技",
-      "days_held": 1,
+      "days_held": 3,
       "peak_price": 37.22,
       "trailing_activated": false,
       "absent_days": 0
@@ -19,56 +19,88 @@
       "shares": 400,
       "avg_cost": 17.95,
       "entry_date": "2026-08-10",
-      "current_price": 16.48,
+      "current_price": 17.13,
       "stop_loss": 14.46,
       "name": "招商轮船",
-      "days_held": 1,
+      "days_held": 3,
       "peak_price": 17.95,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 2
     },
     "000506": {
       "shares": 200,
       "avg_cost": 21.0,
       "entry_date": "2026-08-12",
-      "current_price": 18.89,
-      "stop_loss": 16.37,
+      "current_price": 17.55,
+      "stop_loss": 14.91,
       "name": "招金黄金",
-      "days_held": 0,
+      "days_held": 2,
       "peak_price": 21.0,
       "trailing_activated": false,
       "absent_days": 0
-    }
-  },
-  "pending": {
+    },
     "000603": {
       "shares": 100,
-      "target_price": 34.55,
+      "avg_cost": 35.08,
+      "entry_date": "2026-08-14",
+      "current_price": 32.21,
       "stop_loss": 28.46,
-      "signal_date": "2026-08-12",
       "name": "盛达资源",
-      "side": "buy",
-      "created_time": "06:43"
+      "days_held": 1,
+      "peak_price": 35.08,
+      "trailing_activated": false,
+      "absent_days": 2
     },
     "600497": {
       "shares": 500,
-      "target_price": 10.26,
-      "stop_loss": 9.39,
-      "signal_date": "2026-08-12",
+      "avg_cost": 10.52,
+      "entry_date": "2026-08-14",
+      "current_price": 9.99,
+      "stop_loss": 9.09,
       "name": "驰宏锌锗",
-      "side": "buy",
-      "created_time": "06:43"
+      "days_held": 1,
+      "peak_price": 10.52,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "000426": {
       "shares": 100,
-      "target_price": 38.73,
-      "stop_loss": 32.99,
-      "signal_date": "2026-08-12",
+      "avg_cost": 40.07,
+      "entry_date": "2026-08-14",
+      "current_price": 37.88,
+      "stop_loss": 33.36,
       "name": "兴业银锡",
-      "side": "buy",
-      "created_time": "06:43"
+      "days_held": 1,
+      "peak_price": 40.07,
+      "trailing_activated": false,
+      "absent_days": 0
+    },
+    "600186": {
+      "shares": 300,
+      "avg_cost": 11.6,
+      "entry_date": "2026-08-14",
+      "current_price": 10.93,
+      "stop_loss": 9.06,
+      "name": "莲花控股",
+      "days_held": 0,
+      "peak_price": 11.6,
+      "trailing_activated": false,
+      "absent_days": 1
+    },
+    "600126": {
+      "shares": 400,
+      "avg_cost": 7.23,
+      "entry_date": "2026-08-14",
+      "current_price": 6.97,
+      "stop_loss": 6.26,
+      "name": "杭钢股份",
+      "days_held": 0,
+      "peak_price": 7.23,
+      "trailing_activated": false,
+      "absent_days": 1
     }
   },
+  "pending": {},
   "history": [
     {
       "symbol": "000603",
@@ -110,6 +142,22 @@
       "cash": 34866.1,
       "position_value": 13862.0,
       "return_pct": -2.54
+    },
+    {
+      "date": "2026-08-14",
+      "time": "09:52",
+      "equity": 47977.1,
+      "cash": 22076.1,
+      "position_value": 25901.0,
+      "return_pct": -4.05
+    },
+    {
+      "date": "2026-08-14",
+      "time": "10:10",
+      "equity": 47662.1,
+      "cash": 15694.1,
+      "position_value": 31968.0,
+      "return_pct": -4.68
     }
   ],
   "order_log": [
@@ -272,6 +320,116 @@
       "shares": 100,
       "target_price": 38.73,
       "stop_loss": 32.99
+    },
+    {
+      "time": "2026-08-14 09:52",
+      "event": "ORDER_FILLED",
+      "symbol": "000603",
+      "name": "盛达资源",
+      "side": "buy",
+      "shares": 100,
+      "price": 35.08,
+      "value": 3508.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 3513.0,
+      "cash_before": 34866.1,
+      "cash_after": 31353.1,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-14 09:52",
+      "event": "ORDER_FILLED",
+      "symbol": "600497",
+      "name": "驰宏锌锗",
+      "side": "buy",
+      "shares": 500,
+      "price": 10.52,
+      "value": 5260.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 5265.0,
+      "cash_before": 31353.1,
+      "cash_after": 26088.1,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-14 09:52",
+      "event": "ORDER_FILLED",
+      "symbol": "000426",
+      "name": "兴业银锡",
+      "side": "buy",
+      "shares": 100,
+      "price": 40.07,
+      "value": 4007.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 4012.0,
+      "cash_before": 26088.1,
+      "cash_after": 22076.1,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-14 09:52",
+      "event": "ORDER_CREATED",
+      "symbol": "600186",
+      "name": "莲花控股",
+      "side": "buy",
+      "shares": 300,
+      "target_price": 10.93,
+      "stop_loss": 9.06
+    },
+    {
+      "time": "2026-08-14 09:52",
+      "event": "ORDER_CREATED",
+      "symbol": "600126",
+      "name": "杭钢股份",
+      "side": "buy",
+      "shares": 400,
+      "target_price": 6.97,
+      "stop_loss": 6.26
+    },
+    {
+      "time": "2026-08-14 10:10",
+      "event": "ORDER_FILLED",
+      "symbol": "600186",
+      "name": "莲花控股",
+      "side": "buy",
+      "shares": 300,
+      "price": 11.6,
+      "value": 3480.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 3485.0,
+      "cash_before": 22076.1,
+      "cash_after": 18591.1,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-14 10:10",
+      "event": "ORDER_FILLED",
+      "symbol": "600126",
+      "name": "杭钢股份",
+      "side": "buy",
+      "shares": 400,
+      "price": 7.23,
+      "value": 2892.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 2897.0,
+      "cash_before": 18591.1,
+      "cash_after": 15694.1,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
     }
   ]
 }
