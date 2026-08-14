@@ -133,6 +133,7 @@ def filter_stocks(stocks, max_price=100, min_volume=500_000,
 
 
 _opt_queue = []  # stocks queued for parameter optimization
+_opt_lock = __import__("threading").Lock()
 
 
 def _backtest_one(symbol, feed):
@@ -183,8 +184,10 @@ def _backtest_one(symbol, feed):
             pass
 
     # Queue for optimization if not yet optimized (< 5 queued per run)
-    if not has_optimized and len(_opt_queue) < 5:
-        _opt_queue.append((symbol, opt_key))
+    if not has_optimized:
+        with _opt_lock:
+            if len(_opt_queue) < 5:
+                _opt_queue.append((symbol, opt_key))
 
     return best_sharpe, best_name
 
@@ -211,24 +214,31 @@ def run_pending_optimizations(feed, max_count=5):
 
 
 def rank_by_sharpe(stocks, feed, top_n=30):
-    """Download data, backtest all strategies, rank by best Sharpe.
+    """Backtest all strategies in parallel, rank by best Sharpe.
 
     Returns list of (code, name, price, sharpe, strategy) sorted by Sharpe desc.
     """
     import sys
+    from concurrent.futures import ThreadPoolExecutor
+
+    def _work(item):
+        code = item["code"]
+        name = item.get("name", "")
+        price = item.get("price", 0)
+        sharpe, strategy = _backtest_one(code, feed)
+        return (code, name, price, sharpe, strategy) if sharpe > -900 else None
 
     scored = []
-    for i, s in enumerate(stocks):
-        code = s["code"]
-        name = s.get("name", "")
-        price = s.get("price", 0)
-
-        sys.stdout.write(f"\r  Backtesting: {i+1}/{len(stocks)} {code} {name}...")
-        sys.stdout.flush()
-
-        sharpe, strategy = _backtest_one(code, feed)
-        if sharpe > -900:
-            scored.append((code, name, price, sharpe, strategy))
+    done = 0
+    total = len(stocks)
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for result in pool.map(_work, stocks):
+            done += 1
+            if done % 20 == 0:
+                sys.stdout.write(f"\r  Backtesting: {done}/{total}...")
+                sys.stdout.flush()
+            if result:
+                scored.append(result)
 
     sys.stdout.write("\r" + " " * 60 + "\r")
     sys.stdout.flush()
