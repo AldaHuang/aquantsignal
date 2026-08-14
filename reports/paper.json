@@ -1,64 +1,40 @@
 {
   "updated": "2026-08-14",
-  "cash": 15694.095999999998,
+  "cash": 25747.022999999997,
   "initial_cash": 50000,
   "positions": {
     "300209": {
       "shares": 100,
       "avg_cost": 37.22,
       "entry_date": "2026-08-10",
-      "current_price": 35.35,
-      "stop_loss": 25.47,
+      "current_price": 38.93,
+      "stop_loss": 28.94,
       "name": "行云科技",
-      "days_held": 3,
-      "peak_price": 37.22,
+      "days_held": 4,
+      "peak_price": 38.93,
       "trailing_activated": false,
       "absent_days": 0
-    },
-    "601872": {
-      "shares": 400,
-      "avg_cost": 17.95,
-      "entry_date": "2026-08-10",
-      "current_price": 17.13,
-      "stop_loss": 14.46,
-      "name": "招商轮船",
-      "days_held": 3,
-      "peak_price": 17.95,
-      "trailing_activated": false,
-      "absent_days": 2
     },
     "000506": {
       "shares": 200,
       "avg_cost": 21.0,
       "entry_date": "2026-08-12",
-      "current_price": 17.55,
-      "stop_loss": 14.91,
+      "current_price": 17.64,
+      "stop_loss": 14.96,
       "name": "招金黄金",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 21.0,
       "trailing_activated": false,
       "absent_days": 0
-    },
-    "000603": {
-      "shares": 100,
-      "avg_cost": 35.08,
-      "entry_date": "2026-08-14",
-      "current_price": 32.21,
-      "stop_loss": 28.46,
-      "name": "盛达资源",
-      "days_held": 1,
-      "peak_price": 35.08,
-      "trailing_activated": false,
-      "absent_days": 2
     },
     "600497": {
       "shares": 500,
       "avg_cost": 10.52,
       "entry_date": "2026-08-14",
-      "current_price": 9.99,
-      "stop_loss": 9.09,
+      "current_price": 10.09,
+      "stop_loss": 9.2,
       "name": "驰宏锌锗",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 10.52,
       "trailing_activated": false,
       "absent_days": 0
@@ -67,10 +43,10 @@
       "shares": 100,
       "avg_cost": 40.07,
       "entry_date": "2026-08-14",
-      "current_price": 37.88,
-      "stop_loss": 33.36,
+      "current_price": 37.89,
+      "stop_loss": 33.46,
       "name": "兴业银锡",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 40.07,
       "trailing_activated": false,
       "absent_days": 0
@@ -79,25 +55,25 @@
       "shares": 300,
       "avg_cost": 11.6,
       "entry_date": "2026-08-14",
-      "current_price": 10.93,
+      "current_price": 12.02,
       "stop_loss": 9.06,
       "name": "莲花控股",
-      "days_held": 0,
-      "peak_price": 11.6,
+      "days_held": 1,
+      "peak_price": 12.02,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     },
     "600126": {
       "shares": 400,
       "avg_cost": 7.23,
       "entry_date": "2026-08-14",
-      "current_price": 6.97,
+      "current_price": 7.38,
       "stop_loss": 6.26,
       "name": "杭钢股份",
-      "days_held": 0,
-      "peak_price": 7.23,
+      "days_held": 1,
+      "peak_price": 7.38,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     }
   },
   "pending": {},
@@ -116,6 +92,36 @@
       "commission": 5.0,
       "stamp_duty": 6.9,
       "reason": "止损触发(盘中)"
+    },
+    {
+      "symbol": "601872",
+      "name": "招商轮船",
+      "side": "sell",
+      "shares": 400,
+      "entry_price": 17.95,
+      "exit_price": 17.13,
+      "exit_date": "2026-08-14",
+      "entry_date": "2026-08-10",
+      "pnl": -339.85,
+      "pnl_pct": -4.73,
+      "commission": 5.0,
+      "stamp_duty": 6.85,
+      "reason": "信号消失"
+    },
+    {
+      "symbol": "000603",
+      "name": "盛达资源",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 35.08,
+      "exit_price": 32.21,
+      "exit_date": "2026-08-14",
+      "entry_date": "2026-08-14",
+      "pnl": -295.22,
+      "pnl_pct": -8.42,
+      "commission": 5.0,
+      "stamp_duty": 3.22,
+      "reason": "信号消失"
     }
   ],
   "equity_log": [
@@ -158,6 +164,14 @@
       "cash": 15694.1,
       "position_value": 31968.0,
       "return_pct": -4.68
+    },
+    {
+      "date": "2026-08-14",
+      "time": "16:04",
+      "equity": 48560.02,
+      "cash": 25747.02,
+      "position_value": 22813.0,
+      "return_pct": -2.88
     }
   ],
   "order_log": [
@@ -430,6 +444,42 @@
       "reason": "",
       "pnl": 0,
       "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-14 16:04",
+      "event": "ORDER_FILLED",
+      "symbol": "601872",
+      "name": "招商轮船",
+      "side": "sell",
+      "shares": 400,
+      "price": 17.13,
+      "value": 6852.0,
+      "commission": 5.0,
+      "stamp_duty": 6.85,
+      "total_cost": 6863.85,
+      "cash_before": 15694.1,
+      "cash_after": 22534.24,
+      "reason": "信号消失",
+      "pnl": -339.85,
+      "pnl_pct": -4.73
+    },
+    {
+      "time": "2026-08-14 16:04",
+      "event": "ORDER_FILLED",
+      "symbol": "000603",
+      "name": "盛达资源",
+      "side": "sell",
+      "shares": 100,
+      "price": 32.21,
+      "value": 3221.0,
+      "commission": 5.0,
+      "stamp_duty": 3.22,
+      "total_cost": 3229.22,
+      "cash_before": 22534.24,
+      "cash_after": 25747.02,
+      "reason": "信号消失",
+      "pnl": -295.22,
+      "pnl_pct": -8.42
     }
   ]
 }
