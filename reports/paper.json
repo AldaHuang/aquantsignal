@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14",
+  "updated": "2026-08-15",
   "cash": 22658.464999999997,
   "initial_cash": 50000,
   "positions": {
@@ -10,7 +10,7 @@
       "current_price": 38.93,
       "stop_loss": 28.94,
       "name": "行云科技",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 38.93,
       "trailing_activated": false,
       "absent_days": 0
@@ -22,7 +22,7 @@
       "current_price": 17.64,
       "stop_loss": 14.96,
       "name": "招金黄金",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 21.0,
       "trailing_activated": false,
       "absent_days": 0
@@ -34,7 +34,7 @@
       "current_price": 10.09,
       "stop_loss": 9.2,
       "name": "驰宏锌锗",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 10.52,
       "trailing_activated": false,
       "absent_days": 0
@@ -46,7 +46,7 @@
       "current_price": 37.89,
       "stop_loss": 33.46,
       "name": "兴业银锡",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 40.07,
       "trailing_activated": false,
       "absent_days": 0
@@ -58,10 +58,10 @@
       "current_price": 5.94,
       "stop_loss": 5.28,
       "name": "巨轮智能",
-      "days_held": 0,
+      "days_held": 1,
       "peak_price": 6.15,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     },
     "600667": {
       "shares": 200,
@@ -70,10 +70,10 @@
       "current_price": 22.95,
       "stop_loss": 18.52,
       "name": "太极实业",
-      "days_held": 0,
+      "days_held": 1,
       "peak_price": 23.5,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 0
     }
   },
   "pending": {},
@@ -214,6 +214,14 @@
     {
       "date": "2026-08-14",
       "time": "18:04",
+      "equity": 48255.46,
+      "cash": 22658.46,
+      "position_value": 25597.0,
+      "return_pct": -3.49
+    },
+    {
+      "date": "2026-08-15",
+      "time": "09:41",
       "equity": 48255.46,
       "cash": 22658.46,
       "position_value": 25597.0,
