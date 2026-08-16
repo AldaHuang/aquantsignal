@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-15",
-  "cash": 22658.464999999997,
+  "updated": "2026-08-16",
+  "cash": 27400.712999999996,
   "initial_cash": 50000,
   "positions": {
     "300209": {
@@ -10,7 +10,7 @@
       "current_price": 38.93,
       "stop_loss": 28.94,
       "name": "行云科技",
-      "days_held": 7,
+      "days_held": 8,
       "peak_price": 38.93,
       "trailing_activated": false,
       "absent_days": 0
@@ -22,7 +22,7 @@
       "current_price": 17.64,
       "stop_loss": 14.96,
       "name": "招金黄金",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 21.0,
       "trailing_activated": false,
       "absent_days": 0
@@ -34,10 +34,10 @@
       "current_price": 10.09,
       "stop_loss": 9.2,
       "name": "驰宏锌锗",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 10.52,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "000426": {
       "shares": 100,
@@ -46,22 +46,10 @@
       "current_price": 37.89,
       "stop_loss": 33.46,
       "name": "兴业银锡",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 40.07,
       "trailing_activated": false,
       "absent_days": 0
-    },
-    "002031": {
-      "shares": 800,
-      "avg_cost": 6.15,
-      "entry_date": "2026-08-14",
-      "current_price": 5.94,
-      "stop_loss": 5.28,
-      "name": "巨轮智能",
-      "days_held": 1,
-      "peak_price": 6.15,
-      "trailing_activated": false,
-      "absent_days": 2
     },
     "600667": {
       "shares": 200,
@@ -70,7 +58,7 @@
       "current_price": 22.95,
       "stop_loss": 18.52,
       "name": "太极实业",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 23.5,
       "trailing_activated": false,
       "absent_days": 0
@@ -152,6 +140,21 @@
       "commission": 5.0,
       "stamp_duty": 2.95,
       "reason": "信号消失"
+    },
+    {
+      "symbol": "002031",
+      "name": "巨轮智能",
+      "side": "sell",
+      "shares": 800,
+      "entry_price": 6.15,
+      "exit_price": 5.94,
+      "exit_date": "2026-08-16",
+      "entry_date": "2026-08-14",
+      "pnl": -177.75,
+      "pnl_pct": -3.61,
+      "commission": 5.0,
+      "stamp_duty": 4.75,
+      "reason": "信号消失"
     }
   ],
   "equity_log": [
@@ -226,6 +229,14 @@
       "cash": 22658.46,
       "position_value": 25597.0,
       "return_pct": -3.49
+    },
+    {
+      "date": "2026-08-16",
+      "time": "12:27",
+      "equity": 48245.71,
+      "cash": 27400.71,
+      "position_value": 20845.0,
+      "return_pct": -3.51
     }
   ],
   "order_log": [
@@ -626,6 +637,24 @@
       "reason": "",
       "pnl": 0,
       "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-16 12:52",
+      "event": "ORDER_FILLED",
+      "symbol": "002031",
+      "name": "巨轮智能",
+      "side": "sell",
+      "shares": 800,
+      "price": 5.94,
+      "value": 4752.0,
+      "commission": 5.0,
+      "stamp_duty": 4.75,
+      "total_cost": 4761.75,
+      "cash_before": 22658.46,
+      "cash_after": 27400.71,
+      "reason": "信号消失",
+      "pnl": -177.75,
+      "pnl_pct": -3.61
     }
   ]
 }
