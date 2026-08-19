@@ -1,16 +1,16 @@
 {
-  "updated": "2026-08-18",
-  "cash": 15820.712999999996,
+  "updated": "2026-08-19",
+  "cash": 19173.547999999995,
   "initial_cash": 50000,
   "positions": {
     "300209": {
       "shares": 100,
       "avg_cost": 37.22,
       "entry_date": "2026-08-10",
-      "current_price": 39.3,
-      "stop_loss": 29.23,
+      "current_price": 32.51,
+      "stop_loss": 22.59,
       "name": "行云科技",
-      "days_held": 11,
+      "days_held": 12,
       "peak_price": 39.3,
       "trailing_activated": false,
       "absent_days": 0
@@ -19,46 +19,34 @@
       "shares": 200,
       "avg_cost": 21.0,
       "entry_date": "2026-08-12",
-      "current_price": 17.75,
-      "stop_loss": 15.04,
+      "current_price": 18.36,
+      "stop_loss": 15.49,
       "name": "招金黄金",
-      "days_held": 10,
+      "days_held": 11,
       "peak_price": 21.0,
       "trailing_activated": false,
-      "absent_days": 1
-    },
-    "600497": {
-      "shares": 500,
-      "avg_cost": 10.52,
-      "entry_date": "2026-08-14",
-      "current_price": 10.33,
-      "stop_loss": 9.2,
-      "name": "驰宏锌锗",
-      "days_held": 9,
-      "peak_price": 10.52,
-      "trailing_activated": false,
-      "absent_days": 2
+      "absent_days": 0
     },
     "000426": {
       "shares": 100,
       "avg_cost": 40.07,
       "entry_date": "2026-08-14",
-      "current_price": 39.48,
-      "stop_loss": 35.15,
+      "current_price": 35.96,
+      "stop_loss": 31.53,
       "name": "兴业银锡",
-      "days_held": 9,
+      "days_held": 10,
       "peak_price": 40.07,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 0
     },
     "600667": {
       "shares": 200,
       "avg_cost": 23.5,
       "entry_date": "2026-08-14",
-      "current_price": 23.86,
-      "stop_loss": 19.36,
+      "current_price": 21.12,
+      "stop_loss": 16.74,
       "name": "太极实业",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 23.86,
       "trailing_activated": false,
       "absent_days": 0
@@ -67,36 +55,48 @@
       "shares": 200,
       "avg_cost": 17.35,
       "entry_date": "2026-08-17",
-      "current_price": 17.89,
-      "stop_loss": 16.0,
+      "current_price": 18.6,
+      "stop_loss": 16.69,
       "name": "招商轮船",
-      "days_held": 1,
-      "peak_price": 17.89,
+      "days_held": 2,
+      "peak_price": 18.6,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 0
     },
     "603115": {
       "shares": 100,
       "avg_cost": 81.0,
       "entry_date": "2026-08-18",
-      "current_price": 85.26,
+      "current_price": 76.9,
       "stop_loss": 69.81,
       "name": "海星股份",
-      "days_held": 0,
+      "days_held": 1,
       "peak_price": 81.0,
+      "trailing_activated": false,
+      "absent_days": 2
+    },
+    "002031": {
+      "shares": 300,
+      "avg_cost": 5.99,
+      "entry_date": "2026-08-19",
+      "current_price": 5.63,
+      "stop_loss": 5.37,
+      "name": "巨轮智能",
+      "days_held": 0,
+      "peak_price": 5.99,
       "trailing_activated": false,
       "absent_days": 1
     }
   },
   "pending": {
-    "002031": {
-      "shares": 300,
-      "target_price": 6.05,
-      "stop_loss": 5.37,
-      "signal_date": "2026-08-18",
-      "name": "巨轮智能",
+    "301511": {
+      "shares": 100,
+      "target_price": 86.36,
+      "stop_loss": 64.95,
+      "signal_date": "2026-08-19",
+      "name": "德福科技",
       "side": "buy",
-      "created_time": "13:21"
+      "created_time": "17:44"
     }
   },
   "history": [
@@ -188,6 +188,21 @@
       "pnl_pct": -3.61,
       "commission": 5.0,
       "stamp_duty": 4.75,
+      "reason": "信号消失"
+    },
+    {
+      "symbol": "600497",
+      "name": "驰宏锌锗",
+      "side": "sell",
+      "shares": 500,
+      "entry_price": 10.52,
+      "exit_price": 10.33,
+      "exit_date": "2026-08-19",
+      "entry_date": "2026-08-14",
+      "pnl": -105.16,
+      "pnl_pct": -2.0,
+      "commission": 5.0,
+      "stamp_duty": 5.17,
       "reason": "信号消失"
     }
   ],
@@ -295,6 +310,14 @@
       "cash": 15820.71,
       "position_value": 33469.0,
       "return_pct": -1.42
+    },
+    {
+      "date": "2026-08-19",
+      "time": "17:44",
+      "equity": 47015.55,
+      "cash": 19173.55,
+      "position_value": 27842.0,
+      "return_pct": -5.97
     }
   ],
   "order_log": [
@@ -779,6 +802,52 @@
       "shares": 300,
       "target_price": 6.05,
       "stop_loss": 5.37
+    },
+    {
+      "time": "2026-08-19 17:44",
+      "event": "ORDER_FILLED",
+      "symbol": "002031",
+      "name": "巨轮智能",
+      "side": "buy",
+      "shares": 300,
+      "price": 5.99,
+      "value": 1797.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 1802.0,
+      "cash_before": 15820.71,
+      "cash_after": 14018.71,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-19 18:03",
+      "event": "ORDER_FILLED",
+      "symbol": "600497",
+      "name": "驰宏锌锗",
+      "side": "sell",
+      "shares": 500,
+      "price": 10.33,
+      "value": 5165.0,
+      "commission": 5.0,
+      "stamp_duty": 5.17,
+      "total_cost": 5175.16,
+      "cash_before": 14018.71,
+      "cash_after": 19173.55,
+      "reason": "信号消失",
+      "pnl": -105.16,
+      "pnl_pct": -2.0
+    },
+    {
+      "time": "2026-08-19 18:03",
+      "event": "ORDER_CREATED",
+      "symbol": "301511",
+      "name": "德福科技",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 86.36,
+      "stop_loss": 64.95
     }
   ]
 }
