@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-19",
-  "cash": 19173.547999999995,
+  "updated": "2026-08-20",
+  "cash": 22867.380999999994,
   "initial_cash": 50000,
   "positions": {
     "300209": {
@@ -10,7 +10,7 @@
       "current_price": 32.51,
       "stop_loss": 22.59,
       "name": "行云科技",
-      "days_held": 12,
+      "days_held": 13,
       "peak_price": 39.3,
       "trailing_activated": false,
       "absent_days": 0
@@ -22,7 +22,7 @@
       "current_price": 18.36,
       "stop_loss": 15.49,
       "name": "招金黄金",
-      "days_held": 11,
+      "days_held": 12,
       "peak_price": 21.0,
       "trailing_activated": false,
       "absent_days": 0
@@ -34,7 +34,7 @@
       "current_price": 35.96,
       "stop_loss": 31.53,
       "name": "兴业银锡",
-      "days_held": 10,
+      "days_held": 11,
       "peak_price": 40.07,
       "trailing_activated": false,
       "absent_days": 0
@@ -46,57 +46,51 @@
       "current_price": 21.12,
       "stop_loss": 16.74,
       "name": "太极实业",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 23.86,
       "trailing_activated": false,
       "absent_days": 0
     },
-    "601872": {
-      "shares": 200,
-      "avg_cost": 17.35,
-      "entry_date": "2026-08-17",
-      "current_price": 18.6,
-      "stop_loss": 16.69,
-      "name": "招商轮船",
-      "days_held": 2,
-      "peak_price": 18.6,
+    "301511": {
+      "shares": 100,
+      "avg_cost": 94.4,
+      "entry_date": "2026-08-20",
+      "current_price": 86.36,
+      "stop_loss": 64.95,
+      "name": "德福科技",
+      "days_held": 0,
+      "peak_price": 94.4,
       "trailing_activated": false,
       "absent_days": 0
-    },
-    "603115": {
-      "shares": 100,
-      "avg_cost": 81.0,
-      "entry_date": "2026-08-18",
-      "current_price": 76.9,
-      "stop_loss": 69.81,
-      "name": "海星股份",
-      "days_held": 1,
-      "peak_price": 81.0,
-      "trailing_activated": false,
-      "absent_days": 2
-    },
-    "002031": {
-      "shares": 300,
-      "avg_cost": 5.99,
-      "entry_date": "2026-08-19",
-      "current_price": 5.63,
-      "stop_loss": 5.37,
-      "name": "巨轮智能",
-      "days_held": 0,
-      "peak_price": 5.99,
-      "trailing_activated": false,
-      "absent_days": 1
     }
   },
   "pending": {
-    "301511": {
+    "600353": {
       "shares": 100,
-      "target_price": 86.36,
-      "stop_loss": 64.95,
-      "signal_date": "2026-08-19",
-      "name": "德福科技",
+      "target_price": 33.79,
+      "stop_loss": 27.22,
+      "signal_date": "2026-08-20",
+      "name": "旭光电子",
       "side": "buy",
-      "created_time": "17:44"
+      "created_time": "15:09"
+    },
+    "603221": {
+      "shares": 100,
+      "target_price": 27.0,
+      "stop_loss": 22.39,
+      "signal_date": "2026-08-20",
+      "name": "爱丽家居",
+      "side": "buy",
+      "created_time": "15:09"
+    },
+    "600497": {
+      "shares": 300,
+      "target_price": 9.67,
+      "stop_loss": 8.78,
+      "signal_date": "2026-08-20",
+      "name": "驰宏锌锗",
+      "side": "buy",
+      "created_time": "15:09"
     }
   },
   "history": [
@@ -203,6 +197,51 @@
       "pnl_pct": -2.0,
       "commission": 5.0,
       "stamp_duty": 5.17,
+      "reason": "信号消失"
+    },
+    {
+      "symbol": "601872",
+      "name": "招商轮船",
+      "side": "sell",
+      "shares": 200,
+      "entry_price": 17.35,
+      "exit_price": 19.33,
+      "exit_date": "2026-08-20",
+      "entry_date": "2026-08-17",
+      "pnl": 387.13,
+      "pnl_pct": 11.16,
+      "commission": 5.0,
+      "stamp_duty": 3.87,
+      "reason": "止盈触发(盘中)"
+    },
+    {
+      "symbol": "002031",
+      "name": "巨轮智能",
+      "side": "sell",
+      "shares": 300,
+      "entry_price": 5.99,
+      "exit_price": 5.37,
+      "exit_date": "2026-08-20",
+      "entry_date": "2026-08-19",
+      "pnl": -192.61,
+      "pnl_pct": -10.72,
+      "commission": 5.0,
+      "stamp_duty": 1.61,
+      "reason": "止损触发(盘中)"
+    },
+    {
+      "symbol": "603115",
+      "name": "海星股份",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 81.0,
+      "exit_price": 76.9,
+      "exit_date": "2026-08-20",
+      "entry_date": "2026-08-18",
+      "pnl": -422.69,
+      "pnl_pct": -5.22,
+      "commission": 5.0,
+      "stamp_duty": 7.69,
       "reason": "信号消失"
     }
   ],
@@ -318,6 +357,14 @@
       "cash": 19173.55,
       "position_value": 27842.0,
       "return_pct": -5.97
+    },
+    {
+      "date": "2026-08-20",
+      "time": "15:09",
+      "equity": 46246.38,
+      "cash": 22867.38,
+      "position_value": 23379.0,
+      "return_pct": -7.51
     }
   ],
   "order_log": [
@@ -848,6 +895,108 @@
       "shares": 100,
       "target_price": 86.36,
       "stop_loss": 64.95
+    },
+    {
+      "time": "2026-08-20 15:09",
+      "event": "ORDER_FILLED",
+      "symbol": "301511",
+      "name": "德福科技",
+      "side": "buy",
+      "shares": 100,
+      "price": 94.4,
+      "value": 9440.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 9445.0,
+      "cash_before": 19173.55,
+      "cash_after": 9728.55,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-20 15:09",
+      "event": "ORDER_FILLED",
+      "symbol": "601872",
+      "name": "招商轮船",
+      "side": "sell",
+      "shares": 200,
+      "price": 19.33,
+      "value": 3866.0,
+      "commission": 5.0,
+      "stamp_duty": 3.87,
+      "total_cost": 3874.87,
+      "cash_before": 9728.55,
+      "cash_after": 13585.68,
+      "reason": "止盈触发(盘中)",
+      "pnl": 387.13,
+      "pnl_pct": 11.16
+    },
+    {
+      "time": "2026-08-20 15:09",
+      "event": "ORDER_FILLED",
+      "symbol": "002031",
+      "name": "巨轮智能",
+      "side": "sell",
+      "shares": 300,
+      "price": 5.37,
+      "value": 1611.0,
+      "commission": 5.0,
+      "stamp_duty": 1.61,
+      "total_cost": 1617.61,
+      "cash_before": 13585.68,
+      "cash_after": 15190.07,
+      "reason": "止损触发(盘中)",
+      "pnl": -192.61,
+      "pnl_pct": -10.72
+    },
+    {
+      "time": "2026-08-20 15:09",
+      "event": "ORDER_FILLED",
+      "symbol": "603115",
+      "name": "海星股份",
+      "side": "sell",
+      "shares": 100,
+      "price": 76.9,
+      "value": 7690.0,
+      "commission": 5.0,
+      "stamp_duty": 7.69,
+      "total_cost": 7702.69,
+      "cash_before": 15190.07,
+      "cash_after": 22867.38,
+      "reason": "信号消失",
+      "pnl": -422.69,
+      "pnl_pct": -5.22
+    },
+    {
+      "time": "2026-08-20 15:09",
+      "event": "ORDER_CREATED",
+      "symbol": "600353",
+      "name": "旭光电子",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 33.79,
+      "stop_loss": 27.22
+    },
+    {
+      "time": "2026-08-20 15:09",
+      "event": "ORDER_CREATED",
+      "symbol": "603221",
+      "name": "爱丽家居",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 27.0,
+      "stop_loss": 22.39
+    },
+    {
+      "time": "2026-08-20 15:09",
+      "event": "ORDER_CREATED",
+      "symbol": "600497",
+      "name": "驰宏锌锗",
+      "side": "buy",
+      "shares": 300,
+      "target_price": 9.67,
+      "stop_loss": 8.78
     }
   ]
 }
