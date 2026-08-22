@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-21",
-  "cash": 16924.150999999994,
+  "updated": "2026-08-22",
+  "cash": 9956.114999999994,
   "initial_cash": 50000,
   "positions": {
     "000506": {
@@ -10,10 +10,10 @@
       "current_price": 20.77,
       "stop_loss": 17.64,
       "name": "招金黄金",
-      "days_held": 13,
+      "days_held": 14,
       "peak_price": 21.0,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "000426": {
       "shares": 100,
@@ -22,10 +22,10 @@
       "current_price": 40.88,
       "stop_loss": 34.8,
       "name": "兴业银锡",
-      "days_held": 12,
+      "days_held": 13,
       "peak_price": 40.88,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "600667": {
       "shares": 200,
@@ -34,7 +34,7 @@
       "current_price": 21.44,
       "stop_loss": 17.14,
       "name": "太极实业",
-      "days_held": 8,
+      "days_held": 9,
       "peak_price": 23.86,
       "trailing_activated": false,
       "absent_days": 0
@@ -46,7 +46,7 @@
       "current_price": 90.64,
       "stop_loss": 69.31,
       "name": "德福科技",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 94.4,
       "trailing_activated": false,
       "absent_days": 0
@@ -58,8 +58,8 @@
       "current_price": 38.28,
       "stop_loss": 30.7,
       "name": "旭光电子",
-      "days_held": 0,
-      "peak_price": 34.8,
+      "days_held": 1,
+      "peak_price": 38.28,
       "trailing_activated": false,
       "absent_days": 0
     },
@@ -70,33 +70,33 @@
       "current_price": 26.26,
       "stop_loss": 22.39,
       "name": "爱丽家居",
-      "days_held": 0,
+      "days_held": 1,
       "peak_price": 27.3,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     },
-    "600497": {
-      "shares": 300,
-      "avg_cost": 9.8,
-      "entry_date": "2026-08-21",
-      "current_price": 10.12,
-      "stop_loss": 8.78,
-      "name": "驰宏锌锗",
+    "301611": {
+      "shares": 100,
+      "avg_cost": 99.91,
+      "entry_date": "2026-08-22",
+      "current_price": 98.27,
+      "stop_loss": 83.37,
+      "name": "珂玛科技",
       "days_held": 0,
-      "peak_price": 9.8,
+      "peak_price": 99.91,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 0
     }
   },
   "pending": {
-    "301611": {
+    "000603": {
       "shares": 100,
-      "target_price": 98.27,
-      "stop_loss": 83.37,
-      "signal_date": "2026-08-21",
-      "name": "珂玛科技",
+      "target_price": 36.61,
+      "stop_loss": 29.8,
+      "signal_date": "2026-08-22",
+      "name": "盛达资源",
       "side": "buy",
-      "created_time": "18:04"
+      "created_time": "19:50"
     }
   },
   "history": [
@@ -264,6 +264,21 @@
       "commission": 5.0,
       "stamp_duty": 3.23,
       "reason": "卖出信号"
+    },
+    {
+      "symbol": "600497",
+      "name": "驰宏锌锗",
+      "side": "sell",
+      "shares": 300,
+      "entry_price": 9.8,
+      "exit_price": 10.12,
+      "exit_date": "2026-08-22",
+      "entry_date": "2026-08-21",
+      "pnl": 87.96,
+      "pnl_pct": 2.99,
+      "commission": 5.0,
+      "stamp_duty": 3.04,
+      "reason": "卖出信号"
     }
   ],
   "equity_log": [
@@ -394,6 +409,14 @@
       "cash": 16924.15,
       "position_value": 31084.0,
       "return_pct": -3.98
+    },
+    {
+      "date": "2026-08-22",
+      "time": "19:50",
+      "equity": 47831.11,
+      "cash": 9956.11,
+      "position_value": 37875.0,
+      "return_pct": -4.34
     }
   ],
   "order_log": [
@@ -1108,6 +1131,52 @@
       "shares": 100,
       "target_price": 98.27,
       "stop_loss": 83.37
+    },
+    {
+      "time": "2026-08-22 19:50",
+      "event": "ORDER_FILLED",
+      "symbol": "301611",
+      "name": "珂玛科技",
+      "side": "buy",
+      "shares": 100,
+      "price": 99.91,
+      "value": 9991.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 9996.0,
+      "cash_before": 16924.15,
+      "cash_after": 6928.15,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-22 19:50",
+      "event": "ORDER_FILLED",
+      "symbol": "600497",
+      "name": "驰宏锌锗",
+      "side": "sell",
+      "shares": 300,
+      "price": 10.12,
+      "value": 3036.0,
+      "commission": 5.0,
+      "stamp_duty": 3.04,
+      "total_cost": 3044.04,
+      "cash_before": 6928.15,
+      "cash_after": 9956.11,
+      "reason": "卖出信号",
+      "pnl": 87.96,
+      "pnl_pct": 2.99
+    },
+    {
+      "time": "2026-08-22 19:50",
+      "event": "ORDER_CREATED",
+      "symbol": "000603",
+      "name": "盛达资源",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 36.61,
+      "stop_loss": 29.8
     }
   ]
 }
