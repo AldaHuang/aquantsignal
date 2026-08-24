@@ -8,7 +8,7 @@
       "avg_cost": 21.0,
       "entry_date": "2026-08-12",
       "current_price": 22.34,
-      "stop_loss": 17.38,
+      "stop_loss": 18.95,
       "name": "招金黄金",
       "days_held": 16,
       "peak_price": 22.34,
@@ -20,7 +20,7 @@
       "avg_cost": 40.07,
       "entry_date": "2026-08-14",
       "current_price": 42.29,
-      "stop_loss": 34.57,
+      "stop_loss": 35.98,
       "name": "兴业银锡",
       "days_held": 15,
       "peak_price": 42.29,
@@ -37,14 +37,14 @@
       "days_held": 11,
       "peak_price": 23.86,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "301511": {
       "shares": 100,
       "avg_cost": 94.4,
       "entry_date": "2026-08-20",
       "current_price": 81.87,
-      "stop_loss": 68.63,
+      "stop_loss": 59.86,
       "name": "德福科技",
       "days_held": 4,
       "peak_price": 94.4,
@@ -56,7 +56,7 @@
       "avg_cost": 34.8,
       "entry_date": "2026-08-21",
       "current_price": 37.02,
-      "stop_loss": 30.7,
+      "stop_loss": 28.97,
       "name": "旭光电子",
       "days_held": 3,
       "peak_price": 38.28,
@@ -73,14 +73,14 @@
       "days_held": 2,
       "peak_price": 102.9,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     },
     "000603": {
       "shares": 100,
       "avg_cost": 34.25,
       "entry_date": "2026-08-23",
       "current_price": 39.86,
-      "stop_loss": 29.34,
+      "stop_loss": 32.59,
       "name": "盛达资源",
       "days_held": 1,
       "peak_price": 39.86,
@@ -446,6 +446,14 @@
     {
       "date": "2026-08-24",
       "time": "15:39",
+      "equity": 48095.49,
+      "cash": 7833.49,
+      "position_value": 40262.0,
+      "return_pct": -3.81
+    },
+    {
+      "date": "2026-08-24",
+      "time": "20:15",
       "equity": 48095.49,
       "cash": 7833.49,
       "position_value": 40262.0,
