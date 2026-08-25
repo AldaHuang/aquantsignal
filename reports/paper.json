@@ -10,7 +10,7 @@
       "current_price": 39.5,
       "stop_loss": 35.98,
       "name": "兴业银锡",
-      "days_held": 16,
+      "days_held": 17,
       "peak_price": 42.29,
       "trailing_activated": false,
       "absent_days": 0
@@ -22,7 +22,7 @@
       "current_price": 19.94,
       "stop_loss": 17.09,
       "name": "太极实业",
-      "days_held": 12,
+      "days_held": 13,
       "peak_price": 23.86,
       "trailing_activated": false,
       "absent_days": 0
@@ -34,7 +34,7 @@
       "current_price": 6.58,
       "stop_loss": 5.16,
       "name": "白银有色",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 6.7,
       "trailing_activated": false,
       "absent_days": 0
@@ -493,6 +493,14 @@
     {
       "date": "2026-08-25",
       "time": "17:09",
+      "equity": 47601.92,
+      "cash": 38347.92,
+      "position_value": 9254.0,
+      "return_pct": -4.8
+    },
+    {
+      "date": "2026-08-25",
+      "time": "18:08",
       "equity": 47601.92,
       "cash": 38347.92,
       "position_value": 9254.0,
