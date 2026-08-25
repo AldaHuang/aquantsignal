@@ -489,6 +489,14 @@
       "cash": 38347.92,
       "position_value": 9254.0,
       "return_pct": -4.8
+    },
+    {
+      "date": "2026-08-25",
+      "time": "17:09",
+      "equity": 47601.92,
+      "cash": 38347.92,
+      "position_value": 9254.0,
+      "return_pct": -4.8
     }
   ],
   "order_log": [
