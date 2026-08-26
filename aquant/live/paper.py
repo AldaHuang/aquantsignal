@@ -42,9 +42,10 @@ class PaperTrader:
         now_dt = datetime.now()
         market_open = now_dt.hour > 9 or (now_dt.hour == 9 and now_dt.minute >= 30)
 
-        if market_open:
-            # ── Step 1: Fill yesterday's pending orders at today's open ──
+        # ── Step 1: Fill yesterday's pending orders at today's open ──
         pending_copy = dict(self.pending)
+        if not market_open:
+            pending_copy = {}  # skip fills before market opens
         for sym, order in pending_copy.items():
             if not feed:
                 continue
@@ -67,7 +68,8 @@ class PaperTrader:
             self._execute(order)
             del self.pending[sym]
 
-        # ── Step 2: Exit rules (market hours only, same block as Step 1) ──
+        # ── Step 2: Exit rules (skip before market open) ──
+        if market_open:
             for sym in list(self.positions):
                 pos = self.positions[sym]
                 pos.setdefault("days_held", 0)
@@ -258,10 +260,18 @@ class PaperTrader:
                 old["avg_cost"] = (old_cost + value) / (old["shares"] + shares)
                 old["shares"] += shares
             else:
+                # Recalculate stop if fill price deviated from target
+                orig_stop = order.get("stop_loss", 0)
+                target = order.get("target_price", price)
+                if orig_stop > 0 and abs(price - target) / target > 0.05:
+                    # Fill price deviated >5% from target — recalc stop at -15% of fill
+                    orig_stop = round(price * 0.85, 2)
+                elif orig_stop <= 0:
+                    orig_stop = round(price * 0.90, 2)
                 self.positions[sym] = {
                     "shares": shares, "avg_cost": price,
                     "entry_date": fill_date, "current_price": price,
-                    "stop_loss": order.get("stop_loss", 0),
+                    "stop_loss": orig_stop,
                     "name": order.get("name", sym),
                     "filled_today": True,
                 }
