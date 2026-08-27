@@ -1,13 +1,13 @@
 {
-  "updated": "2026-08-26",
-  "cash": 38347.91899999999,
+  "updated": "2026-08-27",
+  "cash": 26446.421999999984,
   "initial_cash": 50000,
   "positions": {
     "000426": {
       "shares": 100,
       "avg_cost": 40.07,
       "entry_date": "2026-08-14",
-      "current_price": 39.5,
+      "current_price": 40.24,
       "stop_loss": 33.17,
       "name": "兴业银锡",
       "days_held": 18,
@@ -19,7 +19,7 @@
       "shares": 200,
       "avg_cost": 23.5,
       "entry_date": "2026-08-14",
-      "current_price": 19.94,
+      "current_price": 19.63,
       "stop_loss": 15.66,
       "name": "太极实业",
       "days_held": 14,
@@ -31,52 +31,40 @@
       "shares": 200,
       "avg_cost": 6.53,
       "entry_date": "2026-08-24",
-      "current_price": 6.58,
+      "current_price": 7.24,
       "stop_loss": 5.78,
       "name": "白银有色",
       "days_held": 3,
       "peak_price": 6.7,
       "trailing_activated": false,
       "absent_days": 0
-    }
-  },
-  "pending": {
-    "600353": {
-      "shares": 100,
-      "target_price": 35.31,
-      "stop_loss": 27.36,
-      "signal_date": "2026-08-26",
-      "name": "旭光电子",
-      "side": "buy",
-      "created_time": "10:48"
     },
     "002491": {
       "shares": 200,
-      "target_price": 21.4,
+      "avg_cost": 21.72,
+      "entry_date": "2026-08-27",
+      "current_price": 22.48,
       "stop_loss": 17.29,
-      "signal_date": "2026-08-26",
       "name": "通鼎互联",
-      "side": "buy",
-      "created_time": "10:48"
+      "days_held": 0,
+      "peak_price": 21.72,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "603580": {
       "shares": 100,
-      "target_price": 74.62,
+      "avg_cost": 73.71,
+      "entry_date": "2026-08-27",
+      "current_price": 73.2,
       "stop_loss": 58.78,
-      "signal_date": "2026-08-26",
       "name": "艾艾精工",
-      "side": "buy",
-      "created_time": "10:48"
-    },
-    "000506": {
-      "shares": 200,
-      "target_price": 20.61,
-      "stop_loss": 17.14,
-      "signal_date": "2026-08-26",
-      "name": "招金黄金",
-      "side": "buy",
-      "created_time": "10:48"
-    },
+      "days_held": 0,
+      "peak_price": 73.71,
+      "trailing_activated": false,
+      "absent_days": 1
+    }
+  },
+  "pending": {
     "000603": {
       "shares": 100,
       "target_price": 36.27,
@@ -357,6 +345,36 @@
       "commission": 5.0,
       "stamp_duty": 4.47,
       "reason": "卖出信号"
+    },
+    {
+      "symbol": "600353",
+      "name": "旭光电子",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 35.2,
+      "exit_price": 34.55,
+      "exit_date": "2026-08-27",
+      "entry_date": "2026-08-27",
+      "pnl": -73.46,
+      "pnl_pct": -2.09,
+      "commission": 5.0,
+      "stamp_duty": 3.45,
+      "reason": "卖出信号"
+    },
+    {
+      "symbol": "000506",
+      "name": "招金黄金",
+      "side": "sell",
+      "shares": 200,
+      "entry_price": 20.63,
+      "exit_price": 20.21,
+      "exit_date": "2026-08-27",
+      "entry_date": "2026-08-27",
+      "pnl": -93.04,
+      "pnl_pct": -2.26,
+      "commission": 5.0,
+      "stamp_duty": 4.04,
+      "reason": "卖出信号"
     }
   ],
   "equity_log": [
@@ -559,6 +577,14 @@
       "cash": 38347.92,
       "position_value": 9254.0,
       "return_pct": -4.8
+    },
+    {
+      "date": "2026-08-27",
+      "time": "09:39",
+      "equity": 47660.42,
+      "cash": 26446.42,
+      "position_value": 21214.0,
+      "return_pct": -4.68
     }
   ],
   "order_log": [
@@ -1523,6 +1549,114 @@
       "shares": 100,
       "target_price": 36.27,
       "stop_loss": 28.77
+    },
+    {
+      "time": "2026-08-27 09:39",
+      "event": "ORDER_FILLED",
+      "symbol": "600353",
+      "name": "旭光电子",
+      "side": "buy",
+      "shares": 100,
+      "price": 35.2,
+      "value": 3520.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 3525.0,
+      "cash_before": 38347.92,
+      "cash_after": 34822.92,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-27 09:39",
+      "event": "ORDER_FILLED",
+      "symbol": "002491",
+      "name": "通鼎互联",
+      "side": "buy",
+      "shares": 200,
+      "price": 21.72,
+      "value": 4344.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 4349.0,
+      "cash_before": 34822.92,
+      "cash_after": 30473.92,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-27 09:39",
+      "event": "ORDER_FILLED",
+      "symbol": "603580",
+      "name": "艾艾精工",
+      "side": "buy",
+      "shares": 100,
+      "price": 73.71,
+      "value": 7371.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 7376.0,
+      "cash_before": 30473.92,
+      "cash_after": 23097.92,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-27 09:39",
+      "event": "ORDER_FILLED",
+      "symbol": "000506",
+      "name": "招金黄金",
+      "side": "buy",
+      "shares": 200,
+      "price": 20.63,
+      "value": 4126.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 4131.0,
+      "cash_before": 23097.92,
+      "cash_after": 18966.92,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-27 09:40",
+      "event": "ORDER_FILLED",
+      "symbol": "600353",
+      "name": "旭光电子",
+      "side": "sell",
+      "shares": 100,
+      "price": 34.55,
+      "value": 3455.0,
+      "commission": 5.0,
+      "stamp_duty": 3.45,
+      "total_cost": 3463.45,
+      "cash_before": 18966.92,
+      "cash_after": 22413.46,
+      "reason": "卖出信号",
+      "pnl": -73.46,
+      "pnl_pct": -2.09
+    },
+    {
+      "time": "2026-08-27 09:40",
+      "event": "ORDER_FILLED",
+      "symbol": "000506",
+      "name": "招金黄金",
+      "side": "sell",
+      "shares": 200,
+      "price": 20.21,
+      "value": 4042.0,
+      "commission": 5.0,
+      "stamp_duty": 4.04,
+      "total_cost": 4051.04,
+      "cash_before": 22413.46,
+      "cash_after": 26446.42,
+      "reason": "卖出信号",
+      "pnl": -93.04,
+      "pnl_pct": -2.26
     }
   ]
 }
