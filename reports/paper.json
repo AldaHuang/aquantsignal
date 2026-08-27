@@ -1,6 +1,6 @@
 {
   "updated": "2026-08-27",
-  "cash": 26446.421999999984,
+  "cash": 33754.101999999984,
   "initial_cash": 50000,
   "positions": {
     "000426": {
@@ -49,19 +49,7 @@
       "days_held": 0,
       "peak_price": 21.72,
       "trailing_activated": false,
-      "absent_days": 0
-    },
-    "603580": {
-      "shares": 100,
-      "avg_cost": 73.71,
-      "entry_date": "2026-08-27",
-      "current_price": 73.2,
-      "stop_loss": 58.78,
-      "name": "艾艾精工",
-      "days_held": 0,
-      "peak_price": 73.71,
-      "trailing_activated": false,
-      "absent_days": 2
+      "absent_days": 1
     }
   },
   "pending": {
@@ -375,6 +363,21 @@
       "commission": 5.0,
       "stamp_duty": 4.04,
       "reason": "卖出信号"
+    },
+    {
+      "symbol": "603580",
+      "name": "艾艾精工",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 73.71,
+      "exit_price": 73.2,
+      "exit_date": "2026-08-27",
+      "entry_date": "2026-08-27",
+      "pnl": -63.32,
+      "pnl_pct": -0.86,
+      "commission": 5.0,
+      "stamp_duty": 7.32,
+      "reason": "信号消失"
     }
   ],
   "equity_log": [
@@ -593,6 +596,14 @@
       "cash": 26446.42,
       "position_value": 21585.0,
       "return_pct": -3.94
+    },
+    {
+      "date": "2026-08-27",
+      "time": "17:09",
+      "equity": 48019.1,
+      "cash": 33754.1,
+      "position_value": 14265.0,
+      "return_pct": -3.96
     }
   ],
   "order_log": [
@@ -1665,6 +1676,24 @@
       "reason": "卖出信号",
       "pnl": -93.04,
       "pnl_pct": -2.26
+    },
+    {
+      "time": "2026-08-27 17:10",
+      "event": "ORDER_FILLED",
+      "symbol": "603580",
+      "name": "艾艾精工",
+      "side": "sell",
+      "shares": 100,
+      "price": 73.2,
+      "value": 7320.0,
+      "commission": 5.0,
+      "stamp_duty": 7.32,
+      "total_cost": 7332.32,
+      "cash_before": 26446.42,
+      "cash_after": 33754.1,
+      "reason": "信号消失",
+      "pnl": -63.32,
+      "pnl_pct": -0.86
     }
   ]
 }
