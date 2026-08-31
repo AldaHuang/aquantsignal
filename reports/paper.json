@@ -1,28 +1,16 @@
 {
-  "updated": "2026-08-30",
-  "cash": 21316.79999999999,
+  "updated": "2026-08-31",
+  "cash": 22527.814999999988,
   "initial_cash": 50000,
   "positions": {
-    "000426": {
-      "shares": 100,
-      "avg_cost": 40.07,
-      "entry_date": "2026-08-14",
-      "current_price": 41.58,
-      "stop_loss": 36.64,
-      "name": "兴业银锡",
-      "days_held": 22,
-      "peak_price": 42.29,
-      "trailing_activated": false,
-      "absent_days": 0
-    },
     "002491": {
       "shares": 200,
       "avg_cost": 21.72,
       "entry_date": "2026-08-27",
-      "current_price": 22.23,
-      "stop_loss": 17.52,
+      "current_price": 22.22,
+      "stop_loss": 17.44,
       "name": "通鼎互联",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 22.23,
       "trailing_activated": false,
       "absent_days": 0
@@ -31,10 +19,10 @@
       "shares": 100,
       "avg_cost": 38.56,
       "entry_date": "2026-08-28",
-      "current_price": 38.59,
-      "stop_loss": 31.47,
+      "current_price": 36.87,
+      "stop_loss": 33.07,
       "name": "盛达资源",
-      "days_held": 3,
+      "days_held": 4,
       "peak_price": 38.59,
       "trailing_activated": false,
       "absent_days": 0
@@ -43,10 +31,10 @@
       "shares": 100,
       "avg_cost": 37.13,
       "entry_date": "2026-08-28",
-      "current_price": 34.63,
+      "current_price": 36.6,
       "stop_loss": 26.22,
       "name": "旭光电子",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 37.13,
       "trailing_activated": false,
       "absent_days": 0
@@ -55,10 +43,10 @@
       "shares": 100,
       "avg_cost": 38.61,
       "entry_date": "2026-08-28",
-      "current_price": 35.92,
-      "stop_loss": 29.8,
+      "current_price": 34.99,
+      "stop_loss": 29.7,
       "name": "杭电股份",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 38.61,
       "trailing_activated": false,
       "absent_days": 0
@@ -67,10 +55,10 @@
       "shares": 200,
       "avg_cost": 22.23,
       "entry_date": "2026-08-28",
-      "current_price": 21.43,
-      "stop_loss": 17.91,
+      "current_price": 20.3,
+      "stop_loss": 17.95,
       "name": "招金黄金",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 22.23,
       "trailing_activated": false,
       "absent_days": 0
@@ -79,24 +67,36 @@
       "shares": 200,
       "avg_cost": 11.18,
       "entry_date": "2026-08-30",
-      "current_price": 11.45,
-      "stop_loss": 10.21,
+      "current_price": 11.21,
+      "stop_loss": 10.06,
       "name": "深中华A",
+      "days_held": 1,
+      "peak_price": 11.21,
+      "trailing_activated": false,
+      "absent_days": 0
+    },
+    "601212": {
+      "shares": 400,
+      "avg_cost": 6.9,
+      "entry_date": "2026-08-31",
+      "current_price": 6.87,
+      "stop_loss": 5.69,
+      "name": "白银有色",
       "days_held": 0,
-      "peak_price": 11.18,
+      "peak_price": 6.9,
       "trailing_activated": false,
       "absent_days": 0
     }
   },
   "pending": {
-    "601212": {
-      "shares": 400,
-      "target_price": 7.63,
-      "stop_loss": 6.46,
-      "signal_date": "2026-08-30",
-      "name": "白银有色",
+    "601208": {
+      "shares": 100,
+      "target_price": 51.28,
+      "stop_loss": 45.3,
+      "signal_date": "2026-08-31",
+      "name": "东材科技",
       "side": "buy",
-      "created_time": "10:11"
+      "created_time": "19:04"
     }
   },
   "history": [
@@ -459,6 +459,21 @@
       "commission": 5.0,
       "stamp_duty": 4.93,
       "reason": "信号消失"
+    },
+    {
+      "symbol": "000426",
+      "name": "兴业银锡",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 40.07,
+      "exit_price": 39.85,
+      "exit_date": "2026-08-31",
+      "entry_date": "2026-08-14",
+      "pnl": -30.99,
+      "pnl_pct": -0.77,
+      "commission": 5.0,
+      "stamp_duty": 3.98,
+      "reason": "超20日无盈利"
     }
   ],
   "equity_log": [
@@ -725,6 +740,14 @@
       "cash": 21316.8,
       "position_value": 26094.0,
       "return_pct": -5.18
+    },
+    {
+      "date": "2026-08-31",
+      "time": "19:04",
+      "equity": 46867.81,
+      "cash": 22527.81,
+      "position_value": 24340.0,
+      "return_pct": -6.26
     }
   ],
   "order_log": [
@@ -2037,6 +2060,52 @@
       "shares": 400,
       "target_price": 7.63,
       "stop_loss": 6.46
+    },
+    {
+      "time": "2026-08-31 19:04",
+      "event": "ORDER_FILLED",
+      "symbol": "601212",
+      "name": "白银有色",
+      "side": "buy",
+      "shares": 400,
+      "price": 6.9,
+      "value": 2760.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 2765.0,
+      "cash_before": 21316.8,
+      "cash_after": 18551.8,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-08-31 19:04",
+      "event": "ORDER_FILLED",
+      "symbol": "000426",
+      "name": "兴业银锡",
+      "side": "sell",
+      "shares": 100,
+      "price": 39.85,
+      "value": 3985.0,
+      "commission": 5.0,
+      "stamp_duty": 3.98,
+      "total_cost": 3993.99,
+      "cash_before": 18551.8,
+      "cash_after": 22527.81,
+      "reason": "超20日无盈利",
+      "pnl": -30.99,
+      "pnl_pct": -0.77
+    },
+    {
+      "time": "2026-08-31 19:04",
+      "event": "ORDER_CREATED",
+      "symbol": "601208",
+      "name": "东材科技",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 51.28,
+      "stop_loss": 45.3
     }
   ]
 }
