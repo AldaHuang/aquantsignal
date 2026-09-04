@@ -1,40 +1,40 @@
 {
-  "updated": "2026-09-03",
-  "cash": 17702.814999999988,
+  "updated": "2026-09-04",
+  "cash": 19707.80299999999,
   "initial_cash": 50000,
   "positions": {
     "002491": {
       "shares": 200,
       "avg_cost": 21.72,
       "entry_date": "2026-08-27",
-      "current_price": 21.06,
+      "current_price": 20.38,
       "stop_loss": 17.09,
       "name": "通鼎互联",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 22.23,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "000603": {
       "shares": 100,
       "avg_cost": 38.56,
       "entry_date": "2026-08-28",
-      "current_price": 37.0,
+      "current_price": 36.16,
       "stop_loss": 33.07,
       "name": "盛达资源",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 38.59,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     },
     "600353": {
       "shares": 100,
       "avg_cost": 37.13,
       "entry_date": "2026-08-28",
-      "current_price": 33.93,
-      "stop_loss": 24.6,
+      "current_price": 31.25,
+      "stop_loss": 25.38,
       "name": "旭光电子",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 37.13,
       "trailing_activated": false,
       "absent_days": 0
@@ -43,35 +43,23 @@
       "shares": 100,
       "avg_cost": 38.61,
       "entry_date": "2026-08-28",
-      "current_price": 39.25,
+      "current_price": 36.46,
       "stop_loss": 30.59,
       "name": "杭电股份",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 39.25,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "000506": {
       "shares": 200,
       "avg_cost": 22.23,
       "entry_date": "2026-08-28",
-      "current_price": 20.99,
+      "current_price": 20.64,
       "stop_loss": 17.64,
       "name": "招金黄金",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 22.23,
-      "trailing_activated": false,
-      "absent_days": 0
-    },
-    "000017": {
-      "shares": 200,
-      "avg_cost": 11.18,
-      "entry_date": "2026-08-30",
-      "current_price": 10.58,
-      "stop_loss": 10.06,
-      "name": "深中华A",
-      "days_held": 2,
-      "peak_price": 11.21,
       "trailing_activated": false,
       "absent_days": 1
     },
@@ -79,28 +67,38 @@
       "shares": 400,
       "avg_cost": 6.9,
       "entry_date": "2026-08-31",
-      "current_price": 7.33,
+      "current_price": 7.3,
       "stop_loss": 5.69,
       "name": "白银有色",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 7.33,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     },
     "601208": {
       "shares": 100,
       "avg_cost": 48.2,
       "entry_date": "2026-09-03",
-      "current_price": 46.36,
+      "current_price": 46.13,
       "stop_loss": 41.55,
       "name": "东材科技",
-      "days_held": 0,
+      "days_held": 1,
       "peak_price": 48.2,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     }
   },
-  "pending": {},
+  "pending": {
+    "600378": {
+      "shares": 100,
+      "target_price": 48.63,
+      "stop_loss": 39.26,
+      "signal_date": "2026-09-04",
+      "name": "昊华科技",
+      "side": "buy",
+      "created_time": "17:29"
+    }
+  },
   "history": [
     {
       "symbol": "000603",
@@ -476,6 +474,21 @@
       "commission": 5.0,
       "stamp_duty": 3.98,
       "reason": "超20日无盈利"
+    },
+    {
+      "symbol": "000017",
+      "name": "深中华A",
+      "side": "sell",
+      "shares": 200,
+      "entry_price": 11.18,
+      "exit_price": 10.06,
+      "exit_date": "2026-09-04",
+      "entry_date": "2026-08-30",
+      "pnl": -231.01,
+      "pnl_pct": -10.33,
+      "commission": 5.0,
+      "stamp_duty": 2.01,
+      "reason": "止损触发(盘中)"
     }
   ],
   "equity_log": [
@@ -758,6 +771,14 @@
       "cash": 17702.81,
       "position_value": 29112.0,
       "return_pct": -6.37
+    },
+    {
+      "date": "2026-09-04",
+      "time": "17:29",
+      "equity": 45831.8,
+      "cash": 19707.8,
+      "position_value": 26124.0,
+      "return_pct": -8.34
     }
   ],
   "order_log": [
@@ -2134,6 +2155,34 @@
       "reason": "",
       "pnl": 0,
       "pnl_pct": 0
+    },
+    {
+      "time": "2026-09-04 17:29",
+      "event": "ORDER_FILLED",
+      "symbol": "000017",
+      "name": "深中华A",
+      "side": "sell",
+      "shares": 200,
+      "price": 10.06,
+      "value": 2012.0,
+      "commission": 5.0,
+      "stamp_duty": 2.01,
+      "total_cost": 2019.01,
+      "cash_before": 17702.81,
+      "cash_after": 19707.8,
+      "reason": "止损触发(盘中)",
+      "pnl": -231.01,
+      "pnl_pct": -10.33
+    },
+    {
+      "time": "2026-09-04 17:29",
+      "event": "ORDER_CREATED",
+      "symbol": "600378",
+      "name": "昊华科技",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 48.63,
+      "stop_loss": 39.26
     }
   ]
 }
