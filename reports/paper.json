@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-05",
-  "cash": 18395.186999999987,
+  "updated": "2026-09-06",
+  "cash": 20692.573999999986,
   "initial_cash": 50000,
   "positions": {
     "002491": {
@@ -10,7 +10,7 @@
       "current_price": 20.38,
       "stop_loss": 16.02,
       "name": "通鼎互联",
-      "days_held": 8,
+      "days_held": 9,
       "peak_price": 22.23,
       "trailing_activated": false,
       "absent_days": 0
@@ -22,7 +22,7 @@
       "current_price": 31.25,
       "stop_loss": 22.7,
       "name": "旭光电子",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 37.13,
       "trailing_activated": false,
       "absent_days": 0
@@ -34,7 +34,7 @@
       "current_price": 36.46,
       "stop_loss": 29.44,
       "name": "杭电股份",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 39.25,
       "trailing_activated": false,
       "absent_days": 0
@@ -46,7 +46,7 @@
       "current_price": 20.64,
       "stop_loss": 17.19,
       "name": "招金黄金",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 22.23,
       "trailing_activated": false,
       "absent_days": 0
@@ -58,22 +58,10 @@
       "current_price": 7.3,
       "stop_loss": 6.0,
       "name": "白银有色",
-      "days_held": 3,
+      "days_held": 4,
       "peak_price": 7.33,
       "trailing_activated": false,
       "absent_days": 0
-    },
-    "601208": {
-      "shares": 100,
-      "avg_cost": 48.2,
-      "entry_date": "2026-09-03",
-      "current_price": 46.13,
-      "stop_loss": 41.55,
-      "name": "东材科技",
-      "days_held": 2,
-      "peak_price": 48.2,
-      "trailing_activated": false,
-      "absent_days": 2
     },
     "600378": {
       "shares": 100,
@@ -82,21 +70,33 @@
       "current_price": 45.75,
       "stop_loss": 39.26,
       "name": "昊华科技",
-      "days_held": 0,
+      "days_held": 1,
       "peak_price": 49.15,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
+    },
+    "600354": {
+      "shares": 300,
+      "avg_cost": 7.67,
+      "entry_date": "2026-09-06",
+      "current_price": 8.66,
+      "stop_loss": 6.92,
+      "name": "敦煌种业",
+      "days_held": 0,
+      "peak_price": 7.67,
+      "trailing_activated": false,
+      "absent_days": 0
     }
   },
   "pending": {
-    "600354": {
+    "000017": {
       "shares": 300,
-      "target_price": 8.66,
-      "stop_loss": 6.92,
-      "signal_date": "2026-09-05",
-      "name": "敦煌种业",
+      "target_price": 9.52,
+      "stop_loss": 7.6,
+      "signal_date": "2026-09-06",
+      "name": "深中华A",
       "side": "buy",
-      "created_time": "13:09"
+      "created_time": "13:50"
     }
   },
   "history": [
@@ -504,6 +504,21 @@
       "commission": 5.0,
       "stamp_duty": 3.62,
       "reason": "信号消失"
+    },
+    {
+      "symbol": "601208",
+      "name": "东材科技",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 48.2,
+      "exit_price": 46.13,
+      "exit_date": "2026-09-06",
+      "entry_date": "2026-09-03",
+      "pnl": -216.61,
+      "pnl_pct": -4.49,
+      "commission": 5.0,
+      "stamp_duty": 4.61,
+      "reason": "信号消失"
     }
   ],
   "equity_log": [
@@ -802,6 +817,14 @@
       "cash": 18395.19,
       "position_value": 27083.0,
       "return_pct": -9.04
+    },
+    {
+      "date": "2026-09-06",
+      "time": "13:50",
+      "equity": 45760.57,
+      "cash": 20692.57,
+      "position_value": 25068.0,
+      "return_pct": -8.48
     }
   ],
   "order_log": [
@@ -2252,6 +2275,52 @@
       "shares": 300,
       "target_price": 8.66,
       "stop_loss": 6.92
+    },
+    {
+      "time": "2026-09-06 13:50",
+      "event": "ORDER_FILLED",
+      "symbol": "600354",
+      "name": "敦煌种业",
+      "side": "buy",
+      "shares": 300,
+      "price": 7.67,
+      "value": 2301.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 2306.0,
+      "cash_before": 18395.19,
+      "cash_after": 16089.19,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-09-06 13:50",
+      "event": "ORDER_FILLED",
+      "symbol": "601208",
+      "name": "东材科技",
+      "side": "sell",
+      "shares": 100,
+      "price": 46.13,
+      "value": 4613.0,
+      "commission": 5.0,
+      "stamp_duty": 4.61,
+      "total_cost": 4622.61,
+      "cash_before": 16089.19,
+      "cash_after": 20692.57,
+      "reason": "信号消失",
+      "pnl": -216.61,
+      "pnl_pct": -4.49
+    },
+    {
+      "time": "2026-09-06 13:50",
+      "event": "ORDER_CREATED",
+      "symbol": "000017",
+      "name": "深中华A",
+      "side": "buy",
+      "shares": 300,
+      "target_price": 9.52,
+      "stop_loss": 7.6
     }
   ]
 }
