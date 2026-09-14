@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13",
+  "updated": "2026-09-14",
   "cash": 6332.459999999985,
   "initial_cash": 50000,
   "positions": {
@@ -7,73 +7,97 @@
       "shares": 200,
       "avg_cost": 23.2,
       "entry_date": "2026-09-13",
-      "current_price": 25.35,
-      "stop_loss": 19.72,
+      "current_price": 24.36,
+      "stop_loss": 20.58,
       "name": "远东股份",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 23.2,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "002046": {
       "shares": 100,
       "avg_cost": 58.83,
       "entry_date": "2026-09-13",
-      "current_price": 57.3,
-      "stop_loss": 50.92,
+      "current_price": 60.0,
+      "stop_loss": 50.65,
       "name": "国机精工",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 58.83,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "601208": {
       "shares": 100,
       "avg_cost": 46.97,
       "entry_date": "2026-09-13",
-      "current_price": 47.72,
-      "stop_loss": 41.45,
+      "current_price": 48.29,
+      "stop_loss": 41.53,
       "name": "东材科技",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 46.97,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "600354": {
       "shares": 300,
       "avg_cost": 11.65,
       "entry_date": "2026-09-13",
-      "current_price": 10.97,
+      "current_price": 9.87,
       "stop_loss": 9.9,
       "name": "敦煌种业",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 11.65,
+      "trailing_activated": false,
+      "absent_days": 1
     },
     "603618": {
       "shares": 100,
       "avg_cost": 37.8,
       "entry_date": "2026-09-13",
-      "current_price": 40.71,
-      "stop_loss": 32.13,
+      "current_price": 41.47,
+      "stop_loss": 32.14,
       "name": "杭电股份",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 37.8,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "601212": {
       "shares": 600,
       "avg_cost": 6.35,
       "entry_date": "2026-09-13",
-      "current_price": 6.44,
-      "stop_loss": 5.1,
+      "current_price": 6.24,
+      "stop_loss": 5.17,
       "name": "白银有色",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 6.35,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "601988": {
       "shares": 1000,
       "avg_cost": 6.56,
       "entry_date": "2026-09-13",
-      "current_price": 6.57,
-      "stop_loss": 6.25,
+      "current_price": 6.64,
+      "stop_loss": 6.24,
       "name": "中国银行",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 6.56,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "601872": {
       "shares": 300,
       "avg_cost": 21.46,
       "entry_date": "2026-09-13",
       "current_price": 20.0,
-      "stop_loss": 18.24,
+      "stop_loss": 16.93,
       "name": "招商轮船",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 21.46,
+      "trailing_activated": false,
+      "absent_days": 0
     }
   },
   "pending": {},
@@ -992,6 +1016,14 @@
       "cash": 6332.46,
       "position_value": 39368.0,
       "return_pct": -8.6
+    },
+    {
+      "date": "2026-09-14",
+      "time": "16:20",
+      "equity": 45525.46,
+      "cash": 6332.46,
+      "position_value": 39193.0,
+      "return_pct": -8.95
     }
   ],
   "order_log": [
