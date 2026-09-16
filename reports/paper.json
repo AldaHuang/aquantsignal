@@ -1,41 +1,41 @@
 {
-  "updated": "2026-09-15",
-  "cash": 9294.489999999985,
+  "updated": "2026-09-16",
+  "cash": 12284.643999999986,
   "initial_cash": 50000,
   "positions": {
     "600869": {
       "shares": 200,
       "avg_cost": 23.2,
       "entry_date": "2026-09-13",
-      "current_price": 21.92,
+      "current_price": 21.86,
       "stop_loss": 19.42,
       "name": "远东股份",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 23.2,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "002046": {
       "shares": 100,
       "avg_cost": 58.83,
       "entry_date": "2026-09-13",
-      "current_price": 59.28,
-      "stop_loss": 50.65,
+      "current_price": 61.41,
+      "stop_loss": 56.6,
       "name": "国机精工",
-      "days_held": 1,
-      "peak_price": 59.28,
+      "days_held": 2,
+      "peak_price": 61.41,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 0
     },
     "601208": {
       "shares": 100,
       "avg_cost": 46.97,
       "entry_date": "2026-09-13",
-      "current_price": 49.37,
-      "stop_loss": 42.0,
+      "current_price": 54.31,
+      "stop_loss": 47.95,
       "name": "东材科技",
-      "days_held": 1,
-      "peak_price": 49.37,
+      "days_held": 2,
+      "peak_price": 54.31,
       "trailing_activated": false,
       "absent_days": 0
     },
@@ -43,23 +43,11 @@
       "shares": 100,
       "avg_cost": 37.8,
       "entry_date": "2026-09-13",
-      "current_price": 41.04,
-      "stop_loss": 32.9,
+      "current_price": 40.27,
+      "stop_loss": 33.56,
       "name": "杭电股份",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 41.04,
-      "trailing_activated": false,
-      "absent_days": 0
-    },
-    "601212": {
-      "shares": 600,
-      "avg_cost": 6.35,
-      "entry_date": "2026-09-13",
-      "current_price": 6.18,
-      "stop_loss": 5.08,
-      "name": "白银有色",
-      "days_held": 1,
-      "peak_price": 6.35,
       "trailing_activated": false,
       "absent_days": 0
     },
@@ -67,36 +55,48 @@
       "shares": 1000,
       "avg_cost": 6.56,
       "entry_date": "2026-09-13",
-      "current_price": 6.57,
+      "current_price": 6.56,
       "stop_loss": 6.31,
       "name": "中国银行",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 6.57,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "601872": {
       "shares": 300,
       "avg_cost": 21.46,
       "entry_date": "2026-09-13",
-      "current_price": 20.5,
-      "stop_loss": 16.93,
+      "current_price": 19.86,
+      "stop_loss": 16.55,
       "name": "招商轮船",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 21.46,
+      "trailing_activated": false,
+      "absent_days": 0
+    },
+    "600354": {
+      "shares": 100,
+      "avg_cost": 8.42,
+      "entry_date": "2026-09-16",
+      "current_price": 8.86,
+      "stop_loss": 6.28,
+      "name": "敦煌种业",
+      "days_held": 0,
+      "peak_price": 8.42,
       "trailing_activated": false,
       "absent_days": 0
     }
   },
   "pending": {
-    "600354": {
+    "603115": {
       "shares": 100,
-      "target_price": 9.87,
-      "stop_loss": 7.46,
-      "signal_date": "2026-09-15",
-      "name": "敦煌种业",
+      "target_price": 91.66,
+      "stop_loss": 76.93,
+      "signal_date": "2026-09-16",
+      "name": "海星股份",
       "side": "buy",
-      "created_time": "15:44"
+      "created_time": "20:52"
     }
   },
   "history": [
@@ -699,6 +699,21 @@
       "commission": 5.0,
       "stamp_duty": 2.97,
       "reason": "止损触发(盘中)"
+    },
+    {
+      "symbol": "601212",
+      "name": "白银有色",
+      "side": "sell",
+      "shares": 600,
+      "entry_price": 6.35,
+      "exit_price": 6.41,
+      "exit_date": "2026-09-16",
+      "entry_date": "2026-09-13",
+      "pnl": 27.15,
+      "pnl_pct": 0.71,
+      "commission": 5.0,
+      "stamp_duty": 3.85,
+      "reason": "卖出信号"
     }
   ],
   "equity_log": [
@@ -1045,6 +1060,14 @@
       "cash": 9294.49,
       "position_value": 35781.0,
       "return_pct": -9.85
+    },
+    {
+      "date": "2026-09-16",
+      "time": "20:52",
+      "equity": 45659.64,
+      "cash": 12284.64,
+      "position_value": 33375.0,
+      "return_pct": -8.68
     }
   ],
   "order_log": [
@@ -3093,6 +3116,52 @@
       "shares": 100,
       "target_price": 9.87,
       "stop_loss": 7.46
+    },
+    {
+      "time": "2026-09-16 20:52",
+      "event": "ORDER_FILLED",
+      "symbol": "600354",
+      "name": "敦煌种业",
+      "side": "buy",
+      "shares": 100,
+      "price": 8.42,
+      "value": 842.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 847.0,
+      "cash_before": 9294.49,
+      "cash_after": 8447.49,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-09-16 20:52",
+      "event": "ORDER_FILLED",
+      "symbol": "601212",
+      "name": "白银有色",
+      "side": "sell",
+      "shares": 600,
+      "price": 6.41,
+      "value": 3846.0,
+      "commission": 5.0,
+      "stamp_duty": 3.85,
+      "total_cost": 3854.85,
+      "cash_before": 8447.49,
+      "cash_after": 12284.64,
+      "reason": "卖出信号",
+      "pnl": 27.15,
+      "pnl_pct": 0.71
+    },
+    {
+      "time": "2026-09-16 20:52",
+      "event": "ORDER_CREATED",
+      "symbol": "603115",
+      "name": "海星股份",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 91.66,
+      "stop_loss": 76.93
     }
   ]
 }
