@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-16",
-  "cash": 12284.643999999986,
+  "updated": "2026-09-17",
+  "cash": 14193.909449999986,
   "initial_cash": 50000,
   "positions": {
     "600869": {
@@ -10,34 +10,10 @@
       "current_price": 21.86,
       "stop_loss": 19.42,
       "name": "远东股份",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 23.2,
       "trailing_activated": false,
-      "absent_days": 1
-    },
-    "002046": {
-      "shares": 100,
-      "avg_cost": 58.83,
-      "entry_date": "2026-09-13",
-      "current_price": 61.41,
-      "stop_loss": 56.6,
-      "name": "国机精工",
-      "days_held": 2,
-      "peak_price": 61.41,
-      "trailing_activated": false,
-      "absent_days": 0
-    },
-    "601208": {
-      "shares": 100,
-      "avg_cost": 46.97,
-      "entry_date": "2026-09-13",
-      "current_price": 54.31,
-      "stop_loss": 47.95,
-      "name": "东材科技",
-      "days_held": 2,
-      "peak_price": 54.31,
-      "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 2
     },
     "603618": {
       "shares": 100,
@@ -46,7 +22,7 @@
       "current_price": 40.27,
       "stop_loss": 33.56,
       "name": "杭电股份",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 41.04,
       "trailing_activated": false,
       "absent_days": 0
@@ -58,10 +34,10 @@
       "current_price": 6.56,
       "stop_loss": 6.31,
       "name": "中国银行",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 6.57,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     },
     "601872": {
       "shares": 300,
@@ -70,7 +46,7 @@
       "current_price": 19.86,
       "stop_loss": 16.55,
       "name": "招商轮船",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 21.46,
       "trailing_activated": false,
       "absent_days": 0
@@ -82,21 +58,42 @@
       "current_price": 8.86,
       "stop_loss": 6.28,
       "name": "敦煌种业",
+      "days_held": 1,
+      "peak_price": 8.86,
+      "trailing_activated": false,
+      "absent_days": 0
+    },
+    "603115": {
+      "shares": 100,
+      "avg_cost": 93.49,
+      "entry_date": "2026-09-17",
+      "current_price": 91.66,
+      "stop_loss": 76.93,
+      "name": "海星股份",
       "days_held": 0,
-      "peak_price": 8.42,
+      "peak_price": 93.49,
       "trailing_activated": false,
       "absent_days": 0
     }
   },
   "pending": {
-    "603115": {
+    "601208": {
       "shares": 100,
-      "target_price": 91.66,
-      "stop_loss": 76.93,
-      "signal_date": "2026-09-16",
-      "name": "海星股份",
+      "target_price": 54.31,
+      "stop_loss": 47.95,
+      "signal_date": "2026-09-17",
+      "name": "东材科技",
       "side": "buy",
-      "created_time": "20:52"
+      "created_time": "09:35"
+    },
+    "002046": {
+      "shares": 100,
+      "target_price": 61.41,
+      "stop_loss": 56.6,
+      "signal_date": "2026-09-17",
+      "name": "国机精工",
+      "side": "buy",
+      "created_time": "09:35"
     }
   },
   "history": [
@@ -714,6 +711,36 @@
       "commission": 5.0,
       "stamp_duty": 3.85,
       "reason": "卖出信号"
+    },
+    {
+      "symbol": "002046",
+      "name": "国机精工",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 58.83,
+      "exit_price": 58.83,
+      "exit_date": "2026-09-17",
+      "entry_date": "2026-09-13",
+      "pnl": -10.88,
+      "pnl_pct": -0.18,
+      "commission": 5.0,
+      "stamp_duty": 5.88,
+      "reason": "止损触发(盘中)"
+    },
+    {
+      "symbol": "601208",
+      "name": "东材科技",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 46.97,
+      "exit_price": 54.02,
+      "exit_date": "2026-09-17",
+      "entry_date": "2026-09-13",
+      "pnl": 694.15,
+      "pnl_pct": 14.78,
+      "commission": 5.0,
+      "stamp_duty": 5.4,
+      "reason": "止盈触发(盘中)"
     }
   ],
   "equity_log": [
@@ -1068,6 +1095,14 @@
       "cash": 12284.64,
       "position_value": 33375.0,
       "return_pct": -8.68
+    },
+    {
+      "date": "2026-09-17",
+      "time": "09:35",
+      "equity": 45162.91,
+      "cash": 14193.91,
+      "position_value": 30969.0,
+      "return_pct": -9.67
     }
   ],
   "order_log": [
@@ -3162,6 +3197,80 @@
       "shares": 100,
       "target_price": 91.66,
       "stop_loss": 76.93
+    },
+    {
+      "time": "2026-09-17 09:35",
+      "event": "ORDER_FILLED",
+      "symbol": "603115",
+      "name": "海星股份",
+      "side": "buy",
+      "shares": 100,
+      "price": 93.49,
+      "value": 9349.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 9354.0,
+      "cash_before": 12284.64,
+      "cash_after": 2930.64,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-09-17 09:35",
+      "event": "ORDER_FILLED",
+      "symbol": "002046",
+      "name": "国机精工",
+      "side": "sell",
+      "shares": 100,
+      "price": 58.83,
+      "value": 5883.0,
+      "commission": 5.0,
+      "stamp_duty": 5.88,
+      "total_cost": 5893.88,
+      "cash_before": 2930.64,
+      "cash_after": 8802.76,
+      "reason": "止损触发(盘中)",
+      "pnl": -10.88,
+      "pnl_pct": -0.18
+    },
+    {
+      "time": "2026-09-17 09:35",
+      "event": "ORDER_FILLED",
+      "symbol": "601208",
+      "name": "东材科技",
+      "side": "sell",
+      "shares": 100,
+      "price": 54.02,
+      "value": 5401.55,
+      "commission": 5.0,
+      "stamp_duty": 5.4,
+      "total_cost": 5411.95,
+      "cash_before": 8802.76,
+      "cash_after": 14193.91,
+      "reason": "止盈触发(盘中)",
+      "pnl": 694.15,
+      "pnl_pct": 14.78
+    },
+    {
+      "time": "2026-09-17 09:35",
+      "event": "ORDER_CREATED",
+      "symbol": "601208",
+      "name": "东材科技",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 54.31,
+      "stop_loss": 47.95
+    },
+    {
+      "time": "2026-09-17 09:35",
+      "event": "ORDER_CREATED",
+      "symbol": "002046",
+      "name": "国机精工",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 61.41,
+      "stop_loss": 56.6
     }
   ]
 }
