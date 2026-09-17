@@ -1,6 +1,6 @@
 {
   "updated": "2026-09-17",
-  "cash": 5606.537449999986,
+  "cash": 11696.436449999987,
   "initial_cash": 50000,
   "positions": {
     "603618": {
@@ -10,10 +10,10 @@
       "current_price": 38.63,
       "stop_loss": 31.99,
       "name": "杭电股份",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 41.04,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 0
     },
     "601988": {
       "shares": 1000,
@@ -22,7 +22,7 @@
       "current_price": 6.58,
       "stop_loss": 6.25,
       "name": "中国银行",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 6.58,
       "trailing_activated": false,
       "absent_days": 0
@@ -34,7 +34,7 @@
       "current_price": 21.85,
       "stop_loss": 18.31,
       "name": "招商轮船",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 21.85,
       "trailing_activated": false,
       "absent_days": 0
@@ -46,7 +46,7 @@
       "current_price": 9.75,
       "stop_loss": 7.1,
       "name": "敦煌种业",
-      "days_held": 3,
+      "days_held": 4,
       "peak_price": 9.75,
       "trailing_activated": false,
       "absent_days": 0
@@ -58,7 +58,7 @@
       "current_price": 95.41,
       "stop_loss": 80.06,
       "name": "海星股份",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 95.41,
       "trailing_activated": false,
       "absent_days": 0
@@ -70,20 +70,8 @@
       "current_price": 52.3,
       "stop_loss": 45.93,
       "name": "东材科技",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 54.31,
-      "trailing_activated": false,
-      "absent_days": 0
-    },
-    "002046": {
-      "shares": 100,
-      "avg_cost": 61.01,
-      "entry_date": "2026-09-17",
-      "current_price": 63.86,
-      "stop_loss": 58.88,
-      "name": "国机精工",
-      "days_held": 1,
-      "peak_price": 63.86,
       "trailing_activated": false,
       "absent_days": 0
     },
@@ -94,13 +82,23 @@
       "current_price": 14.6,
       "stop_loss": 10.84,
       "name": "国芳集团",
-      "days_held": 0,
-      "peak_price": 14.03,
+      "days_held": 1,
+      "peak_price": 14.6,
       "trailing_activated": false,
       "absent_days": 0
     }
   },
-  "pending": {},
+  "pending": {
+    "002046": {
+      "shares": 100,
+      "target_price": 63.86,
+      "stop_loss": 58.88,
+      "signal_date": "2026-09-17",
+      "name": "国机精工",
+      "side": "buy",
+      "created_time": "18:05"
+    }
+  },
   "history": [
     {
       "symbol": "000603",
@@ -761,6 +759,21 @@
       "commission": 5.0,
       "stamp_duty": 4.37,
       "reason": "信号消失"
+    },
+    {
+      "symbol": "002046",
+      "name": "国机精工",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 61.01,
+      "exit_price": 61.01,
+      "exit_date": "2026-09-17",
+      "entry_date": "2026-09-17",
+      "pnl": -11.1,
+      "pnl_pct": -0.18,
+      "commission": 5.0,
+      "stamp_duty": 6.1,
+      "reason": "止损触发(盘中)"
     }
   ],
   "equity_log": [
@@ -1139,6 +1152,14 @@
       "cash": 5606.54,
       "position_value": 40590.0,
       "return_pct": -7.61
+    },
+    {
+      "date": "2026-09-17",
+      "time": "18:05",
+      "equity": 45900.44,
+      "cash": 11696.44,
+      "position_value": 34204.0,
+      "return_pct": -8.2
     }
   ],
   "order_log": [
@@ -3389,6 +3410,34 @@
       "reason": "",
       "pnl": 0,
       "pnl_pct": 0
+    },
+    {
+      "time": "2026-09-17 18:05",
+      "event": "ORDER_FILLED",
+      "symbol": "002046",
+      "name": "国机精工",
+      "side": "sell",
+      "shares": 100,
+      "price": 61.01,
+      "value": 6101.0,
+      "commission": 5.0,
+      "stamp_duty": 6.1,
+      "total_cost": 6112.1,
+      "cash_before": 5606.54,
+      "cash_after": 11696.44,
+      "reason": "止损触发(盘中)",
+      "pnl": -11.1,
+      "pnl_pct": -0.18
+    },
+    {
+      "time": "2026-09-17 18:05",
+      "event": "ORDER_CREATED",
+      "symbol": "002046",
+      "name": "国机精工",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 63.86,
+      "stop_loss": 58.88
     }
   ]
 }
