@@ -1,6 +1,6 @@
 {
   "updated": "2026-09-17",
-  "cash": 7014.537449999986,
+  "cash": 5606.537449999986,
   "initial_cash": 50000,
   "positions": {
     "603618": {
@@ -10,10 +10,10 @@
       "current_price": 38.63,
       "stop_loss": 31.99,
       "name": "杭电股份",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 41.04,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "601988": {
       "shares": 1000,
@@ -22,7 +22,7 @@
       "current_price": 6.58,
       "stop_loss": 6.25,
       "name": "中国银行",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 6.58,
       "trailing_activated": false,
       "absent_days": 0
@@ -34,7 +34,7 @@
       "current_price": 21.85,
       "stop_loss": 18.31,
       "name": "招商轮船",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 21.85,
       "trailing_activated": false,
       "absent_days": 0
@@ -46,7 +46,7 @@
       "current_price": 9.75,
       "stop_loss": 7.1,
       "name": "敦煌种业",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 9.75,
       "trailing_activated": false,
       "absent_days": 0
@@ -58,7 +58,7 @@
       "current_price": 95.41,
       "stop_loss": 80.06,
       "name": "海星股份",
-      "days_held": 1,
+      "days_held": 2,
       "peak_price": 95.41,
       "trailing_activated": false,
       "absent_days": 0
@@ -70,7 +70,7 @@
       "current_price": 52.3,
       "stop_loss": 45.93,
       "name": "东材科技",
-      "days_held": 0,
+      "days_held": 1,
       "peak_price": 54.31,
       "trailing_activated": false,
       "absent_days": 0
@@ -80,25 +80,27 @@
       "avg_cost": 61.01,
       "entry_date": "2026-09-17",
       "current_price": 63.86,
-      "stop_loss": 56.6,
+      "stop_loss": 58.88,
       "name": "国机精工",
-      "days_held": 0,
-      "peak_price": 61.01,
+      "days_held": 1,
+      "peak_price": 63.86,
       "trailing_activated": false,
-      "absent_days": 1
-    }
-  },
-  "pending": {
+      "absent_days": 0
+    },
     "601086": {
       "shares": 100,
-      "target_price": 14.6,
+      "avg_cost": 14.03,
+      "entry_date": "2026-09-17",
+      "current_price": 14.6,
       "stop_loss": 10.84,
-      "signal_date": "2026-09-17",
       "name": "国芳集团",
-      "side": "buy",
-      "created_time": "16:05"
+      "days_held": 0,
+      "peak_price": 14.03,
+      "trailing_activated": false,
+      "absent_days": 0
     }
   },
+  "pending": {},
   "history": [
     {
       "symbol": "000603",
@@ -1129,6 +1131,14 @@
       "cash": 7014.54,
       "position_value": 39130.0,
       "return_pct": -7.71
+    },
+    {
+      "date": "2026-09-17",
+      "time": "17:05",
+      "equity": 46196.54,
+      "cash": 5606.54,
+      "position_value": 40590.0,
+      "return_pct": -7.61
     }
   ],
   "order_log": [
@@ -3361,6 +3371,24 @@
       "shares": 100,
       "target_price": 14.6,
       "stop_loss": 10.84
+    },
+    {
+      "time": "2026-09-17 17:05",
+      "event": "ORDER_FILLED",
+      "symbol": "601086",
+      "name": "国芳集团",
+      "side": "buy",
+      "shares": 100,
+      "price": 14.03,
+      "value": 1403.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 1408.0,
+      "cash_before": 7014.54,
+      "cash_after": 5606.54,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
     }
   ]
 }
