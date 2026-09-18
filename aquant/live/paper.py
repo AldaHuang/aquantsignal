@@ -101,20 +101,45 @@ class PaperTrader:
                     except Exception:
                         pass
 
+                    # A: Take-profit at +3x risk
                     if intra_high >= entry + 3 * risk_dist:
                         self._close_position(sym, entry + 3 * risk_dist, today, "止盈触发(盘中)")
                         continue
-                    if intra_high >= entry + 1.5 * risk_dist and not pos["trailing_activated"]:
+
+                    # B: Trailing stop — ratchet up with profits
+                    # Once +1.5x risk: lock breakeven. Then lock max(breakeven, peak-10%)
+                    if intra_high >= entry + 1.5 * risk_dist:
                         pos["trailing_activated"] = True
-                        pos["stop_loss"] = entry
+                        ratchet = max(entry, pos["peak_price"] * 0.90)
+                        if ratchet > pos["stop_loss"]:
+                            pos["stop_loss"] = round(ratchet, 2)
+
+                    # C: Hard stop — never lose more than 8% on any position
+                    hard_stop = entry * 0.92
+                    if pos["stop_loss"] < hard_stop:
+                        pos["stop_loss"] = hard_stop
+
+                    # D: Stop loss check
                     if intra_low <= pos["stop_loss"]:
                         self._close_position(sym, pos["stop_loss"], today, "止损触发(盘中)")
                         continue
+
+                    # E: Time exit (>20 days, no profit)
                     if pos["days_held"] >= 20 and close <= entry:
                         self._close_position(sym, close, today, "超20日无盈利")
                         continue
                 except Exception:
                     pass
+
+        # ── Step 2.2: Score-based early exit (score < 40 → exit) ──
+        if market_open:
+            for sym in list(self.positions):
+                if sym in rec_map:
+                    rec = rec_map[sym]
+                    score = getattr(rec, 'score', 100)
+                    if score < 40:
+                        self._close_position(sym, rec.price, today, f"评分跌破40({score})")
+                        continue
 
         # ── Step 2.5: Signal reversal (absent from recs 3+ days) ──
         for sym in list(self.positions):
