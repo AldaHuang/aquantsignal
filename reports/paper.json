@@ -1,16 +1,16 @@
 {
-  "updated": "2026-09-17",
-  "cash": 11696.436449999987,
+  "updated": "2026-09-18",
+  "cash": 5313.4364499999865,
   "initial_cash": 50000,
   "positions": {
     "603618": {
       "shares": 100,
       "avg_cost": 37.8,
       "entry_date": "2026-09-13",
-      "current_price": 38.63,
-      "stop_loss": 31.99,
+      "current_price": 39.91,
+      "stop_loss": 33.15,
       "name": "杭电股份",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 41.04,
       "trailing_activated": false,
       "absent_days": 0
@@ -19,23 +19,23 @@
       "shares": 1000,
       "avg_cost": 6.56,
       "entry_date": "2026-09-13",
-      "current_price": 6.58,
+      "current_price": 6.54,
       "stop_loss": 6.25,
       "name": "中国银行",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 6.58,
       "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "601872": {
       "shares": 300,
       "avg_cost": 21.46,
       "entry_date": "2026-09-13",
-      "current_price": 21.85,
-      "stop_loss": 18.31,
+      "current_price": 22.36,
+      "stop_loss": 18.14,
       "name": "招商轮船",
-      "days_held": 6,
-      "peak_price": 21.85,
+      "days_held": 7,
+      "peak_price": 22.36,
       "trailing_activated": false,
       "absent_days": 0
     },
@@ -43,22 +43,22 @@
       "shares": 100,
       "avg_cost": 8.42,
       "entry_date": "2026-09-16",
-      "current_price": 9.75,
-      "stop_loss": 7.1,
+      "current_price": 10.23,
+      "stop_loss": 7.04,
       "name": "敦煌种业",
-      "days_held": 4,
-      "peak_price": 9.75,
-      "trailing_activated": false,
+      "days_held": 5,
+      "peak_price": 10.23,
+      "trailing_activated": true,
       "absent_days": 0
     },
     "603115": {
       "shares": 100,
       "avg_cost": 93.49,
       "entry_date": "2026-09-17",
-      "current_price": 95.41,
-      "stop_loss": 80.06,
+      "current_price": 93.68,
+      "stop_loss": 79.86,
       "name": "海星股份",
-      "days_held": 3,
+      "days_held": 4,
       "peak_price": 95.41,
       "trailing_activated": false,
       "absent_days": 0
@@ -67,10 +67,10 @@
       "shares": 100,
       "avg_cost": 54.31,
       "entry_date": "2026-09-17",
-      "current_price": 52.3,
-      "stop_loss": 45.93,
+      "current_price": 51.3,
+      "stop_loss": 45.91,
       "name": "东材科技",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 54.31,
       "trailing_activated": false,
       "absent_days": 0
@@ -79,26 +79,28 @@
       "shares": 100,
       "avg_cost": 14.03,
       "entry_date": "2026-09-17",
-      "current_price": 14.6,
-      "stop_loss": 10.84,
+      "current_price": 16.06,
+      "stop_loss": 10.61,
       "name": "国芳集团",
-      "days_held": 1,
-      "peak_price": 14.6,
+      "days_held": 2,
+      "peak_price": 16.06,
       "trailing_activated": false,
       "absent_days": 0
-    }
-  },
-  "pending": {
+    },
     "002046": {
       "shares": 100,
-      "target_price": 63.86,
+      "avg_cost": 63.78,
+      "entry_date": "2026-09-18",
+      "current_price": 64.23,
       "stop_loss": 58.88,
-      "signal_date": "2026-09-17",
       "name": "国机精工",
-      "side": "buy",
-      "created_time": "18:05"
+      "days_held": 0,
+      "peak_price": 63.78,
+      "trailing_activated": false,
+      "absent_days": 1
     }
   },
+  "pending": {},
   "history": [
     {
       "symbol": "000603",
@@ -1160,6 +1162,14 @@
       "cash": 11696.44,
       "position_value": 34204.0,
       "return_pct": -8.2
+    },
+    {
+      "date": "2026-09-18",
+      "time": "17:28",
+      "equity": 46102.44,
+      "cash": 5313.44,
+      "position_value": 40789.0,
+      "return_pct": -7.8
     }
   ],
   "order_log": [
@@ -3438,6 +3448,24 @@
       "shares": 100,
       "target_price": 63.86,
       "stop_loss": 58.88
+    },
+    {
+      "time": "2026-09-18 17:28",
+      "event": "ORDER_FILLED",
+      "symbol": "002046",
+      "name": "国机精工",
+      "side": "buy",
+      "shares": 100,
+      "price": 63.78,
+      "value": 6378.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 6383.0,
+      "cash_before": 11696.44,
+      "cash_after": 5313.44,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
     }
   ]
 }
