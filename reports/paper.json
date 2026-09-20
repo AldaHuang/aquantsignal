@@ -1,66 +1,90 @@
 {
-  "updated": "2026-09-19",
-  "cash": 22711.001449999985,
+  "updated": "2026-09-20",
+  "cash": 29222.914449999986,
   "initial_cash": 50000,
   "positions": {
-    "601988": {
-      "shares": 1000,
-      "avg_cost": 6.56,
-      "entry_date": "2026-09-13",
-      "current_price": 6.54,
-      "stop_loss": 6.25,
-      "name": "中国银行",
-      "days_held": 7,
-      "peak_price": 6.58,
-      "trailing_activated": false,
-      "absent_days": 2
-    },
     "600354": {
       "shares": 100,
       "avg_cost": 8.42,
       "entry_date": "2026-09-16",
       "current_price": 10.23,
-      "stop_loss": 7.04,
+      "stop_loss": 9.21,
       "name": "敦煌种业",
-      "days_held": 5,
+      "days_held": 6,
       "peak_price": 10.23,
       "trailing_activated": true,
-      "absent_days": 1
+      "absent_days": 2
     },
     "603115": {
       "shares": 100,
       "avg_cost": 93.49,
       "entry_date": "2026-09-17",
       "current_price": 93.68,
-      "stop_loss": 79.86,
+      "stop_loss": 78.13,
       "name": "海星股份",
-      "days_held": 4,
+      "days_held": 5,
       "peak_price": 95.41,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 0
     },
     "002046": {
       "shares": 100,
       "avg_cost": 63.78,
       "entry_date": "2026-09-18",
       "current_price": 64.23,
-      "stop_loss": 58.88,
+      "stop_loss": 59.27,
       "name": "国机精工",
-      "days_held": 0,
-      "peak_price": 63.78,
+      "days_held": 1,
+      "peak_price": 64.23,
       "trailing_activated": false,
-      "absent_days": 2
+      "absent_days": 0
     }
   },
   "pending": {
-    "000426": {
-      "shares": 100,
-      "target_price": 35.47,
-      "stop_loss": 32.95,
-      "signal_date": "2026-09-19",
-      "name": "兴业银锡",
+    "601086": {
+      "shares": 200,
+      "target_price": 16.06,
+      "stop_loss": 12.07,
+      "signal_date": "2026-09-20",
+      "name": "国芳集团",
       "side": "buy",
-      "created_time": "09:47"
+      "created_time": "14:07"
+    },
+    "601208": {
+      "shares": 100,
+      "target_price": 51.3,
+      "stop_loss": 44.91,
+      "signal_date": "2026-09-20",
+      "name": "东材科技",
+      "side": "buy",
+      "created_time": "14:07"
+    },
+    "000628": {
+      "shares": 100,
+      "target_price": 60.48,
+      "stop_loss": 54.18,
+      "signal_date": "2026-09-20",
+      "name": "高新发展",
+      "side": "buy",
+      "created_time": "14:07"
+    },
+    "601872": {
+      "shares": 100,
+      "target_price": 22.36,
+      "stop_loss": 18.65,
+      "signal_date": "2026-09-20",
+      "name": "招商轮船",
+      "side": "buy",
+      "created_time": "14:07"
+    },
+    "603618": {
+      "shares": 100,
+      "target_price": 39.91,
+      "stop_loss": 33.15,
+      "signal_date": "2026-09-20",
+      "name": "杭电股份",
+      "side": "buy",
+      "created_time": "14:07"
     }
   },
   "history": [
@@ -798,6 +822,36 @@
       "commission": 5.0,
       "stamp_duty": 1.61,
       "reason": "评分跌破40(28)"
+    },
+    {
+      "symbol": "000426",
+      "name": "兴业银锡",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 35.5,
+      "exit_price": 35.47,
+      "exit_date": "2026-09-20",
+      "entry_date": "2026-09-20",
+      "pnl": -11.55,
+      "pnl_pct": -0.33,
+      "commission": 5.0,
+      "stamp_duty": 3.55,
+      "reason": "评分跌破40(27)"
+    },
+    {
+      "symbol": "601988",
+      "name": "中国银行",
+      "side": "sell",
+      "shares": 1000,
+      "entry_price": 6.56,
+      "exit_price": 6.54,
+      "exit_date": "2026-09-20",
+      "entry_date": "2026-09-13",
+      "pnl": -31.54,
+      "pnl_pct": -0.48,
+      "commission": 5.0,
+      "stamp_duty": 6.54,
+      "reason": "信号消失"
     }
   ],
   "equity_log": [
@@ -1200,6 +1254,14 @@
       "cash": 22711.0,
       "position_value": 23354.0,
       "return_pct": -7.87
+    },
+    {
+      "date": "2026-09-20",
+      "time": "14:07",
+      "equity": 46036.91,
+      "cash": 29222.91,
+      "position_value": 16814.0,
+      "return_pct": -7.93
     }
   ],
   "order_log": [
@@ -3578,6 +3640,110 @@
       "shares": 100,
       "target_price": 35.47,
       "stop_loss": 32.95
+    },
+    {
+      "time": "2026-09-20 14:07",
+      "event": "ORDER_FILLED",
+      "symbol": "000426",
+      "name": "兴业银锡",
+      "side": "buy",
+      "shares": 100,
+      "price": 35.5,
+      "value": 3550.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 3555.0,
+      "cash_before": 22711.0,
+      "cash_after": 19156.0,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-09-20 14:31",
+      "event": "ORDER_FILLED",
+      "symbol": "000426",
+      "name": "兴业银锡",
+      "side": "sell",
+      "shares": 100,
+      "price": 35.47,
+      "value": 3547.0,
+      "commission": 5.0,
+      "stamp_duty": 3.55,
+      "total_cost": 3555.55,
+      "cash_before": 19156.0,
+      "cash_after": 22694.45,
+      "reason": "评分跌破40(27)",
+      "pnl": -11.55,
+      "pnl_pct": -0.33
+    },
+    {
+      "time": "2026-09-20 14:31",
+      "event": "ORDER_FILLED",
+      "symbol": "601988",
+      "name": "中国银行",
+      "side": "sell",
+      "shares": 1000,
+      "price": 6.54,
+      "value": 6540.0,
+      "commission": 5.0,
+      "stamp_duty": 6.54,
+      "total_cost": 6551.54,
+      "cash_before": 22694.45,
+      "cash_after": 29222.91,
+      "reason": "信号消失",
+      "pnl": -31.54,
+      "pnl_pct": -0.48
+    },
+    {
+      "time": "2026-09-20 14:31",
+      "event": "ORDER_CREATED",
+      "symbol": "601086",
+      "name": "国芳集团",
+      "side": "buy",
+      "shares": 200,
+      "target_price": 16.06,
+      "stop_loss": 12.07
+    },
+    {
+      "time": "2026-09-20 14:31",
+      "event": "ORDER_CREATED",
+      "symbol": "601208",
+      "name": "东材科技",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 51.3,
+      "stop_loss": 44.91
+    },
+    {
+      "time": "2026-09-20 14:31",
+      "event": "ORDER_CREATED",
+      "symbol": "000628",
+      "name": "高新发展",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 60.48,
+      "stop_loss": 54.18
+    },
+    {
+      "time": "2026-09-20 14:31",
+      "event": "ORDER_CREATED",
+      "symbol": "601872",
+      "name": "招商轮船",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 22.36,
+      "stop_loss": 18.65
+    },
+    {
+      "time": "2026-09-20 14:31",
+      "event": "ORDER_CREATED",
+      "symbol": "603618",
+      "name": "杭电股份",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 39.91,
+      "stop_loss": 33.15
     }
   ]
 }
