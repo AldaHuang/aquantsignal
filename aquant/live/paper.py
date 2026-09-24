@@ -166,7 +166,9 @@ class PaperTrader:
                 pass
             elif verdict in ("买入", "关注"):
                 score = r.score if hasattr(r, 'score') else 0
-                new_buys.append((score, sym, r))
+                # Only buy strong signals (score >= 60)
+                if score >= 60:
+                    new_buys.append((score, sym, r))
 
         # Sort by score descending, buy until budget exhausted
         new_buys.sort(key=lambda x: -x[0])
@@ -184,6 +186,17 @@ class PaperTrader:
             same_sec += sum(1 for s in self.pending if _sector_key(s) == sec)
             if (same_sec + 1) / total_pos > 0.5 and total_pos >= 3:
                 continue  # would concentrate too much in one sector
+            # Trend filter: only buy when price above 60-day MA
+            if feed:
+                try:
+                    df = feed.get(sym)
+                    if df is not None and len(df) >= 60:
+                        ma60 = float(df["close"].rolling(60).mean().iloc[-1])
+                        price_now = float(df["close"].iloc[-1])
+                        if price_now < ma60:
+                            continue  # below 60MA — don't catch falling knife
+                except Exception:
+                    pass
             price = r.price
             stop_loss = getattr(r, 'stop_loss', price * 0.9)
             # Position size: risk 2% of total capital per trade
