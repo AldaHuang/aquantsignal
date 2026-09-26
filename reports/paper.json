@@ -1,41 +1,29 @@
 {
-  "updated": "2026-09-23",
-  "cash": 17942.725069999986,
+  "updated": "2026-09-26",
+  "cash": 10090.823629999986,
   "initial_cash": 50000,
   "positions": {
     "002046": {
       "shares": 100,
       "avg_cost": 63.78,
       "entry_date": "2026-09-18",
-      "current_price": 66.1,
+      "current_price": 63.9,
       "stop_loss": 60.73,
       "name": "国机精工",
-      "days_held": 2,
+      "days_held": 3,
       "peak_price": 66.1,
       "trailing_activated": false,
-      "absent_days": 0
-    },
-    "601086": {
-      "shares": 200,
-      "avg_cost": 18.16,
-      "entry_date": "2026-09-23",
-      "current_price": 17.02,
-      "stop_loss": 13.75,
-      "name": "国芳集团",
-      "days_held": 0,
-      "peak_price": 18.16,
-      "trailing_activated": false,
-      "absent_days": 0
+      "absent_days": 1
     },
     "601208": {
       "shares": 100,
       "avg_cost": 52.78,
       "entry_date": "2026-09-23",
-      "current_price": 55.0,
-      "stop_loss": 48.63,
+      "current_price": 56.44,
+      "stop_loss": 50.01,
       "name": "东材科技",
-      "days_held": 0,
-      "peak_price": 52.78,
+      "days_held": 1,
+      "peak_price": 56.44,
       "trailing_activated": false,
       "absent_days": 0
     },
@@ -43,23 +31,23 @@
       "shares": 100,
       "avg_cost": 59.6,
       "entry_date": "2026-09-23",
-      "current_price": 59.47,
-      "stop_loss": 54.18,
+      "current_price": 57.78,
+      "stop_loss": 54.832,
       "name": "高新发展",
-      "days_held": 0,
+      "days_held": 1,
       "peak_price": 59.6,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     },
     "601872": {
       "shares": 100,
       "avg_cost": 20.8,
       "entry_date": "2026-09-23",
-      "current_price": 20.78,
-      "stop_loss": 16.97,
+      "current_price": 20.93,
+      "stop_loss": 17.18,
       "name": "招商轮船",
-      "days_held": 0,
-      "peak_price": 20.8,
+      "days_held": 1,
+      "peak_price": 20.93,
       "trailing_activated": false,
       "absent_days": 0
     },
@@ -67,35 +55,40 @@
       "shares": 100,
       "avg_cost": 38.55,
       "entry_date": "2026-09-23",
-      "current_price": 37.74,
-      "stop_loss": 31.47,
+      "current_price": 36.35,
+      "stop_loss": 30.36,
       "name": "杭电股份",
-      "days_held": 0,
+      "days_held": 1,
       "peak_price": 38.55,
       "trailing_activated": false,
       "absent_days": 0
-    }
-  },
-  "pending": {
+    },
     "300209": {
       "shares": 100,
-      "target_price": 37.41,
-      "stop_loss": 34.04,
-      "signal_date": "2026-09-23",
+      "avg_cost": 37.5,
+      "entry_date": "2026-09-26",
+      "current_price": 36.35,
+      "stop_loss": 33.02,
       "name": "行云科技",
-      "side": "buy",
-      "created_time": "17:48"
+      "days_held": 0,
+      "peak_price": 37.5,
+      "trailing_activated": false,
+      "absent_days": 0
     },
     "002290": {
       "shares": 100,
-      "target_price": 74.65,
+      "avg_cost": 74.25,
+      "entry_date": "2026-09-26",
+      "current_price": 73.89,
       "stop_loss": 66.71,
-      "signal_date": "2026-09-23",
       "name": "禾盛新材",
-      "side": "buy",
-      "created_time": "17:48"
+      "days_held": 0,
+      "peak_price": 74.25,
+      "trailing_activated": false,
+      "absent_days": 1
     }
   },
+  "pending": {},
   "history": [
     {
       "symbol": "000603",
@@ -891,6 +884,21 @@
       "commission": 5.0,
       "stamp_duty": 8.6,
       "reason": "止损触发(盘中)"
+    },
+    {
+      "symbol": "601086",
+      "name": "国芳集团",
+      "side": "sell",
+      "shares": 200,
+      "entry_price": 18.16,
+      "exit_price": 16.71,
+      "exit_date": "2026-09-26",
+      "entry_date": "2026-09-23",
+      "pnl": -298.9,
+      "pnl_pct": -8.23,
+      "commission": 5.0,
+      "stamp_duty": 3.34,
+      "reason": "止损触发(盘中)"
     }
   ],
   "equity_log": [
@@ -1309,6 +1317,14 @@
       "cash": 17942.73,
       "position_value": 27313.0,
       "return_pct": -9.49
+    },
+    {
+      "date": "2026-09-26",
+      "time": "09:41",
+      "equity": 44654.82,
+      "cash": 10090.82,
+      "position_value": 34564.0,
+      "return_pct": -10.69
     }
   ],
   "order_log": [
@@ -3937,6 +3953,60 @@
       "shares": 100,
       "target_price": 74.65,
       "stop_loss": 66.71
+    },
+    {
+      "time": "2026-09-26 09:41",
+      "event": "ORDER_FILLED",
+      "symbol": "300209",
+      "name": "行云科技",
+      "side": "buy",
+      "shares": 100,
+      "price": 37.5,
+      "value": 3750.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 3755.0,
+      "cash_before": 17942.73,
+      "cash_after": 14187.73,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-09-26 09:41",
+      "event": "ORDER_FILLED",
+      "symbol": "002290",
+      "name": "禾盛新材",
+      "side": "buy",
+      "shares": 100,
+      "price": 74.25,
+      "value": 7425.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 7430.0,
+      "cash_before": 14187.73,
+      "cash_after": 6757.73,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
+    },
+    {
+      "time": "2026-09-26 09:41",
+      "event": "ORDER_FILLED",
+      "symbol": "601086",
+      "name": "国芳集团",
+      "side": "sell",
+      "shares": 200,
+      "price": 16.71,
+      "value": 3341.44,
+      "commission": 5.0,
+      "stamp_duty": 3.34,
+      "total_cost": 3349.78,
+      "cash_before": 6757.73,
+      "cash_after": 10090.82,
+      "reason": "止损触发(盘中)",
+      "pnl": -298.9,
+      "pnl_pct": -8.23
     }
   ]
 }
