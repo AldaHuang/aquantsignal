@@ -7,13 +7,13 @@
       "shares": 100,
       "avg_cost": 63.78,
       "entry_date": "2026-09-18",
-      "current_price": 61.48,
+      "current_price": 60.45,
       "stop_loss": 58.677600000000005,
       "name": "国机精工",
-      "days_held": 6,
+      "days_held": 7,
       "peak_price": 66.1,
       "trailing_activated": false,
-      "absent_days": 1
+      "absent_days": 2
     }
   },
   "pending": {},
@@ -1367,6 +1367,14 @@
       "cash": 37263.19,
       "position_value": 6148.0,
       "return_pct": -13.18
+    },
+    {
+      "date": "2026-09-29",
+      "time": "20:47",
+      "equity": 43308.19,
+      "cash": 37263.19,
+      "position_value": 6045.0,
+      "return_pct": -13.38
     }
   ],
   "order_log": [
