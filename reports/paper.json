@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "cash": 43120.086269999985,
   "initial_cash": 50000,
   "positions": {},
@@ -1421,6 +1421,14 @@
     {
       "date": "2026-10-07",
       "time": "18:06",
+      "equity": 43120.09,
+      "cash": 43120.09,
+      "position_value": 0,
+      "return_pct": -13.76
+    },
+    {
+      "date": "2026-10-08",
+      "time": "09:37",
       "equity": 43120.09,
       "cash": 43120.09,
       "position_value": 0,
