@@ -1,21 +1,8 @@
 {
   "updated": "2026-10-09",
-  "cash": 37615.086269999985,
+  "cash": 44073.616269999984,
   "initial_cash": 50000,
-  "positions": {
-    "301513": {
-      "shares": 100,
-      "avg_cost": 55.0,
-      "entry_date": "2026-10-09",
-      "current_price": 67.81,
-      "stop_loss": 46.75,
-      "name": "尚水智能",
-      "days_held": 0,
-      "peak_price": 55.0,
-      "trailing_activated": false,
-      "absent_days": 1
-    }
-  },
+  "positions": {},
   "pending": {},
   "history": [
     {
@@ -932,6 +919,21 @@
       "commission": 5.0,
       "stamp_duty": 5.87,
       "reason": "止损触发(盘中)"
+    },
+    {
+      "symbol": "301513",
+      "name": "尚水智能",
+      "side": "sell",
+      "shares": 100,
+      "entry_price": 55.0,
+      "exit_price": 64.7,
+      "exit_date": "2026-10-09",
+      "entry_date": "2026-10-09",
+      "pnl": 958.53,
+      "pnl_pct": 17.43,
+      "commission": 5.0,
+      "stamp_duty": 6.47,
+      "reason": "止损触发(盘中)"
     }
   ],
   "equity_log": [
@@ -1486,6 +1488,14 @@
       "cash": 37615.09,
       "position_value": 6781.0,
       "return_pct": -11.21
+    },
+    {
+      "date": "2026-10-09",
+      "time": "17:05",
+      "equity": 44073.62,
+      "cash": 44073.62,
+      "position_value": 0,
+      "return_pct": -11.85
     }
   ],
   "order_log": [
@@ -4322,6 +4332,24 @@
       "reason": "",
       "pnl": 0,
       "pnl_pct": 0
+    },
+    {
+      "time": "2026-10-09 17:05",
+      "event": "ORDER_FILLED",
+      "symbol": "301513",
+      "name": "尚水智能",
+      "side": "sell",
+      "shares": 100,
+      "price": 64.7,
+      "value": 6470.0,
+      "commission": 5.0,
+      "stamp_duty": 6.47,
+      "total_cost": 6481.47,
+      "cash_before": 37615.09,
+      "cash_after": 44073.62,
+      "reason": "止损触发(盘中)",
+      "pnl": 958.53,
+      "pnl_pct": 17.43
     }
   ]
 }
