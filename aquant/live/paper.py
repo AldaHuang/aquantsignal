@@ -155,6 +155,17 @@ class PaperTrader:
         max_positions = 8  # max holdings at once
         new_buys = []
 
+        # Market gate: no new buys when index below 60-day MA (don't fight the tape)
+        market_up = True
+        if feed:
+            try:
+                idx = feed.get_index("000300")
+                if idx is not None and len(idx) >= 60:
+                    ma60 = float(idx["close"].rolling(60).mean().iloc[-1])
+                    market_up = float(idx["close"].iloc[-1]) >= ma60
+            except Exception:
+                pass
+
         for sym, r in rec_map.items():
             verdict = r.verdict
             if sym in self.positions:
@@ -177,6 +188,9 @@ class PaperTrader:
         remaining_cash -= pending_cost
 
         for _, sym, r in new_buys:
+            if not market_up:
+                log.info("市场下跌(沪深300<60MA)，暂停建仓")
+                break
             if len(self.positions) + len(self.pending) >= max_positions:
                 break
             # Sector concentration check: skip if same sector already > 50%
