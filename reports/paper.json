@@ -10,7 +10,10 @@
       "current_price": 33.55,
       "stop_loss": 30.08,
       "name": "行云科技",
-      "filled_today": true
+      "days_held": 0,
+      "peak_price": 34.0,
+      "trailing_activated": false,
+      "absent_days": 0
     }
   },
   "pending": {},
@@ -1534,6 +1537,14 @@
     {
       "date": "2026-10-12",
       "time": "16:05",
+      "equity": 44023.62,
+      "cash": 40668.62,
+      "position_value": 3355.0,
+      "return_pct": -11.95
+    },
+    {
+      "date": "2026-10-12",
+      "time": "17:05",
       "equity": 44023.62,
       "cash": 40668.62,
       "position_value": 3355.0,
