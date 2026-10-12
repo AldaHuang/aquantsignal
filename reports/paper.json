@@ -1,8 +1,18 @@
 {
   "updated": "2026-10-12",
-  "cash": 44073.616269999984,
+  "cash": 40668.616269999984,
   "initial_cash": 50000,
-  "positions": {},
+  "positions": {
+    "300209": {
+      "shares": 100,
+      "avg_cost": 34.0,
+      "entry_date": "2026-10-12",
+      "current_price": 33.55,
+      "stop_loss": 30.08,
+      "name": "行云科技",
+      "filled_today": true
+    }
+  },
   "pending": {},
   "history": [
     {
@@ -1520,6 +1530,14 @@
       "cash": 44073.62,
       "position_value": 0,
       "return_pct": -11.85
+    },
+    {
+      "date": "2026-10-12",
+      "time": "16:05",
+      "equity": 44023.62,
+      "cash": 40668.62,
+      "position_value": 3355.0,
+      "return_pct": -11.95
     }
   ],
   "order_log": [
@@ -4374,6 +4392,34 @@
       "reason": "止损触发(盘中)",
       "pnl": 958.53,
       "pnl_pct": 17.43
+    },
+    {
+      "time": "2026-10-12 16:05",
+      "event": "ORDER_CREATED",
+      "symbol": "300209",
+      "name": "行云科技",
+      "side": "buy",
+      "shares": 100,
+      "target_price": 33.55,
+      "stop_loss": 30.08
+    },
+    {
+      "time": "2026-10-12 16:05",
+      "event": "ORDER_FILLED",
+      "symbol": "300209",
+      "name": "行云科技",
+      "side": "buy",
+      "shares": 100,
+      "price": 34.0,
+      "value": 3400.0,
+      "commission": 5.0,
+      "stamp_duty": 0,
+      "total_cost": 3405.0,
+      "cash_before": 44073.62,
+      "cash_after": 40668.62,
+      "reason": "",
+      "pnl": 0,
+      "pnl_pct": 0
     }
   ]
 }
