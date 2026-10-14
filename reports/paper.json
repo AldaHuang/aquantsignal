@@ -1575,6 +1575,14 @@
       "cash": 44096.18,
       "position_value": 0,
       "return_pct": -11.81
+    },
+    {
+      "date": "2026-10-14",
+      "time": "18:28",
+      "equity": 44096.18,
+      "cash": 44096.18,
+      "position_value": 0,
+      "return_pct": -11.81
     }
   ],
   "order_log": [
